@@ -1,0 +1,60 @@
+{
+    "subcategory":"A DEI vision and mission statement",
+    "content": [
+        {
+            "text": "Many of the participating organizations have developed DEI vision and mission statements to extend systematic efforts towards the cause of fostering DEI in the respective organizations. Some examples are listed below.",
+            "name": "Hashoo Foundation: DEI Vision statement",
+            "content": [
+                {
+                "type":"quote",
+                "text":"An ethical, equitable, inclusive society in which people live with dignity and have power over their own lives."
+                }
+            ]
+        },
+        {
+            "name":"Jazz: DEI Mission statement",
+            "content":[
+                {
+                    "type":"quote",
+                    "text":"To improve the lives and livelihoods of women in Pakistan through technology."
+                }
+            ]
+        },
+        {
+            "name":"PTCL Group: DEI Vision statement",
+            "content":[
+                {
+                    "type":"quote",
+                    "text":"To be recognized as an inclusive workplace where diversity is appreciated and is considered imperative for enhanced business performance."
+                }
+            ]
+        },
+        {
+            "name":"PTCL Group: DEI Mission statement",
+            "content":[
+                {
+                    "type":"quote",
+                    "text":"To foster a culture of diversity, inclusion, and belonging through our systems, processes, and human interactions."
+                }
+            ]
+        },
+        {
+            "name":"Telenor: DEI Vision statement",
+            "content":[
+                {
+                    "type":"quote",
+                    "text":"Winning together by valuing our differences, leading to a High-Performance Culture"
+                }
+            ]
+        },
+        {
+            "name":"Teradata: DEI Vision statement",
+            "content":[
+                {
+                    "type":"quote",
+                    "text":"We are committed to an inclusive workplace culture where everyone feels welcome, respected, supported, valued and can be themselves."
+                }
+            ]
+        }
+    ]
+}

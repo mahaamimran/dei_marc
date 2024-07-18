@@ -1,0 +1,24 @@
+{
+    "subcategory":"A DEI motto",
+    "content":[
+        {
+            "text":"Few organizations have formed DEI mottos implying the importance of synergy that is created when diverse groups of people collaborate and work together. These mottos serve as a declaration of the organization's commitment to furthering DEI",
+            "name":"Hashoo Group",
+            "content":[
+                {
+                    "type":"quote",
+                    "text":"Together we make a difference"
+                }
+            ]
+        },
+        {
+            "name":"Telenor",
+            "content":[
+                {
+                    "type":"quote",
+                    "text":"Creating together services and solutions that include different perspectives."
+                }
+            ]
+        }
+    ]
+}

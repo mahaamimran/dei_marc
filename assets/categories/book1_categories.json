@@ -1,0 +1,56 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Vision, Strategy and Business Impact"
+        },
+        {
+            "id": 2,
+            "name": "Leadership and Accountability"
+        },
+        {
+            "id": 3,
+            "name": "DEI Structure and Implementation"
+        },
+        {
+            "id": 4,
+            "name": "Recruitment"
+        },
+        {
+            "id": 5,
+            "name": "Advancement and Retention"
+        },
+        {
+            "id": 6,
+            "name": "Job design, Classification and Compensation"
+        },
+        {
+            "id": 7,
+            "name": "Work-life Integration, Flexibility and Benefits"
+        },
+        {
+            "id": 8,
+            "name": "Assessment, Measurement and Research DEI"
+        },
+        {
+            "id": 9,
+            "name": "DEI Communications"
+        },
+        {
+            "id": 10,
+            "name": "DEI Learning and Development"
+        },
+        {
+            "id": 11,
+            "name": "Connecting DEI and Sustainability"
+        },
+        {
+            "id": 12,
+            "name": "Community, Government Relations and Philanthropy"
+        },
+        {
+            "id": 13,
+            "name": "Services and Products, Marketing and Responsible Sourcing"
+        }
+    ]
+}

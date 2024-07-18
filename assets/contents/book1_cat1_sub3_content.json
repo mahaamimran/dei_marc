@@ -1,0 +1,42 @@
+{
+    "subcategory": "Organizational values that promote DEI",
+    "content": [
+        {
+            "text":"Organizations aim at creating an ideal workplace environment and culture where employees feel included and rewarded for their efforts.",
+            "name": "Abacus",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Abacus’s core values concentrate on attracting the best talent and maintaining a diverse and inclusive organizational environment. Gender diversity is catered to by engaging women, not only in the lower tiers but in the higher positions as well, and sustaining a female-friendly workplace culture."
+                }
+            ]
+        },
+        {
+            "name":"Unilever",
+            "content":[
+                {
+                    "type": "paragraph",
+                    "text": "Unilever's philosophy is reflected in everything the company does. For instance, D&I has ownership from the top management, the company has a clearly spelled out purpose for pursuing D&I, a proper structure for enablement, channels for articulating and communicating its D&I philosophy and its essentiality across the organization."
+                }
+            ]
+        },
+        {
+            "name":"EPCL",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"EPCL believes in motivating, developing, and rewarding employees as a means of achieving success, respecting its employees’ rights, and encouraging freedom of expression and open dialogue."
+                }
+            ]
+        },
+        {
+            "name":"Feroze1888",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Feroze1888's value system is defined as “PROSPER”. P stands for People Development, R for Respect, O for Ownership and Accountability, S for Success Will, P for Proactive, E for Excellence in work, and R for Reliability. Every Feroze1888 employee has had trainings on PROSPER and are encouraged to know it by heart. These values are a reflection of their organization's aspiration for ensuring an equitable and inclusive workplace."
+                }
+            ]
+        }
+    ]
+}
