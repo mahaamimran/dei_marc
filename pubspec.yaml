@@ -4,13 +4,15 @@ publish_to: 'none'
 version: 1.0.0+1
 environment:
   sdk: '>=3.5.0-266.0.dev <4.0.0'
+
+# add dependencies here
 dependencies:
   flutter:
     sdk: flutter
-  
-  #dependencies
   cupertino_icons: ^1.0.8
   provider:
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -21,8 +23,10 @@ dev_dependencies:
   
   flutter_lints: ^4.0.0
 flutter:
-  
-  
+  assets:
+    - assets/data/ 
+    - assets/data/books/
+    - assets/images/placeholder.png
   
   uses-material-design: true
   
