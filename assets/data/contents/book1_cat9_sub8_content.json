@@ -1,0 +1,65 @@
+{
+    "subcategory": "External DEI digital campaigns",
+    "description": "A digital campaign involves raising awareness about DEI across all the digital channels where people engage with an organization. Some examples are presented in this sub-section.",
+    "content": [
+        {
+            "heading": "EPCL",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "EPCL recently embarked on a gender inclusive journey targeted at breaking stereotypes that surround working women by communication tools and implementing the narrative of normalizing the presence of women at various positions in the petrochemicals industry. With a digitally driven campaign titled \"Celebrating Our Women,\" inspiring stories of female employees were launched. The main aim was to break stereotypes that surround working women, especially in the field of engineering. Four episodes were launched, with the following titles."
+                },
+                {
+                    "type": "bullet",
+                    "text":"Ghar sai itni dur, akeley kesey rahogi? (How will you live alone this far away from home?)"
+                },
+                {
+                    "type": "bullet",
+                    "text":"Shaadi k baad, kesey manage kerogi? (How will you manage all of this after marriage?)"
+                },
+                {
+                    "type": "bullet",
+                    "text":"Yeh larko ki field hoti hay, tum larki ho. (This field is for men, you’re a girl)"
+                },
+                {
+                    "type": "bullet",
+                    "text":"Yeh larko ki field hoti hay, tum larki ho. (This field is for men, you’re a girl)"
+                }
+            ]
+        },
+        {
+            "heading": "TPL",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "TPL Corp ran numerous engaging digital campaigns during the summer of 2021 for eight weeks. The focus of the campaign was to enlighten potential employees about how the company promotes women, directs constant efforts towards creating an inclusive culture, and the benefits of working with TPL Corp."
+                }
+            ]
+        },
+        {
+            "heading": "Telenor",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text":"Telenor ran campaigns such as:"
+                },
+                {
+                    "type": "bullet",
+                    "text":"#SeeTheRealMe, debunking biases around females and communicating their true potential."
+                },
+                {
+                    "type": "bullet",
+                    "text":"\"Myth Busting\", where male mangers advocated female employees as being equally hard working and competent by sharing the benefits of working with female colleagues, and how female's contributions allowed the organization to gain competitive advantage. The whole practice helped getting male leaders/managers on board, and demolishing the mental traps that become a barrier in hiring female employees."
+                },
+                {
+                    "type": "bullet",
+                    "text":"#SpeakUp, reminding employees about different types of harassment and reporting."
+                },
+                {
+                    "type": "bullet",
+                    "text":"#BreaktheBias, released on International Women’s Day where Telenor Pakistan's women narrated their stories on how they broke the biases in their workplace"
+                }
+            ]
+        }
+    ]
+}

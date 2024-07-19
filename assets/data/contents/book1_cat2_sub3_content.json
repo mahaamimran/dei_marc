@@ -1,0 +1,33 @@
+{
+    "subcategory": "Role modelling by male leaders",
+    "description":"Engagement and support from men is critical for achieving true diversity and inclusion in the workplace. Male leaders at all levels need to actively support gender DEI and role model their ideals. A vivid example of this is male leaders becoming change agents and taking action to support, empower and help women achieve their goals. \nLeadership's commitment in several of the participating organizations is reflected through the CEO's becoming Male Champions of Change (MCC). Members of MCC meet regularly in small action-orientated groups centered around a collective work plan, where they learn from and challenge their peers. As a coalition, they work collectively to publicly share their learnings and their progress. As individuals, change champions implement change within their organizations and publicly advocate for gender equality. Examples of organizations whose CEOs have served as a MCC include:",
+    "content": [
+        {
+            "heading":"HRSG",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Founder of HRSG, late Mr. Azhar's focus had been directed towards ensuring a work environment which was transparent, free of negativity, and allowed open communication and feedback. These values provided the foundation for DEI initiatives within the organization."
+                }
+            ]
+        },
+        {
+            "heading":"Jazz",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"The CEO of Jazz, Mr. Aamir Ibrahim's efforts have greatly contributed to the open and inclusive culture of Jazz, initiatives for gender-equality and enhancing women empowerment. He is an embodiment of inclusivity."
+                }
+            ]
+        },
+        {
+            "heading":"Telenor",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Telenor’s CEO, Mr. Irfan Wahab, took a panel pledge to promote inclusion in the organization. The pledge promised the presence of female employees in every internal and external panel talk, ultimately giving them a meaningful voice in the organization. In an exciting way to spread the message, he handed over his position as CEO to a female student for a single day. This symbolic takeover highlighted Telenor's commitment towards increased female participation in the workforce."
+                }
+            ]
+        }
+    ]
+}
