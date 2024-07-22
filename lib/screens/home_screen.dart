@@ -1,10 +1,9 @@
-import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/screens/category_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/book_provider.dart';
 import 'package:dei_marc/config/asset_paths.dart';
-import 'category_screen.dart';
+import 'package:dei_marc/config/text_styles.dart';
+import 'category_screen.dart'; // Ensure this import is correct
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -43,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => CategoryScreen(
-                                bookFileName: 'book${book.id}_categories.json',
+                                bookFileName: book.bookId.toString(),
                               ),
                             ),
                           );

@@ -1,6 +1,5 @@
-// book data model according to the json file
 class Book {
-  final int id;
+  final int bookId;
   final int volume;
   final String title;
   final String author;
@@ -8,7 +7,7 @@ class Book {
   final String imagePath;
 
   Book({
-    required this.id,
+    required this.bookId,
     required this.volume,
     required this.title,
     required this.author,
@@ -18,7 +17,7 @@ class Book {
 
   factory Book.fromJson(Map<String, dynamic> json) {
     return Book(
-      id: json['id'],
+      bookId: json['book_id'],
       volume: json['Volume'],
       title: json['title'],
       author: json['author'],

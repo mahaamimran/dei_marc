@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         home: TabBarScreen(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

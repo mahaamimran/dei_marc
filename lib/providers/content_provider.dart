@@ -1,29 +1,29 @@
-
 import 'dart:convert';
-
-import 'package:dei_marc/config/asset_paths.dart';
-import 'package:dei_marc/models/subcategory.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
+import 'package:dei_marc/models/content_item.dart';
+import 'package:dei_marc/config/asset_paths.dart';
 
 class ContentProvider with ChangeNotifier {
-  List<Subcategory> _subcategories = [];
+  Map<String, List<ContentItem>> _contents = {};
 
-  List<Subcategory> get subcategories => _subcategories;
+  Map<String, List<ContentItem>> get contents => _contents;
 
-  Future<void> loadSubcategories(String bookId, String categoryId) async {
-    final String response = await rootBundle.loadString(AssetPaths.subcategoriesJson(bookId, categoryId));
-    final data = await json.decode(response);
-    _subcategories = (data['subcategories'] as List).map((i) => Subcategory(id: i['id'], name: i['name'], content: [])).toList();
-    notifyListeners();
-  }
-
-  Future<void> loadContent(String bookId, String categoryId, String subcategoryId) async {
-    final String response = await rootBundle.loadString(AssetPaths.contentJson(bookId, categoryId, subcategoryId));
-    final data = await json.decode(response);
-    int subcategoryIndex = _subcategories.indexWhere((subcategory) => subcategory.id == data['id']);
-    if (subcategoryIndex != -1) {
-      _subcategories[subcategoryIndex] = Subcategory.fromJson(data);
+  Future<void> loadContent(String bookId, int categoryId, int subcategoryId) async {
+    try {
+      final String response = await rootBundle.loadString(
+          AssetPaths.contentJson(bookId, categoryId, subcategoryId));
+      final data = json.decode(response);
+      if (data['content'] != null && data['content'] is List) {
+        _contents['$categoryId-$subcategoryId'] = (data['content'] as List)
+            .map((i) => ContentItem.fromJson(i))
+            .toList();
+      } else {
+        _contents['$categoryId-$subcategoryId'] = [];
+      }
+    } catch (e) {
+      print("Error loading content: $e");
+      _contents['$categoryId-$subcategoryId'] = [];
     }
     notifyListeners();
   }

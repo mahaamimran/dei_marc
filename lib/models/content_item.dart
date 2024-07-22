@@ -1,14 +1,13 @@
 import 'package:dei_marc/models/quote.dart';
 
 class ContentItem {
-  final String text;
-  final String name;
+  final String heading;
   final List<Quote> content;
 
-  ContentItem({required this.text, required this.name, required this.content});
+  ContentItem({required this.heading, required this.content});
 
   factory ContentItem.fromJson(Map<String, dynamic> json) {
-    var quoteList = (json['content'] as List).map((i) => Quote.fromJson(i)).toList();
-    return ContentItem(text: json['text'], name: json['name'], content: quoteList);
+    var contentList = (json['content'] as List).map((i) => Quote.fromJson(i)).toList();
+    return ContentItem(heading: json['heading'], content: contentList);
   }
 }
