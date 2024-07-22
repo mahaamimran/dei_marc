@@ -1,0 +1,75 @@
+{
+    "subcategory": "Maternity Leave",
+    "description": "Maternity leave applies to expectant or new mothers who require time off for pregnancy, childbirth and childcare. The maternity leave comprises of statutory or extended leave depending upon the organization. Organizations that are supporting gender DEI are providing fully paid, partially paid, or unpaid maternity leave of varying time period exceeding legislative requirements.",
+    "content": [
+        {
+            "heading": "Examples of maternity leave duration in organizations",
+            "content": [
+                {
+                    "type": "subheading",
+                    "text":"Bank Alfalah"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"6 months (full-paid)"
+                },
+                {
+                    "type":"subheading",
+                    "text":"EPCL"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"6 months (full-paid)"
+                },
+                {
+                    "type":"subheading",
+                    "text":"FINCA Microfinance Bank Limited"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"3 months (full-paid) + an extendable leave of 2 months or work from home"
+                },
+                {
+                    "type":"subheading",
+                    "text":"Jazz"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"6 months (full-paid for full term) \n4 weeks (full paid in case of early miscarriage) \n6 months (full paid in case of miscarriage in third trimester or still birth)"
+                },
+                {
+                    "type":"subheading",
+                    "text":"MMBL"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"3 months (full-paid) + an extendable facilitation of up to 3 months with\nwork from home two days a week (full-paid)"
+                },
+                {
+                    "type":"subheading",
+                    "text":"PTCL Group"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"3 months"
+                },
+                {
+                    "type":"subheading",
+                    "text":"Teradata"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"6 months (full-paid) + an extended unpaid leave of 12 months"
+                },
+                {
+                    "type":"subheading",
+                    "text":"Unilever"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"6 months (full-paid)"
+                }
+            ]
+        }
+    ]
+}

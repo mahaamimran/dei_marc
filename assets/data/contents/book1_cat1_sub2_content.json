@@ -1,10 +1,10 @@
 {
     "id":2,
     "subcategory":"A DEI strategy",
+    "description":"Organizations that are trying to improve DEI planning and implementation prepare strategic plans in order to enhance their DEI efforts and materialize their long-term vision regarding DEI. Some organizations have developed specific strategies while others have general roadmaps laid out, to create a culture that consistently promotes DEI; it is a part of their overall strategy and is integrated in their organizational culture.",
     "content":[
         {
-            "text":"Organizations that are trying to improve DEI planning and implementation prepare strategic plans in order to enhance their DEI efforts and materialize their long-term vision regarding DEI. Some organizations have developed specific strategies while others have general roadmaps laid out, to create a culture that consistently promotes DEI; it is a part of their overall strategy and is integrated in their organizational culture.",
-            "name":"Teradata",
+            "heading":"Teradata",
             "content":[
                 {
                     "type":"paragraph",
@@ -13,7 +13,7 @@
             ]
         },
         {
-            "name":"Unilever",
+            "heading":"Unilever",
             "content":[
                 {
                     "type":"paragraph",
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "name":"EPCL",
+            "heading":"EPCL",
             "content":[
                 {
                     "type":"paragraph",
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "name":"MMBL",
+            "heading":"MMBL",
             "content":[
                 {
                     "type":"paragraph",
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "name":"JS Bank",
+            "heading":"JS Bank",
             "content":[
                 {
                     "type":"paragraph",
@@ -49,7 +49,7 @@
             ]
         },
         {
-            "name":"British Council",
+            "heading":"British Council",
             "content":[
                 {
                     "type":"paragraph",
@@ -58,12 +58,97 @@
             ]
         },
         {
-            "name":"S&P Global",
+            "heading":"S&P Global",
             "content":[
                 {
                     "type":"paragraph",
                     "text":"At S&P Global, DEI is central to who they are and is vital to their success. DEI is rooted in three key areas; people, customers, and community. The company integrates DEI into everything they do, starting with their workforce and workplace, and extending far beyond company walls, into the marketplace and local communities."
                 }
+            ]
+        },
+        {
+            "heading":"Examples of pillars of the DEI strategy",
+            "content":[
+                {
+                    "type":"subheading",
+                    "text":"Abacus",
+                    "content":[
+                        {
+                            "type":"bullet",
+                            "text":"Become an employer of choice by attracting and retaining top talent"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Develop a diverse pool of talent"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Secure an inclusive work culture"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Leverage D&I in the marketplace in partnership with customers, suppliers and communities"
+                        }
+                    ]             
+                },
+                {
+                    "type":"subheading",
+                    "text":"Bank Alfalah",
+                    "content":[
+                        {
+                            "type":"bullet",
+                            "text":"Introducing D&I analytics"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Taking a conscious approach to recruitment"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Focusing on learning and development"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Catering to employee retention and engagement needs"
+                        }
+                    ]
+                },
+                {
+                    "type":"subheading",
+                    "text":"Jazz",
+                    "content":[
+                        {
+                            "type":"bullet",
+                            "text":"People: Covering talent, leadership and culture"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Business: Covering content, products and partners"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Community: Covering public image, advocacy and service"
+                        }
+                    ]
+                },
+                {
+                    "type":"subheading",
+                    "text":"Telenor",
+                    "content":[
+                        {
+                            "type":"bullet",
+                            "text":"Female talent development"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Female retention"
+                        },
+                        {
+                            "type":"bullet",
+                            "text":"Female inclusion"
+                        }
+                    ]
+                }   
             ]
         }
     ]

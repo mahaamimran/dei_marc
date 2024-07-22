@@ -1,0 +1,14 @@
+{
+    "image_path":"book1_cat2",
+    "subcategories": [
+        {
+            "name":"Leadership’s commitment to DEI"
+        },
+        {
+            "name": "Executives' involvement in DEI"
+        },
+        {
+            "name": "Role modelling by male leaders"
+        }
+    ]
+}

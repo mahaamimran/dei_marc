@@ -1,9 +1,9 @@
 {
     "subcategory": "Organizational values that promote DEI",
+    "description":"Organizations aim at creating an ideal workplace environment and culture where employees feel included and rewarded for their efforts.",
     "content": [
         {
-            "text":"Organizations aim at creating an ideal workplace environment and culture where employees feel included and rewarded for their efforts.",
-            "name": "Abacus",
+            "heading": "Abacus",
             "content": [
                 {
                     "type": "paragraph",
@@ -12,7 +12,7 @@
             ]
         },
         {
-            "name":"Unilever",
+            "heading":"Unilever",
             "content":[
                 {
                     "type": "paragraph",
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "name":"EPCL",
+            "heading":"EPCL",
             "content":[
                 {
                     "type":"paragraph",
@@ -30,7 +30,7 @@
             ]
         },
         {
-            "name":"Feroze1888",
+            "heading":"Feroze1888",
             "content":[
                 {
                     "type":"paragraph",

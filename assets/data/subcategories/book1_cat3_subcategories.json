@@ -1,0 +1,11 @@
+{
+    "image_path":"book1_cat3",
+    "subcategories": [
+        {
+            "name": "A suitable DEI structure"
+        },
+        {
+            "name":"Budget and resource allocation to DEI"
+        }
+    ]
+}
