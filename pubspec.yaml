@@ -26,6 +26,9 @@ flutter:
   assets:
     - assets/data/ 
     - assets/data/books/
+    - assets/data/categories/
+    - assets/data/subcategories/
+    - assets/data/contents/
     - assets/images/placeholder.png
   
   uses-material-design: true
