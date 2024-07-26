@@ -2,21 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/config/color_constants.dart';
 
 class ContentScreen extends StatelessWidget {
   final String bookId;
   final String categoryId;
 
-  const ContentScreen({super.key, required this.bookId, required this.categoryId});
+  const ContentScreen(
+      {super.key, required this.bookId, required this.categoryId});
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => ContentProvider()..loadSubcategories(bookId, categoryId),
+      create: (context) =>
+          ContentProvider()..loadSubcategories(bookId, categoryId),
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+          backgroundColor: BasicColors.background,
+          foregroundColor: BasicColors.appBarForeground,
           title: const Text('Content', style: TextStyles.appBarTitle),
         ),
         body: Consumer<ContentProvider>(
@@ -30,7 +33,8 @@ class ContentScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 final subcategory = contentProvider.subcategories[index];
                 return FutureBuilder(
-                  future: contentProvider.loadContent(bookId, categoryId, subcategory.id.toString()),
+                  future: contentProvider.loadContent(
+                      bookId, categoryId, subcategory.id.toString()),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(child: CircularProgressIndicator());
@@ -46,13 +50,15 @@ class ContentScreen extends StatelessWidget {
                               Text(contentItem.name, style: TextStyles.title),
                               ...contentItem.content.map((quote) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: Text('“${quote.text}”', style: TextStyles.caption),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: Text('“${quote.text}”',
+                                      style: TextStyles.caption),
                                 );
-                              }).toList(),
+                              }),
                             ],
                           );
-                        }).toList(),
+                        }),
                       ],
                     );
                   },
