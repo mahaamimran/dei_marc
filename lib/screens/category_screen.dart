@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/category_provider.dart';
 import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/config/color_constants.dart';
 import 'content_screen.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -15,8 +16,8 @@ class CategoryScreen extends StatelessWidget {
       create: (context) => CategoryProvider()..loadCategories(bookFileName),
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+          backgroundColor: BasicColors.appBarBackground,
+          foregroundColor: BasicColors.appBarForeground,
           title: const Text('Categories', style: TextStyles.appBarTitle),
         ),
         body: Padding(
@@ -31,7 +32,8 @@ class CategoryScreen extends StatelessWidget {
                 children: [
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: Text('Browse by category', style: TextStyles.heading),
+                    child:
+                        Text('Browse by category', style: TextStyles.heading),
                   ),
                   Expanded(
                     child: ListView.builder(
@@ -39,7 +41,7 @@ class CategoryScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final category = categoryProvider.categories[index];
                         return Card(
-                          color: Colors.grey[200],
+                          color: Toolkit1Colors.babyPinkBackground,
                           margin: const EdgeInsets.symmetric(vertical: 8.0),
                           child: ListTile(
                             title: Text(category.name, style: TextStyles.title),

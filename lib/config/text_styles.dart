@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+
 // constants for the way text is displayed so we can use it like this:
 // Text('Hello World', style: TextStyles.title)
 class TextStyles {
   static const TextStyle appBarTitle = TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.bold,
-    color: Colors.black,
+    color: Color.fromARGB(255, 248, 247, 247),
   );
 
   static const TextStyle heading = TextStyle(

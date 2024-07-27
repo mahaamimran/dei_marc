@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/book_provider.dart';
+import 'package:dei_marc/providers/category_provider.dart';
+import 'package:dei_marc/providers/content_provider.dart';
+import 'package:dei_marc/config/color_constants.dart';
+import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/screens/category_screen.dart';
 import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'category_screen.dart'; // Ensure this import is correct
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,10 +15,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: BasicColors.background,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+        foregroundColor: BasicColors.appBarForeground,
+        backgroundColor: BasicColors.appBarBackground,
         title: const Text('Home', style: TextStyles.appBarTitle),
       ),
       body: Padding(
@@ -48,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                           );
                         },
                         child: Card(
-                          color: Colors.grey[200],
+                          color: Toolkit1Colors.babyPinkBackground,
                           margin: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -59,9 +63,11 @@ class HomeScreen extends StatelessWidget {
                                 const SizedBox(height: 8.0),
                                 Text(book.title, style: TextStyles.title),
                                 const SizedBox(height: 4.0),
-                                Text('By ${book.author}', style: TextStyles.caption),
+                                Text('By ${book.author}',
+                                    style: TextStyles.caption),
                                 const SizedBox(height: 4.0),
-                                Text('Volume ${book.volume}', style: TextStyles.caption),
+                                Text('Volume ${book.volume}',
+                                    style: TextStyles.caption),
                               ],
                             ),
                           ),
