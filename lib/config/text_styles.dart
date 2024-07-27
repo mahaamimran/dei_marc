@@ -21,8 +21,8 @@ class TextStyles {
     color: Colors.black,
   );
 
-  static const TextStyle caption = TextStyle(
+  static TextStyle caption = TextStyle(
     fontSize: 14,
-    color: Colors.grey,
+    color: Colors.grey[900],
   );
 }

@@ -1,3 +1,4 @@
+import 'package:dei_marc/config/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';
@@ -12,16 +13,16 @@ class BookmarksScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bookmarks'),
-        backgroundColor:
-            Toolkit1Colors.magentaDark, // Assuming the default is for Toolkit 1
+        title:  Text('Bookmarks',style: TextStyles.appBarTitle.copyWith(color: Colors.black),),
+       // backgroundColor:
+          //  Toolkit1Colors.magentaDark, // Assuming the default is for Toolkit 1
       ),
       body: Column(
         children: [
           Container(
             padding: const EdgeInsets.all(16.0),
-            color: Toolkit1Colors
-                .babyPinkBackground, // Background for adding bookmarks
+         // //  color: Toolkit1Colors
+             //   .babyPinkBackground, // Background for adding bookmarks
             child: Row(
               children: [
                 Expanded(
@@ -29,16 +30,16 @@ class BookmarksScreen extends StatelessWidget {
                     controller: bookmarkController,
                     decoration: const InputDecoration(
                       labelText: 'Add a new bookmark',
-                      labelStyle:
-                          TextStyle(color: Toolkit1Colors.categoryHeadingText),
+                    //  labelStyle:
+                      //    TextStyle(color: Toolkit1Colors.categoryHeadingText),
                     ),
-                    style:
-                        const TextStyle(color: Toolkit1Colors.categoryNameText),
+                  //  style:
+                    //    const TextStyle(color: Toolkit1Colors.categoryNameText),
                   ),
                 ),
                 IconButton(
                   icon: const Icon(Icons.add),
-                  color: Toolkit1Colors.magentaDark,
+                 // color: Toolkit1Colors.magentaDark,
                   onPressed: () {
                     final newBookmark = bookmarkController.text;
                     if (newBookmark.isNotEmpty) {
@@ -65,22 +66,22 @@ class BookmarksScreen extends StatelessWidget {
                     final bool isToolkit1 = bookmark.startsWith('Book1');
 
                     return ListTile(
-                      tileColor: isToolkit1
-                          ? Toolkit1Colors.babyPinkBackground
-                          : Toolkit2Colors.babyPinkBackground,
+                      // tileColor: isToolkit1
+                      //     ? Toolkit1Colors.babyPinkBackground
+                      //     : Toolkit2Colors.babyPinkBackground,
                       title: Text(
                         bookmark,
                         style: TextStyle(
-                          color: isToolkit1
-                              ? Toolkit1Colors.categoryNameText
-                              : Toolkit2Colors.categoryNameText,
+                          // color: isToolkit1
+                          //     ? Toolkit1Colors.categoryNameText
+                          //     : Toolkit2Colors.categoryNameText,
                         ),
                       ),
                       trailing: IconButton(
                         icon: const Icon(Icons.delete),
-                        color: isToolkit1
-                            ? Toolkit1Colors.magentaDark
-                            : Toolkit2Colors.tealDark,
+                        // color: isToolkit1
+                        //     ? Toolkit1Colors.magentaDark
+                        //     : Toolkit2Colors.tealDark,
                         onPressed: () {
                           bookmarkProvider.removeBookmark(bookmark);
                         },

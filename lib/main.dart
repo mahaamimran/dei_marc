@@ -1,10 +1,9 @@
+import 'package:dei_marc/screens/tab_bar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:dei_marc/screens/home_screen.dart';
 import 'package:dei_marc/screens/splash_screen.dart';
 import 'package:dei_marc/providers/book_provider.dart';
 import 'package:dei_marc/providers/category_provider.dart';
-import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';
 
 void main() {
@@ -20,17 +19,17 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => BookProvider()..loadBooks()),
         ChangeNotifierProvider(create: (_) => CategoryProvider()),
-        ChangeNotifierProvider(create: (_) => ContentProvider()),
         ChangeNotifierProvider(create: (_) => BookmarkProvider()),
       ],
       child: MaterialApp(
         title: 'DEI MARC',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        // theme: ThemeData(
+        //   primarySwatch: Colors.blue,
+        // ),
         home: const SplashScreen(), 
         routes: {
-          '/home': (context) => const HomeScreen(),
+          // not home screen, tab bar screen consists of home screen
+          '/home': (context) => const TabBarScreen(), 
         },
         debugShowCheckedModeBanner: false,
       ),

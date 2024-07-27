@@ -1,3 +1,4 @@
+import 'package:dei_marc/config/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -7,7 +8,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title:  Text('Settings',style: TextStyles.appBarTitle.copyWith(color: Colors.black),),
       ),
       body: ListView(
         children: [

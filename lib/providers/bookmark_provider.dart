@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BookmarkProvider with ChangeNotifier {
-  final List<String> _bookmarks = ["Default Bookmark"];
+  final List<String> _bookmarks = [];
 
   List<String> get bookmarks => _bookmarks;
 

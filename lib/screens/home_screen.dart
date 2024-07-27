@@ -1,13 +1,10 @@
+import 'package:dei_marc/config/image_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/book_provider.dart';
-import 'package:dei_marc/providers/category_provider.dart';
-import 'package:dei_marc/providers/content_provider.dart';
-import 'package:dei_marc/config/color_constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/screens/category_screen.dart';
-import 'package:dei_marc/config/asset_paths.dart';
-import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/config/color_constants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,14 +12,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BasicColors.background,
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        foregroundColor: BasicColors.appBarForeground,
-        backgroundColor: BasicColors.appBarBackground,
-        title: const Text('Home', style: TextStyles.appBarTitle),
+        backgroundColor: Colors.white,
+        // to avoid color change on scroll
+        scrolledUnderElevation: 0, 
+        title: Text(
+          'Home',
+          style: TextStyles.appBarTitle.copyWith(color: Colors.black),
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
         child: Consumer<BookProvider>(
           builder: (context, bookProvider, child) {
             if (bookProvider.books.isEmpty) {
@@ -39,7 +40,11 @@ class HomeScreen extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: bookProvider.books.length,
                     itemBuilder: (context, index) {
+                      // code for each book 'index' amount of times
                       final book = bookProvider.books[index];
+                      // % to avoid index out of bounds
+                      final primaryColor = ColorConstants.booksPrimary[index % ColorConstants.booksPrimary.length]; 
+                      final secondaryColor = ColorConstants.booksSecondary[index % ColorConstants.booksSecondary.length];
                       return GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -47,27 +52,36 @@ class HomeScreen extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => CategoryScreen(
                                 bookFileName: book.bookId.toString(),
+                                appBarColor: primaryColor, // Pass the primary color for the AppBar
+                                secondaryColor: secondaryColor, // Pass the secondary color for the category boxes
                               ),
                             ),
                           );
                         },
                         child: Card(
-                          color: Toolkit1Colors.babyPinkBackground,
+                          color: Colors.white,
                           margin: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Image.asset(AssetPaths.placeholderImage),
+                                Image.asset(ImageAssets.bookCovers[index % ImageAssets.bookCovers.length]), // % to avoid index out of bounds
                                 const SizedBox(height: 8.0),
-                                Text(book.title, style: TextStyles.title),
+                                Text(
+                                  book.title,
+                                  style: TextStyles.title.copyWith(color: primaryColor),
+                                ),
                                 const SizedBox(height: 4.0),
-                                Text('By ${book.author}',
-                                    style: TextStyles.caption),
+                                Text(
+                                  'By ${book.author}',
+                                  style: TextStyles.caption,
+                                ),
                                 const SizedBox(height: 4.0),
-                                Text('Volume ${book.volume}',
-                                    style: TextStyles.caption),
+                                Text(
+                                  'Volume ${book.volume}',
+                                  style: TextStyles.caption,
+                                ),
                               ],
                             ),
                           ),
