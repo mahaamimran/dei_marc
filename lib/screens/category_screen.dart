@@ -50,8 +50,8 @@ class CategoryScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => ContentScreen(
-                                    bookId: bookFileName.split('_')[0],
-                                    categoryId: category.id.toString(),
+                                    bookId: bookFileName,
+                                    categoryId: index + 1, // Pass the index of the category
                                   ),
                                 ),
                               );

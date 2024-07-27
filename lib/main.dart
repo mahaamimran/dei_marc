@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => BookProvider()),
+        ChangeNotifierProvider(create: (_) => BookProvider()..loadBooks()),
         ChangeNotifierProvider(create: (_) => CategoryProvider()),
         ChangeNotifierProvider(create: (_) => ContentProvider()),
         ChangeNotifierProvider(create: (_) => BookmarkProvider()),
@@ -28,11 +28,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const SplashScreen(), // Set SplashScreen as the initial route
+        home: const SplashScreen(), 
         routes: {
           '/home': (context) => const HomeScreen(),
-          // Add other routes here as necessary
         },
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

@@ -1,0 +1,60 @@
+{
+    "subcategory": "Gender DEI Research",
+    "description": "Organizations use various surveys and data collection techniques to conduct research and assess their DEI initiatives. Data and analytics provide the ability to identify whether there are any gaps, prioritize areas for action and enable ongoing measurement of progress. The tools used for gender DEI research include DEI items in employee engagement surveys, focus group discussions on DEI, pulse surveys on DEI, coverage of DEI in exit interviews, DEI one of the themes in 360-degree appraisals and benchmarking for DEI.",
+    "content": [
+        {
+            "heading": "DEI items in employee engagement surveys",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Organizations such as Teradata, PTCL Group and Unilever include DEI items in their Employee Engagement Survey (EES). The data collected from these surveys is dissected under the lens of DEI to identify patterns of non-inclusivity highlighted by the employees."
+                }
+            ]
+        },
+        {
+            "heading": "Focus group discussions",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "A focus group discussion on DEI involves gathering people from similar or diverse backgrounds and experiences together to discuss a specific topic of interest related to DEI in the workplace. Questions are asked in these group discussions about the perceptions, attitudes, beliefs, opinions or ideas of the participants. The PTCL Group has focus group discussions in order to identify the root cause of any inequality that may exist."
+                }
+            ]
+        },
+        {
+            "heading": "Pulse surveys on DEI",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Some organizations such as MMBL conduct pulse surveys to understand if women in their organization feel safe, respected and comfortable in their workplace. These pulse surveys are mainly conducted to gather women's feedback, in order to develop a strategy that best caters to their needs and priorities."
+                }
+            ]
+        },
+        {
+            "heading": "Coverage of DEI in exit interviews",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Exit interviews are carried out when an employee is leaving the organization. Several companies such as FINCA Microfinance Bank Limited, Jazz, JS Bank conduct exit interviews to improve their policies, and to help and try retain the female employees who plan to leave."
+                }
+            ]
+        },
+        {
+            "heading": "DEI one of the themes in 360-degree performance appraisals",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "A 360-degree performance appraisal takes place when employers evaluate employee performance from multiple sources instead of only one-on-one feedback from a direct manager. Once all the feedback is collected, it is used to measure employees’ strengths, weaknesses and skills and can provide a well-rounded performance review. While 360-degree appraisals are more of a developmental tool than a rating tool, many organizations integrate this performance review system with other evaluation tools to accelerate improvement company-wide. Organizations such as EPCL identify specific themes regarding gender gaps that are reflected in different persons’ feedback in the 360-degree assessment in performance appraisals."
+                }
+            ]
+        },
+        {
+            "heading": "Benchmarking for DEI",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Benchmarking is the process of measuring key business metrics and practices, and comparing them within business areas or against a competitor, industry peers, or other companies to understand how and where the organization needs to change in order to improve performance. Bank Alfalah periodically sets DEI-related internal and external benchmarks to track progress on DEI. In some organizations, KPIs are set for the departmental heads to achieve an optimum number of women in their respective departments."
+                }
+            ]
+        }
+    ]
+}

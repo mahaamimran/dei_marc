@@ -1,19 +1,15 @@
 {
-    "categories": [
+    "categories":[
         {
-            "id": 1,
             "name": "THE FOUNDATION GROUP: DRIVE THE STRATEGY"
         },
         {
-            "id": 2,
             "name": "THE INTERNAL GROUP: ATTRACT AND RETAIN PEOPLE"
         },
         {
-            "id": 3,
             "name": "THE BRIDGING GROUP: ALIGN AND CONNECT"
         },
         {
-            "id": 4,
             "name": "THE EXTERNAL GROUP: LISTEN TO AND SERVE SOCIETY"
         }
     ]

@@ -1,0 +1,52 @@
+{
+    "subcategory": "Internal and External Communication Channels",
+    "description": "A digital campaign involves raising awareness about DEI across all the digital channels where people engage with an organization. Some examples are presented in this sub-section.",
+    "content": [
+        {
+            "heading":"Internal communication channels",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Examples of internal communication channels being used by organizations are:"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Internal web-spaces to promote DEI"
+                },
+                {
+                    "type":"bullet",
+                    "text":"DEI discussions in town hall meetings"
+                },
+                {
+                    "type":"bullet",
+                    "text":"DEI coverage in employee newsletters"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Internal meeting sessions on DEI"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Internal IVRs and SMSs for DEI"
+                }
+            ]
+        },
+        {
+            "heading":"External communication channels",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Examples of external communication channels being used by organizations are:"
+                },
+                {
+                    "type":"bullet",
+                    "text":"External DEI communication using social media"
+                },
+                {
+                    "type":"bullet",
+                    "text":"External DEI digital campaigns"
+                }
+            ]
+        }
+    ]
+}

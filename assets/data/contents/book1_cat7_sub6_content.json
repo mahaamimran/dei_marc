@@ -1,0 +1,27 @@
+{
+    "subcategory": "Sabbatical Leave",
+    "description": "A sabbatical is a lengthy, intentional break from one's career. Organizations are also offering sabbatical leave as a means to provide flexibility to their female employees",
+    "content": [
+        {
+            "heading": "Examples of sabbatical leave policies of organizations",
+            "content": [
+                {
+                    "type": "subheading",
+                    "text":"EPCL"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Off-track Policy: If a female employee wants to go on a sabbatical due to personal reasons, she is granted a leave of up to 2 years after the management committee’s approval. Upon her return, the organization accommodates her either in the same department, or elsewhere, as per the availability of positions at that time."
+                },
+                {
+                    "type": "subheading",
+                    "text":"Telenor"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Female employees can take a sabbatical for a period of 6 months to 2 years, based on \"family/personal needs.\""
+                }
+            ]
+        }
+    ]
+}

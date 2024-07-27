@@ -1,20 +1,20 @@
 {
     "books": [
         {
-            "id": 1,
+            "book_id": 1,
             "Volume": 1,
             "title": "Toolkit 1: Best Practices to Enhance Gender Equality in Pakistan",
             "author": "Sadia Nadeem, Ayesha Siddiqa, Javeria Jamil, Neeha Khan, Razeen Fawad, Ayesha Bano",
             "citation": "Nadeem, S., Siddiqa, A., Jamil, J., Khan, N., Fawad, R., & Bano, A. (2022). Toolkit: Best practices to enhance gender equality in Pakistan. Islamabad: Management Advancement Research Centre, FAST-NUCES.",
-            "image_path": "Book_1"
+            "image_path": "book_1"
         },
         {
-            "id": 2,
+            "book_id": 2,
             "Volume": 2,
             "title": "GENDER DEI TOOLKIT: BEST PRACTICES TO ENHANCE GENDER EQUALITY IN PAKISTAN (Case Studies)",
             "author": "Sadia Nadeem, Ayesha Siddiqa, Javeria Jamil, Neeha Khan, Razeen Fawad, Ayesha Bano",
             "citation": "Nadeem, S., Siddiqa, A., Jamil, J., Khan, N., Fawad, R., & Bano. A. (2022). Gender DEI Toolkit: Best practices to enhance gender equality in Pakistan (Case Studies). Islamabad: Management Advancement Research Centre, FAST-NUCES.",
-            "image_path": "Book_2"
+            "image_path": "book_2"
         }
     ]
 }

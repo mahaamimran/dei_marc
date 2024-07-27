@@ -1,10 +1,10 @@
 {
     "id": 1,
     "subcategory":"A DEI vision and mission statement",
+    "description": "Many of the participating organizations have developed DEI vision and mission statements to extend systematic efforts towards the cause of fostering DEI in the respective organizations. Some examples are listed below.",
     "content": [
         {
-            "text": "Many of the participating organizations have developed DEI vision and mission statements to extend systematic efforts towards the cause of fostering DEI in the respective organizations. Some examples are listed below.",
-            "name": "Hashoo Foundation: DEI Vision statement",
+            "heading": "Hashoo Foundation: DEI Vision statement",
             "content": [
                 {
                 "type":"quote",
@@ -13,7 +13,7 @@
             ]
         },
         {
-            "name":"Jazz: DEI Mission statement",
+            "heading":"Jazz: DEI Mission statement",
             "content":[
                 {
                     "type":"quote",
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "name":"PTCL Group: DEI Vision statement",
+            "heading":"PTCL Group: DEI Vision statement",
             "content":[
                 {
                     "type":"quote",
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "name":"PTCL Group: DEI Mission statement",
+            "heading":"PTCL Group: DEI Mission statement",
             "content":[
                 {
                     "type":"quote",
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "name":"Telenor: DEI Vision statement",
+            "heading":"Telenor: DEI Vision statement",
             "content":[
                 {
                     "type":"quote",
@@ -49,7 +49,7 @@
             ]
         },
         {
-            "name":"Teradata: DEI Vision statement",
+            "heading":"Teradata: DEI Vision statement",
             "content":[
                 {
                     "type":"quote",

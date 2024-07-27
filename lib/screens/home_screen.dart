@@ -7,6 +7,7 @@ import 'package:dei_marc/config/color_constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/screens/category_screen.dart';
 import 'package:dei_marc/config/asset_paths.dart';
+import 'package:dei_marc/config/text_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -45,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => CategoryScreen(
-                                bookFileName: 'book${book.id}_categories.json',
+                                bookFileName: book.bookId.toString(),
                               ),
                             ),
                           );
