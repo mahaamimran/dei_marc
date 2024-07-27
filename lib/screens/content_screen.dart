@@ -3,14 +3,12 @@ import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/config/color_constants.dart';
 
 class ContentScreen extends StatelessWidget {
   final String bookId;
   final int categoryId;
 
-  const ContentScreen(
-      {super.key, required this.bookId, required this.categoryId});
+  const ContentScreen({super.key, required this.bookId, required this.categoryId});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +19,8 @@ class ContentScreen extends StatelessWidget {
       ],
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: BasicColors.background,
-          foregroundColor: BasicColors.appBarForeground,
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
           title: const Text('Content', style: TextStyles.appBarTitle),
         ),
         body: Consumer<SubcategoryProvider>(
@@ -36,8 +34,7 @@ class ContentScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 final subcategory = subcategoryProvider.subcategories[index];
                 return FutureBuilder(
-                  future: contentProvider.loadContent(
-                      bookId, categoryId, subcategory.id.toString()),
+                  future: context.read<ContentProvider>().loadContent(bookId, categoryId, index + 1),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(child: CircularProgressIndicator());
@@ -59,10 +56,8 @@ class ContentScreen extends StatelessWidget {
                               Text(contentItem.heading, style: TextStyles.title),
                               ...contentItem.content.map((quote) {
                                 return Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: Text('“${quote.text}”',
-                                      style: TextStyles.caption),
+                                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: Text('“${quote.text}”', style: TextStyles.caption),
                                 );
                               }),
                             ],
