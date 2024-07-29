@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/providers/settings_provider.dart';
 
 class ContentScreen extends StatelessWidget {
   final String bookId;
@@ -33,7 +34,17 @@ class ContentScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: appBarColor, // Use the passed color for the AppBar
           foregroundColor: Colors.white,
-          title: Text('Toolkit $categoryId', style: TextStyles.appBarTitle),
+          title: Consumer<SettingsProvider>(
+            builder: (context, settingsProvider, child) {
+              return Text(
+                'Toolkit $categoryId',
+                style: TextStyles.appBarTitle(context).copyWith(
+                  fontSize: settingsProvider.fontSize + 2, // Adjust font size
+                ),
+              );
+            },
+          ),
+          toolbarHeight: 75.0, // Change this value to adjust AppBar height
         ),
         body: Consumer<SubcategoryProvider>(
           builder: (context, subcategoryProvider, child) {
@@ -68,46 +79,76 @@ class ContentScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                subcategory.name.toUpperCase(),
-                                style: TextStyles.heading.copyWith(
-                                  color: appBarColor,
-                                ),
+                              Consumer<SettingsProvider>(
+                                builder: (context, settingsProvider, child) {
+                                  return Text(
+                                    subcategory.name.toUpperCase(),
+                                    style: TextStyles.heading(context).copyWith(
+                                      color: appBarColor,
+                                      fontSize: settingsProvider.fontSize + 2,
+                                    ),
+                                  );
+                                },
                               ),
                               if (subcategory.description != null)
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 8.0),
-                                  child: Text(
-                                    subcategory.description!,
-                                    style: TextStyles.caption.copyWith(
-                                      color: Colors.black,
-                                    ),
-                                  ),
+                                Consumer<SettingsProvider>(
+                                  builder: (context, settingsProvider, child) {
+                                    return Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 8.0),
+                                      child: Text(
+                                        subcategory.description!,
+                                        style: TextStyles.caption(context)
+                                            .copyWith(
+                                          color: Colors.black,
+                                          fontSize: settingsProvider.fontSize,
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ...contents.map((contentItem) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 8.0),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8.0),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        contentItem.heading,
-                                        style: TextStyles.title,
+                                      Consumer<SettingsProvider>(
+                                        builder:
+                                            (context, settingsProvider, child) {
+                                          return Text(
+                                            contentItem.heading,
+                                            style: TextStyles.title(context)
+                                                .copyWith(
+                                              fontSize:
+                                                  settingsProvider.fontSize + 2,
+                                            ),
+                                          );
+                                        },
                                       ),
                                       const SizedBox(height: 8.0),
                                       ...contentItem.content.map((quote) {
-                                        return Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 4.0),
-                                          child: Text(
-                                            '“${quote.text}”',
-                                            style: TextStyles.caption.copyWith(
-                                              color: Colors.grey[800],
-                                            ),
-                                          ),
+                                        return Consumer<SettingsProvider>(
+                                          builder: (context, settingsProvider,
+                                              child) {
+                                            return Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 4.0),
+                                              child: Text(
+                                                '“${quote.text}”',
+                                                style:
+                                                    TextStyles.caption(context)
+                                                        .copyWith(
+                                                  color: Colors.grey[800],
+                                                  fontSize:
+                                                      settingsProvider.fontSize,
+                                                ),
+                                              ),
+                                            );
+                                          },
                                         );
                                       }),
                                     ],

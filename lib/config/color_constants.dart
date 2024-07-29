@@ -12,7 +12,7 @@ class ColorConstants {
   ];
 // secondary colors for each toolkit
   static const List<Color> booksSecondary = [
-    Color(0xFFF7EAEF),
+    Color.fromARGB(255, 224, 201, 209),
     Color(0xFFCADBDD),
   ];
 }

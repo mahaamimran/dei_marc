@@ -5,6 +5,7 @@ import 'package:dei_marc/providers/book_provider.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/screens/category_screen.dart';
 import 'package:dei_marc/config/color_constants.dart';
+import 'package:dei_marc/providers/settings_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,15 +13,31 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: const Color.fromARGB(200, 245, 245, 245),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        // to avoid color change on scroll
-        scrolledUnderElevation: 0, 
+        automaticallyImplyLeading: false,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomLeft,
+              colors: [
+                Color(0xFFB52556),
+                Color.fromARGB(255, 108, 161, 166),
+              ],
+            ),
+          ),
+        ),
         title: Text(
           'Home',
-          style: TextStyles.appBarTitle.copyWith(color: Colors.black),
+          style: TextStyles.appBarTitle(context).copyWith(
+            color: Colors.white,
+          ),
         ),
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: 0,
+        // Increase AppBar height
+        toolbarHeight: 80.0, // Change this value to adjust AppBar height
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
@@ -32,19 +49,22 @@ class HomeScreen extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text('Books', style: TextStyles.heading),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Text(
+                    'Books',
+                    style: TextStyles.heading(context),
+                  ),
                 ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: bookProvider.books.length,
                     itemBuilder: (context, index) {
-                      // code for each book 'index' amount of times
                       final book = bookProvider.books[index];
-                      // % to avoid index out of bounds
-                      final primaryColor = ColorConstants.booksPrimary[index % ColorConstants.booksPrimary.length]; 
-                      final secondaryColor = ColorConstants.booksSecondary[index % ColorConstants.booksSecondary.length];
+                      final primaryColor = ColorConstants.booksPrimary[
+                          index % ColorConstants.booksPrimary.length];
+                      final secondaryColor = ColorConstants.booksSecondary[
+                          index % ColorConstants.booksSecondary.length];
                       return GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -52,35 +72,39 @@ class HomeScreen extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => CategoryScreen(
                                 bookFileName: book.bookId.toString(),
-                                appBarColor: primaryColor, // Pass the primary color for the AppBar
-                                secondaryColor: secondaryColor, // Pass the secondary color for the category boxes
+                                appBarColor: primaryColor,
+                                secondaryColor: secondaryColor,
                               ),
                             ),
                           );
                         },
                         child: Card(
-                          color: Colors.white,
+                          color:
+                              secondaryColor, // Set the background color to booksSecondary
                           margin: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Image.asset(ImageAssets.bookCovers[index % ImageAssets.bookCovers.length]), // % to avoid index out of bounds
+                                Image.asset(ImageAssets.bookCovers[
+                                    index % ImageAssets.bookCovers.length]),
                                 const SizedBox(height: 8.0),
                                 Text(
                                   book.title,
-                                  style: TextStyles.title.copyWith(color: primaryColor),
+                                  style: TextStyles.title(context).copyWith(
+                                    color: primaryColor,
+                                  ),
                                 ),
                                 const SizedBox(height: 4.0),
                                 Text(
                                   'By ${book.author}',
-                                  style: TextStyles.caption,
+                                  style: TextStyles.caption(context),
                                 ),
                                 const SizedBox(height: 4.0),
                                 Text(
                                   'Volume ${book.volume}',
-                                  style: TextStyles.caption,
+                                  style: TextStyles.caption(context),
                                 ),
                               ],
                             ),

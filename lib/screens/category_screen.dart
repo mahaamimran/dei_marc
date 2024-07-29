@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/category_provider.dart';
 import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/providers/settings_provider.dart';
 import 'content_screen.dart';
 
 class CategoryScreen extends StatefulWidget {
@@ -32,8 +33,18 @@ class _CategoryScreenState extends State<CategoryScreen> {
         appBar: AppBar(
           backgroundColor:
               widget.appBarColor, // Use the passed color for the AppBar
-          //foregroundColor: BasicColors.appBarForeground,
-          title: const Text('Categories', style: TextStyles.appBarTitle),
+          title: Consumer<SettingsProvider>(
+            builder: (context, settingsProvider, child) {
+              return Text(
+                'Categories',
+                style: TextStyles.appBarTitle(context).copyWith(
+                    color: Colors.white,
+                    fontSize: settingsProvider.fontSize +
+                        2), // Adjust appBar title font size
+              );
+            },
+          ),
+          toolbarHeight: 75.0, // Change this value to adjust AppBar height
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -50,8 +61,15 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text('Browse by category',
-                            style: TextStyles.heading),
+                        Consumer<SettingsProvider>(
+                          builder: (context, settingsProvider, child) {
+                            return Text(
+                              'Browse by category',
+                              style: TextStyles.heading(context).copyWith(
+                                  fontSize: settingsProvider.fontSize),
+                            );
+                          },
+                        ),
                         IconButton(
                           icon:
                               Icon(_isGridView ? Icons.list : Icons.grid_view),
@@ -104,12 +122,20 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Text(
-                                          'Category ${index + 1}',
-                                          style: TextStyles.caption.copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            color: widget.appBarColor,
-                                          ),
+                                        Consumer<SettingsProvider>(
+                                          builder: (context, settingsProvider,
+                                              child) {
+                                            return Text(
+                                              'Category ${index + 1}',
+                                              style: TextStyles.caption(context)
+                                                  .copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                color: widget.appBarColor,
+                                                fontSize:
+                                                    settingsProvider.fontSize,
+                                              ),
+                                            );
+                                          },
                                         ),
                                         const SizedBox(height: 4.0),
                                         Container(
@@ -118,10 +144,19 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                           color: widget.appBarColor,
                                         ),
                                         const SizedBox(height: 8.0),
-                                        Text(
-                                          category.name,
-                                          style: TextStyles.caption,
-                                          textAlign: TextAlign.center,
+                                        Consumer<SettingsProvider>(
+                                          builder: (context, settingsProvider,
+                                              child) {
+                                            return Text(
+                                              category.name,
+                                              style: TextStyles.caption(context)
+                                                  .copyWith(
+                                                fontSize:
+                                                    settingsProvider.fontSize,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                            );
+                                          },
                                         ),
                                       ],
                                     ),
@@ -144,8 +179,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                         appBarColor: widget.appBarColor,
                                         secondaryColor: widget.secondaryColor,
                                         bookId: widget.bookFileName,
-                                        categoryId: index +
-                                            1,
+                                        categoryId: index + 1,
                                       ),
                                     ),
                                   );
@@ -155,18 +189,33 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                   margin:
                                       const EdgeInsets.symmetric(vertical: 8.0),
                                   child: ListTile(
-                                    title: Text(
-                                      'Category ${index + 1}',
-                                      style: TextStyles.caption.copyWith(
-                                        color: widget.appBarColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                    title: Consumer<SettingsProvider>(
+                                      builder:
+                                          (context, settingsProvider, child) {
+                                        return Text(
+                                          'Category ${index + 1}',
+                                          style: TextStyles.caption(context)
+                                              .copyWith(
+                                            color: widget.appBarColor,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: settingsProvider.fontSize,
+                                          ),
+                                        );
+                                      },
                                     ),
-                                    subtitle: Text(
-                                      category.name,
-                                      style: TextStyles.caption.copyWith(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal),
+                                    subtitle: Consumer<SettingsProvider>(
+                                      builder:
+                                          (context, settingsProvider, child) {
+                                        return Text(
+                                          category.name,
+                                          style: TextStyles.caption(context)
+                                              .copyWith(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: settingsProvider.fontSize,
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ),
                                 ),

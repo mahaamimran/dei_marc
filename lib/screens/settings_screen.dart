@@ -1,80 +1,134 @@
 import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title:  Text('Settings',style: TextStyles.appBarTitle.copyWith(color: Colors.black),),
+    return ChangeNotifierProvider(
+      create: (context) => SettingsProvider(),
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Color(0xFFB52556),
+                  Color.fromARGB(255, 108, 160, 166),
+                ],
+              ),
+            ),
+          ),
+          title: Text(
+            'Settings',
+            style:
+                TextStyles.appBarTitle(context).copyWith(color: Colors.white),
+          ),
+          backgroundColor: Colors.transparent,
+          toolbarHeight: 80.0, // Change this value to adjust AppBar height
+        ),
+        body: Consumer<SettingsProvider>(
+          builder: (context, settingsProvider, child) {
+            return ListView(
+              padding: const EdgeInsets.all(
+                  8.0), // Padding around the entire ListView
+              children: [
+                _buildFontSizeTile(context, settingsProvider),
+                _buildNotificationsTile(context, settingsProvider),
+                _buildNavigationTile(
+                  context,
+                  title: 'Privacy Policy',
+                  icon: Icons.arrow_forward_ios,
+                  onTap: () {
+                    // Navigate to privacy policy screen or display modal
+                  },
+                ),
+                _buildNavigationTile(
+                  context,
+                  title: 'Copyrights',
+                  icon: Icons.arrow_forward_ios,
+                  onTap: () {
+                    // Navigate to copyrights screen or display modal
+                  },
+                ),
+                _buildNavigationTile(
+                  context,
+                  title: 'Share App',
+                  icon: Icons.share,
+                  onTap: () {
+                    // Implement sharing functionality
+                  },
+                ),
+              ],
+            );
+          },
+        ),
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            title: const Text('Font size'),
-            trailing: Switch(
-              value: true,
-              onChanged: (value) {
-                // Logic to switch size
-                if (value) {
-                  // Set dark theme
-                  // Implement your size switching logic here
-                } else {
-                  // Set light theme
-                  // Implement your size switching logic here
-                }
-              },
-            ),
-          ),
-          ListTile(
-            title: const Text('Notifications'),
-            trailing: Switch(
-              value: true, // Replace with actual notification setting value
-              onChanged: (value) {
-                // Logic to toggle notifications
-                // Implement your notification toggling logic here
-              },
-            ),
-          ),
-          ListTile(
-            title: const Text('About'),
-            trailing: Switch(
-              value: true, // Replace with about setting value
-              onChanged: (value) {
-                // Logic to display about
-              },
-            ),
-          ),
-          ListTile(
-            title: const Text('Privacy and Security'),
-            trailing: Switch(
-              value: true, // Replace with actual privacy setting value
-              onChanged: (value) {
-                // Logic to display privacy and security
-              },
-            ),
-          ),
-          ListTile(
-            title: const Text('Copyright'),
-            trailing: Switch(
-              value: true, // Replace with actual copyrights setting value
-              onChanged: (value) {
-                // Logic to display copyrights info
-              },
-            ),
-          ),
-          ListTile(
-            title: const Text('Share App'),
-            trailing: Switch(
-              value: true, // Replace with actual share app setting value
-              onChanged: (value) {
-                // Logic to display share app URL
-              },
-            ),
-          ),
-        ],
+    );
+  }
+
+  Widget _buildFontSizeTile(
+      BuildContext context, SettingsProvider settingsProvider) {
+    return Padding(
+      padding:
+          const EdgeInsets.symmetric(vertical: 4.0), // Padding between tiles
+      child: ListTile(
+        tileColor: Colors.grey[200], // Light grey background color for the tile
+        title: const Text('Font size'),
+        trailing: DropdownButton<double>(
+          value: settingsProvider.fontSize,
+          items: [14.0, 16.0, 18.0, 20.0].map((double value) {
+            return DropdownMenuItem<double>(
+              value: value,
+              child: Text(value.toString()),
+            );
+          }).toList(),
+          onChanged: (value) {
+            if (value != null) {
+              settingsProvider.setFontSize(value);
+            }
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNotificationsTile(
+      BuildContext context, SettingsProvider settingsProvider) {
+    return Padding(
+      padding:
+          const EdgeInsets.symmetric(vertical: 4.0), // Padding between tiles
+      child: ListTile(
+        tileColor: Colors.grey[200], // Light grey background color for the tile
+        title: const Text('Notifications'),
+        trailing: Switch(
+          value: settingsProvider.notificationsEnabled,
+          onChanged: (value) {
+            settingsProvider.toggleNotifications(value);
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNavigationTile(BuildContext context,
+      {required String title,
+      required IconData icon,
+      required VoidCallback onTap}) {
+    return Padding(
+      padding:
+          const EdgeInsets.symmetric(vertical: 4.0), // Padding between tiles
+      child: ListTile(
+        tileColor: Colors.grey[200], // Light grey background color for the tile
+        title: Text(title),
+        trailing: Icon(icon),
+        onTap: onTap,
       ),
     );
   }
