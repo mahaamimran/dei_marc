@@ -1,30 +1,22 @@
 
 {
     "subcategory": "DEI-related internal communications are frequently ignored by the majority of employees",
-    "description": "",
+    "description": "This refers to messages, policies, and initiatives that an organization communicates to its employees with the aim of promoting diversity, but the majority of employees tend to ignore it.",
     "content": [
         {
             "heading": "Causes",
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Internal information channels of organizations are scattered. "
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "There is an overload of information on internal communication channels and sometimes the information is difficult to access."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "There is lack of effective communication from the manager’s side."
                 }
             ]
         },
@@ -33,31 +25,23 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Organizations need to measure the results of their internal communication strategy for DEI; appropriate adjustments should be made to improve effectiveness."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Organizations should take employee feedback about the communication channels and take steps for improvement."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Organizations should use infographics to convey information in place of raw data."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "The communication model can be changed from a top-down model to horizontal communication."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "Organizations should let managers deliver corporate messages in their own words in meetings to make things easier to understand and comprehend."
                 }
             ]
         }
