@@ -1,13 +1,62 @@
 {
     "subcategory": "Lack of ownership of DEI mission/vision statement by the majority of stakeholders",
-    "description": "",
+    "description": "This refers to a situation where the majority of stakeholders in an organization do not feel a sense of personal investment or responsibility towards the organization's DEI mission and vision statement.",
     "content": [
         {
-            "heading": "",
+            "heading": "Causes",
             "content": [
                 {
-                    "type": "paragraph",
-                    "text": ""
+                    "type": "bullet",
+                    "text": "DEI is used as a mere representation, with more emphasis placed on its depiction than its actual execution."
+                },
+                {
+                    "type": "bullet",
+                    "text": "The executives fail to understand the importance of DEI as no particular tools are available to measure its impact."
+                },
+                {
+                    "type": "bullet",
+                    "text": "The organizational culture does not support the DEI vision and mission statements."
+                },
+                {
+                    "type": "bullet",
+                    "text": "The people leaders are not aware of, or do not give importance to, the DEI vision/mission statements."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Resources are not allocated to support the DEI vision and mission statements."
+                }
+            ]
+        },
+        {
+            "heading": "Solutions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "An act addressing diversity and inclusion is necessary, as the underlying framework must be exceptionally robust."
+                },
+                {
+                    "type": "bullet",
+                    "text": "It is essential to work on men's mindset to foster an inclusive, innovative, and harmonious workplace for all individuals."
+                },
+                {
+                    "type": "bullet",
+                    "text": "It is necessary to organize regular training sessions and workshops for employees to educate them on the benefits of DEI and its importance in creating a positive organizational culture."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Senior leaders should set an example by setting DEI targets for themselves and their teams to influence broad organizational change."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Teams or individuals who achieve DEI targets must be rewarded and recognized."
+                },
+                {
+                    "type": "bullet",
+                    "text": "It is imperative to incorporate DEI metrics into performance evaluations and appraisals, just like profits and sales."
+                },
+                {
+                    "type": "bullet",
+                    "text": "A specific budget must be allocated to an organization’s DEI initiatives, which can be a game-changer in the dynamic business environment where the importance of DEI is growing significantly."
                 }
             ]
         }
