@@ -1,12 +1,62 @@
+
 {
     "subcategory": "DEI-related internal communications are frequently ignored by the majority of employees",
     "description": "",
     "content": [
         {
-            "heading": "",
+            "heading": "Causes",
             "content": [
                 {
-                    "type": "paragraph",
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                }
+            ]
+        },
+        {
+            "heading": "Solutions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
                     "text": ""
                 }
             ]

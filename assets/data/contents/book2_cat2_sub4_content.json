@@ -1,12 +1,62 @@
+
 {
     "subcategory": "Inadequate number of females available for panel interviews",
     "description": "",
     "content": [
         {
-            "heading": "",
+            "heading": "Causes",
             "content": [
                 {
-                    "type": "paragraph",
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                }
+            ]
+        },
+        {
+            "heading": "Solutions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
                     "text": ""
                 }
             ]
