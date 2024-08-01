@@ -1,30 +1,30 @@
 
 {
     "subcategory": "Non serious attitude during mandatory DEI training sessions",
-    "description": "",
+    "description": "This refers to the challenge that employees do not take DEI trainings seriously when it is made mandatory by their organization.",
     "content": [
         {
             "heading": "Causes",
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "DEI trainings are not considered important by employees."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Some employees have a misogynist way of thinking. People do not take soft skills training, like diversity training, seriously."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Companies often arrange training sessions to cover legal requirements and force employees to attend them. "
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Training is often used in reaction to complaints such as harassment cases. "
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "There are limited good quality DEI trainers available."
                 }
             ]
         },
@@ -33,31 +33,23 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Ensure or promote visible as well as active participation of senior leadership in the DEI trainings. "
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Organizations should develop surveys and feedback forms for employees to evaluate the effectiveness of training and its impact on individual development."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Organizations need to offer voluntary diversity training instead of making trainings mandatory for all employees. "
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Assessment tools such as pretests can be used to make prospective trainees aware of the need for their training. "
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "Organizations can incentivize training, learning and behavioral change as a result of training."
                 }
             ]
         }
