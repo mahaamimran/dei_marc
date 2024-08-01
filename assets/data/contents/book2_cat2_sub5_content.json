@@ -1,30 +1,26 @@
 
 {
     "subcategory": "Insufficient number of female applicants for returnship programs",
-    "description": "",
+    "description": "This refers to the situation when there aren't enough females applying for the programs that assist people in returning to the job after taking a career break.",
     "content": [
         {
             "heading": "Causes",
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Self-limiting beliefs of females hold them back from achieving their full potential."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Due to cultural barriers and family responsibilities, females don’t apply for returnship programs."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "There is a general perception in the minds of people that females are not responsible for earning for their households."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "Organizations are not promoting returnship programs using the appropriate channels."
                 }
             ]
         },
@@ -33,31 +29,19 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Launch awareness programs to inform women about the benefits of returnship programs."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Organizations should promote returnship programs using targeted channels to ensure that they reach women who have taken career breaks."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Organizations must design returnship programs that offer flexible working hours and remote work options so that women can balance their home and work responsibilities."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "Recruiters and hiring managers should be trained to recognize and eliminate biases to ascertain fair evaluation of candidates."
                 }
             ]
         }
