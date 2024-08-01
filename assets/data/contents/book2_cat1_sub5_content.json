@@ -1,30 +1,14 @@
 
 {
     "subcategory": "Lack of DEI awareness among people leaders",
-    "description": "",
+    "description": "This refers to a situation when managers or supervisors have insufficient knowledge and understanding of the value of encouraging gender diversity in the workplace.",
     "content": [
         {
             "heading": "Causes",
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "There is a common assumption that individuals across various levels of the organization are aware of the issues faced by females, but this is often not the case."
                 }
             ]
         },
@@ -33,31 +17,19 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "The agenda for DEI should be driven more by the people leaders."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Organizations need to align DEI strategies with the goals of line managers."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "HR should arrange various training sessions, including unconscious bias training sessions, for people leaders."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "Organizations should provide opportunities to both males and females to enhance their awareness about the challenges that females typically encounter."
                 }
             ]
         }
