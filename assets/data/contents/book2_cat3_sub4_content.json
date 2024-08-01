@@ -1,30 +1,22 @@
 
 {
     "subcategory": "Limited availability of trainers specializing in DEI training",
-    "description": "",
+    "description": "This refers to the absence of experienced trainers to implement DEI initiatives within the organization.",
     "content": [
         {
             "heading": "Causes",
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "There is no specific regulatory authority governing the training and development industry and no benchmarks to identify good or bad trainers. This results in anyone being able to enter the field, regardless of their expertise or qualifications."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "DEI training is demanding and specialized, and requires someone who can correlate with the core idea, apart from the material, tools and methodology of training."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "There is a growing demand for DEI specialists and trainers as organizations are realizing the importance of DEI."
                 }
             ]
         },
@@ -33,31 +25,15 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "DEI should be introduced as a subject in universities with extensive curriculum-based activities to develop experts in this area."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Organizations can create microcosmos to help employees gain expertise in this area."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "Diversity champions and practitioners can help introduce train the trainer programs."
                 }
             ]
         }
