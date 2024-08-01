@@ -1,0 +1,57 @@
+
+{
+    "subcategory": "Gender pay gap because of less assertiveness in initial salary negotiations by females",
+    "description": "This refers to the discrepancy in pay between male and female employees in the workplace, which may primarily stem from the tendency for women to be less assertive and less likely to negotiate for higher pay or benefits when starting a new job or during performance reviews.",
+    "content": [
+        {
+            "heading": "Causes",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Women often accept the job being offered to them instead of negotiating their salaries."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Women usually do not know their work's true value and worth."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Women face conscious and unconscious bias, such as the stereotype that women are less competent than men."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Women get nervous about negotiating for higher pay."
+                },
+                {
+                    "type": "bullet",
+                    "text": "The social cost of negotiating for higher pay is greater for women as compared to men."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Industries that are women-dominated are filled with careers that usually pay less compared to male-dominated fields."
+                }
+            ]
+        },
+        {
+            "heading": "Solutions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Organizations need to make conscious efforts to ensure that they offer equal pay to all employees regardless of gender."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations should compensate employees based on their skill set utilizing a comprehensive formula that allocates weightings to factors such as skillsets and achievement of KPIs to minimize human involvement and ensure fair compensation for all."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Women need to be mentored and guided to acknowledge their actual worth and to be able to negotiate the package better."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations should promote greater involvement of women in more significant roles and projects and provide them with opportunities to participate in decision-making forums, thus indirectly building their confidence for salary negotiations as well."
+                }
+            ]
+        }
+    ]
+}

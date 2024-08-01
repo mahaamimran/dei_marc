@@ -1,0 +1,53 @@
+
+{
+    "subcategory": "Limited number of females applicants for technical/STEM jobs",
+    "description": "This refers to the lack of representation of women in technical jobs, including all jobs in STEM (Science, Technology, Engineering, and Mathematics), that can lead to a lack of diversity, innovation, and inclusivity in the organization.",
+    "content": [
+        {
+            "heading": "Causes",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Stereotypes exist that certain roles are suited more for males."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Cultural barriers exist as people are not used to dealing with women on the field or in technical jobs."
+                },
+                {
+                    "type": "bullet",
+                    "text": "There is a low supply of females in the talent pool because of the small number of females joining the fields of science and technology. "
+                },
+                {
+                    "type": "bullet",
+                    "text": "Job advertisements consist of traits and characteristics that favour a male candidate. "
+                }
+            ]
+        },
+        {
+            "heading": "Solutions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "The supply of female talent in the STEM field can be increased by signing MoUs between businesses and universities so that universities provide the organizations with more female graduates in the field of STEM."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Companies need to hire fresh graduates and develop them for technical roles. "
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations need to work on making job advertisements gender-neutral, e.g., refraining from using words such as strong, physically abled, etc. "
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations need to give more attention to providing a safe and conducive workplace environment for females, particularly when there are limited number of females in organizations, such as in STEM. "
+                },
+                {
+                    "type": "bullet",
+                    "text": "The government needs to introduce more reforms that encourage investment in girls’ education as well as skills development in STEM. "
+                }
+            ]
+        }
+    ]
+}

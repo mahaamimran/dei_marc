@@ -1,0 +1,53 @@
+{
+    "image_path":"",
+    "subcategories": [
+        {
+            "name":"Limited number of females applicants in response to job advertisements"
+        },
+        {
+            "name":"Limited number of females applicants for technical/STEM jobs"
+        },
+        {
+            "name": "Perception that females are unsuitable for outdoor and fieldwork job roles"
+        },
+        {
+            "name": "Inadequate number of females available for panel interviews"
+        },
+        {
+            "name": "Insufficient number of female applicants for returnship programs"
+        },
+        {
+            "name": "Persistence of the ‘family comes first’ mindset even after completing the returnship program."
+        },
+        {
+            "name": "Reluctance among women to pursue top management positions"
+        },
+        {
+            "name":"Limited opportunities for professional advancement of women in organizations"
+        },
+        {
+            "name":"Scarcity of women in leadership roles in organizations"
+        },
+        {
+            "name": "Stereotyping that women cannot fulfil professional commitments at senior levels"
+        },
+        {
+            "name": "Challenges in retaining female talent amid changes in their circumstances"
+        },
+        {
+            "name": "Gender pay gap because of less assertiveness in initial salary negotiations by females"
+        },
+        {
+            "name": "Difficulty for organizations in finding replacements for females during maternity or sabbatical leaves"
+        },
+        {
+            "name": "Negative impact of maternity leave on performance evaluations"
+        },
+        {
+            "name": "Perception of unfairness among males when females are granted more flexibility in the workplace"
+        },
+        {
+            "name":"Reluctance of men to take paternity leave because of the prevailing macho culture"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+
+{
+    "subcategory": "Lack of awareness about the business impact of DEI",
+    "description": "This refers to a situation where the businesses and stakeholders are not entirely aware of the possible advantages that gender DEI can bring to their business functions, profitability, and objectives.",
+    "content": [
+        {
+            "heading": "Causes",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "There is lack of information, analytics, technology, and research to justify the relationship between gender representation and profitability."
+                },
+                {
+                    "type": "bullet",
+                    "text": "There is no clear link established between DEI metrics and organizational profitability."
+                },
+                {
+                    "type": "bullet",
+                    "text": "There is less visibility into the information-sharing aspect of DEI and its impact on the local level."
+                },
+                {
+                    "type": "bullet",
+                    "text": "An organization is solely using profit margins and stock charts to support diversity rather than focusing on its broader long-term impact. "
+                }
+            ]
+        },
+        {
+            "heading": "Solutions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Organizations should incorporate the DEI into the financial baseline to ensure its integration into business analytics and increase visibility."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations need to incentivize leaders to prioritize and promote DEI by using statistics to demonstrate how it can enhance profitability and productivity."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations should strive to increase accountability and bring DEI to the forefront of the organization's thinking by hiring staff members who are invested in DEI and promoting allyship."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Thinktanks and DEI consultants can share intersectional information and benchmark data from established organizations and industries. This material should be shared in the form of manuals, toolkits, or booklets to help small and medium-sized organizations stay informed about the changing trends, tools, and techniques related to DEI."
+                }
+            ]
+        }
+    ]
+}
