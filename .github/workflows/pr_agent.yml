@@ -17,7 +17,7 @@ jobs:
         uses: docker://codiumai/pr-agent:0.23-github_action 
         env:
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
           OPENAI.ORG: "<Your organization name under your OpenAI account>"
           PR_REVIEWER.REQUIRE_TESTS_REVIEW: "false"
           PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS: 6
