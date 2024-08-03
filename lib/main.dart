@@ -6,7 +6,7 @@ import 'package:dei_marc/screens/splash_screen.dart';
 import 'package:dei_marc/providers/book_provider.dart';
 import 'package:dei_marc/providers/category_provider.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';
-import 'package:dei_marc/providers/image_provider.dart' as my_image_provider;
+
 
 void main() {
   runApp(const MyApp());

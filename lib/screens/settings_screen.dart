@@ -13,22 +13,22 @@ class SettingsScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomLeft,
-                colors: [
-                  Color(0xFFB52556),
-                  Color.fromARGB(255, 108, 160, 166),
-                ],
-              ),
-            ),
-          ),
+          // flexibleSpace: Container(
+          //   decoration: const BoxDecoration(
+          //     gradient: LinearGradient(
+          //       begin: Alignment.topLeft,
+          //       end: Alignment.bottomLeft,
+          //       colors: [
+          //         Color(0xFFB52556),
+          //         Color.fromARGB(255, 108, 160, 166),
+          //       ],
+          //     ),
+          //   ),
+          // ),
           title: Text(
             'Settings',
             style:
-                TextStyles.appBarTitle(context).copyWith(color: Colors.white),
+                TextStyles.appBarTitle.copyWith(color: Colors.black), // Change text color to black
           ),
           backgroundColor: Colors.transparent,
           toolbarHeight: 80.0, // Change this value to adjust AppBar height
@@ -40,7 +40,7 @@ class SettingsScreen extends StatelessWidget {
                   8.0), // Padding around the entire ListView
               children: [
                 _buildFontSizeTile(context, settingsProvider),
-                _buildNotificationsTile(context, settingsProvider),
+                //_buildNotificationsTile(context, settingsProvider),
                 _buildNavigationTile(
                   context,
                   title: 'Privacy Policy',
@@ -99,23 +99,6 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildNotificationsTile(
-      BuildContext context, SettingsProvider settingsProvider) {
-    return Padding(
-      padding:
-          const EdgeInsets.symmetric(vertical: 4.0), // Padding between tiles
-      child: ListTile(
-        tileColor: Colors.grey[200], // Light grey background color for the tile
-        title: const Text('Notifications'),
-        trailing: Switch(
-          value: settingsProvider.notificationsEnabled,
-          onChanged: (value) {
-            settingsProvider.toggleNotifications(value);
-          },
-        ),
-      ),
-    );
-  }
 
   Widget _buildNavigationTile(BuildContext context,
       {required String title,

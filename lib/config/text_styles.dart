@@ -1,40 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:dei_marc/providers/settings_provider.dart';
 
+// constants for the way text is displayed so we can use it like this:
+// Text('Hello World', style: TextStyles.title)
 class TextStyles {
-  static TextStyle appBarTitle(BuildContext context) {
-    double fontSize = Provider.of<SettingsProvider>(context).fontSize;
-    return TextStyle(
-      fontSize: fontSize + 10,
-      fontWeight: FontWeight.bold,
-      color: const Color.fromARGB(255, 248, 247, 247),
-    );
-  }
+  static const TextStyle appBarTitle = TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.bold,
+    color: Color.fromARGB(255, 248, 247, 247),
+  );
 
-  static TextStyle heading(BuildContext context) {
-    double fontSize = Provider.of<SettingsProvider>(context).fontSize;
-    return TextStyle(
-      fontSize: fontSize + 8,
-      fontWeight: FontWeight.w700,
-      color: Colors.black,
-    );
-  }
+  static const TextStyle heading = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+    color: Colors.black,
+  );
 
-  static TextStyle title(BuildContext context) {
-    double fontSize = Provider.of<SettingsProvider>(context).fontSize;
-    return TextStyle(
-      fontSize: fontSize + 2,
-      fontWeight: FontWeight.bold,
-      color: Colors.black,
-    );
-  }
+  static const TextStyle title = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
 
-  static TextStyle caption(BuildContext context) {
-    double fontSize = Provider.of<SettingsProvider>(context).fontSize;
-    return TextStyle(
-      fontSize: fontSize,
-      color: Colors.grey[900],
-    );
-  }
+  static TextStyle caption = TextStyle(
+    fontSize: 14,
+    color: Colors.grey[900],
+  );
 }
