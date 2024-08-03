@@ -1,0 +1,26 @@
+{
+    "image_path":"",
+    "subcategories": [
+        {
+            "name":"Lack of ownership of DEI mission/vision statement by the majority of stakeholders"
+        },
+        {
+            "name":"Absence of an organizational culture promoting DEI"
+        },
+        {
+            "name": "Lack of ownership of DEI throughout the organization"
+        },
+        {
+            "name": "Lack of awareness about the business impact of DEI"
+        },
+        {
+            "name": "Lack of DEI awareness among people leaders"
+        },
+        {
+            "name": "Lack of executive involvement in DEI initiatives"
+        },
+        {
+            "name": "Budgetary constraints for implementation of DEI strategies"
+        }
+    ]
+}

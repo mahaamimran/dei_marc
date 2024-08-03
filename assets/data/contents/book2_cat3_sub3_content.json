@@ -1,0 +1,33 @@
+
+{
+    "subcategory": "Perceived lack of credibility in external DEI communications",
+    "description": "This refers to the situation when the intended audience does not view an organization's messaging and communication efforts in DEI as trustworthy or dependable.",
+    "content": [
+        {
+            "heading": "Causes",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Organizations invest more time and effort in creating hype about DEI practices but have limited investments in concrete initiatives."
+                }
+            ]
+        },
+        {
+            "heading": "Solutions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Organizations need to be aware of how they are perceived by both employees and customers and maintain a realistic positive image."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations need to be open in their communication and convey negative information, e.g., mistakes should be highlighted, in addition to positive messages."
+                },
+                {
+                    "type": "bullet",
+                    "text": "When communicating important information externally, organizations need to replace managers with employees when selecting spokespersons."
+                }
+            ]
+        }
+    ]
+}

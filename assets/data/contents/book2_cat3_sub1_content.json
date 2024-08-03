@@ -1,0 +1,53 @@
+
+{
+    "subcategory": "Limited expertise in identifying issues through analytics and research findings",
+    "description": "This refers to the insufficient knowledge of analytics because of which organizations fail to understand the importance of using tools and analytics to measure the impact of DEI initiatives.",
+    "content": [
+        {
+            "heading": "Causes",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "There is an absence of concrete tools for the analysis of DEI policies and their impact."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations invest limited time and resources to examine the background of the insights gathered through data and do not distribute them among the appropriate decision-makers. "
+                },
+                {
+                    "type": "bullet",
+                    "text": "There is a lack of awareness and understanding of the importance of analytics among DEI champions; they may feel safe with their own strategies and comfort zones."
+                }
+            ]
+        },
+        {
+            "heading": "Solutions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Organizations should focus on a minimal framework with clear measurements and output-oriented tools, to measure the impact of DEI effectively."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations should work on making DEI a part of the annual audit financial reports to emphasize its relevance in organizations. "
+                },
+                {
+                    "type": "bullet",
+                    "text": "DEI practitioners can define actions, ratios and tools, measure progress with numerical measures, and review the actions taken and their impact on diversity and inclusion. "
+                },
+                {
+                    "type": "bullet",
+                    "text": "HR may focus on conducting employee engagement surveys with a detailed section for DEI to identify areas for improvement in the next couple of years."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Organizations can train more HR professionals to use data and analytics for use in DEI and other areas. "
+                },
+                {
+                    "type": "bullet",
+                    "text": "DEI champions can fulfill their role effectively by conducting awareness sessions and highlighting success stories of organizations that have used DEI initiatives to create a solid business impact."
+                }
+            ]
+        }
+    ]
+}

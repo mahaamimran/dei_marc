@@ -1,0 +1,50 @@
+
+{
+    "subcategory": "Inadequate number of females available for panel interviews",
+    "description": "This refers to the phenomenon when there are not enough females who are able or willing to participate in panel interviews, which further creates gender bias in the workplace.",
+    "content": [
+        {
+            
+            "heading": "Causes",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Insufficient number of females in the workforce, due to which there are fewer females available for the panel interviews."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Limited number of female managers in the organisation can make it difficult to find relevant females for interview panels."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Unconscious bias can favour appointment of male interviewers, reinforcing gender stereotypes, and positioning men as better evaluators and decision-makers."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Workplace cultures can discourage female participation in panel interviews and leadership roles, reducing their willingness to volunteer."
+                }
+            ]
+        },
+        {
+            "heading": "Solutions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Try to attract and retain more females in the workforce by promoting a healthy organizational culture."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Continuously and consistently develop females for managerial positions."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Conduct unconscious bias training to reduce favouritism towards male interviewers."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Cultivate an inclusive workplace culture that empowers and encourages female participation in panel interviews and leadership roles."
+                }
+            ]
+        }
+    ]
+}
