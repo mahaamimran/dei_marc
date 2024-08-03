@@ -32,6 +32,8 @@ flutter:
     - assets/data/contents/
     - assets/images/placeholder.png
     - assets/images/book_covers/
+    - assets/images/book1/
+    - assets/images/book2/
   
   uses-material-design: true
   
