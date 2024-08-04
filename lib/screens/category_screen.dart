@@ -30,12 +30,20 @@ class _CategoryScreenState extends State<CategoryScreen> {
           CategoryProvider()..loadCategories(widget.bookFileName),
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          )
+          ,
             backgroundColor:
                 widget.appBarColor, // Use the passed color for the AppBar
             //foregroundColor: BasicColors.appBarForeground,
             title: const Text('Categories', style: TextStyles.appBarTitle),
             actions: [
               IconButton(
+                color: Colors.white,
                 icon: Icon(_isGridView ? Icons.list : Icons.grid_view),
                 onPressed: () {
                   setState(() {
@@ -43,7 +51,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   });
                 },
               ),
-            ]),
+            ])
+            ,
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Consumer<CategoryProvider>(
