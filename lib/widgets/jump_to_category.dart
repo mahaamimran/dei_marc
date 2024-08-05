@@ -5,6 +5,9 @@ class JumpToCategory extends StatelessWidget {
   final List<Subcategory> subcategories;
   final Function(int) onCategorySelected;
 
+  // add category name
+  // color
+
   const JumpToCategory({
     Key? key,
     required this.subcategories,

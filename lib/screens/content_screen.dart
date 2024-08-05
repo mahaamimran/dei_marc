@@ -179,8 +179,7 @@ class _ContentScreenState extends State<ContentScreen> {
     );
   }
 
-  void _showCategoryList(
-      BuildContext context, List<Subcategory> subcategories) {
+  void _showCategoryList(BuildContext context, List<Subcategory> subcategories) {
     showModalBottomSheet(
       context: context,
       isDismissible: true,

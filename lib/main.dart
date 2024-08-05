@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CategoryProvider()),
         ChangeNotifierProvider(create: (_) => BookmarkProvider()),
         ChangeNotifierProvider(create: (_) => SettingsProvider()),
+        // add a;; rpoviders
       ],
       child: MaterialApp(
         title: 'DEI MARC',

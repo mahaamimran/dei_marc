@@ -40,7 +40,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             backgroundColor:
                 widget.appBarColor, // Use the passed color for the AppBar
             //foregroundColor: BasicColors.appBarForeground,
-            title: const Text('Categories', style: TextStyles.appBarTitle),
+            title:  Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               IconButton(
                 color: Colors.white,
@@ -107,7 +107,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Category ${index + 1}',
+                                          _getTitle(widget.bookFileName),
                                           style: TextStyles.caption.copyWith(
                                             fontWeight: FontWeight.bold,
                                             color: widget.appBarColor,
@@ -182,5 +182,18 @@ class _CategoryScreenState extends State<CategoryScreen> {
         ),
       ),
     );
+  }
+  
+  String _getTitle(String bookFileName) {
+    switch (bookFileName) {
+      case 'book1':
+        return 'Categoru';
+      case 'book2':
+        return 'Group 2';
+      case 'book3':
+        return 'Book 3';
+      default:
+        return 'Book';
+    }
   }
 }

@@ -1,5 +1,5 @@
 class Quote {
-  final String type;
+  final String type; // subheading, bullet, description 
   final String text;
 
   Quote({required this.type, required this.text});
