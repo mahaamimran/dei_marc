@@ -1,4 +1,11 @@
 {
+    "category" : "THE FOUNDATION GROUP: DRIVE THE STRATEGY",
+    "image": [
+        {
+        "type": "image",
+        "text": "book2_cat1"
+        }
+    ],
     "subcategory": "Lack of ownership of DEI mission/vision statement by the majority of stakeholders",
     "description": "This refers to a situation where the majority of stakeholders in an organization do not feel a sense of personal investment or responsibility towards the organization's DEI mission and vision statement.",
     "content": [
@@ -57,15 +64,10 @@
                 {
                     "type": "bullet",
                     "text": "A specific budget must be allocated to an organization’s DEI initiatives, which can be a game-changer in the dynamic business environment where the importance of DEI is growing significantly."
-                }
-            ]
-        },
-        {
-            "heading": "Visuals",
-            "content": [
+                },
                 {
-                    "type": "image",
-                    "text": "book2_cat1_sub1"
+                    "type":"image",
+                    "text":"book2_cat1_sub1"
                 }
             ]
         }

@@ -50,6 +50,10 @@
                 {
                     "type": "bullet",
                     "text": "Organizations can incentivize training, learning and behavioral change as a result of training."
+                },
+                {
+                    "type":"image",
+                    "text":"book2_cat3_sub5"
                 }
             ]
         }

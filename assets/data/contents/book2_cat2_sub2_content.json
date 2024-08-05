@@ -46,6 +46,10 @@
                 {
                     "type": "bullet",
                     "text": "The government needs to introduce more reforms that encourage investment in girls’ education as well as skills development in STEM. "
+                },
+                {
+                    "type":"image",
+                    "text":"book2_cat2_sub2"
                 }
             ]
         }
