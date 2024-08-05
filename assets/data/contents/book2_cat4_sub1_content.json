@@ -1,5 +1,11 @@
-
 {
+    "category" : "THE EXTERNAL GROUP: LISTEN TO AND SERVE SOCIETY",
+    "image": [
+        {
+        "type": "image",
+        "text": "book2_cat4"
+        }
+    ],
     "subcategory": "National culture limiting female workforce participation",
     "description": "This refers to the limited participation of women in the labor force because of the national culture and associated stereotypes.",
     "content": [
@@ -46,6 +52,10 @@
                 {
                     "type": "bullet",
                     "text": "The government can use examples of countries that have used feminist policies to empower their female population."
+                },
+                {
+                    "type":"image",
+                    "text":"book2_cat4_sub1"
                 }
             ]
         }

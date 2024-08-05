@@ -1,5 +1,12 @@
 
 {
+    "category" : "THE BRIDGING GROUP: ALIGN AND CONNECT",
+    "image": [
+        {
+        "type": "image",
+        "text": "book2_cat3"
+        }
+    ],
     "subcategory": "Limited expertise in identifying issues through analytics and research findings",
     "description": "This refers to the insufficient knowledge of analytics because of which organizations fail to understand the importance of using tools and analytics to measure the impact of DEI initiatives.",
     "content": [
@@ -46,6 +53,10 @@
                 {
                     "type": "bullet",
                     "text": "DEI champions can fulfill their role effectively by conducting awareness sessions and highlighting success stories of organizations that have used DEI initiatives to create a solid business impact."
+                },
+                {
+                    "type":"image",
+                    "text":"book2_cat3_sub1"
                 }
             ]
         }

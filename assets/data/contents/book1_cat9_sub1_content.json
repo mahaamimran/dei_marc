@@ -1,4 +1,11 @@
 {
+    "category" : "DEI Communications",
+    "image": [
+        {
+        "type": "image",
+        "text": "book1_cat9"
+        }
+    ],
     "subcategory": "Internal and External Communication Channels",
     "description": "A digital campaign involves raising awareness about DEI across all the digital channels where people engage with an organization. Some examples are presented in this sub-section.",
     "content": [

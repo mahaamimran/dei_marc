@@ -42,6 +42,10 @@
                 {
                     "type": "bullet",
                     "text": "Organizations should let managers deliver corporate messages in their own words in meetings to make things easier to understand and comprehend."
+                },
+                {
+                    "type":"image",
+                    "text":"book2_cat3_sub2"
                 }
             ]
         }

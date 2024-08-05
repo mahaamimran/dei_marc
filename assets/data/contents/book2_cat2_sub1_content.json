@@ -1,5 +1,12 @@
 
 {
+    "category" : "THE INTERNAL GROUP: ATTRACT AND RETAIN PEOPLE",
+    "image": [
+        {
+        "type": "image",
+        "text": "book2_cat2"
+        }
+    ],
     "subcategory": "Limited number of females applicants in response to job advertisements",
     "description": "This refers to challenges organizations face in generating a sufficient suitable pool of female employees during recruitment that results in a lack of gender diversity and inclusion in the organization.",
     "content": [
@@ -66,6 +73,10 @@
                 {
                     "type": "bullet",
                     "text": "Organizations need to provide safe transport, public spaces, and a conducive workplace environment for females."
+                },
+                {
+                    "type":"image",
+                    "text":"book2_cat2_sub1"
                 }
             ]
         }
