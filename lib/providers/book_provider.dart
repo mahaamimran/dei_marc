@@ -1,12 +1,8 @@
-// this is used to load the books from the json file and store it in a list of books
-// this is our 'business logic' for the books
-// we will use this provider to load the books in the home screen
-// home screen will not directly load the books from the json file (layered architecture)
 import 'dart:convert';
-import 'package:dei_marc/config/asset_paths.dart';
-import 'package:dei_marc/models/book.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
+import 'package:dei_marc/models/book.dart';
+import 'package:dei_marc/config/asset_paths.dart';
 
 class BookProvider with ChangeNotifier {
   List<Book> _books = [];

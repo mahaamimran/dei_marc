@@ -1,0 +1,24 @@
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+  issue_comment:
+jobs:
+  pr_agent_job:
+    if: ${{ github.event.sender.type != 'Bot' }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: write
+    name: Run pr agent on every pull request, respond to user comments
+    steps:
+      - name: PR Agent action step
+        id: pragent
+        uses: docker://codiumai/pr-agent:0.23-github_action 
+        env:
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          OPENAI.ORG: "<Your organization name under your OpenAI account>"
+          PR_REVIEWER.REQUIRE_TESTS_REVIEW: "false"
+          PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS: 6
+          OPENAI.MODEL: "gpt-3.5-turbo"

@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   provider:
+  shared_preferences: ^2.2.3
 
 
 dev_dependencies:
@@ -26,7 +27,13 @@ flutter:
   assets:
     - assets/data/ 
     - assets/data/books/
+    - assets/data/categories/
+    - assets/data/subcategories/
+    - assets/data/contents/
     - assets/images/placeholder.png
+    - assets/images/book_covers/
+    - assets/images/book1/
+    - assets/images/book2/
   
   uses-material-design: true
   
