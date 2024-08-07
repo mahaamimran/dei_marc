@@ -1,0 +1,41 @@
+{
+    "category": "Unconscious Bias",
+    "subcategory": "Video | Rethinking Assumptions: Supporting Working Parents | 10 Min",
+    "description":"The video is about a manager reflecting on his assumptions regarding a female employee’s capabilities after her returning from maternity leave, realizing his unconscious bias and the impact it may have on her career progression.",
+    "content": [
+        {
+            "heading": "Learning Outcomes",
+            "content":[
+                {
+                    "type":"subheading",
+                    "text":"Increase awareness of unconscious bias in the workplace:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Trainees will develop an understanding of unconscious bias through the video's depiction of a manager reflecting on his assumptions about a female employee returning from maternity leave. They will recognize the impact of unconscious bias on decision-making processes and interpersonal interactions in the workplace, promoting empathy and self-awareness in professional contexts."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Reflect on personal experiences of unconscious bias and its effects:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Participants will reflect on their own experiences, considering times when they may have been subject to biased assumptions in the workplace. They will analyze the impact of unconscious bias on themselves and those around them, understanding the broader implications of biased behaviors on individual careers and organizational culture."
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content":[
+                {
+                    "type":"bullet",
+                    "text":"Can you recall a time when you faced similar unconscious biasedness?"
+                },
+                {
+                    "type":"bullet",
+                    "text":"If yes, how did it impact you and those around you?"
+                }
+            ]
+        }
+    ]
+}

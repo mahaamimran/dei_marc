@@ -1,0 +1,58 @@
+{
+    "category": "Unconscious Bias",
+    "subcategory": "TEDx Talk | Are You Biased? I am | 15 Min",
+    "description":"In the TEDx Talk titled \"Are you biased? I am\" by Kristen Pressner, she discusses the nature of personal bias and how it impacts our judgements of other people. Kristen Pressner also talks about her own experiences with bias; she acknowledges that despite being an advocate of gender equality, she discovered her own unconscious bias against women in leadership roles. At the same time, she also emphasizes the importance of recognizing and confronting our own biases. For this reason, she suggests a new idea called “flip it to test it”, which involves reversing gender roles to check if the same judgment applies. In simple terms, if it seems odd or wrong to consider anything the other way around, it indicates bias. Overall, this talk stresses the need for self-awareness in overcoming our inbuilt biases.",
+    "content": [
+        {
+            "heading": "Learning Outcomes",
+            "content":[
+                {
+                    "type":"subheading",
+                    "text":"Recognizing unconscious bias:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Trainees will learn to identify and acknowledge their own unconscious biases, especially those related to gender. This outcome emphasizes the need for self-awareness in recognizing biases we might not initially admit or even be aware of."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Understanding the impact of bias in professional settings:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Participants will explore how unconscious biases can influence decision-making processes, particularly in hiring, promotions, and leadership evaluations. This includes understanding the negative consequences of such biases on diversity and inclusion within organizations."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Implementing the \"flip it to test it\" method:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Learners will be introduced to and practice the \"Flip It To Test It\" technique proposed by Pressner. This method involves reversing the roles or characteristics associated with a particular bias (such as gender) to test if the perception remains consistent, helping to highlight potential biases in judgments."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Promoting gender equality in leadership:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Trainees will understand the importance of equal gender representation in leadership roles and learn how to support and advocate for balanced leadership. This involves recognizing the value that diverse leadership brings to organizations and the ways in which biases can hinder this diversity."
+                }
+
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content":[
+                {
+                    "type":"bullet",
+                    "text":"Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace? "
+                },
+                {
+                    "type":"bullet",
+                    "text":"In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
+                }
+            ]
+        }
+    ]
+}
