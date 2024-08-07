@@ -1,0 +1,40 @@
+{
+    "categories":[
+        {
+            "name":"Unconscious Bias"
+        },
+        {
+            "name":"Stereotyping"
+        },
+        {
+            "name":"Women in STEM "
+        },
+        {
+            "name":"Maternity/Paternity Leave"
+        },
+        {
+            "name":"Work Life Balance"
+        },
+        {
+            "name":"Organizational Culture"
+        },
+        {
+            "name":"Double Shift"
+        },
+        {
+            "name":"Microaggressions"
+        },
+        {
+            "name":"Negative Self-Perception"
+        },
+        {
+            "name":"Communication and Analytics"
+        },
+        {
+            "name":"Gender Pay Gap and Budgetary Constraints"
+        },
+        {
+            "name":"Leadership"
+        }
+    ]
+}
