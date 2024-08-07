@@ -1,5 +1,4 @@
 {
-    "image_path":"book1_cat13",
     "subcategories": [
         {
             "name":"Industry Examples of Tools for Services and Products, Marketing and Responsible Sourcing"
@@ -11,8 +10,7 @@
             "name": "Gender sensitivity in marketing and customer service"
         },
         {
-            "name": "Gender equity in sourcing",
-            "image_path":"book1_cat13_sub3"
+            "name": "Gender equity in sourcing"
         }
     ]
 }

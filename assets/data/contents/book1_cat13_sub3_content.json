@@ -1,5 +1,10 @@
 {
     "subcategory": "Gender sensitivity in marketing and customer service",
-    "description": "Bank Alfalah is developing gender champions at customer touchpoints bank wide. These champions can either be male or female, and receive a sensitization training, along with the detail about every facility that is available for women in the bank."
-
+    "description": "Bank Alfalah is developing gender champions at customer touchpoints bank wide. These champions can either be male or female, and receive a sensitization training, along with the detail about every facility that is available for women in the bank.",
+    "content":[
+        {
+            "type":"image",
+            "text":"book1_cat13_sub3"
+        }
+    ]
 }
