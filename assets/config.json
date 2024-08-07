@@ -84,6 +84,8 @@
         "book2_cat3_sub5": "images/book2/categories/cat3_sub5.jpeg",
         "book2_cat4": "images/book2/categories/cat4.png",
         "book2_cat4_sub1": "images/book2/categories/cat4_sub1.jpeg",
-        "book2_cat4_sub2": "images/book2/categories/cat4_sub2.jpeg"
+        "book2_cat4_sub2": "images/book2/categories/cat4_sub2.jpeg",
+
+        "book_3":""
     }
 }

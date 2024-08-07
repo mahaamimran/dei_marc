@@ -1,11 +1,9 @@
 {
-    "image_path":"book1_cat8",
     "description": "Organizations that are implementing best practices are actively involved in assessing the effectiveness of their DEI initiatives. The assessment tools they are using can be grouped into two themes; gender DEI analytics and gender DEI research.",
 
     "subcategories": [
         {
-            "name": "Gender DEI Analytics",
-            "img":"book1_cat8_sub1"
+            "name": "Gender DEI Analytics"
         },
         {
             "name": "Gender DEI Research"

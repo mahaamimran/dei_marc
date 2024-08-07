@@ -1,0 +1,53 @@
+{
+    "category": "Unconscious Bias",
+    "subcategory": "Caselet | The Promotion Dilemma | 25 Min",
+    "description":"Fiza, a project manager at a consultancy, has received numerous excellent performance reviews in her 10 years there. Her boss and the client praised her efforts in leading a team of five consultants on a major project. Fiza has expressed her desire to be promoted to the role of director on several occasions.\nThe performance appraisals leave Fiza disappointed when she learns she is not being considered for the director position. The promotion has instead been given to her male colleague, Obaid. While both candidates have worked with the company for 10 years, Fiza has more experience leading teams. Aside from that, she has contributed significantly to the firm's diversity and inclusion efforts, an area Obaid has been less active.\nFiza schedules a meeting with her boss to find out more about his decision. Her boss describes Obaid as possessing better executive presence, qualities he considers crucial to the role of director. Due to the fact that Fiza's husband works full time as well, he acknowledges her responsibilities as a mother. Her boss expressed concern about her ability to balance family responsibilities with her professional obligations. He also points out that directors have high stakes and need to travel frequently, along with long work hours.\nThe meeting ends, and Fiza is left with a mixture of emotions. As a result, she feels frustrated, angry, and hurt at the same time. Due to her gender and family obligations, she feels discriminated against and unjustly treated. Her boss may have overlooked all of her achievements and preferred Obaid over her simply because he fit a traditional leader's image.",
+    "content": [
+        {
+            "heading": "Learning Outcomes",
+            "content":[
+                {
+                    "type":"subheading",
+                    "text":"Recognizing Gender Stereotypes in Promotion Decisions:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Develop the ability to identify gender stereotypes that may influence promotion decisions in the workplace, enabling critical evaluation of such decisions and advocacy for fairness and equity."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Understanding the Impact of Bias on Employee Morale and Engagement:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Gain insight into how biases in promotion decisions, such as assumptions about work-life balance based on gender, can negatively impact employee morale and engagement, leading to decreased productivity and retention rates."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Implementing Strategies for Promoting Inclusive Leadership:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Learn practical strategies for promoting inclusive leadership practices, including fostering an environment where diverse perspectives are valued, and ensuring that promotion decisions are based on merit and potential rather than biased assumptions or stereotypes."
+                }
+            ]
+        },
+        {
+            "heading": "Caselet Questions",
+            "content":[
+                {
+                    "type":"bullet",
+                    "text":"By promoting Obaid over Fiza, Fiza's boss displayed what gender stereotypes?"
+                },
+                {
+                    "type":"bullet",
+                    "text":"How do these stereotypes affect Fiza's motivation and job satisfaction?"
+                },
+                {
+                    "type":"bullet",
+                    "text":"What can the firm do to prevent and address gender discrimination?"
+                }
+            ]
+        }
+    ]
+}
