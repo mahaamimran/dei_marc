@@ -1,8 +1,9 @@
+import 'package:dei_marc/providers/category_provider.dart';
+import 'package:dei_marc/screens/content_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:dei_marc/providers/category_provider.dart';
-import 'package:dei_marc/config/text_styles.dart';
-import 'content_screen.dart';
+
+import '../config/text_styles.dart';
 
 class CategoryScreen extends StatefulWidget {
   final String bookFileName;
@@ -30,17 +31,16 @@ class _CategoryScreenState extends State<CategoryScreen> {
           CategoryProvider()..loadCategories(widget.bookFileName),
       child: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          )
-          ,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
             backgroundColor:
                 widget.appBarColor, // Use the passed color for the AppBar
-            //foregroundColor: BasicColors.appBarForeground,
-            title:  Text("Categories", style: TextStyles.appBarTitle),
+            toolbarHeight: 75.0,
+            title: Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               IconButton(
                 color: Colors.white,
@@ -51,8 +51,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   });
                 },
               ),
-            ])
-            ,
+            ]),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Consumer<CategoryProvider>(
@@ -89,8 +88,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                         appBarColor: widget.appBarColor,
                                         secondaryColor: widget.secondaryColor,
                                         bookId: widget.bookFileName,
-                                        categoryId: index +
-                                            1, // Pass the index of the category
+                                        categoryId: index + 1,
                                       ),
                                     ),
                                   );
@@ -107,7 +105,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          _getTitle(widget.bookFileName),
+                                          '${_getTitle(widget.bookFileName)} ${index + 1}',
                                           style: TextStyles.caption.copyWith(
                                             fontWeight: FontWeight.bold,
                                             color: widget.appBarColor,
@@ -157,7 +155,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                       const EdgeInsets.symmetric(vertical: 8.0),
                                   child: ListTile(
                                     title: Text(
-                                      'Category ${index + 1}',
+                                      '${_getTitle(widget.bookFileName)} ${index + 1}',
                                       style: TextStyles.caption.copyWith(
                                         color: widget.appBarColor,
                                         fontWeight: FontWeight.bold,
@@ -183,17 +181,17 @@ class _CategoryScreenState extends State<CategoryScreen> {
       ),
     );
   }
-  
+
   String _getTitle(String bookFileName) {
     switch (bookFileName) {
       case 'book1':
-        return 'Categoru';
+        return 'Category';
       case 'book2':
-        return 'Group 2';
+        return 'Group';
       case 'book3':
-        return 'Book 3';
+        return 'Module';
       default:
-        return 'Book';
+        return 'Category';
     }
   }
 }

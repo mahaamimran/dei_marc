@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Colors.white,
+        toolbarHeight: 75.0, // Change this value to adjust AppBar height
         // to avoid color change on scroll
         scrolledUnderElevation: 0,
         title: Text(
@@ -85,10 +86,6 @@ class HomeScreen extends StatelessWidget {
                                   style: TextStyles.caption,
                                 ),
                                 const SizedBox(height: 4.0),
-                                Text(
-                                  'Volume ${book.volume}',
-                                  style: TextStyles.caption,
-                                ),
                               ],
                             ),
                           ),

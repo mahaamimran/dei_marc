@@ -1,3 +1,4 @@
+import 'package:dei_marc/config/color_constants.dart';
 import 'package:dei_marc/models/subcategory.dart';
 import 'package:dei_marc/widgets/jump_to_category.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +10,8 @@ import 'package:dei_marc/config/text_styles.dart';
 class ContentScreen extends StatefulWidget {
   final String bookId;
   final int categoryId;
-  final Color appBarColor; // Add a parameter for the AppBar color
-  final Color secondaryColor; // Add a parameter for the secondary color
+  final Color appBarColor;
+  final Color secondaryColor;
 
   const ContentScreen({
     super.key,
@@ -26,8 +27,7 @@ class ContentScreen extends StatefulWidget {
 
 class _ContentScreenState extends State<ContentScreen> {
   final ScrollController _scrollController = ScrollController();
-  final Map<int, GlobalKey> _keyMap =
-      {}; 
+  final Map<int, GlobalKey> _keyMap = {};
 
   @override
   void dispose() {
@@ -59,9 +59,9 @@ class _ContentScreenState extends State<ContentScreen> {
       ],
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor:
-              widget.appBarColor, // Use the passed color for the AppBar
+          backgroundColor: widget.appBarColor,
           foregroundColor: Colors.white,
+          toolbarHeight: 75.0,
           title: Text('Category ${widget.categoryId}',
               style: TextStyles.appBarTitle),
           actions: [
@@ -81,7 +81,7 @@ class _ContentScreenState extends State<ContentScreen> {
             if (subcategoryProvider.subcategories.isEmpty) {
               return const Center(child: CircularProgressIndicator());
             }
-            _keyMap.clear(); // Clear the key map
+            _keyMap.clear();
 
             return ListView.builder(
               controller: _scrollController,
@@ -90,10 +90,10 @@ class _ContentScreenState extends State<ContentScreen> {
               itemBuilder: (context, index) {
                 final subcategory = subcategoryProvider.subcategories[index];
                 final key = GlobalKey();
-                _keyMap[index] = key; // Store the key in the map
+                _keyMap[index] = key;
 
                 return Padding(
-                  key: key, // Assign the key to the padding widget
+                  key: key,
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
@@ -149,7 +149,7 @@ class _ContentScreenState extends State<ContentScreen> {
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 4.0),
                                           child: Text(
-                                            '“${quote.text}”',
+                                            quote.text,
                                             style: TextStyles.caption.copyWith(
                                               color: Colors.grey[800],
                                             ),
@@ -179,17 +179,26 @@ class _ContentScreenState extends State<ContentScreen> {
     );
   }
 
-  void _showCategoryList(BuildContext context, List<Subcategory> subcategories) {
+  void _showCategoryList(
+      BuildContext context, List<Subcategory> subcategories) {
+    // Determine the background color based on the book ID
+    final int bookIdIndex =
+        int.parse(widget.bookId) - 1; // Adjust if bookId is not zero-based
+    final backgroundColor = ColorConstants
+        .booksSecondary[bookIdIndex % ColorConstants.booksSecondary.length];
+
     showModalBottomSheet(
       context: context,
       isDismissible: true,
       builder: (context) {
         return JumpToCategory(
+          categoryName: 'Category ${widget.categoryId}', // Pass category name
           subcategories: subcategories,
           onCategorySelected: (index) {
-            Navigator.pop(context); // Close the bottom sheet
-            _scrollToIndex(index); // Scroll to the selected category
+            Navigator.pop(context);
+            _scrollToIndex(index);
           },
+          backgroundColor: backgroundColor, // Set dynamic background color
         );
       },
     );
