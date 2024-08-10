@@ -1,0 +1,57 @@
+{
+    "category": "book3_cat7",
+    "subcategory": "Video | A Tale Of Double Standards | 10 Min",
+    "description": "",
+    "content": [
+        {
+            "heading": "Learning Outcomes",
+            "content": [
+                {
+                    "type": "subheading",
+                    "text": ""
+                },
+                {
+                    "type": "paragraph",
+                    "text": ""
+                },
+                {
+                    "type": "subheading",
+                    "text": ""
+                },
+                {
+                    "type": "paragraph",
+                    "text": ""
+                },
+                {
+                    "type": "subheading",
+                    "text": ""
+                },
+                {
+                    "type": "paragraph",
+                    "text": ""
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "link",
+                    "text": ""
+                }
+            ]
+        }
+    ]
+}
