@@ -1,46 +1,137 @@
+import 'package:dei_marc/config/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/models/subcategory.dart';
 
 class JumpToCategory extends StatelessWidget {
   final List<Subcategory> subcategories;
   final Function(int) onCategorySelected;
-
-  // add category name
-  // color
+  final String categoryName;
+  final Color backgroundColor;
 
   const JumpToCategory({
     Key? key,
     required this.subcategories,
     required this.onCategorySelected,
+    required this.categoryName,
+    required this.backgroundColor,
   }) : super(key: key);
+
+  String _capitalize(String text) {
+    if (text.isEmpty) return text;
+    return text.split(' ').map((word) {
+      if (word == word.toUpperCase()) return word; 
+      return word[0].toUpperCase() + word.substring(1).toLowerCase();
+    }).join(' ');
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      child: SingleChildScrollView(
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
+    return ClipRRect(
+      borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+      child: Container(
+        color: backgroundColor,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              'Jump to Subcategory',
+            Container(
+              width: MediaQuery.of(context).size.width * 0.25,
+              height: 4,
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade600,
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            Text(
+              categoryName,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
+                color: isDarkMode ? Colors.white : Colors.black,
               ),
             ),
-            const SizedBox(height: 16.0),
-            ...List.generate(subcategories.length, (index) {
-              final subcategory = subcategories[index];
-              return ListTile(
-                title: Text(subcategory.name),
-                onTap: () => onCategorySelected(index),
-              );
-            }),
+            const SizedBox(height: 20),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(
+                color: isDarkMode
+                    ? Colors.black.withOpacity(0.8)
+                    : Colors.white,
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+              ),
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: subcategories.length,
+                itemBuilder: (context, index) {
+                  final subcategory = subcategories[index];
+                  final displayName = _capitalize(subcategory.name);
+
+                  return Column(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          onCategorySelected(index);
+                          Navigator.pop(context);
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).scaffoldBackgroundColor,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 5,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: backgroundColor.darker(0.1),
+                                    borderRadius: BorderRadius.circular(2.0),
+                                  ),
+                                ),
+                                const SizedBox(width: 8), 
+                                Expanded(
+                                  child: Text(
+                                    '${index + 1}. $displayName',
+                                    style: TextStyles.caption.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    )
+                                    ,
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        height: 0.5,
+                        thickness: 0.5,
+                        color: isDarkMode ? Colors.white54 : Colors.black54,
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
     );
+  }
+}
+
+extension ColorExtension on Color {
+  Color darker([double amount = .1]) {
+    assert(amount >= 0 && amount <= 1);
+    final hsl = HSLColor.fromColor(this);
+    final hslDark = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
+    return hslDark.toColor();
   }
 }

@@ -50,6 +50,8 @@ class HomeScreen extends StatelessWidget {
                           index % ColorConstants.booksSecondary.length];
                       return GestureDetector(
                         onTap: () {
+                          print(book.bookId.toString());
+                          print('object');
                           Navigator.push(
                             context,
                             MaterialPageRoute(

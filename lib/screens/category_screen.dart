@@ -183,12 +183,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
   }
 
   String _getTitle(String bookFileName) {
+    
     switch (bookFileName) {
-      case 'book1':
+      case '1':
         return 'Category';
-      case 'book2':
+      case '2':
         return 'Group';
-      case 'book3':
+      case '3':
         return 'Module';
       default:
         return 'Category';
