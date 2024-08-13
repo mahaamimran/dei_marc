@@ -1,0 +1,57 @@
+{
+    "category": "book3_cat3",
+    "subcategory": "Video | Women In Stem (#StemTheGap) | 10 Min",
+    "description": "",
+    "content": [
+        {
+            "heading": "Learning Outcomes",
+            "content": [
+                {
+                    "type": "subheading",
+                    "text": ""
+                },
+                {
+                    "type": "paragraph",
+                    "text": ""
+                },
+                {
+                    "type": "subheading",
+                    "text": ""
+                },
+                {
+                    "type": "paragraph",
+                    "text": ""
+                },
+                {
+                    "type": "subheading",
+                    "text": ""
+                },
+                {
+                    "type": "paragraph",
+                    "text": ""
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "link",
+                    "text": ""
+                }
+            ]
+        }
+    ]
+}
