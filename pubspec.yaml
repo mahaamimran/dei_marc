@@ -29,7 +29,9 @@ flutter:
     - assets/data/books/
     - assets/data/categories/
     - assets/data/subcategories/
-    - assets/data/contents/
+    - assets/data/contents/book1/
+    - assets/data/contents/book2/
+    - assets/data/contents/book3/
     - assets/images/placeholder.png
     - assets/images/book_covers/
     - assets/images/book1/

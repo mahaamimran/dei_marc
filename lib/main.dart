@@ -1,4 +1,6 @@
+import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
+import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/screens/tab_bar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +25,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CategoryProvider()),
         ChangeNotifierProvider(create: (_) => BookmarkProvider()),
         ChangeNotifierProvider(create: (_) => SettingsProvider()),
+        ChangeNotifierProvider(create: (_) => ContentProvider()),
+        ChangeNotifierProvider(create: (_) => SubcategoryProvider()),
+
         // add a;; rpoviders
       ],
       child: MaterialApp(
