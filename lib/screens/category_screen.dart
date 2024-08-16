@@ -1,3 +1,4 @@
+import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/providers/category_provider.dart';
 import 'package:dei_marc/screens/content_screen.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 Navigator.pop(context);
               },
             ),
-            backgroundColor: widget.appBarColor,
+            backgroundColor:
+                widget.appBarColor, // Use the passed color for the AppBar
+            toolbarHeight: 75.0,
             title: Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               IconButton(
@@ -87,7 +90,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                         secondaryColor: widget.secondaryColor,
                                         bookId: widget.bookFileName,
                                         categoryId: index + 1,
-                                        categoryName: category.name,
+                                        categoryName: category.name
                                       ),
                                     ),
                                   );
@@ -104,7 +107,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '${_getTitle(widget.bookFileName)} ${index + 1}',
+                                          '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
                                           style: TextStyles.caption.copyWith(
                                             fontWeight: FontWeight.bold,
                                             color: widget.appBarColor,
@@ -143,8 +146,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                         appBarColor: widget.appBarColor,
                                         secondaryColor: widget.secondaryColor,
                                         bookId: widget.bookFileName,
-                                        categoryId: index + 1,
-                                        categoryName: category.name,
+                                        categoryId: index + 1, 
+                                        categoryName: category.name
                                       ),
                                     ),
                                   );
@@ -155,7 +158,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                       const EdgeInsets.symmetric(vertical: 8.0),
                                   child: ListTile(
                                     title: Text(
-                                      '${_getTitle(widget.bookFileName)} ${index + 1}',
+                                      '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
                                       style: TextStyles.caption.copyWith(
                                         color: widget.appBarColor,
                                         fontWeight: FontWeight.bold,
@@ -180,18 +183,5 @@ class _CategoryScreenState extends State<CategoryScreen> {
         ),
       ),
     );
-  }
-
-  String _getTitle(String bookFileName) {
-    switch (bookFileName) {
-      case '1':
-        return 'Category';
-      case '2':
-        return 'Group';
-      case '3':
-        return 'Module';
-      default:
-        return 'Category';
-    }
   }
 }

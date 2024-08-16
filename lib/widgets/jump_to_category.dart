@@ -1,4 +1,5 @@
 import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/helpers/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/models/subcategory.dart';
 
@@ -15,14 +16,6 @@ class JumpToCategory extends StatelessWidget {
     required this.categoryName,
     required this.backgroundColor,
   }) : super(key: key);
-
-  String _capitalize(String text) {
-    if (text.isEmpty) return text;
-    return text.split(' ').map((word) {
-      if (word == word.toUpperCase()) return word; 
-      return word[0].toUpperCase() + word.substring(1).toLowerCase();
-    }).join(' ');
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,20 +49,21 @@ class JumpToCategory extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                color: isDarkMode
-                    ? Colors.black.withOpacity(0.8)
-                    : Colors.white,
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                color:
+                    isDarkMode ? Colors.black.withOpacity(0.8) : Colors.white,
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(20)),
               ),
               child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: subcategories.length,
                 itemBuilder: (context, index) {
                   final subcategory = subcategories[index];
-                  final displayName = _capitalize(subcategory.name);
+                  final displayName = Helpers.capitalizeTitle(subcategory.name);
 
                   return Column(
                     children: [
+                      const SizedBox(height: 8),
                       InkWell(
                         onTap: () {
                           onCategorySelected(index);
@@ -79,7 +73,6 @@ class JumpToCategory extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Theme.of(context).scaffoldBackgroundColor,
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Row(
@@ -88,19 +81,18 @@ class JumpToCategory extends StatelessWidget {
                                   width: 5,
                                   height: 30,
                                   decoration: BoxDecoration(
-                                    color: backgroundColor.darker(0.1),
+                                    color: backgroundColor,
                                     borderRadius: BorderRadius.circular(2.0),
                                   ),
                                 ),
-                                const SizedBox(width: 8), 
+                                const SizedBox(width: 8),
                                 Expanded(
                                   child: Text(
                                     '${index + 1}. $displayName',
                                     style: TextStyles.caption.copyWith(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16,
-                                    )
-                                    ,
+                                    ),
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 2,
                                   ),
@@ -124,14 +116,5 @@ class JumpToCategory extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-extension ColorExtension on Color {
-  Color darker([double amount = .1]) {
-    assert(amount >= 0 && amount <= 1);
-    final hsl = HSLColor.fromColor(this);
-    final hslDark = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
-    return hslDark.toColor();
   }
 }

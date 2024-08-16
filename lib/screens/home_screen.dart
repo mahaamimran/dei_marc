@@ -15,7 +15,6 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Colors.white,
-        toolbarHeight: 75.0, // Change this value to adjust AppBar height
         // to avoid color change on scroll
         scrolledUnderElevation: 0,
         title: Text(
@@ -57,10 +56,8 @@ class HomeScreen extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => CategoryScreen(
                                 bookFileName: book.bookId.toString(),
-                                appBarColor:
-                                    primaryColor, // Pass the primary color for the AppBar
-                                secondaryColor:
-                                    secondaryColor, // Pass the secondary color for the category boxes
+                                appBarColor: primaryColor,
+                                secondaryColor: secondaryColor,
                               ),
                             ),
                           );
@@ -73,9 +70,8 @@ class HomeScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Image.asset(ImageAssets.bookCovers[index %
-                                    ImageAssets.bookCovers
-                                        .length]), // % to avoid index out of bounds
+                                Image.asset(ImageAssets.bookCovers[
+                                    index % ImageAssets.bookCovers.length]),
                                 const SizedBox(height: 8.0),
                                 Text(
                                   book.title,
