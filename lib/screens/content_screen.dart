@@ -12,6 +12,7 @@ class ContentScreen extends StatefulWidget {
   final int categoryId;
   final Color appBarColor;
   final Color secondaryColor;
+  final String categoryName;
 
   const ContentScreen({
     super.key,
@@ -19,6 +20,7 @@ class ContentScreen extends StatefulWidget {
     required this.categoryId,
     required this.appBarColor,
     required this.secondaryColor,
+    required this.categoryName,
   });
 
   @override
@@ -70,7 +72,6 @@ class _ContentScreenState extends State<ContentScreen> {
       appBar: AppBar(
         backgroundColor: widget.appBarColor,
         foregroundColor: Colors.white,
-        toolbarHeight: 75.0,
         title: Text('Category ${widget.categoryId}',
             style: TextStyles.appBarTitle),
         actions: [
@@ -95,11 +96,40 @@ class _ContentScreenState extends State<ContentScreen> {
           return ListView.builder(
             controller: _scrollController,
             padding: const EdgeInsets.all(16.0),
-            itemCount: subcategoryProvider.subcategories.length,
+            itemCount: subcategoryProvider.subcategories.length + 1,
             itemBuilder: (context, index) {
-              final subcategory = subcategoryProvider.subcategories[index];
+              if (index == 0) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 6,
+                        decoration: BoxDecoration(
+                          color: widget.appBarColor,
+                          borderRadius: BorderRadius.circular(3.0),
+                        ),
+                      ),
+                      const SizedBox(width: 18.0),
+                      Expanded(
+                        child: Text(
+                          widget.categoryName.toUpperCase(),
+                          style: TextStyles.heading.copyWith(
+                          //  color: widget.appBarColor,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }
+
+              final subcategory = subcategoryProvider.subcategories[index - 1];
               final key = GlobalKey();
-              _keyMap[index] = key;
+              _keyMap[index - 1] = key;
 
               return Padding(
                 key: key,
@@ -107,24 +137,9 @@ class _ContentScreenState extends State<ContentScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (index == 0) ...[
-                      // Display the category name and image first
-                      Text(
-                        subcategory.name.toUpperCase(),
-                        style: TextStyles.heading.copyWith(
-                          color: widget.appBarColor,
-                        ),
-                      ),
-                      // Assuming you have an Image widget to handle the image display
-                      // Image.asset(
-                      //   'assets/images/${contentProvider.contents['${widget.categoryId}-${index + 1}']![0].imagePath}',
-                      //   fit: BoxFit.cover,
-                      // ),
-                      // const SizedBox(height: 16.0),
-                    ],
-                    // Display subcategory name for each subcategory
+                    // Display subcategory name
                     Text(
-                      subcategory.name.toUpperCase(),
+                      subcategory.name,
                       style: TextStyles.heading.copyWith(
                         color: widget.appBarColor,
                       ),
@@ -132,65 +147,48 @@ class _ContentScreenState extends State<ContentScreen> {
                     Consumer<ContentProvider>(
                       builder: (context, contentProvider, child) {
                         final contents = contentProvider.contents[
-                                '${widget.categoryId}-${index + 1}'] ??
+                                '${widget.categoryId}-${index}'] ??
                             [];
 
                         if (contents.isEmpty) {
                           return const Text('No content available.');
                         }
 
-                        // Display category and description if available
-                        final firstItem = contents.first;
-
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (firstItem.description != null &&
-                                firstItem.description!.isNotEmpty)
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: Text(
-                                  firstItem.description!,
-                                  style: TextStyles.caption.copyWith(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ...contents.skip(1).map((contentItem) {
-                              return Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    if (contentItem.heading != null)
-                                      Text(
-                                        contentItem.heading!,
-                                        style: TextStyles.title,
-                                      ),
-                                    const SizedBox(height: 8.0),
-                                    ...contentItem.content.map((quote) {
-                                      return Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 4.0),
-                                        child: Text(
-                                          quote.text,
-                                          style: TextStyles.caption.copyWith(
-                                            color: Colors.grey[800],
-                                          ),
+                          children: contents.map((contentItem) {
+                            return Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  if (contentItem.heading != null)
+                                    Text(
+                                      contentItem.heading!,
+                                      style: TextStyles.title,
+                                    ),
+                                  const SizedBox(height: 8.0),
+                                  ...contentItem.content.map((quote) {
+                                    return Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: Text(
+                                        quote.text,
+                                        style: TextStyles.caption.copyWith(
+                                          color: Colors.grey[800],
                                         ),
-                                      );
-                                    }).toList(),
-                                  ],
-                                ),
-                              );
-                            }).toList(),
-                            Divider(
-                              color: widget.secondaryColor,
-                              thickness: 2.0,
-                            ),
-                          ],
+                                      ),
+                                    );
+                                  }).toList(),
+                                ],
+                              ),
+                            );
+                          }).toList(),
+                          // Divider(
+                          //   color: widget.secondaryColor,
+                          //   thickness: 2.0,
+                          // ),
                         );
                       },
                     ),
@@ -207,8 +205,8 @@ class _ContentScreenState extends State<ContentScreen> {
   void _showCategoryList(
       BuildContext context, List<Subcategory> subcategories) {
     final int bookIdIndex = int.parse(widget.bookId) - 1;
-    final backgroundColor = ColorConstants.booksSecondary[
-        bookIdIndex % ColorConstants.booksSecondary.length];
+    final backgroundColor = ColorConstants
+        .booksSecondary[bookIdIndex % ColorConstants.booksSecondary.length];
 
     showModalBottomSheet(
       context: context,

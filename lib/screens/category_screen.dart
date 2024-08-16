@@ -37,9 +37,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 Navigator.pop(context);
               },
             ),
-            backgroundColor:
-                widget.appBarColor, // Use the passed color for the AppBar
-            toolbarHeight: 75.0,
+            backgroundColor: widget.appBarColor,
             title: Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               IconButton(
@@ -89,6 +87,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                         secondaryColor: widget.secondaryColor,
                                         bookId: widget.bookFileName,
                                         categoryId: index + 1,
+                                        categoryName: category.name,
                                       ),
                                     ),
                                   );
@@ -145,6 +144,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                         secondaryColor: widget.secondaryColor,
                                         bookId: widget.bookFileName,
                                         categoryId: index + 1,
+                                        categoryName: category.name,
                                       ),
                                     ),
                                   );
@@ -183,7 +183,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
   }
 
   String _getTitle(String bookFileName) {
-    
     switch (bookFileName) {
       case '1':
         return 'Category';
