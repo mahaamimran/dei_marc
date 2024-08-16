@@ -32,7 +32,6 @@ class BookmarksScreen extends StatelessWidget {
               .copyWith(color: const Color.fromARGB(255, 248, 246, 246)),
         ),
         backgroundColor: Colors.transparent,
-        toolbarHeight: 75.0, // Change this value to adjust AppBar height
       ),
       body: Column(
         children: [

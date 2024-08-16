@@ -30,7 +30,7 @@ class ContentScreen extends StatefulWidget {
 
 class _ContentScreenState extends State<ContentScreen> {
   final ScrollController _scrollController = ScrollController();
-  final Map<int, GlobalKey> _keyMap = {};
+  final Map<String, GlobalKey> _keyMap = {};
 
   @override
   void dispose() {
@@ -57,10 +57,13 @@ class _ContentScreenState extends State<ContentScreen> {
   }
 
   void _scrollToIndex(int index) {
-    final context = _keyMap[index]?.currentContext;
-    if (context != null) {
-      Scrollable.ensureVisible(
-        context,
+    final key = _keyMap['${widget.bookId}-${widget.categoryId}-$index'];
+    if (key != null && key.currentContext != null) {
+      final RenderBox box = key.currentContext!.findRenderObject() as RenderBox;
+      final position = box.localToGlobal(Offset.zero).dy + _scrollController.offset;
+
+      _scrollController.animateTo(
+        position,
         duration: const Duration(seconds: 1),
         curve: Curves.easeInOut,
       );
@@ -105,7 +108,7 @@ class _ContentScreenState extends State<ContentScreen> {
             itemBuilder: (context, index) {
               final subcategory = subcategoryProvider.subcategories[index];
               final key = GlobalKey();
-              _keyMap[index] = key;
+              _keyMap['${widget.bookId}-${widget.categoryId}-$index'] = key;
 
               return Padding(
                 key: key,
@@ -128,7 +131,7 @@ class _ContentScreenState extends State<ContentScreen> {
                           const SizedBox(width: 18.0),
                           Expanded(
                             child: Text(
-                              Helpers.capitalizeTitle(widget.categoryName),
+                              Helpers.capitalizeTitle(widget.categoryName).toUpperCase(),
                               style: TextStyles.heading.copyWith(
                                 color: Colors.black,
                               ),
@@ -205,7 +208,6 @@ class _ContentScreenState extends State<ContentScreen> {
                                 ),
                               );
                             }).toList(),
-                          
                           ],
                         );
                       },
@@ -237,7 +239,9 @@ class _ContentScreenState extends State<ContentScreen> {
           subcategories: subcategories,
           onCategorySelected: (index) {
             Navigator.pop(context);
-            _scrollToIndex(index);
+            Future.delayed(Duration(milliseconds: 200), () {
+              _scrollToIndex(index);
+            });
           },
           backgroundColor: backgroundColor,
         );

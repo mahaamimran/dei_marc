@@ -40,7 +40,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
             ),
             backgroundColor:
                 widget.appBarColor, // Use the passed color for the AppBar
-            toolbarHeight: 75.0,
             title: Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               IconButton(
