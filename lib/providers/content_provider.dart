@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:dei_marc/models/content_item.dart';
 import 'package:dei_marc/config/asset_paths.dart';
 
-class ContentProvider with ChangeNotifier {
+class ContentProvider extends ChangeNotifier {
   final Map<String, List<ContentItem>> _contents = {};
 
   Map<String, List<ContentItem>> get contents => _contents;
@@ -24,6 +24,7 @@ class ContentProvider with ChangeNotifier {
             description: data['description'],
             heading: null, // No heading in this case
             content: [], // Empty content list
+            image: _parseImagePath(data['image']), // Parse image path
           ),
         ];
       } else {
@@ -33,6 +34,7 @@ class ContentProvider with ChangeNotifier {
             description: data['description'],
             heading: null,
             content: [],
+            image: _parseImagePath(data['image']), // Parse image path
           ),
           ...data['content'].map<ContentItem>((item) {
             return ContentItem.fromJson(item);
@@ -44,5 +46,17 @@ class ContentProvider with ChangeNotifier {
       _contents['$categoryId-$subcategoryId'] = [];
     }
     notifyListeners();
+  }
+
+  String? _parseImagePath(List<dynamic>? imageData) {
+    if (imageData != null && imageData.isNotEmpty) {
+      final imageEntry = imageData.firstWhere(
+          (element) => element['type'] == 'image',
+          orElse: () => null);
+      if (imageEntry != null) {
+        return imageEntry['text'];
+      }
+    }
+    return null;
   }
 }

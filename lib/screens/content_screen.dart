@@ -72,30 +72,36 @@ class _ContentScreenState extends State<ContentScreen> {
     }
   }
 
+  Widget _buildImage(String? imageName) {
+    if (imageName == null) return SizedBox.shrink();
+
+    final configProvider = Provider.of<ConfigProvider>(context, listen: false);
+    final imagePath = configProvider.getImagePath(imageName);
+
+    if (imagePath != null) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Image.asset(
+          'assets/$imagePath',
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) {
+            return Text('Image not found');
+          },
+        ),
+      );
+    } else {
+      return Text('Image not found');
+    }
+  }
+
   Widget _buildContentItem(ContentItem contentItem) {
     if (contentItem.content.isEmpty) return Container();
-
-    final configProvider = ConfigProvider(); // Get the config provider instance
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: contentItem.content.map((quote) {
         if (quote.type == 'image') {
-          final imagePath = configProvider.getImagePath(quote.text);
-          if (imagePath != null) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Image.asset(
-                'assets/$imagePath',
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return Text('Image not found');
-                },
-              ),
-            );
-          } else {
-            return Text('Image not found');
-          }
+          return _buildImage(quote.text);
         } else if (quote.type == 'bullet') {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 4.0),
@@ -200,7 +206,8 @@ class _ContentScreenState extends State<ContentScreen> {
                           const SizedBox(width: 18.0),
                           Expanded(
                             child: Text(
-                              Helpers.capitalizeTitle(widget.categoryName).toUpperCase(),
+                              Helpers.capitalizeTitle(widget.categoryName)
+                                  .toUpperCase(),
                               style: TextStyles.heading.copyWith(
                                 color: Colors.black,
                               ),
@@ -233,6 +240,8 @@ class _ContentScreenState extends State<ContentScreen> {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            if (firstItem.image != null)
+                              _buildImage(firstItem.image),
                             if (firstItem.description != null &&
                                 firstItem.description!.isNotEmpty)
                               Padding(
@@ -248,7 +257,8 @@ class _ContentScreenState extends State<ContentScreen> {
                             _buildContentItem(firstItem),
                             ...contents.skip(1).map((contentItem) {
                               return Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 8.0),
                                 child: _buildContentItem(contentItem),
                               );
                             }).toList(),
@@ -279,7 +289,8 @@ class _ContentScreenState extends State<ContentScreen> {
       isDismissible: true,
       builder: (context) {
         return JumpToCategory(
-          categoryName: '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
+          categoryName:
+              '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
           subcategories: subcategories,
           onCategorySelected: (index) {
             Navigator.pop(context);

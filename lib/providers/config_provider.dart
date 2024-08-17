@@ -1,7 +1,8 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class ConfigProvider {
+class ConfigProvider extends ChangeNotifier {
   static final ConfigProvider _instance = ConfigProvider._internal();
 
   factory ConfigProvider() {

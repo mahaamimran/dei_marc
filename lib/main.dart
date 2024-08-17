@@ -12,8 +12,6 @@ import 'package:dei_marc/providers/bookmark_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await ConfigProvider().loadConfig(); 
-
   runApp(const MyApp());
 }
 
@@ -30,6 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => SettingsProvider()),
         ChangeNotifierProvider(create: (_) => ContentProvider()),
         ChangeNotifierProvider(create: (_) => SubcategoryProvider()),
+        ChangeNotifierProvider(create: (_) => ConfigProvider()..loadConfig()),
         // Add any other providers if needed
       ],
       child: MaterialApp(
