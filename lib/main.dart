@@ -1,3 +1,4 @@
+import 'package:dei_marc/providers/config_provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
@@ -9,8 +10,10 @@ import 'package:dei_marc/providers/book_provider.dart';
 import 'package:dei_marc/providers/category_provider.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ConfigProvider().loadConfig(); 
 
-void main() {
   runApp(const MyApp());
 }
 
@@ -27,14 +30,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => SettingsProvider()),
         ChangeNotifierProvider(create: (_) => ContentProvider()),
         ChangeNotifierProvider(create: (_) => SubcategoryProvider()),
-
-        // add a;; rpoviders
+        // Add any other providers if needed
       ],
       child: MaterialApp(
         title: 'DEI MARC',
         home: const SplashScreen(),
         routes: {
-          // not home screen, tab bar screen consists of home screen
           '/home': (context) => const TabBarScreen(),
         },
         debugShowCheckedModeBanner: false,

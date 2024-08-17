@@ -1,6 +1,8 @@
 import 'package:dei_marc/config/color_constants.dart';
 import 'package:dei_marc/helpers/helpers.dart';
+import 'package:dei_marc/models/content_item.dart';
 import 'package:dei_marc/models/subcategory.dart';
+import 'package:dei_marc/providers/config_provider.dart';
 import 'package:dei_marc/widgets/jump_to_category.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -60,14 +62,82 @@ class _ContentScreenState extends State<ContentScreen> {
     final key = _keyMap['${widget.bookId}-${widget.categoryId}-$index'];
     if (key != null && key.currentContext != null) {
       final RenderBox box = key.currentContext!.findRenderObject() as RenderBox;
-      final position = box.localToGlobal(Offset.zero).dy + _scrollController.offset;
+      final position = box.localToGlobal(Offset.zero, ancestor: context.findRenderObject());
 
       _scrollController.animateTo(
-        position,
+        _scrollController.offset + position.dy - kToolbarHeight,
         duration: const Duration(seconds: 1),
         curve: Curves.easeInOut,
       );
     }
+  }
+
+  Widget _buildContentItem(ContentItem contentItem) {
+    if (contentItem.content.isEmpty) return Container();
+
+    final configProvider = ConfigProvider(); // Get the config provider instance
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: contentItem.content.map((quote) {
+        if (quote.type == 'image') {
+          final imagePath = configProvider.getImagePath(quote.text);
+          if (imagePath != null) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Image.asset(
+                'assets/$imagePath',
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Text('Image not found');
+                },
+              ),
+            );
+          } else {
+            return Text('Image not found');
+          }
+        } else if (quote.type == 'bullet') {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text("• "),
+                Expanded(
+                  child: Text(
+                    quote.text,
+                    style: TextStyles.caption.copyWith(
+                      color: Colors.grey[800],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        } else if (quote.type == 'quote') {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
+            child: Text(
+              quote.text,
+              style: TextStyles.caption.copyWith(
+                color: Colors.grey[800],
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          );
+        } else {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
+            child: Text(
+              quote.text,
+              style: TextStyles.caption.copyWith(
+                color: Colors.grey[800],
+              ),
+            ),
+          );
+        }
+      }).toList(),
+    );
   }
 
   @override
@@ -117,7 +187,6 @@ class _ContentScreenState extends State<ContentScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (index == 0) ...[
-                      // Display the category name with a line on the left
                       Row(
                         children: [
                           Container(
@@ -143,7 +212,6 @@ class _ContentScreenState extends State<ContentScreen> {
                       ),
                     ],
                     const SizedBox(height: 16),
-                    // Display subcategory name for each subcategory
                     Text(
                       Helpers.capitalizeTitle(subcategory.name),
                       style: TextStyles.heading.copyWith(
@@ -160,7 +228,6 @@ class _ContentScreenState extends State<ContentScreen> {
                           return const Text('No content available.');
                         }
 
-                        // Display the description and contents
                         final firstItem = contents.first;
 
                         return Column(
@@ -178,34 +245,11 @@ class _ContentScreenState extends State<ContentScreen> {
                                   ),
                                 ),
                               ),
+                            _buildContentItem(firstItem),
                             ...contents.skip(1).map((contentItem) {
                               return Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    if (contentItem.heading != null)
-                                      Text(
-                                        Helpers.capitalizeTitle(
-                                            contentItem.heading!),
-                                        style: TextStyles.title,
-                                      ),
-                                    const SizedBox(height: 8.0),
-                                    ...contentItem.content.map((quote) {
-                                      return Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 4.0),
-                                        child: Text(
-                                          quote.text,
-                                          style: TextStyles.caption.copyWith(
-                                            color: Colors.grey[800],
-                                          ),
-                                        ),
-                                      );
-                                    }).toList(),
-                                  ],
-                                ),
+                                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                child: _buildContentItem(contentItem),
                               );
                             }).toList(),
                           ],
