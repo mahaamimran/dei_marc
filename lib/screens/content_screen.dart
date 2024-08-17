@@ -100,47 +100,69 @@ class _ContentScreenState extends State<ContentScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: contentItem.content.map((quote) {
-        if (quote.type == 'image') {
-          return _buildImage(quote.text);
-        } else if (quote.type == 'bullet') {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text("• "),
-                Expanded(
-                  child: Text(
-                    quote.text,
-                    style: TextStyles.caption.copyWith(
-                      color: Colors.grey[800],
+        switch (quote.type) {
+          case 'image':
+            return _buildImage(quote.text);
+          case 'bullet':
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text("• "),
+                  Expanded(
+                    child: Text(
+                      quote.text,
+                      style: TextStyles.caption.copyWith(
+                        color: Colors.grey[800],
+                      ),
                     ),
                   ),
+                ],
+              ),
+            );
+          case 'subheading':
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Text(
+                quote.text,
+                style: TextStyles.subheading.copyWith(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
                 ),
-              ],
-            ),
-          );
-        } else if (quote.type == 'quote') {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4.0),
-            child: Text(
-              quote.text,
-              style: TextStyles.caption.copyWith(
-                color: Colors.grey[800],
-                fontStyle: FontStyle.italic,
               ),
-            ),
-          );
-        } else {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4.0),
-            child: Text(
-              quote.text,
-              style: TextStyles.caption.copyWith(
-                color: Colors.grey[800],
+            );
+          case 'paragraph':
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0),
+              child: Text(
+                quote.text,
+                style: TextStyles.caption.copyWith(
+                  color: Colors.grey[800],
+                ),
               ),
-            ),
-          );
+            );
+          case 'video':
+            // Implement video widget or return a placeholder for now
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Text(
+                "Video: ${quote.text}",
+                style: TextStyles.caption.copyWith(
+                  color: Colors.blue,
+                ),
+              ),
+            );
+          default:
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0),
+              child: Text(
+                quote.text,
+                style: TextStyles.caption.copyWith(
+                  color: Colors.grey[800],
+                ),
+              ),
+            );
         }
       }).toList(),
     );
@@ -149,6 +171,7 @@ class _ContentScreenState extends State<ContentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white, // Set background color to white
       appBar: AppBar(
         backgroundColor: widget.appBarColor,
         foregroundColor: Colors.white,
