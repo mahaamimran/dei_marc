@@ -5,7 +5,7 @@ class ContentItem {
   final String? description;
   final String? heading;
   final List<Quote> content;
-  final String? image; // Add image field
+  final String? image;
 
   ContentItem({
     this.category,
@@ -16,16 +16,20 @@ class ContentItem {
   });
 
   factory ContentItem.fromJson(Map<String, dynamic> json) {
-    var contentList = (json['content'] as List?)
-        ?.map((i) => Quote.fromJson(i))
-        .toList() ?? [];
-
     return ContentItem(
       category: json['category'],
       description: json['description'],
       heading: json['heading'],
-      content: contentList,
-      image: null, // Handle image parsing in ContentProvider
+      content: (json['content'] as List<dynamic>?)
+              ?.map((quoteJson) => Quote.fromJson(quoteJson))
+              .toList() ??
+          [],
+      image: (json['image'] as List<dynamic>?)
+              ?.firstWhere(
+                (img) => img['type'] == 'image',
+                orElse: () => null,
+              )?['text'],
     );
   }
 }
+

@@ -1,7 +1,4 @@
 import 'package:dei_marc/screens/bookmark_screen.dart';
-import 'package:dei_marc/screens/splash_screen.dart';
-import 'package:dei_marc/screens/category_screen.dart';
-import 'package:dei_marc/screens/content_screen.dart';
 import 'package:dei_marc/screens/home_screen.dart';
 import 'package:dei_marc/screens/settings_screen.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,7 @@
 import 'package:dei_marc/config/color_constants.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/models/content_item.dart';
+import 'package:dei_marc/models/quote.dart';
 import 'package:dei_marc/models/subcategory.dart';
 import 'package:dei_marc/providers/config_provider.dart';
 import 'package:dei_marc/widgets/jump_to_category.dart';
@@ -48,12 +49,27 @@ class _ContentScreenState extends State<ContentScreen> {
         Provider.of<SubcategoryProvider>(context, listen: false);
     final contentProvider =
         Provider.of<ContentProvider>(context, listen: false);
+    final configProvider = Provider.of<ConfigProvider>(context, listen: false);
 
     subcategoryProvider
         .loadSubcategories(widget.bookId, widget.categoryId)
         .then((_) {
       for (int i = 0; i < subcategoryProvider.subcategories.length; i++) {
-        contentProvider.loadContent(widget.bookId, widget.categoryId, i + 1);
+        contentProvider
+            .loadContent(widget.bookId, widget.categoryId, i + 1)
+            .then((_) {
+          // Precache images for this content
+          final contents =
+              contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
+          for (var content in contents) {
+            if (content.image != null) {
+              final imagePath = configProvider.getImagePath(content.image!);
+              if (imagePath != null) {
+                precacheImage(AssetImage('assets/$imagePath'), context);
+              }
+            }
+          }
+        });
       }
     });
   }
@@ -62,7 +78,8 @@ class _ContentScreenState extends State<ContentScreen> {
     final key = _keyMap['${widget.bookId}-${widget.categoryId}-$index'];
     if (key != null && key.currentContext != null) {
       final RenderBox box = key.currentContext!.findRenderObject() as RenderBox;
-      final position = box.localToGlobal(Offset.zero, ancestor: context.findRenderObject());
+      final position =
+          box.localToGlobal(Offset.zero, ancestor: context.findRenderObject());
 
       _scrollController.animateTo(
         _scrollController.offset + position.dy - kToolbarHeight,
@@ -100,78 +117,94 @@ class _ContentScreenState extends State<ContentScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: contentItem.content.map((quote) {
-        switch (quote.type) {
-          case 'image':
-            return _buildImage(quote.text);
-          case 'bullet':
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text("• "),
-                  Expanded(
-                    child: Text(
-                      quote.text,
-                      style: TextStyles.caption.copyWith(
-                        color: Colors.grey[800],
-                      ),
-                    ),
+        if (quote.type == 'subheading') {
+          // Render subheading and its nested content
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Text(
+                  quote.text,
+                  style: TextStyles.subheading.copyWith(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
-              ),
-            );
-          case 'subheading':
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                quote.text,
-                style: TextStyles.subheading.copyWith(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
                 ),
               ),
-            );
-          case 'paragraph':
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0),
-              child: Text(
-                quote.text,
-                style: TextStyles.caption.copyWith(
-                  color: Colors.grey[800],
-                ),
-              ),
-            );
-          case 'video':
-            // Implement video widget or return a placeholder for now
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                "Video: ${quote.text}",
-                style: TextStyles.caption.copyWith(
-                  color: Colors.blue,
-                ),
-              ),
-            );
-          default:
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0),
-              child: Text(
-                quote.text,
-                style: TextStyles.caption.copyWith(
-                  color: Colors.grey[800],
-                ),
-              ),
-            );
+              // Render nested content (e.g., bullets)
+              ...?quote.content?.map((nestedQuote) {
+                return _buildQuote(nestedQuote);
+              }).toList(),
+            ],
+          );
+        } else {
+          return _buildQuote(quote);
         }
       }).toList(),
     );
   }
 
+  Widget _buildQuote(Quote quote) {
+    switch (quote.type) {
+      case 'image':
+        return _buildImage(quote.text);
+      case 'bullet':
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text("• "),
+              Expanded(
+                child: Text(
+                  quote.text,
+                  style: TextStyles.caption.copyWith(
+                    color: Colors.grey[800],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      case 'paragraph':
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4.0),
+          child: Text(
+            quote.text,
+            style: TextStyles.caption.copyWith(
+              color: Colors.grey[800],
+            ),
+          ),
+        );
+      case 'subheading':
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Text(
+            quote.text,
+            style: TextStyles.subheading.copyWith(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        );
+      default:
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4.0),
+          child: Text(
+            quote.text,
+            style: TextStyles.caption.copyWith(
+              color: Colors.grey[800],
+            ),
+          ),
+        );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Set background color to white
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: widget.appBarColor,
         foregroundColor: Colors.white,
@@ -234,7 +267,7 @@ class _ContentScreenState extends State<ContentScreen> {
                               style: TextStyles.heading.copyWith(
                                 color: Colors.black,
                               ),
-                              maxLines: 2,
+                              maxLines: 3,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
