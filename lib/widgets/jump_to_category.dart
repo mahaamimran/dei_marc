@@ -25,6 +25,7 @@ class JumpToCategory extends StatelessWidget {
         color: backgroundColor,
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               width: 50,
@@ -35,12 +36,15 @@ class JumpToCategory extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            Text(
-              categoryName,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child: Text(
+                categoryName,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -79,7 +83,7 @@ class JumpToCategory extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Row(
                             children: [
-                              SizedBox(width: 10,),
+                              const SizedBox(width: 10),
                               Container(
                                 width: 5,
                                 height: 30,
@@ -109,7 +113,7 @@ class JumpToCategory extends StatelessWidget {
                         thickness: 1,
                         color: Colors.grey,
                       ),
-                      SizedBox(height: 8,)
+                      const SizedBox(height: 8),
                     ],
                   );
                 },

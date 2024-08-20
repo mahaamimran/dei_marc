@@ -345,8 +345,7 @@ class _ContentScreenState extends State<ContentScreen> {
       isDismissible: true,
       builder: (context) {
         return JumpToCategory(
-          categoryName:
-              '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
+          categoryName: widget.categoryName,
           subcategories: subcategories,
           onCategorySelected: (index) {
             Navigator.pop(context);
