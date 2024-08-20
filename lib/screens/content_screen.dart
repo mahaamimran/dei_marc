@@ -188,6 +188,24 @@ class _ContentScreenState extends State<ContentScreen> {
             ),
           ),
         );
+      case 'quote':
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4.0),
+          child: Text(
+            "\"${quote.text}\"",
+            style: TextStyles.caption.copyWith(color: Colors.grey[800]),
+          ),
+        );
+      case 'heading':
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4.0),
+          child: Text(
+            quote.text,
+            style: TextStyles.caption.copyWith(color: Colors.grey[800]),
+          ),
+        );
+      
+
       default:
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 4.0),
