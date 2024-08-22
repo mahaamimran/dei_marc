@@ -1,42 +1,103 @@
 {
-    "category": "book3_cat3",
+    "category": "Women in STEM",
     "subcategory": "Caselet | Gender Disparities In Stem | 25 Min",
     "description": "",
     "content": [
+        {
+            "heading":"Description",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"TechOne is a leading tech company offering artificial intelligence solutions to its users. It is committed to fostering an inclusive environment and Recognizes the value of a diverse workforce. In spite of this, TechOne’s HR team faces two significant challenges in achieving DEI goals. The number of female applicants remains low despite extensive advertising on the company's website, LinkedIn, and social media. Secondly, fewer women are interested in careers in STEM or technical fields, including data scientists and software engineers. Accordingly, several initiatives have been implemented by the company in an effort to recruit and retain female candidates:"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Interacting with potential candidates and showcasing the company's values, culture, and initiatives at employment fairs and events."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Providing competitive compensation, perks, and flexible schedules along with professional advancement opportunities."
+                },
+                {
+                    "type":"paragraph",
+                    "text":"The HR department has not met its expectations regarding gender diversity, particularly in technical positions, despite these efforts.\nPlease find attached a sample advertisement for TechOne."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Job Advertisement: Senior Software Engineer"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Join our team if you enjoy the challenges of cutting-edge technology and thrive in a fast-paced environment!\nWe are seeking a Senior Software Engineer to join our team. This role requires you to lead initiatives, foster innovation, and deliver exceptional results. We are seeking highly qualified and experienced technical professionals who strive to push the limits of technology."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Requirements:"
+                },
+                {
+                    "type":"bullet",
+                    "text":"A minimum of five years of software development experience in a dynamic environment."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Bachelor's degree in computer science or a related field is required, but advanced degrees are preferred."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Exceptional leadership skills, and being able to take charge."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Ability to meet deadlines and perform well under pressure."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Perks"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Competitive pay, benefits, and growth opportunities."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Fast-paced, dynamic environment."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Collaborative team culture that motivates each person to succeed"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Note: Extended working hours and weekend commitments may be required. Candidate should be prepared to prioritize work over personal commitments when necessary. Male applicants will be preferred for this position."
+                }
+            ]
+        },
         {
             "heading": "Learning Outcomes",
             "content": [
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Recognize the importance of diversity in the workplace:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will develop an understanding of the significance of diversity, equity, and inclusion (DEI) in fostering an innovative work environment. They will grasp the benefits of having a diverse workforce, including improved problem-solving, creativity, and organizational performance."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Identify barriers to gender diversity in technical fields: "
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Participants will learn to identify common obstacles that hinder gender diversity in technical job applications, particularly in fields like software engineering and data science. They will explore societal stereotypes, cultural biases, and structural barriers that may discourage women from pursuing careers in STEM-related roles."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Develop strategies to promote gender diversity in recruitment and retention:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
-                },
-                {
-                    "type": "subheading",
-                    "text": ""
-                },
-                {
-                    "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will acquire skills to design and implement inclusive recruitment and retention strategies aimed at attracting and retaining female talent in technical positions. They will explore methods such as inclusive language in job advertisements, targeted outreach to underrepresented groups, and creating supportive workplace cultures that value diversity and inclusion."
                 }
             ]
         },
@@ -45,19 +106,11 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "What factors may influence women's decision to apply for technical jobs at TechOne?"
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "To attract more female candidates for technical roles, what can HR do to improve its recruitment strategies and practices?"
                 }
             ]
         }

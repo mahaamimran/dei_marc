@@ -1,34 +1,42 @@
 {
-    "category": "book3_cat3",
+    "category": "Women in Stem",
     "subcategory": "Video | Women In Stem (#StemTheGap) | 10 Min",
-    "description": "",
+    "description": "The video portrays various scenarios where young girls encounter gender stereotypes and discouragement in pursuing STEM (Science, Technology, Engineering, Mathematics) fields. In the first scene, a girl is told by her father to aspire to be a film star instead of an astronaut, unlike her brother. The second scene shows a girl who single-handedly completes a science project, only for her male peer to initially receive the credit. In the third scene, a mother criticizes her daughter's creative robot costume, preferring traditional princess attire. The final scene depicts a father discouraging his daughter from helping with a mechanical task, suggesting it's unsuitable for her. Each scenario highlights the subtle ways gender biases can undermine girls' interests and confidence in STEM activities.",
     "content": [
         {
             "heading": "Learning Outcomes",
             "content": [
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Recognising gender stereotypes in everyday situations: "
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will learn to identify common gender stereotypes, particularly those that discourage women and girls from pursuing STEM (science, technology, engineering, and mathematics) careers. "
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Understanding the impact of stereotyping on career choices:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Participants will explore how early exposure to gender stereotyping can influence the educational and career choices of young women. This includes examining the long-term effects of discouraging girls from engaging in science and technology-related activities."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Promoting gender inclusivity in education and parenting:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Learners will gain insights into how educators, parents, and community leaders can support and encourage girls to pursue interests in STEM fields. This outcome focuses on strategies to counteract stereotypical expectations and to provide equal opportunities for all children, regardless of gender."
+                },
+                {
+                    "type": "subheading",
+                    "text": "Empowering women and girls in STEM:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Participants will explore practical ways to empower women and girls to pursue and succeed in STEM careers. This includes creating supportive environments, mentoring programs, and showcasing role models who exemplify diverse success stories in STEM."
                 }
             ]
         },
@@ -37,19 +45,19 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "What stereotypes about gender roles are depicted in each scene of the video? How do these stereotypes potentially influence the aspirations and behaviors of young girls and boys differently?"
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "How might the responses from the adults in the video affect the self-esteem and confidence of the girls involved in STEM activities? Discuss the possible long-term impacts on their educational and career choices."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "How do cultural expectations about gender roles contribute to the reactions of the adults in the video? Discuss how cultural shifts could help change the narrative around girls and women in STEM."
                 },
                 {
                     "type": "link",
-                    "text": ""
+                    "text": "Have you ever witnessed or experienced similar situations to those depicted in the video? How did they make you feel, and what was the outcome?"
                 }
             ]
         }
