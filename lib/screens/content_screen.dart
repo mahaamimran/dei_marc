@@ -58,7 +58,6 @@ class _ContentScreenState extends State<ContentScreen> {
         contentProvider
             .loadContent(widget.bookId, widget.categoryId, i + 1)
             .then((_) {
-          // Precache images for this content
           final contents =
               contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
           for (var content in contents) {
@@ -77,12 +76,8 @@ class _ContentScreenState extends State<ContentScreen> {
   void _scrollToIndex(int index) {
     final key = _keyMap['${widget.bookId}-${widget.categoryId}-$index'];
     if (key != null && key.currentContext != null) {
-      final RenderBox box = key.currentContext!.findRenderObject() as RenderBox;
-      final position =
-          box.localToGlobal(Offset.zero, ancestor: context.findRenderObject());
-
-      _scrollController.animateTo(
-        _scrollController.offset + position.dy - kToolbarHeight,
+      Scrollable.ensureVisible(
+        key.currentContext!,
         duration: const Duration(seconds: 1),
         curve: Curves.easeInOut,
       );
@@ -118,7 +113,6 @@ class _ContentScreenState extends State<ContentScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: contentItem.content.map((quote) {
         if (quote.type == 'subheading') {
-          // Render subheading and its nested content
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -132,7 +126,6 @@ class _ContentScreenState extends State<ContentScreen> {
                   ),
                 ),
               ),
-              // Render nested content (e.g., bullets)
               ...?quote.content?.map((nestedQuote) {
                 return _buildQuote(nestedQuote);
               }).toList(),
@@ -204,8 +197,6 @@ class _ContentScreenState extends State<ContentScreen> {
             style: TextStyles.caption.copyWith(color: Colors.grey[800]),
           ),
         );
-      
-
       default:
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 4.0),
@@ -291,8 +282,22 @@ class _ContentScreenState extends State<ContentScreen> {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 16),
                     ],
-                    const SizedBox(height: 16),
+                    // Image before subcategory title
+                    Consumer<ContentProvider>(
+                      builder: (context, contentProvider, child) {
+                        final contents = contentProvider.contents[
+                                '${widget.categoryId}-${index + 1}'] ??
+                            [];
+
+                        if (contents.isNotEmpty && contents.first.image != null) {
+                          return _buildImage(contents.first.image);
+                        }
+
+                        return SizedBox.shrink();
+                      },
+                    ),
                     Text(
                       Helpers.capitalizeTitle(subcategory.name),
                       style: TextStyles.heading.copyWith(
@@ -314,8 +319,6 @@ class _ContentScreenState extends State<ContentScreen> {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (firstItem.image != null)
-                              _buildImage(firstItem.image),
                             if (firstItem.description != null &&
                                 firstItem.description!.isNotEmpty)
                               Padding(
@@ -339,6 +342,10 @@ class _ContentScreenState extends State<ContentScreen> {
                           ],
                         );
                       },
+                    ),
+                    Divider(
+                      color: widget.secondaryColor,
+                      thickness: 0.5,
                     ),
                   ],
                 ),
