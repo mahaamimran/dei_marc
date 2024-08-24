@@ -22,7 +22,7 @@ class ContentProvider extends ChangeNotifier {
           ContentItem(
             category: data['category'],
             description: data['description'],
-            heading: null, // No heading in this case
+            heading: data['heading'], // Capture the heading if it exists
             content: [], // Empty content list
             image: _parseImagePath(data['image']), // Parse image path
           ),
@@ -32,7 +32,7 @@ class ContentProvider extends ChangeNotifier {
           ContentItem(
             category: data['category'],
             description: data['description'],
-            heading: null,
+            heading: data['heading'],
             content: [],
             image: _parseImagePath(data['image']), // Parse image path
           ),

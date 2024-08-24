@@ -111,30 +111,43 @@ class _ContentScreenState extends State<ContentScreen> {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: contentItem.content.map((quote) {
-        if (quote.type == 'subheading') {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Text(
-                  quote.text,
-                  style: TextStyles.subheading.copyWith(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
+      children: [
+        if (contentItem.heading != null && contentItem.heading!.isNotEmpty)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              contentItem.heading!,
+              style: TextStyles.title.copyWith(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ...contentItem.content.map((quote) {
+          if (quote.type == 'subheading') {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Text(
+                    quote.text,
+                    style: TextStyles.subheading.copyWith(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              ...?quote.content?.map((nestedQuote) {
-                return _buildQuote(nestedQuote);
-              }).toList(),
-            ],
-          );
-        } else {
-          return _buildQuote(quote);
-        }
-      }).toList(),
+                ...?quote.content?.map((nestedQuote) {
+                  return _buildQuote(nestedQuote);
+                }).toList(),
+              ],
+            );
+          } else {
+            return _buildQuote(quote);
+          }
+        }).toList(),
+      ],
     );
   }
 
@@ -291,7 +304,8 @@ class _ContentScreenState extends State<ContentScreen> {
                                 '${widget.categoryId}-${index + 1}'] ??
                             [];
 
-                        if (contents.isNotEmpty && contents.first.image != null) {
+                        if (contents.isNotEmpty &&
+                            contents.first.image != null) {
                           return _buildImage(contents.first.image);
                         }
 
