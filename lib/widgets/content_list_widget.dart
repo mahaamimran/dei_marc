@@ -231,15 +231,75 @@ class ContentListWidget extends StatelessWidget {
   }
 
   Widget _buildQuote(Quote quote, BuildContext context, double fontSize) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: Text(
-        Helpers.capitalizeTitle(quote.text),
-        style: TextStyle(
-          fontSize: fontSize, // Base text size
-          color: Colors.grey[800],
+    // Determine if the quote is a bullet or a standard quote
+    if (quote.type == 'bullet') {
+      // Handle bullet points
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text("• ", style: TextStyle(fontSize: 20)),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                quote.text,
+                style: TextStyle(
+                  fontSize: fontSize, // Base text size
+                  color: Colors.grey[800],
+                ),
+              ),
+            ),
+          ],
         ),
-      ),
-    );
+      );
+    } else if (quote.type == 'quote') {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border(
+              left: BorderSide(
+                color: Colors.grey.shade400,
+                width: 4,
+              ),
+            ),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Icon(
+                Icons.format_quote_rounded,
+                size: 20,
+                color: Colors.grey,
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  quote.text,
+                  style: TextStyle(
+                    fontSize: fontSize,
+                    color: Colors.grey[800],
+                   //fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    } else {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4.0),
+        child: Text(
+          Helpers.capitalizeTitle(quote.text),
+          style: TextStyle(
+            fontSize: fontSize, // Base text size
+            color: Colors.grey[800],
+          ),
+        ),
+      );
+    }
   }
 }
