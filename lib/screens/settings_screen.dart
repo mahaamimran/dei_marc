@@ -11,28 +11,27 @@ class SettingsScreen extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => SettingsProvider(),
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          // flexibleSpace: Container(
-          //   decoration: const BoxDecoration(
-          //     gradient: LinearGradient(
-          //       begin: Alignment.topLeft,
-          //       end: Alignment.bottomLeft,
-          //       colors: [
-          //         Color(0xFFB52556),
-          //         Color.fromARGB(255, 108, 160, 166),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-          title: Text(
-            'Settings',
-            style:
-                TextStyles.appBarTitle.copyWith(color: Colors.black), // Change text color to black
+       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomLeft,
+              colors: [
+                Color(0xFFB52556),
+                Color.fromARGB(255, 108, 160, 166),
+              ],
+            ),
           ),
-          backgroundColor: Colors.transparent,
-          toolbarHeight: 80.0, // Change this value to adjust AppBar height
         ),
+        title: Text(
+          'Settings',
+          style: TextStyles.appBarTitle
+              .copyWith(color: const Color.fromARGB(255, 248, 246, 246)),
+        ),
+        backgroundColor: Colors.transparent,
+      ),
         body: Consumer<SettingsProvider>(
           builder: (context, settingsProvider, child) {
             return ListView(
@@ -98,7 +97,6 @@ class SettingsScreen extends StatelessWidget {
       ),
     );
   }
-
 
   Widget _buildNavigationTile(BuildContext context,
       {required String title,

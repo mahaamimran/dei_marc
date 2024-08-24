@@ -14,59 +14,60 @@ class BookmarksScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        // flexibleSpace: Container(
-        //   decoration: const BoxDecoration(
-        //     gradient: LinearGradient(
-        //       begin: Alignment.topLeft,
-        //       end: Alignment.bottomLeft,
-        //       colors: [
-        //         Color(0xFFB52556),
-        //         Color.fromARGB(255, 108, 160, 166),
-        //       ],
-        //     ),
-        //   ),
-        // ),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomLeft,
+              colors: [
+                Color(0xFFB52556),
+                Color.fromARGB(255, 108, 160, 166),
+              ],
+            ),
+          ),
+        ),
         title: Text(
           'Bookmarks',
-          style: TextStyles.appBarTitle.copyWith(color: Colors.black),
+          style: TextStyles.appBarTitle
+              .copyWith(color: const Color.fromARGB(255, 248, 246, 246)),
         ),
         backgroundColor: Colors.transparent,
       ),
       body: Column(
         children: [
-          // Container(
-          //   padding: const EdgeInsets.all(16.0),
-          //   child: Row(
-          //     children: [
-          //       Expanded(
-          //         child: Consumer<SettingsProvider>(
-          //           builder: (context, settingsProvider, child) {
-          //             return TextField(
-          //               controller: bookmarkController,
-          //               decoration: const InputDecoration(
-          //                 labelText: 'Add a new bookmark',
-          //               ),
-          //               style: TextStyle(
-          //                 fontSize: settingsProvider.fontSize,
-          //               ),
-          //             );
-          //           },
-          //         ),
-          //       ),
-          //       IconButton(
-          //         icon: const Icon(Icons.add),
-          //         onPressed: () {
-          //           final newBookmark = bookmarkController.text;
-          //           if (newBookmark.isNotEmpty) {
-          //             Provider.of<BookmarkProvider>(context, listen: false)
-          //                 .addBookmark(newBookmark);
-          //             bookmarkController.clear();
-          //           }
-          //         },
-          //       ),
-          //     ],
-          //   ),
-          // ),
+          Container(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Consumer<SettingsProvider>(
+                    builder: (context, settingsProvider, child) {
+                      return TextField(
+                        controller: bookmarkController,
+                        decoration: const InputDecoration(
+                          labelText: 'Add a new bookmark',
+                        ),
+                        style: TextStyle(
+                          fontSize: settingsProvider.fontSize,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.add),
+                  onPressed: () {
+                    final newBookmark = bookmarkController.text;
+                    if (newBookmark.isNotEmpty) {
+                      Provider.of<BookmarkProvider>(context, listen: false)
+                          .addBookmark(newBookmark);
+                      bookmarkController.clear();
+                    }
+                  },
+                ),
+              ],
+            ),
+          ),
           Expanded(
             child: Consumer<BookmarkProvider>(
               builder: (context, bookmarkProvider, child) {

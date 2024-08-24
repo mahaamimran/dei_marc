@@ -14,6 +14,11 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     color: Colors.black,
   );
+  static const TextStyle subheading = TextStyle(
+ fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
 
   static const TextStyle title = TextStyle(
     fontSize: 18,

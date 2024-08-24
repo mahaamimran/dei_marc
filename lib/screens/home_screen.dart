@@ -49,15 +49,15 @@ class HomeScreen extends StatelessWidget {
                           index % ColorConstants.booksSecondary.length];
                       return GestureDetector(
                         onTap: () {
+                          print(book.bookId.toString());
+                          print('object');
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => CategoryScreen(
                                 bookFileName: book.bookId.toString(),
-                                appBarColor:
-                                    primaryColor, // Pass the primary color for the AppBar
-                                secondaryColor:
-                                    secondaryColor, // Pass the secondary color for the category boxes
+                                appBarColor: primaryColor,
+                                secondaryColor: secondaryColor,
                               ),
                             ),
                           );
@@ -70,9 +70,8 @@ class HomeScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Image.asset(ImageAssets.bookCovers[index %
-                                    ImageAssets.bookCovers
-                                        .length]), // % to avoid index out of bounds
+                                Image.asset(ImageAssets.bookCovers[
+                                    index % ImageAssets.bookCovers.length]),
                                 const SizedBox(height: 8.0),
                                 Text(
                                   book.title,
@@ -85,10 +84,6 @@ class HomeScreen extends StatelessWidget {
                                   style: TextStyles.caption,
                                 ),
                                 const SizedBox(height: 4.0),
-                                Text(
-                                  'Volume ${book.volume}',
-                                  style: TextStyles.caption,
-                                ),
                               ],
                             ),
                           ),

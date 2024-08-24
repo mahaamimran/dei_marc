@@ -1,13 +1,35 @@
 import 'package:dei_marc/models/quote.dart';
 
 class ContentItem {
-  final String heading;
+  final String? category;
+  final String? description;
+  final String? heading;
   final List<Quote> content;
+  final String? image;
 
-  ContentItem({required this.heading, required this.content});
+  ContentItem({
+    this.category,
+    this.description,
+    this.heading,
+    required this.content,
+    this.image,
+  });
 
   factory ContentItem.fromJson(Map<String, dynamic> json) {
-    var contentList = (json['content'] as List).map((i) => Quote.fromJson(i)).toList();
-    return ContentItem(heading: json['heading'], content: contentList);
+    return ContentItem(
+      category: json['category'],
+      description: json['description'],
+      heading: json['heading'],
+      content: (json['content'] as List<dynamic>?)
+              ?.map((quoteJson) => Quote.fromJson(quoteJson))
+              .toList() ??
+          [],
+      image: (json['image'] as List<dynamic>?)
+              ?.firstWhere(
+                (img) => img['type'] == 'image',
+                orElse: () => null,
+              )?['text'],
+    );
   }
 }
+

@@ -1,13 +1,15 @@
+import 'package:dei_marc/helpers/helpers.dart';
+import 'package:dei_marc/providers/category_provider.dart';
+import 'package:dei_marc/screens/content_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:dei_marc/providers/category_provider.dart';
-import 'package:dei_marc/config/text_styles.dart';
-import 'content_screen.dart';
+
+import '../config/text_styles.dart';
 
 class CategoryScreen extends StatefulWidget {
   final String bookFileName;
-  final Color appBarColor; // Add a parameter for the AppBar color
-  final Color secondaryColor; // Add a parameter for the secondary color
+  final Color appBarColor;
+  final Color secondaryColor;
 
   const CategoryScreen({
     super.key,
@@ -21,7 +23,7 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-  bool _isGridView = true; // Toggle for list/grid view
+  bool _isGridView = true;
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +32,15 @@ class _CategoryScreenState extends State<CategoryScreen> {
           CategoryProvider()..loadCategories(widget.bookFileName),
       child: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          )
-          ,
-            backgroundColor:
-                widget.appBarColor, // Use the passed color for the AppBar
-            //foregroundColor: BasicColors.appBarForeground,
-            title:  Text("Categories", style: TextStyles.appBarTitle),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                  color: Colors.white),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            backgroundColor: widget.appBarColor,
+            title: const Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               IconButton(
                 color: Colors.white,
@@ -51,8 +51,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   });
                 },
               ),
-            ])
-            ,
+            ]),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Consumer<CategoryProvider>(
@@ -86,12 +85,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => ContentScreen(
-                                        appBarColor: widget.appBarColor,
-                                        secondaryColor: widget.secondaryColor,
-                                        bookId: widget.bookFileName,
-                                        categoryId: index +
-                                            1, // Pass the index of the category
-                                      ),
+                                          appBarColor: widget.appBarColor,
+                                          secondaryColor: widget.secondaryColor,
+                                          bookId: widget.bookFileName,
+                                          categoryId: index + 1,
+                                          categoryName: category.name),
                                     ),
                                   );
                                 },
@@ -107,7 +105,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          _getTitle(widget.bookFileName),
+                                          '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
                                           style: TextStyles.caption.copyWith(
                                             fontWeight: FontWeight.bold,
                                             color: widget.appBarColor,
@@ -143,11 +141,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => ContentScreen(
-                                        appBarColor: widget.appBarColor,
-                                        secondaryColor: widget.secondaryColor,
-                                        bookId: widget.bookFileName,
-                                        categoryId: index + 1,
-                                      ),
+                                          appBarColor: widget.appBarColor,
+                                          secondaryColor: widget.secondaryColor,
+                                          bookId: widget.bookFileName,
+                                          categoryId: index + 1,
+                                          categoryName: category.name),
                                     ),
                                   );
                                 },
@@ -157,7 +155,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                       const EdgeInsets.symmetric(vertical: 8.0),
                                   child: ListTile(
                                     title: Text(
-                                      'Category ${index + 1}',
+                                      '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
                                       style: TextStyles.caption.copyWith(
                                         color: widget.appBarColor,
                                         fontWeight: FontWeight.bold,
@@ -182,18 +180,5 @@ class _CategoryScreenState extends State<CategoryScreen> {
         ),
       ),
     );
-  }
-  
-  String _getTitle(String bookFileName) {
-    switch (bookFileName) {
-      case 'book1':
-        return 'Categoru';
-      case 'book2':
-        return 'Group 2';
-      case 'book3':
-        return 'Book 3';
-      default:
-        return 'Book';
-    }
   }
 }
