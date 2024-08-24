@@ -8,10 +8,8 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => SettingsProvider(),
-      child: Scaffold(
-       appBar: AppBar(
+    return Scaffold(
+      appBar: AppBar(
         automaticallyImplyLeading: false,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -32,84 +30,42 @@ class SettingsScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-        body: Consumer<SettingsProvider>(
-          builder: (context, settingsProvider, child) {
-            return ListView(
-              padding: const EdgeInsets.all(
-                  8.0), // Padding around the entire ListView
+      body: Consumer<SettingsProvider>(
+        builder: (context, settingsProvider, child) {
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildFontSizeTile(context, settingsProvider),
-                //_buildNotificationsTile(context, settingsProvider),
-                _buildNavigationTile(
-                  context,
-                  title: 'Privacy Policy',
-                  icon: Icons.arrow_forward_ios,
-                  onTap: () {
-                    // Navigate to privacy policy screen or display modal
+                Text(
+                  'Font Size',
+                  style: TextStyles.heading.copyWith(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Slider(
+                  value: settingsProvider.fontSize,
+                  min: 14.0,
+                  max: 24.0,
+                  divisions: 10,
+                  label: settingsProvider.fontSize.round().toString(),
+                  onChanged: (double value) {
+                    settingsProvider.setFontSize(value);
                   },
                 ),
-                _buildNavigationTile(
-                  context,
-                  title: 'Copyrights',
-                  icon: Icons.arrow_forward_ios,
-                  onTap: () {
-                    // Navigate to copyrights screen or display modal
-                  },
-                ),
-                _buildNavigationTile(
-                  context,
-                  title: 'Share App',
-                  icon: Icons.share,
-                  onTap: () {
-                    // Implement sharing functionality
-                  },
+                SizedBox(height: 20),
+                Text(
+                  'Aa',
+                  style: TextStyle(
+                    fontSize: settingsProvider.fontSize,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
-            );
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget _buildFontSizeTile(
-      BuildContext context, SettingsProvider settingsProvider) {
-    return Padding(
-      padding:
-          const EdgeInsets.symmetric(vertical: 4.0), // Padding between tiles
-      child: ListTile(
-        tileColor: Colors.grey[200], // Light grey background color for the tile
-        title: const Text('Font size'),
-        trailing: DropdownButton<double>(
-          value: settingsProvider.fontSize,
-          items: [14.0, 16.0, 18.0, 20.0].map((double value) {
-            return DropdownMenuItem<double>(
-              value: value,
-              child: Text(value.toString()),
-            );
-          }).toList(),
-          onChanged: (value) {
-            if (value != null) {
-              settingsProvider.setFontSize(value);
-            }
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget _buildNavigationTile(BuildContext context,
-      {required String title,
-      required IconData icon,
-      required VoidCallback onTap}) {
-    return Padding(
-      padding:
-          const EdgeInsets.symmetric(vertical: 4.0), // Padding between tiles
-      child: ListTile(
-        tileColor: Colors.grey[200], // Light grey background color for the tile
-        title: Text(title),
-        trailing: Icon(icon),
-        onTap: onTap,
+            ),
+          );
+        },
       ),
     );
   }

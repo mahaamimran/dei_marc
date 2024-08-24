@@ -1,15 +1,15 @@
-import 'package:dei_marc/config/color_constants.dart';
+import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/helpers/helpers.dart';
-import 'package:dei_marc/models/content_item.dart';
-import 'package:dei_marc/models/quote.dart';
 import 'package:dei_marc/models/subcategory.dart';
-import 'package:dei_marc/providers/config_provider.dart';
+import 'package:dei_marc/widgets/content_list_widget.dart';
 import 'package:dei_marc/widgets/jump_to_category.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
-import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/providers/config_provider.dart';
+import 'package:dei_marc/config/color_constants.dart';
+import 'package:dei_marc/config/enums.dart'; // Assuming enums.dart contains DataStatus
 
 class ContentScreen extends StatefulWidget {
   final String bookId;
@@ -36,45 +36,43 @@ class _ContentScreenState extends State<ContentScreen> {
   final Map<String, GlobalKey> _keyMap = {};
 
   @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
-
-  @override
   void initState() {
     super.initState();
+    _initializeData();
+  }
 
+  Future<void> _initializeData() async {
     final subcategoryProvider =
         Provider.of<SubcategoryProvider>(context, listen: false);
     final contentProvider =
         Provider.of<ContentProvider>(context, listen: false);
     final configProvider = Provider.of<ConfigProvider>(context, listen: false);
 
-    subcategoryProvider
-        .loadSubcategories(widget.bookId, widget.categoryId)
-        .then((_) {
+    await subcategoryProvider.loadSubcategories(widget.bookId, widget.categoryId);
+
+    if (subcategoryProvider.dataStatus == DataStatus.loaded) {
       for (int i = 0; i < subcategoryProvider.subcategories.length; i++) {
-        contentProvider
-            .loadContent(widget.bookId, widget.categoryId, i + 1)
-            .then((_) {
+        await contentProvider.loadContent(widget.bookId, widget.categoryId, i + 1);
+
+        if (contentProvider.dataStatus == DataStatus.loaded) {
           final contents =
               contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
+
           for (var content in contents) {
             if (content.image != null) {
               final imagePath = configProvider.getImagePath(content.image!);
               if (imagePath != null) {
-                precacheImage(AssetImage('assets/$imagePath'), context);
+                await precacheImage(AssetImage('assets/$imagePath'), context);
               }
             }
           }
-        });
+        }
       }
-    });
+    }
   }
 
   void _scrollToIndex(int index) {
-    final key = _keyMap['${widget.bookId}-${widget.categoryId}-$index'];
+    final key = _keyMap['${widget.categoryId}-$index'];
     if (key != null && key.currentContext != null) {
       Scrollable.ensureVisible(
         key.currentContext!,
@@ -84,143 +82,10 @@ class _ContentScreenState extends State<ContentScreen> {
     }
   }
 
-  Widget _buildImage(String? imageName) {
-    if (imageName == null) return SizedBox.shrink();
-
-    final configProvider = Provider.of<ConfigProvider>(context, listen: false);
-    final imagePath = configProvider.getImagePath(imageName);
-
-    if (imagePath != null) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Image.asset(
-          'assets/$imagePath',
-          fit: BoxFit.cover,
-          errorBuilder: (context, error, stackTrace) {
-            return Text('Image not found');
-          },
-        ),
-      );
-    } else {
-      return Text('Image not found');
-    }
-  }
-
-  Widget _buildContentItem(ContentItem contentItem) {
-    if (contentItem.content.isEmpty) return Container();
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (contentItem.heading != null && contentItem.heading!.isNotEmpty)
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text(
-              contentItem.heading!,
-              style: TextStyles.title.copyWith(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ...contentItem.content.map((quote) {
-          if (quote.type == 'subheading') {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    quote.text,
-                    style: TextStyles.subheading.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                ...?quote.content?.map((nestedQuote) {
-                  return _buildQuote(nestedQuote);
-                }).toList(),
-              ],
-            );
-          } else {
-            return _buildQuote(quote);
-          }
-        }).toList(),
-      ],
-    );
-  }
-
-  Widget _buildQuote(Quote quote) {
-    switch (quote.type) {
-      case 'image':
-        return _buildImage(quote.text);
-      case 'bullet':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text("• "),
-              Expanded(
-                child: Text(
-                  quote.text,
-                  style: TextStyles.caption.copyWith(
-                    color: Colors.grey[800],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      case 'paragraph':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(
-            quote.text,
-            style: TextStyles.caption.copyWith(
-              color: Colors.grey[800],
-            ),
-          ),
-        );
-      case 'subheading':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text(
-            quote.text,
-            style: TextStyles.subheading.copyWith(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        );
-      case 'quote':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(
-            "\"${quote.text}\"",
-            style: TextStyles.caption.copyWith(color: Colors.grey[800]),
-          ),
-        );
-      case 'heading':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(
-            quote.text,
-            style: TextStyles.caption.copyWith(color: Colors.grey[800]),
-          ),
-        );
-      default:
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(
-            quote.text,
-            style: TextStyles.caption.copyWith(
-              color: Colors.grey[800],
-            ),
-          ),
-        );
-    }
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -248,124 +113,27 @@ class _ContentScreenState extends State<ContentScreen> {
           ),
         ],
       ),
-      body: Consumer<SubcategoryProvider>(
-        builder: (context, subcategoryProvider, child) {
-          if (subcategoryProvider.subcategories.isEmpty) {
+      body: Consumer2<SubcategoryProvider, ContentProvider>(
+        builder: (context, subcategoryProvider, contentProvider, child) {
+          if (subcategoryProvider.dataStatus == DataStatus.loading ||
+              contentProvider.dataStatus == DataStatus.loading) {
             return const Center(child: CircularProgressIndicator());
+          } else if (subcategoryProvider.dataStatus == DataStatus.failure ||
+              contentProvider.dataStatus == DataStatus.failure) {
+            return const Center(child: Text('Failed to load content.'));
+          } else if (subcategoryProvider.dataStatus == DataStatus.loaded &&
+              contentProvider.dataStatus == DataStatus.loaded) {
+            return ContentListWidget(
+              categoryId: widget.categoryId,
+              appBarColor: widget.appBarColor,
+              secondaryColor: widget.secondaryColor,
+              categoryName: widget.categoryName,
+              scrollController: _scrollController,
+              keyMap: _keyMap,
+            );
+          } else {
+            return const Center(child: Text('Something went wrong.'));
           }
-          _keyMap.clear();
-
-          return ListView.builder(
-            controller: _scrollController,
-            padding: const EdgeInsets.all(16.0),
-            itemCount: subcategoryProvider.subcategories.length,
-            itemBuilder: (context, index) {
-              final subcategory = subcategoryProvider.subcategories[index];
-              final key = GlobalKey();
-              _keyMap['${widget.bookId}-${widget.categoryId}-$index'] = key;
-
-              return Padding(
-                key: key,
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (index == 0) ...[
-                      Row(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 6,
-                            decoration: BoxDecoration(
-                              color: widget.appBarColor,
-                              borderRadius: BorderRadius.circular(3.0),
-                            ),
-                          ),
-                          const SizedBox(width: 18.0),
-                          Expanded(
-                            child: Text(
-                              Helpers.capitalizeTitle(widget.categoryName)
-                                  .toUpperCase(),
-                              style: TextStyles.heading.copyWith(
-                                color: Colors.black,
-                              ),
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 16),
-                    ],
-                    // Image before subcategory title
-                    Consumer<ContentProvider>(
-                      builder: (context, contentProvider, child) {
-                        final contents = contentProvider.contents[
-                                '${widget.categoryId}-${index + 1}'] ??
-                            [];
-
-                        if (contents.isNotEmpty &&
-                            contents.first.image != null) {
-                          return _buildImage(contents.first.image);
-                        }
-
-                        return SizedBox.shrink();
-                      },
-                    ),
-                    Text(
-                      Helpers.capitalizeTitle(subcategory.name),
-                      style: TextStyles.heading.copyWith(
-                        color: widget.appBarColor,
-                      ),
-                    ),
-                    Consumer<ContentProvider>(
-                      builder: (context, contentProvider, child) {
-                        final contents = contentProvider.contents[
-                                '${widget.categoryId}-${index + 1}'] ??
-                            [];
-
-                        if (contents.isEmpty) {
-                          return const Text('No content available.');
-                        }
-
-                        final firstItem = contents.first;
-
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (firstItem.description != null &&
-                                firstItem.description!.isNotEmpty)
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: Text(
-                                  firstItem.description!,
-                                  style: TextStyles.caption.copyWith(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            _buildContentItem(firstItem),
-                            ...contents.skip(1).map((contentItem) {
-                              return Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: _buildContentItem(contentItem),
-                              );
-                            }).toList(),
-                          ],
-                        );
-                      },
-                    ),
-                    Divider(
-                      color: widget.secondaryColor,
-                      thickness: 0.5,
-                    ),
-                  ],
-                ),
-              );
-            },
-          );
         },
       ),
     );
