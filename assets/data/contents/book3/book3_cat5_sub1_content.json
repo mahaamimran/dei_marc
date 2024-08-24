@@ -1,13 +1,13 @@
 {
-    "category": "book3_cat5",
-    "subcategory": "Activity | Hopes And Fears | 60 Min",
+    "category": "Work Life Balance | 2-2.5 hrs",
+    "subcategory": "Activity 1 | Hopes And Fears | 60 Min",
     "content": [
         {
             "heading": "Aim",
             "content": [
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "To create an opportunity for participants and trainers to share their expectations and anticipated challenges related to the training."
                 }
             ]
         },
@@ -16,20 +16,23 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "To express their personal expectations (hopes) and concerns (fears)."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                }
-            ]
-        },
-        {
-            "heading": "Materials Required",
-            "content": [
+                    "text": "To acknowledge and show respect for the hopes and worries of other participants."
+                },
                 {
-                    "type": "paragraph",
-                    "text": ""
+                    "type": "bullet",
+                    "text": "To promote involvement in discussions and activities to make sure that all voices are heard."
+                },
+                {
+                    "type": "bullet",
+                    "text": "To cultivate an environment of encouragement and inclusiveness among the group members."
+                },
+                {
+                    "type": "bullet",
+                    "text": "To understand what the activity is about and what results are expected."
                 }
             ]
         },
@@ -42,7 +45,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Participants need to take two pieces of paper in the first exercise. They should mark one sheet as \"Hopes\" and the other as \"Fears\". On these sheets, participants are encouraged to write brief phrases or sentences capturing their own hopes and fears about participating in this workshop.\nDuration: Ten minutes \nMaterials: Paper"
                 },
                 {
                     "type": "bold",
@@ -50,7 +53,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "In the second activity, instruct participants to organize their listed expectations (hopes) and concerns (fears) in order of importance, starting with the most important.\nDuration: Ten minutes "
                 },
                 {
                     "type": "bold",
@@ -58,7 +61,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "In third part of the session, invite participants to share what they have written. Ask volunteers to present their primary hope and write it on the whiteboard at the front of the room. Continue this process until everyone has had the opportunity to share. Following that, guide a discussion to explore both the similarities and differences in the hopes shared, examining the common patterns and the sets of opinions of the group members.\nDuration: Twenty-five minutes\nMaterials: White board"
                 },
                 {
                     "type": "bold",
@@ -66,7 +69,23 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "The fourth activity follows the same format as the third, but focuses on the participants discussing their fears instead.\nDuration: Twenty-five minutes"
+                },
+                {
+                    "type": "bold",
+                    "text": "Step 5: "
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In the fifth exercise, facilitate an open discussion regarding ways in which participants' hopes might be achieved both during the workshop and through activities outside of it.\nDuration: Ten minutes "
+                },
+                {
+                    "type": "bold",
+                    "text": "Step 6: "
+                },
+                {
+                    "type": "paragraph",
+                    "text": "For activity six, lead an open forum where the participants talk about their own fears and the ways to overcome them. Revisit the document that outlines the workshop’s objectives to resolve any confusion about the scheduled activities.\nDuration: Ten minutes \nMaterials: Transparency No. 1 outlining the Workshop objectives"
                 }
             ]
         },
@@ -75,7 +94,7 @@
             "content": [
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Track the engagement levels of both participants and trainers."
                 }
             ]
         }
