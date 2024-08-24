@@ -8,8 +8,8 @@ import '../config/text_styles.dart';
 
 class CategoryScreen extends StatefulWidget {
   final String bookFileName;
-  final Color appBarColor; // Add a parameter for the AppBar color
-  final Color secondaryColor; // Add a parameter for the secondary color
+  final Color appBarColor;
+  final Color secondaryColor;
 
   const CategoryScreen({
     super.key,
@@ -23,7 +23,7 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-  bool _isGridView = true; // Toggle for list/grid view
+  bool _isGridView = true;
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +33,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
       child: Scaffold(
         appBar: AppBar(
             leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+              icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                  color: Colors.white),
               onPressed: () {
                 Navigator.pop(context);
               },
             ),
-            backgroundColor:
-                widget.appBarColor, // Use the passed color for the AppBar
-            title: Text("Categories", style: TextStyles.appBarTitle),
+            backgroundColor: widget.appBarColor,
+            title: const Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               IconButton(
                 color: Colors.white,
@@ -85,12 +85,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => ContentScreen(
-                                        appBarColor: widget.appBarColor,
-                                        secondaryColor: widget.secondaryColor,
-                                        bookId: widget.bookFileName,
-                                        categoryId: index + 1,
-                                        categoryName: category.name
-                                      ),
+                                          appBarColor: widget.appBarColor,
+                                          secondaryColor: widget.secondaryColor,
+                                          bookId: widget.bookFileName,
+                                          categoryId: index + 1,
+                                          categoryName: category.name),
                                     ),
                                   );
                                 },
@@ -142,12 +141,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => ContentScreen(
-                                        appBarColor: widget.appBarColor,
-                                        secondaryColor: widget.secondaryColor,
-                                        bookId: widget.bookFileName,
-                                        categoryId: index + 1, 
-                                        categoryName: category.name
-                                      ),
+                                          appBarColor: widget.appBarColor,
+                                          secondaryColor: widget.secondaryColor,
+                                          bookId: widget.bookFileName,
+                                          categoryId: index + 1,
+                                          categoryName: category.name),
                                     ),
                                   );
                                 },
