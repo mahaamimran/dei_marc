@@ -9,7 +9,6 @@ import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/providers/config_provider.dart';
 import 'package:dei_marc/config/color_constants.dart';
-import 'package:dei_marc/config/enums.dart'; // Assuming enums.dart contains DataStatus
 
 class ContentScreen extends StatefulWidget {
   final String bookId;
@@ -34,6 +33,7 @@ class ContentScreen extends StatefulWidget {
 class _ContentScreenState extends State<ContentScreen> {
   final ScrollController _scrollController = ScrollController();
   final Map<String, GlobalKey> _keyMap = {};
+  bool _isLoading = true;
 
   @override
   void initState() {
@@ -50,25 +50,25 @@ class _ContentScreenState extends State<ContentScreen> {
 
     await subcategoryProvider.loadSubcategories(widget.bookId, widget.categoryId);
 
-    if (subcategoryProvider.dataStatus == DataStatus.loaded) {
-      for (int i = 0; i < subcategoryProvider.subcategories.length; i++) {
-        await contentProvider.loadContent(widget.bookId, widget.categoryId, i + 1);
+    for (int i = 0; i < subcategoryProvider.subcategories.length; i++) {
+      await contentProvider.loadContent(widget.bookId, widget.categoryId, i + 1);
 
-        if (contentProvider.dataStatus == DataStatus.loaded) {
-          final contents =
-              contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
+      final contents =
+          contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
 
-          for (var content in contents) {
-            if (content.image != null) {
-              final imagePath = configProvider.getImagePath(content.image!);
-              if (imagePath != null) {
-                await precacheImage(AssetImage('assets/$imagePath'), context);
-              }
-            }
+      for (var content in contents) {
+        if (content.image != null) {
+          final imagePath = configProvider.getImagePath(content.image!);
+          if (imagePath != null) {
+            await precacheImage(AssetImage('assets/$imagePath'), context);
           }
         }
       }
     }
+
+    setState(() {
+      _isLoading = false;
+    });
   }
 
   void _scrollToIndex(int index) {
@@ -92,7 +92,7 @@ class _ContentScreenState extends State<ContentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+       appBar: AppBar(
         backgroundColor: widget.appBarColor,
         foregroundColor: Colors.white,
         title: Text(
@@ -113,29 +113,16 @@ class _ContentScreenState extends State<ContentScreen> {
           ),
         ],
       ),
-      body: Consumer2<SubcategoryProvider, ContentProvider>(
-        builder: (context, subcategoryProvider, contentProvider, child) {
-          if (subcategoryProvider.dataStatus == DataStatus.loading ||
-              contentProvider.dataStatus == DataStatus.loading) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (subcategoryProvider.dataStatus == DataStatus.failure ||
-              contentProvider.dataStatus == DataStatus.failure) {
-            return const Center(child: Text('Failed to load content.'));
-          } else if (subcategoryProvider.dataStatus == DataStatus.loaded &&
-              contentProvider.dataStatus == DataStatus.loaded) {
-            return ContentListWidget(
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : ContentListWidget(
               categoryId: widget.categoryId,
               appBarColor: widget.appBarColor,
               secondaryColor: widget.secondaryColor,
               categoryName: widget.categoryName,
               scrollController: _scrollController,
               keyMap: _keyMap,
-            );
-          } else {
-            return const Center(child: Text('Something went wrong.'));
-          }
-        },
-      ),
+            ),
     );
   }
 

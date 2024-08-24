@@ -4,6 +4,7 @@ import 'package:dei_marc/providers/config_provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
+import 'package:dei_marc/helpers/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -63,7 +64,7 @@ class ContentListWidget extends StatelessWidget {
                         const SizedBox(width: 18.0),
                         Expanded(
                           child: Text(
-                            categoryName.toUpperCase(),
+                            Helpers.capitalizeTitle(categoryName).toUpperCase(),
                             style: TextStyle(
                               fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5, // Heading scale
                               color: Colors.black,
@@ -93,7 +94,7 @@ class ContentListWidget extends StatelessWidget {
                     },
                   ),
                   Text(
-                    subcategory.name,
+                    Helpers.capitalizeTitle(subcategory.name),
                     style: TextStyle(
                       fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5, // Subheading scale
                       color: appBarColor,
@@ -187,7 +188,7 @@ class ContentListWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
-              contentItem.heading!,
+              Helpers.capitalizeTitle(contentItem.heading!),
               style: TextStyle(
                 fontSize: fontSize + 4, // Heading scale
                 color: Colors.black,
@@ -203,7 +204,7 @@ class ContentListWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
-                    quote.text,
+                    Helpers.capitalizeTitle(quote.text),
                     style: TextStyle(
                       fontSize: fontSize + 2, // Subheading scale
                       color: Colors.black,
@@ -212,10 +213,15 @@ class ContentListWidget extends StatelessWidget {
                   ),
                 ),
                 ...?quote.content?.map((nestedQuote) {
+                  if (nestedQuote.type == 'image') {
+                    return _buildImage(nestedQuote.text, context);
+                  }
                   return _buildQuote(nestedQuote, context, fontSize);
                 }).toList(),
               ],
             );
+          } else if (quote.type == 'image') {
+            return _buildImage(quote.text, context);
           } else {
             return _buildQuote(quote, context, fontSize);
           }
@@ -228,7 +234,7 @@ class ContentListWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Text(
-        quote.text,
+        Helpers.capitalizeTitle(quote.text),
         style: TextStyle(
           fontSize: fontSize, // Base text size
           color: Colors.grey[800],
