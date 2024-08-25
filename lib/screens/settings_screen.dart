@@ -8,95 +8,98 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(
-          'Settings',
-          style: TextStyles.appBarTitle(context).copyWith(color: Colors.black),
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text(
+            'Settings',
+            style: TextStyles.appBarTitle(context).copyWith(color: Colors.black),
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
         ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: Consumer<SettingsProvider>(
-        builder: (context, settingsProvider, child) {
-          return Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Font Size',
-                  style: TextStyles.heading(context).copyWith(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18, // Fixed font size
+        body: Consumer<SettingsProvider>(
+          builder: (context, settingsProvider, child) {
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Font Size',
+                    style: TextStyles.heading(context).copyWith(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18, // Fixed font size
+                    ),
                   ),
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'Aa',
-                      style: TextStyle(
-                        fontSize: settingsProvider.fontSize,
-                        fontWeight: FontWeight.bold,
+                  Row(
+                    children: [
+                      Text(
+                        'Aa',
+                        style: TextStyle(
+                          fontSize: settingsProvider.fontSize,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: Slider(
-                        value: settingsProvider.fontSize,
-                        min: 14.0,
-                        max: 24.0,
-                        divisions: 10,
-                        label: settingsProvider.fontSize.round().toString(),
-                        onChanged: (double value) {
-                          settingsProvider.setFontSize(value);
-                        },
+                      Expanded(
+                        child: Slider(
+                          value: settingsProvider.fontSize,
+                          min: 14.0,
+                          max: 24.0,
+                          divisions: 10,
+                          label: settingsProvider.fontSize.round().toString(),
+                          onChanged: (double value) {
+                            settingsProvider.setFontSize(value);
+                          },
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                SettingsOption(
-                  title: 'Notifications',
-                  onTap: () {
-                    // Handle tap here
-                  },
-                ),
-                SettingsOption(
-                  title: 'Support',
-                  onTap: () {
-                    // Handle tap here
-                  },
-                ),
-                SettingsOption(
-                  title: 'About',
-                  onTap: () {
-                    // Handle tap here
-                  },
-                ),
-                SettingsOption(
-                  title: 'Privacy and Security',
-                  onTap: () {
-                    // Handle tap here
-                  },
-                ),
-                SettingsOption(
-                  title: 'Copyright',
-                  onTap: () {
-                    // Handle tap here
-                  },
-                ),
-                SettingsOption(
-                  title: 'Share App',
-                  onTap: () {
-                    // Handle tap here
-                  },
-                ),
-              ],
-            ),
-          );
-        },
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  SettingsOption(
+                    title: 'Notifications',
+                    onTap: () {
+                      // Handle tap here
+                    },
+                  ),
+                  SettingsOption(
+                    title: 'Support',
+                    onTap: () {
+                      // Handle tap here
+                    },
+                  ),
+                  SettingsOption(
+                    title: 'About',
+                    onTap: () {
+                      // Handle tap here
+                    },
+                  ),
+                  SettingsOption(
+                    title: 'Privacy and Security',
+                    onTap: () {
+                      // Handle tap here
+                    },
+                  ),
+                  SettingsOption(
+                    title: 'Copyright',
+                    onTap: () {
+                      // Handle tap here
+                    },
+                  ),
+                  SettingsOption(
+                    title: 'Share App',
+                    onTap: () {
+                      // Handle tap here
+                    },
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }

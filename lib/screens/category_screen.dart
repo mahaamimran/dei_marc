@@ -26,56 +26,59 @@ class CategoryScreen extends StatefulWidget {
 class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) =>
-          CategoryProvider()..loadCategories(widget.bookFileName),
-      child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new_rounded,
-                color: Colors.white),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      child: ChangeNotifierProvider(
+        create: (context) =>
+            CategoryProvider()..loadCategories(widget.bookFileName),
+        child: Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                  color: Colors.white),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            backgroundColor: widget.appBarColor,
+            title: Text("Categories", style: TextStyles.appBarTitle(context)),
+            actions: [
+              Consumer<SettingsProvider>(
+                builder: (context, settingsProvider, child) {
+                  return IconButton(
+                    color: Colors.white,
+                    icon: Icon(settingsProvider.isGridView
+                        ? Icons.list
+                        : Icons.grid_view),
+                    onPressed: () {
+                      settingsProvider
+                          .setViewPreference(!settingsProvider.isGridView);
+                    },
+                  );
+                },
+              ),
+            ],
           ),
-          backgroundColor: widget.appBarColor,
-          title: Text("Categories", style: TextStyles.appBarTitle(context)),
-          actions: [
-            Consumer<SettingsProvider>(
-              builder: (context, settingsProvider, child) {
-                return IconButton(
-                  color: Colors.white,
-                  icon: Icon(settingsProvider.isGridView
-                      ? Icons.list
-                      : Icons.grid_view),
-                  onPressed: () {
-                    settingsProvider
-                        .setViewPreference(!settingsProvider.isGridView);
-                  },
+          body: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Consumer2<CategoryProvider, SettingsProvider>(
+              builder: (context, categoryProvider, settingsProvider, child) {
+                if (categoryProvider.categories.isEmpty) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 12.0),
+                    Expanded(
+                      child: settingsProvider.isGridView
+                          ? _buildGridView(context, categoryProvider)
+                          : _buildListView(context, categoryProvider),
+                    ),
+                  ],
                 );
               },
             ),
-          ],
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Consumer2<CategoryProvider, SettingsProvider>(
-            builder: (context, categoryProvider, settingsProvider, child) {
-              if (categoryProvider.categories.isEmpty) {
-                return const Center(child: CircularProgressIndicator());
-              }
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 12.0),
-                  Expanded(
-                    child: settingsProvider.isGridView
-                        ? _buildGridView(context, categoryProvider)
-                        : _buildListView(context, categoryProvider),
-                  ),
-                ],
-              );
-            },
           ),
         ),
       ),

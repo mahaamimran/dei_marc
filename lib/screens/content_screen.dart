@@ -97,43 +97,46 @@ class _ContentScreenState extends State<ContentScreen> {
     final String bookmarkId = '${widget.bookId}-${widget.categoryId}-${widget.categoryName}';
     final bool isBookmarked = bookmarkProvider.isBookmarked(bookmarkId);
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: widget.appBarColor,
-        foregroundColor: Colors.white,
-        title: Text(
-          '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
-          style: TextStyles.appBarTitle(context),
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: widget.appBarColor,
+          foregroundColor: Colors.white,
+          title: Text(
+            '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
+            style: TextStyles.appBarTitle(context),
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(
+                isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                if (isBookmarked) {
+                  bookmarkProvider.removeBookmark(bookmarkId);
+                } else {
+                  bookmarkProvider.addBookmark(bookmarkId);
+                }
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.text_fields),
+              onPressed: () => _showFontSettings(context),
+            ),
+            IconButton(
+              icon: const Icon(Icons.list),
+              onPressed: () => _showCategoryList(
+                context,
+                subcategoryProvider.subcategories,
+              ),
+            ),
+          ],
         ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              isBookmarked ? Icons.bookmark : Icons.bookmark_border,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              if (isBookmarked) {
-                bookmarkProvider.removeBookmark(bookmarkId);
-              } else {
-                bookmarkProvider.addBookmark(bookmarkId);
-              }
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.text_fields),
-            onPressed: () => _showFontSettings(context),
-          ),
-          IconButton(
-            icon: const Icon(Icons.list),
-            onPressed: () => _showCategoryList(
-              context,
-              subcategoryProvider.subcategories,
-            ),
-          ),
-        ],
+        body: _buildBody(subcategoryProvider, contentProvider),
       ),
-      body: _buildBody(subcategoryProvider, contentProvider),
     );
   }
 

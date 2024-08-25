@@ -47,27 +47,30 @@ class SplashScreenState extends State<SplashScreen> with SingleTickerProviderSta
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xFF1C7077),
-              Color(0xFFB52556),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      child: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color(0xFF1C7077),
+                Color(0xFFB52556),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
-        ),
-        child: Center(
-          child: SlideTransition(
-            position: _animation,
-            child: const Text(
-              'DEI MARC',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+          child: Center(
+            child: SlideTransition(
+              position: _animation,
+              child: const Text(
+                'DEI MARC',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),

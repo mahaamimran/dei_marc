@@ -12,53 +12,56 @@ class BookmarksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        scrolledUnderElevation: 0,
-        leading: Consumer<BookmarkProvider>(
-          builder: (context, bookmarkProvider, child) {
-            return IconButton(
-              icon: Icon(Icons.delete_rounded, color: Colors.red),
-              onPressed: () {
-                if (bookmarkProvider.bookmarks.isNotEmpty) {
-                  _showClearAllDialog(context, bookmarkProvider);
-                }
-              },
-            );
-          },
-        ),
-        title: Text(
-          'Bookmarks',
-          style: TextStyles.appBarTitle(context).copyWith(color: Colors.black),
-        ),
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      child: Scaffold(
         backgroundColor: Colors.white,
-        elevation: 0,
-        actions: [
-          Consumer<SettingsProvider>(
-            builder: (context, settingsProvider, child) {
+        appBar: AppBar(
+          scrolledUnderElevation: 0,
+          leading: Consumer<BookmarkProvider>(
+            builder: (context, bookmarkProvider, child) {
               return IconButton(
-                icon: Icon(settingsProvider.isGridView ? Icons.list : Icons.grid_view),
+                icon: Icon(Icons.delete_rounded, color: Colors.red),
                 onPressed: () {
-                  settingsProvider.setViewPreference(!settingsProvider.isGridView);
+                  if (bookmarkProvider.bookmarks.isNotEmpty) {
+                    _showClearAllDialog(context, bookmarkProvider);
+                  }
                 },
               );
             },
           ),
-        ],
-      ),
-      body: Consumer2<BookmarkProvider, SettingsProvider>(
-        builder: (context, bookmarkProvider, settingsProvider, child) {
-          // If there are no bookmarks, display a message
-          if (bookmarkProvider.bookmarks.isEmpty) {
-            return const Center(child: Text('No bookmarks yet.'));
-          }
-
-          // Display the appropriate view (grid or list) based on user preference
-          return settingsProvider.isGridView
-              ? _buildGridView(context, bookmarkProvider)
-              : _buildListView(context, bookmarkProvider);
-        },
+          title: Text(
+            'Bookmarks',
+            style: TextStyles.appBarTitle(context).copyWith(color: Colors.black),
+          ),
+          backgroundColor: Colors.white,
+          elevation: 0,
+          actions: [
+            Consumer<SettingsProvider>(
+              builder: (context, settingsProvider, child) {
+                return IconButton(
+                  icon: Icon(settingsProvider.isGridView ? Icons.list : Icons.grid_view),
+                  onPressed: () {
+                    settingsProvider.setViewPreference(!settingsProvider.isGridView);
+                  },
+                );
+              },
+            ),
+          ],
+        ),
+        body: Consumer2<BookmarkProvider, SettingsProvider>(
+          builder: (context, bookmarkProvider, settingsProvider, child) {
+            // If there are no bookmarks, display a message
+            if (bookmarkProvider.bookmarks.isEmpty) {
+              return const Center(child: Text('No bookmarks yet.'));
+            }
+      
+            // Display the appropriate view (grid or list) based on user preference
+            return settingsProvider.isGridView
+                ? _buildGridView(context, bookmarkProvider)
+                : _buildListView(context, bookmarkProvider);
+          },
+        ),
       ),
     );
   }

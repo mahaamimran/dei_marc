@@ -5,7 +5,7 @@ import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/helpers/helpers.dart';
-import 'package:dei_marc/config/text_styles.dart';  // Import the TextStyles
+import 'package:dei_marc/config/text_styles.dart';  
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
