@@ -30,6 +30,7 @@ class SettingsScreen extends StatelessWidget {
                   style: TextStyles.heading(context).copyWith(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
+                    fontSize: 18, // Fixed font size
                   ),
                 ),
                 Row(
@@ -59,31 +60,37 @@ class SettingsScreen extends StatelessWidget {
                 SettingsOption(
                   title: 'Notifications',
                   onTap: () {
+                    // Handle tap here
                   },
                 ),
                 SettingsOption(
                   title: 'Support',
                   onTap: () {
+                    // Handle tap here
                   },
                 ),
                 SettingsOption(
                   title: 'About',
                   onTap: () {
+                    // Handle tap here
                   },
                 ),
                 SettingsOption(
                   title: 'Privacy and Security',
                   onTap: () {
+                    // Handle tap here
                   },
                 ),
                 SettingsOption(
                   title: 'Copyright',
                   onTap: () {
+                    // Handle tap here
                   },
                 ),
                 SettingsOption(
                   title: 'Share App',
                   onTap: () {
+                    // Handle tap here
                   },
                 ),
               ],
@@ -112,6 +119,7 @@ class SettingsOption extends StatelessWidget {
           title: Text(
             title,
             style: TextStyle(
+              fontSize: 16, // Fixed font size
               color: Colors.black,
             ),
           ),

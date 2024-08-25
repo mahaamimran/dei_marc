@@ -40,7 +40,9 @@ class _ContentScreenState extends State<ContentScreen> {
   @override
   void initState() {
     super.initState();
-    _initializeData();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _initializeData();
+    });
   }
 
   Future<void> _initializeData() async {
@@ -120,9 +122,9 @@ class _ContentScreenState extends State<ContentScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.text_fields),
-            onPressed: () => _showFontSettings(context), 
+            onPressed: () => _showFontSettings(context),
           ),
-           IconButton(
+          IconButton(
             icon: const Icon(Icons.list),
             onPressed: () => _showCategoryList(
               context,
@@ -180,7 +182,7 @@ class _ContentScreenState extends State<ContentScreen> {
           subcategories: subcategories,
           onCategorySelected: (index) {
             Navigator.pop(context);
-            Future.delayed(Duration(milliseconds: 200), () {
+            Future.delayed(const Duration(milliseconds: 200), () {
               _scrollToIndex(index);
             });
           },
@@ -190,7 +192,7 @@ class _ContentScreenState extends State<ContentScreen> {
     );
   }
 
-  void _showFontSettings(BuildContext context) { 
+  void _showFontSettings(BuildContext context) {
     showModalBottomSheet(
       context: context,
       isDismissible: true,

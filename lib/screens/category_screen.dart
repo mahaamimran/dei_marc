@@ -1,5 +1,6 @@
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/providers/category_provider.dart';
+import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/screens/content_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,8 +24,6 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-  bool _isGridView = true;
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -32,146 +31,47 @@ class _CategoryScreenState extends State<CategoryScreen> {
           CategoryProvider()..loadCategories(widget.bookFileName),
       child: Scaffold(
         appBar: AppBar(
-            leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios_new_rounded,
-                  color: Colors.white),
-              onPressed: () {
-                Navigator.pop(context);
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                color: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          backgroundColor: widget.appBarColor,
+          title: Text("Categories", style: TextStyles.appBarTitle(context)),
+          actions: [
+            Consumer<SettingsProvider>(
+              builder: (context, settingsProvider, child) {
+                return IconButton(
+                  color: Colors.white,
+                  icon: Icon(settingsProvider.isGridView
+                      ? Icons.list
+                      : Icons.grid_view),
+                  onPressed: () {
+                    settingsProvider
+                        .setViewPreference(!settingsProvider.isGridView);
+                  },
+                );
               },
             ),
-            backgroundColor: widget.appBarColor,
-            title: Text("Categories", style: TextStyles.appBarTitle(context)),
-            actions: [
-              IconButton(
-                color: Colors.white,
-                icon: Icon(_isGridView ? Icons.list : Icons.grid_view),
-                onPressed: () {
-                  setState(() {
-                    _isGridView = !_isGridView;
-                  });
-                },
-              ),
-            ]),
+          ],
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Consumer<CategoryProvider>(
-            builder: (context, categoryProvider, child) {
+          child: Consumer2<CategoryProvider, SettingsProvider>(
+            builder: (context, categoryProvider, settingsProvider, child) {
               if (categoryProvider.categories.isEmpty) {
                 return const Center(child: CircularProgressIndicator());
               }
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 12.0,
-                  ),
+                  const SizedBox(height: 12.0),
                   Expanded(
-                    child: _isGridView
-                        ? GridView.builder(
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              childAspectRatio: 1.2,
-                              crossAxisSpacing: 8.0,
-                              mainAxisSpacing: 8.0,
-                            ),
-                            itemCount: categoryProvider.categories.length,
-                            itemBuilder: (context, index) {
-                              final category =
-                                  categoryProvider.categories[index];
-                              return GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => ContentScreen(
-                                          appBarColor: widget.appBarColor,
-                                          secondaryColor: widget.secondaryColor,
-                                          bookId: widget.bookFileName,
-                                          categoryId: index + 1,
-                                          categoryName: category.name),
-                                    ),
-                                  );
-                                },
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  color: widget.secondaryColor,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
-                                          style: TextStyles.caption(context).copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            color: widget.appBarColor,
-                                          ),
-                                        ),
-                                        const SizedBox(height: 4.0),
-                                        Container(
-                                          height: 2.0,
-                                          width: 40.0,
-                                          color: widget.appBarColor,
-                                        ),
-                                        const SizedBox(height: 8.0),
-                                        Text(
-                                          category.name,
-                                          style: TextStyles.caption(context),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          )
-                        : ListView.builder(
-                            itemCount: categoryProvider.categories.length,
-                            itemBuilder: (context, index) {
-                              final category =
-                                  categoryProvider.categories[index];
-                              return GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => ContentScreen(
-                                          appBarColor: widget.appBarColor,
-                                          secondaryColor: widget.secondaryColor,
-                                          bookId: widget.bookFileName,
-                                          categoryId: index + 1,
-                                          categoryName: category.name),
-                                    ),
-                                  );
-                                },
-                                child: Card(
-                                  color: widget.secondaryColor,
-                                  margin:
-                                      const EdgeInsets.symmetric(vertical: 8.0),
-                                  child: ListTile(
-                                    title: Text(
-                                      '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
-                                      style: TextStyles.caption(context).copyWith(
-                                        color: widget.appBarColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    subtitle: Text(
-                                      category.name,
-                                      style: TextStyles.caption(context).copyWith(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal),
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
+                    child: settingsProvider.isGridView
+                        ? _buildGridView(context, categoryProvider)
+                        : _buildListView(context, categoryProvider),
                   ),
                 ],
               );
@@ -179,6 +79,113 @@ class _CategoryScreenState extends State<CategoryScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildGridView(
+      BuildContext context, CategoryProvider categoryProvider) {
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 1.2,
+        crossAxisSpacing: 8.0,
+        mainAxisSpacing: 8.0,
+      ),
+      itemCount: categoryProvider.categories.length,
+      itemBuilder: (context, index) {
+        final category = categoryProvider.categories[index];
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ContentScreen(
+                    appBarColor: widget.appBarColor,
+                    secondaryColor: widget.secondaryColor,
+                    bookId: widget.bookFileName,
+                    categoryId: index + 1,
+                    categoryName: category.name),
+              ),
+            );
+          },
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16.0),
+            ),
+            color: widget.secondaryColor,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
+                    style: TextStyles.caption(context).copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: widget.appBarColor,
+                    ),
+                  ),
+                  const SizedBox(height: 4.0),
+                  Container(
+                    height: 2.0,
+                    width: 40.0,
+                    color: widget.appBarColor,
+                  ),
+                  const SizedBox(height: 8.0),
+                  Text(
+                    category.name,
+                    style: TextStyles.caption(context),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildListView(
+      BuildContext context, CategoryProvider categoryProvider) {
+    return ListView.builder(
+      itemCount: categoryProvider.categories.length,
+      itemBuilder: (context, index) {
+        final category = categoryProvider.categories[index];
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ContentScreen(
+                    appBarColor: widget.appBarColor,
+                    secondaryColor: widget.secondaryColor,
+                    bookId: widget.bookFileName,
+                    categoryId: index + 1,
+                    categoryName: category.name),
+              ),
+            );
+          },
+          child: Card(
+            color: widget.secondaryColor,
+            margin: const EdgeInsets.symmetric(vertical: 8.0),
+            child: ListTile(
+              title: Text(
+                '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
+                style: TextStyles.caption(context).copyWith(
+                  color: widget.appBarColor,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              subtitle: Text(
+                category.name,
+                style: TextStyles.caption(context).copyWith(
+                    color: Colors.black, fontWeight: FontWeight.normal),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
