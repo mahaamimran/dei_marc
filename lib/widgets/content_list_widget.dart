@@ -5,6 +5,7 @@ import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/helpers/helpers.dart';
+import 'package:dei_marc/config/text_styles.dart';  // Import the TextStyles
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -65,10 +66,8 @@ class ContentListWidget extends StatelessWidget {
                         Expanded(
                           child: Text(
                             Helpers.capitalizeTitle(categoryName).toUpperCase(),
-                            style: TextStyle(
-                              fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5, // Heading scale
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
+                            style: TextStyles.heading.copyWith(
+                              fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5,
                             ),
                             maxLines: 3,
                             overflow: TextOverflow.ellipsis,
@@ -95,10 +94,9 @@ class ContentListWidget extends StatelessWidget {
                   ),
                   Text(
                     Helpers.capitalizeTitle(subcategory.name),
-                    style: TextStyle(
-                      fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5, // Subheading scale
+                    style: TextStyles.subheading.copyWith(
+                      fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5,
                       color: appBarColor,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Consumer<ContentProvider>(
@@ -123,9 +121,8 @@ class ContentListWidget extends StatelessWidget {
                                   const EdgeInsets.symmetric(vertical: 8.0),
                               child: Text(
                                 firstItem.description!,
-                                style: TextStyle(
-                                  fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.1, // Description scale
-                                  color: Colors.black,
+                                style: TextStyles.content.copyWith(
+                                  fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.1,
                                 ),
                               ),
                             ),
@@ -189,10 +186,8 @@ class ContentListWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
               Helpers.capitalizeTitle(contentItem.heading!),
-              style: TextStyle(
-                fontSize: fontSize + 4, // Heading scale
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
+              style: TextStyles.heading.copyWith(
+                fontSize: fontSize + 4,
               ),
             ),
           ),
@@ -205,10 +200,8 @@ class ContentListWidget extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
                     Helpers.capitalizeTitle(quote.text),
-                    style: TextStyle(
-                      fontSize: fontSize + 2, // Subheading scale
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                    style: TextStyles.subheading.copyWith(
+                      fontSize: fontSize + 2,
                     ),
                   ),
                 ),
@@ -239,15 +232,19 @@ class ContentListWidget extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("• ", style: TextStyle(fontSize: 20)),
+            Padding(
+              padding: EdgeInsets.only(top: fontSize * 0.2),
+              child: Icon(
+                Icons.double_arrow_rounded,
+                size: fontSize,
+                color: appBarColor,
+              ),
+            ),
             const SizedBox(width: 8),
             Expanded(
               child: Text(
                 quote.text,
-                style: TextStyle(
-                  fontSize: fontSize, // Base text size
-                  color: Colors.grey[800],
-                ),
+                style: TextStyles.bullet.copyWith(fontSize: fontSize),
               ),
             ),
           ],
@@ -278,15 +275,19 @@ class ContentListWidget extends StatelessWidget {
               Expanded(
                 child: Text(
                   quote.text,
-                  style: TextStyle(
-                    fontSize: fontSize,
-                    color: Colors.grey[800],
-                   //fontStyle: FontStyle.italic,
-                  ),
+                  style: TextStyles.quote.copyWith(fontSize: fontSize),
                 ),
               ),
             ],
           ),
+        ),
+      );
+    } else if (quote.type == 'bold') {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4.0),
+        child: Text(
+          Helpers.capitalizeTitle(quote.text),
+          style: TextStyles.bold.copyWith(fontSize: fontSize),
         ),
       );
     } else {
@@ -294,10 +295,7 @@ class ContentListWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
           Helpers.capitalizeTitle(quote.text),
-          style: TextStyle(
-            fontSize: fontSize, // Base text size
-            color: Colors.grey[800],
-          ),
+          style: TextStyles.content.copyWith(fontSize: fontSize),
         ),
       );
     }

@@ -106,17 +106,6 @@ class _ContentScreenState extends State<ContentScreen> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.text_fields),
-            onPressed: () => _showFontSizeAdjuster(context),
-          ),
-          IconButton(
-            icon: const Icon(Icons.list),
-            onPressed: () => _showCategoryList(
-              context,
-              subcategoryProvider.subcategories,
-            ),
-          ),
-          IconButton(
             icon: Icon(
               isBookmarked ? Icons.bookmark : Icons.bookmark_border,
               color: Colors.white,
@@ -128,6 +117,17 @@ class _ContentScreenState extends State<ContentScreen> {
                 bookmarkProvider.addBookmark(bookmarkId);
               }
             },
+          ),
+          IconButton(
+            icon: const Icon(Icons.text_fields),
+            onPressed: () => _showFontSizeAdjuster(context),
+          ),
+           IconButton(
+            icon: const Icon(Icons.list),
+            onPressed: () => _showCategoryList(
+              context,
+              subcategoryProvider.subcategories,
+            ),
           ),
         ],
       ),
