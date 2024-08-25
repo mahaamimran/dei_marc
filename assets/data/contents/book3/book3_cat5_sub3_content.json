@@ -4,6 +4,15 @@
     "description": "The video focuses on the challenges of workplace flexibility, particularly with regard to parenting responsibilities. It showcases various perspectives from both employers and employees about adjusting work hours to accommodate childcare needs, highlighting the differing attitudes towards male and female employees who request flexible work arrangements.",
     "content": [
         {
+            "heading": "",
+            "content": [
+                {
+                    "type": "video",
+                    "text": ""
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -38,10 +47,6 @@
                 {
                     "type": "bullet",
                     "text": "How can organizations ensure that their flexible work policies are applied equitably across all genders?"
-                },
-                {
-                    "type": "link",
-                    "text": ""
                 }
             ]
         }

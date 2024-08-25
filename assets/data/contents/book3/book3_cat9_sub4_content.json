@@ -4,6 +4,15 @@
     "description": "The video follows Sana, a skilled marketing manager in her mid-30s, as she grapples with self-doubt despite her considerable experience and competence. Throughout the video, Sana is depicted in various workplace settings where her negative self-perception prevents her from seizing leadership opportunities and speaking up during meetings. The video portrays the impact of negative self-perception on professional growth and emphasizes the importance of self-belief and receiving encouragement from others..",
     "content": [
         {
+            "heading": "",
+            "content": [
+                {
+                    "type": "video",
+                    "text": ""
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -50,10 +59,6 @@
                 {
                     "type": "bullet",
                     "text": "How might cultural, gender, or background influences shape one’s self-perception in professional settings? Discuss how these factors could contribute to the challenges Sana faces."
-                },
-                {
-                    "type": "link",
-                    "text": ""
                 }
             ]
         }

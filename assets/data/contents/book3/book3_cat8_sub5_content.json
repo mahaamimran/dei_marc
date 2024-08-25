@@ -4,6 +4,15 @@
     "description": "",
     "content": [
         {
+            "heading": "",
+            "content": [
+                {
+                    "type": "video",
+                    "text": ""
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -53,10 +62,6 @@
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "link",
                     "text": ""
                 }
             ]
