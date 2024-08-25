@@ -1,42 +1,52 @@
 {
-    "category": "book3_cat10",
+    "category": "Communication and Analytics | 2-2.5 hrs",
     "subcategory": "Caselet 1 | Personal Emergency Leave | 15-20 Min",
     "description": "",
     "content": [
+        {
+            "heading": "Initial Scenario",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Farah is granted a week off for a family emergency. Later, Ali also needed time off for a similar reason, but his request took longer to get approved. This made Ali feel like he was being treated unfairly compared to Farah."
+                }
+            ]
+        },
+        {
+            "heading": "Expanded Scenario",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Farah works in the marketing department and is well-liked. She had an urgent family problem and needed to take time off. Her boss quickly said yes to a week off so she could take care of her emergency without stressing about work. Her coworkers helped out by covering her work while she was gone.\nA few months later, Ali, who also works in marketing and is a hard worker, needed emergency time off just like Farah did. He asked for leave the same way Farah had. However, his application took several days to process due to the recent implementation of a new digital approval system intended to standardize leave requests. The delay was primarily technical, as the system marked his request for additional verification, but nobody told Ali about these new steps. He felt like his emergency wasn't being treated as importantly as Farah's had been.\nThis incident prompted discussions among the staff. They realized there was a big issue of transparency and communication regarding the new system. Employees felt left in the dark about how decisions were made and the criteria used for approving leave requests. This feeling of possibly being treated differently or perception of bias started to make everyone feel less happy and trusting at work."
+                }
+            ]
+        },
         {
             "heading": "Learning Outcomes",
             "content": [
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Understanding and implementing fair leave processes:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will learn the importance of having clear, transparent, and consistently applied processes for handling leave requests, especially in emergency situations. This outcome emphasizes the need for systems that are equitable and understood by all employees to prevent perceptions of bias."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Enhancing communication during process changes:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Participants will gain insights into the critical role of communication when implementing new systems or processes. This includes strategies for ensuring all staff are well-informed about how new systems work and any changes to procedures, particularly in how these changes impact their roles and expectations."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Building a supportive workplace culture: "
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
-                },
-                {
-                    "type": "subheading",
-                    "text": ""
-                },
-                {
-                    "type": "paragraph",
-                    "text": ""
+                    "text": "Learners will understand how to contribute to a culture that supports employees during personal crises. This involves training on empathy, collective responsibility, and the importance of a supportive network within the workplace to help cover duties during a colleague’s absence."
                 }
             ]
         },
@@ -45,19 +55,11 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "How can managers be better equipped to handle leave requests fairly and consistently, especially in times of emergency?"
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "In what ways can employees contribute to a culture of support and understanding, particularly when a colleague is facing personal challenges?"
                 }
             ]
         }

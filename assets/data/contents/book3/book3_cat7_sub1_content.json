@@ -1,13 +1,23 @@
 {
-    "category": "book3_cat7",
-    "subcategory": "Activity 1 | My Wife Does Not Work | 35-40 Min",
+    "category": "Double Shift | 2-2.5 hrs",
+    "subcategory": "Activity | My Wife Does Not Work | 35-40 Min",
     "content": [
+        {
+            "heading":"Training Scenario: Understanding Homemaking as Work",
+            "content":[
+                {
+                    "type":"image",
+                    "image":""
+                }
+
+            ]    
+        },
         {
             "heading": "Aim",
             "content": [
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "To recognize and appreciate the diverse range of tasks and responsibilities managed by homemakers, often unnoticed or undervalued in our society."
                 }
             ]
         },
@@ -16,11 +26,15 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "To highlight the importance of recognizing and valuing all forms of work, whether paid or unpaid."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "To encourage participants to acknowledge and support the homemakers in their lives."
+                },
+                {
+                    "type": "bullet",
+                    "text": "To change participants’ perception of homemaking/housework through this exercise."
                 }
             ]
         },
@@ -28,8 +42,12 @@
             "heading": "Materials Required",
             "content": [
                 {
-                    "type": "paragraph",
-                    "text": ""
+                    "type": "bullet",
+                    "text": "A printout or digital copy of the provided image, showing the homemaker's daily schedule."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Pen and paper for note-taking."
                 }
             ]
         },
@@ -37,45 +55,76 @@
             "heading": "Sequence",
             "content": [
                 {
-                    "type": "bold",
-                    "text": "Step 1: "
+                    "type": "paragraph",
+                    "text": " This activity involves the following steps:"
+                },
+                {
+                    "type": "subheading",
+                    "text": "Observation"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Participants will study the image quietly for a few minutes. They will note the various activities they see the homemaker perform at different times of the day."
                 },
                 {
-                    "type": "bold",
-                    "text": "Step 2: "
-                },
-                {
-                    "type": "paragraph",
-                    "text": ""
-                },
-                {
-                    "type": "bold",
-                    "text": "Step 3: "
+                    "type":"subheading",
+                    "text":"Group Discussion"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Then, participants will share their observations on the following questions:"
                 },
                 {
-                    "type": "bold",
-                    "text": "Step 4: "
+                    "type":"bullet",
+                    "text":"What tasks do you see being performed?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How might these tasks contribute to the functioning of a household"
+                },
+                {
+                    "type": "bullet",
+                    "text": "What skills are required to perform these tasks effectively?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "Throughout her day, whom does this woman care for?"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
-                }
-            ]
-        },
-        {
-            "heading": "Evaluation",
-            "content": [
+                    "text": "How can we ensure that every member of society acknowledges the efforts of others, including those of women?"
+                },
+                {
+                    "type": "subheading",
+                    "text": "Role Analysis"
+                },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Then, participants will be asked to list all the roles the homemaker takes on throughout the day (e.g., cook, caregiver, cleaner, shopper, etc.)."
+                },
+                {
+                    "type": "subheading",
+                    "text": "Time Managment"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In this step, participants will discuss time management and multitasking skills depicted in the image, comparing them to those required in a corporate job."
+                },
+                {
+                    "type": "subheading",
+                    "text": "Value"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Assignment: Moreover, participants will estimate how much each task would cost if outsourced (e.g., hiring a nanny, professional cleaning services, etc.). Hence, this activity is expected to lead to a discussion about the economic value of homemaking."
+                },
+                {
+                    "type": "subheading",
+                    "text": "Empathy Exercise"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Finally, participants will be asked to imagine themselves performing each task for a week, and to share how they would feel and what challenges they might encounter."
                 }
             ]
         }

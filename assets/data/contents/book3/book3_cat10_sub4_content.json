@@ -1,34 +1,42 @@
 {
-    "category": "book3_cat10",
+    "category": "Communication and Analytics | 2-2.5 hrs",
     "subcategory": "Video | Microaggressions In The WorkPlace | 10 Min",
-    "description": "",
+    "description": "The video focuses on raising awareness about microaggressions in the workplace, particularly those directed at women in technical roles. The video defines microaggressions as remarks or actions that subtly express negative associations or insults, often towards members of historically marginalized groups. The main objective of the video is to empower viewers to recognize and interrupt microaggressions. It stresses the cumulative effect of such interactions, noting that while a single comment may seem minor, repeated incidents can significantly impact an individual's well-being.",
     "content": [
         {
             "heading": "Learning Outcomes",
             "content": [
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Recognizing microaggressions:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will learn to identify what constitutes a microaggression and understand the subtle ways in which these comments or actions can manifest in the workplace, particularly those that undermine or stereotype women in technical roles."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Understanding the impact of microaggressions:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Participants will gain insight into how microaggressions accumulate and affect individuals, contributing to a hostile work environment and impacting mental health and productivity. This outcome emphasizes the significant, though often unnoticed, impact of \"small\" comments or gestures."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Intervening effectively in microaggressions:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Learners will acquire skills on how to appropriately and effectively intervene when witnessing microaggressions. This includes techniques for interrupting the situation safely, such as asking probing questions to challenge underlying assumptions, providing support to the affected person, and educating the perpetrator about the impact of their actions."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Being an active bystander: "
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Participants will learn how to be active bystanders who not only notice harmful behaviors but also feel empowered and equipped to address and prevent them. This includes developing the confidence to speak up against microaggressions without escalating the situation."
                 }
             ]
         },
@@ -37,15 +45,15 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "How would you define a microaggression based on the examples given in the video? Can you share personal experiences or observations of microaggressions in your own workplace or social settings?"
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "The video discusses how cumulative microaggressions can weigh heavily on individuals. Can you discuss the potential long-term effects of repeated microaggressions on a person's professional performance and mental health?"
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "The video suggests several ways to interrupt microaggressions, such as asking questions, acknowledging the incident, and explaining the negative impact. Which of these strategies do you find most effective, and why? Can you think of any other ways to address microaggressions?"
                 },
                 {
                     "type": "link",
