@@ -40,7 +40,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               },
             ),
             backgroundColor: widget.appBarColor,
-            title: const Text("Categories", style: TextStyles.appBarTitle),
+            title: Text("Categories", style: TextStyles.appBarTitle(context)),
             actions: [
               IconButton(
                 color: Colors.white,
@@ -106,7 +106,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                       children: [
                                         Text(
                                           '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
-                                          style: TextStyles.caption.copyWith(
+                                          style: TextStyles.caption(context).copyWith(
                                             fontWeight: FontWeight.bold,
                                             color: widget.appBarColor,
                                           ),
@@ -120,7 +120,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                         const SizedBox(height: 8.0),
                                         Text(
                                           category.name,
-                                          style: TextStyles.caption,
+                                          style: TextStyles.caption(context),
                                           textAlign: TextAlign.center,
                                         ),
                                       ],
@@ -156,14 +156,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                   child: ListTile(
                                     title: Text(
                                       '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
-                                      style: TextStyles.caption.copyWith(
+                                      style: TextStyles.caption(context).copyWith(
                                         color: widget.appBarColor,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     subtitle: Text(
                                       category.name,
-                                      style: TextStyles.caption.copyWith(
+                                      style: TextStyles.caption(context).copyWith(
                                           color: Colors.black,
                                           fontWeight: FontWeight.normal),
                                     ),

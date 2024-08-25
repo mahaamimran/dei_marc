@@ -13,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Text(
           'Settings',
-          style: TextStyles.appBarTitle.copyWith(color: Colors.black),
+          style: TextStyles.appBarTitle(context).copyWith(color: Colors.black),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -27,7 +27,7 @@ class SettingsScreen extends StatelessWidget {
               children: [
                 Text(
                   'Font Size',
-                  style: TextStyles.heading.copyWith(
+                  style: TextStyles.heading(context).copyWith(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),

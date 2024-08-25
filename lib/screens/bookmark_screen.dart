@@ -16,7 +16,7 @@ class BookmarksScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Text(
           'Bookmarks',
-          style: TextStyles.appBarTitle.copyWith(color: Colors.black), // Correctly set text color in the TextStyle
+          style: TextStyles.appBarTitle(context).copyWith(color: Colors.black), // Correctly set text color in the TextStyle
         ),
         backgroundColor: Colors.white, // Set app bar background to white
         elevation: 0, // Remove the shadow
@@ -91,7 +91,7 @@ class BookmarksScreen extends StatelessWidget {
                       children: [
                         Text(
                           '${Helpers.getTitle(bookId)} ${categoryId}',
-                          style: TextStyles.caption.copyWith(
+                          style: TextStyles.caption(context)..copyWith(
                             fontWeight: FontWeight.bold,
                             color: bookPrimaryColor, // Text color set to primary color
                             fontSize: 16, // Fixed font size
@@ -106,7 +106,7 @@ class BookmarksScreen extends StatelessWidget {
                         const SizedBox(height: 8.0),
                         Text(
                           categoryName,
-                          style: TextStyles.caption.copyWith(
+                          style: TextStyles.caption(context).copyWith(
                             fontSize: 14, // Fixed font size
                             color: Colors.black, // Text color set to black
                           ),

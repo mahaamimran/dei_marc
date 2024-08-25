@@ -96,7 +96,7 @@ class JumpToCategory extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   '${index + 1}. $displayName',
-                                  style: TextStyles.caption.copyWith(
+                                  style: TextStyles.caption(context).copyWith(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16,
                                   ),

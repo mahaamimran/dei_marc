@@ -9,7 +9,7 @@ import 'package:dei_marc/config/enums.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/widgets/content_list_widget.dart';
-import 'package:dei_marc/widgets/font_adjuster_widget.dart';
+import 'package:dei_marc/widgets/font_settings_widget.dart';
 import 'package:dei_marc/widgets/jump_to_category.dart';
 import 'package:dei_marc/config/color_constants.dart';
 
@@ -102,7 +102,7 @@ class _ContentScreenState extends State<ContentScreen> {
         foregroundColor: Colors.white,
         title: Text(
           '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
-          style: TextStyles.appBarTitle,
+          style: TextStyles.appBarTitle(context),
         ),
         actions: [
           IconButton(
@@ -120,7 +120,7 @@ class _ContentScreenState extends State<ContentScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.text_fields),
-            onPressed: () => _showFontSizeAdjuster(context),
+            onPressed: () => _showFontSettings(context), 
           ),
            IconButton(
             icon: const Icon(Icons.list),
@@ -190,12 +190,12 @@ class _ContentScreenState extends State<ContentScreen> {
     );
   }
 
-  void _showFontSizeAdjuster(BuildContext context) {
+  void _showFontSettings(BuildContext context) { 
     showModalBottomSheet(
       context: context,
       isDismissible: true,
       builder: (context) {
-        return FontSizeAdjusterWidget(
+        return FontSettingsWidget(
           appBarColor: widget.appBarColor,
           secondaryColor: widget.secondaryColor,
         );

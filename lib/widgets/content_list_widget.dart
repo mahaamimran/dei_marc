@@ -66,7 +66,7 @@ class ContentListWidget extends StatelessWidget {
                         Expanded(
                           child: Text(
                             Helpers.capitalizeTitle(categoryName).toUpperCase(),
-                            style: TextStyles.heading.copyWith(
+                            style: TextStyles.heading(context).copyWith(
                               fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5,
                             ),
                             maxLines: 3,
@@ -94,7 +94,7 @@ class ContentListWidget extends StatelessWidget {
                   ),
                   Text(
                     Helpers.capitalizeTitle(subcategory.name),
-                    style: TextStyles.subheading.copyWith(
+                    style: TextStyles.subheading(context).copyWith(
                       fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5,
                       color: appBarColor,
                     ),
@@ -121,7 +121,7 @@ class ContentListWidget extends StatelessWidget {
                                   const EdgeInsets.symmetric(vertical: 8.0),
                               child: Text(
                                 firstItem.description!,
-                                style: TextStyles.content.copyWith(
+                                style: TextStyles.content(context).copyWith(
                                   fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.1,
                                 ),
                               ),
@@ -186,7 +186,7 @@ class ContentListWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
               Helpers.capitalizeTitle(contentItem.heading!),
-              style: TextStyles.heading.copyWith(
+              style: TextStyles.heading(context).copyWith(
                 fontSize: fontSize + 4,
               ),
             ),
@@ -200,7 +200,7 @@ class ContentListWidget extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
                     Helpers.capitalizeTitle(quote.text),
-                    style: TextStyles.subheading.copyWith(
+                    style: TextStyles.subheading(context).copyWith(
                       fontSize: fontSize + 2,
                     ),
                   ),
@@ -244,7 +244,7 @@ class ContentListWidget extends StatelessWidget {
             Expanded(
               child: Text(
                 quote.text,
-                style: TextStyles.bullet.copyWith(fontSize: fontSize),
+                style: TextStyles.bullet(context).copyWith(fontSize: fontSize),
               ),
             ),
           ],
@@ -275,7 +275,7 @@ class ContentListWidget extends StatelessWidget {
               Expanded(
                 child: Text(
                   quote.text,
-                  style: TextStyles.quote.copyWith(fontSize: fontSize),
+                  style: TextStyles.quote(context).copyWith(fontSize: fontSize),
                 ),
               ),
             ],
@@ -287,7 +287,7 @@ class ContentListWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
           Helpers.capitalizeTitle(quote.text),
-          style: TextStyles.bold.copyWith(fontSize: fontSize),
+          style: TextStyles.bold(context).copyWith(fontSize: fontSize),
         ),
       );
     } else {
@@ -295,7 +295,7 @@ class ContentListWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
           Helpers.capitalizeTitle(quote.text),
-          style: TextStyles.content.copyWith(fontSize: fontSize),
+          style: TextStyles.content(context).copyWith(fontSize: fontSize),
         ),
       );
     }
