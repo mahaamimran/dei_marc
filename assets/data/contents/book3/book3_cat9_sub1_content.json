@@ -1,13 +1,13 @@
 {
-    "category": "book3_cat9",
-    "subcategory": "Activity | Mix And Match  | 15-20 Min",
+    "category": "Negative Self Perception | 2-2.5 hrs",
+    "subcategory": "Activity | Mix And Match | 15-20 Min",
     "content": [
         {
             "heading": "Aim",
             "content": [
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "To create a deeper understanding and awareness of gender equality and women's issues among participants through interactive engagement and critical thinking."
                 }
             ]
         },
@@ -16,11 +16,19 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "To consider and discuss a wide range of topics related to gender equality."
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "To enhance their understanding of gender issues."
+                },
+                {
+                    "type": "bullet",
+                    "text": "To reflect on societal norms and biases regarding gender roles."
+                },
+                {
+                    "type": "bullet",
+                    "text": "To engage in meaningful dialogue about societal roles, economic disparities, and the importance of valuing women's contributions in all sectors of life."
                 }
             ]
         },
@@ -29,7 +37,7 @@
             "content": [
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": " Paper strips with statements cut in half."
                 }
             ]
         },
@@ -37,45 +45,60 @@
             "heading": "Sequence",
             "content": [
                 {
-                    "type": "bold",
-                    "text": "Step 1: "
-                },
-                {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "This activity involves handing out pieces of paper that feature statements about issues affecting women. These slips have been unevenly divided in half and mixed, ensuring that each piece can only be perfectly matched with its corresponding half.\nThe following sample statements are to be matched:"
                 },
                 {
-                    "type": "bold",
-                    "text": "Step 2: "
+                    "type": "bullet",
+                    "text": "Work-life balance is essential for both parents, not just mothers."
                 },
                 {
-                    "type": "paragraph",
-                    "text": ""
+                    "type": "bullet",
+                    "text": "If we want to change how society views us, we need to start by viewing ourselves differently."
                 },
                 {
-                    "type": "bold",
-                    "text": "Step 3: "
+                    "type": "bullet",
+                    "text": "Empowering women empowers humanity."
                 },
                 {
-                    "type": "paragraph",
-                    "text": ""
+                    "type": "bullet",
+                    "text": "When we think of an engineer, we never think of a woman."
                 },
                 {
-                    "type": "bold",
-                    "text": "Step 4: "
+                    "type": "bullet",
+                    "text": "We are not divided by our differences. We are divided by our failure to identify, accept, and celebrate them."
                 },
                 {
-                    "type": "paragraph",
-                    "text": ""
-                }
-            ]
-        },
-        {
-            "heading": "Evaluation",
-            "content": [
+                    "type": "bullet",
+                    "text": "Women’s rights are human rights, and human rights are women’s rights."
+                },
                 {
-                    "type": "paragraph",
-                    "text": ""
+                    "type": "bullet",
+                    "text": "We do not aim that women should have power over men; but over themselves."
+                },
+                {
+                    "type": "bullet",
+                    "text": "In future, there will be no female leaders. There will just be leaders."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Educate a woman, educate a nation."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Women can work as hard as men can."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Paternity leave is a way for men to be fully involved in the lives of their children."
+                },
+                {
+                    "type": "bullet",
+                    "text": "The idea that \"real men\" don't cry adds to toxic masculinity."
+                },
+                {
+                    "type": "bullet",
+                    "text": "The stereotype that women's main purpose is to serve as housewives and mothers underestimates their potential in other areas."
                 }
             ]
         }

@@ -1,34 +1,35 @@
 {
-    "category": "book3_cat11",
+    "category": "Gender Pay Gap and Budgetary Constraints | 2-2.5 hrs",
     "subcategory": "Video | The Wage Disparity | 10 Min",
-    "description": "",
+    "description": "The video humorously portrays the disparity in pay between Sara and Ali, despite holding the same position and experience. Through Sara's witty responses and strategic approach to work, it highlights the frustration and absurdity of unequal pay in the workplace. The narrative serves as a reminder of the ongoing battle for gender equality and fair compensation.",
     "content": [
+        {
+            "heading": "",
+            "content": [
+                {
+                    "type": "video",
+                    "text": ""
+                }
+            ]
+        },
         {
             "heading": "Learning Outcomes",
             "content": [
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Identify factors contributing to wage disparity and its impact on employee morale:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will analyze the factors contributing to the wage gap portrayed in the video and explore how they affect individuals' attitudes towards their work. They will understand the implications of unequal pay on employee motivation, job satisfaction, and overall well-being."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Develop strategies to raise awareness and advocate for equal pay: "
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
-                },
-                {
-                    "type": "subheading",
-                    "text": ""
-                },
-                {
-                    "type": "paragraph",
-                    "text": ""
+                    "text": "Participants will learn about effective methods for raising awareness and advocating for equal pay in the workplace. They will explore strategies such as conducting pay audits to identify and address wage gaps, promoting transparency in salary negotiations and compensation practices, and fostering a culture of accountability and fairness in addressing wage disparities."
                 }
             ]
         },
@@ -37,19 +38,11 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "What factors contribute to this wage gap, and how does it impact Sara's attitude towards her work?"
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "link",
-                    "text": ""
+                    "text": "What methods can be used to raise awareness and advocate for equal pay in the workplace?"
                 }
             ]
         }

@@ -1,8 +1,17 @@
 {
-    "category": "Women in Stem",
+    "category": "Women in Stem | 2-2.5 hrs",
     "subcategory": "Video | Women In Stem (#StemTheGap) | 10 Min",
     "description": "The video portrays various scenarios where young girls encounter gender stereotypes and discouragement in pursuing STEM (Science, Technology, Engineering, Mathematics) fields. In the first scene, a girl is told by her father to aspire to be a film star instead of an astronaut, unlike her brother. The second scene shows a girl who single-handedly completes a science project, only for her male peer to initially receive the credit. In the third scene, a mother criticizes her daughter's creative robot costume, preferring traditional princess attire. The final scene depicts a father discouraging his daughter from helping with a mechanical task, suggesting it's unsuitable for her. Each scenario highlights the subtle ways gender biases can undermine girls' interests and confidence in STEM activities.",
     "content": [
+        {
+            "heading": "",
+            "content": [
+                {
+                    "type": "video",
+                    "text": ""
+                }
+            ]
+        },
         {
             "heading": "Learning Outcomes",
             "content": [
@@ -56,7 +65,7 @@
                     "text": "How do cultural expectations about gender roles contribute to the reactions of the adults in the video? Discuss how cultural shifts could help change the narrative around girls and women in STEM."
                 },
                 {
-                    "type": "link",
+                    "type": "bullet",
                     "text": "Have you ever witnessed or experienced similar situations to those depicted in the video? How did they make you feel, and what was the outcome?"
                 }
             ]

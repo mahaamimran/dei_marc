@@ -1,34 +1,43 @@
 {
-    "category": "book3_cat7",
+    "category": "Double Shift | 2-2.5 hrs",
     "subcategory": "Video | A Tale Of Double Standards | 10 Min",
-    "description": "",
+    "description": "The video sheds light on the subtle yet significant differences in treatment between working men and women within the household. Through contrasting scenes of a wife and husband returning home to their families, it highlights the societal double standards embedded in casual jokes and expectations. It prompts viewers to reflect on and challenge these disparities in domestic dynamics.",
     "content": [
+        {
+            "heading": "",
+            "content": [
+                {
+                    "type": "video",
+                    "text": ""
+                }
+            ]
+        },
         {
             "heading": "Learning Outcomes",
             "content": [
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Increase awareness of gender-based double standards in domestic settings: "
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will become more aware of the subtle yet significant differences in treatment between working men and women within households, as depicted in the video. They will recognize how societal expectations and traditional gender roles can lead to disparities in domestic dynamics and impact individuals' experiences both at work and at home."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Analyze the reinforcement of traditional gender roles through everyday remarks and tasks: "
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Participants will analyze the everyday remarks and tasks depicted in the video to understand how they reinforce traditional gender roles. They will examine how casual jokes and expectations contribute to continuing stereotypes and unequal treatment based on gender, and explore the implications of these dynamics on individuals' personal and professional lives."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Develop strategies to challenge and change societal expectations: "
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will explore proactive steps that can be taken to challenge and change societal expectations surrounding gender roles in domestic settings. They will brainstorm strategies such as promoting open communication and mutual respect within relationships, sharing household responsibilities equitably, challenging traditional gender norms and stereotypes, and advocating for policies and initiatives that support gender equality both at home and in the workplace."
                 }
             ]
         },
@@ -37,19 +46,15 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "Have you seen differences in how working men and women are treated in households like the one depicted in the video?"
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "How do the everyday remarks and tasks shown in the video reinforce traditional gender roles? "
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "link",
-                    "text": ""
+                    "text": "What steps can be taken to challenge and change these expectations?"
                 }
             ]
         }

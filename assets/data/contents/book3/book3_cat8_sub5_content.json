@@ -1,8 +1,17 @@
 {
-    "category": "book3_cat8",
+    "category": "Microaggressions | 2-2.5 hrs",
     "subcategory": "TEDx Talk | Management Women And The New Facts Of Life | 15 Min",
     "description": "",
     "content": [
+        {
+            "heading": "",
+            "content": [
+                {
+                    "type": "video",
+                    "text": ""
+                }
+            ]
+        },
         {
             "heading": "Learning Outcomes",
             "content": [
@@ -53,10 +62,6 @@
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "link",
                     "text": ""
                 }
             ]

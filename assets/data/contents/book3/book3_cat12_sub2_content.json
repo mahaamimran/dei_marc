@@ -1,42 +1,33 @@
 {
-    "category": "book3_cat12",
+    "category": "Leadership | 2-2.5 hrs",
     "subcategory": "Caselet 2 | A Determined Saleswoman In Peshawar | 25 Min",
-    "description": "",
     "content": [
         {
             "heading": "Learning Outcomes",
             "content": [
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Identify strategies for overcoming gender-based biases in the workplace:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will analyze a woman's career journey to overcome biases and succeed in a male-dominated field. They will learn about the importance of resilience, determination, and seeking support from mentors and allies in navigating challenging environments and breaking down barriers to career advancement."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Develop proactive measures to mitigate gender-based discrimination in male-dominated industries or regions:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Participants will explore effective strategies that organizations can implement to address and mitigate gender-based discrimination in industries, professions, or regions dominated by men. They will examine approaches such as implementing diversity and inclusion training, establishing mentorship programs, creating inclusive policies and practices, and fostering a supportive work culture that values and respects diversity."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Advocate for systemic changes to empower women in traditionally conservative settings:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
-                },
-                {
-                    "type": "subheading",
-                    "text": ""
-                },
-                {
-                    "type": "paragraph",
-                    "text": ""
+                    "text": "Trainees will learn about the role of women leaders in advocating for systemic changes that empower women in traditionally conservative settings. They will explore strategies such as advocating for gender-inclusive policies and practices within the organization and leveraging their influence to mentor and support other women."
                 }
             ]
         },
@@ -45,19 +36,15 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "How did Fatima overcome biases and succeed?"
                 },
                 {
                     "type": "bullet",
-                    "text": ""
+                    "text": "In industries, professions, or regions dominated by men, what can organizations do to mitigate gender-based discrimination?"
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "What can leaders like Fatima do to advocate for systemic changes that empower women in traditionally conservative settings?"
                 }
             ]
         }

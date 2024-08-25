@@ -1,8 +1,16 @@
 {
-    "category": "book3_cat5",
+    "category": "Work Life Balance | 2-2.5 hrs",
     "subcategory": "Video 1 | Are You Listening To Your Gender Bias Too Much? | 10 Min",
-    "description": "",
     "content": [
+        {
+            "heading": "",
+            "content": [
+                {
+                    "type": "video",
+                    "text": ""
+                }
+            ]
+        },
         {
             "heading": "Learning Outcomes",
             "content": [
@@ -45,10 +53,6 @@
                 },
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "link",
                     "text": ""
                 }
             ]
