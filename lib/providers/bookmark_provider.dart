@@ -23,6 +23,12 @@ class BookmarkProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> clearAllBookmarks() async {
+    _bookmarks.clear();
+    await _saveBookmarks();
+    notifyListeners();
+  }
+
   Future<void> _saveBookmarks() async {
     final prefs = await SharedPreferences.getInstance();
     prefs.setStringList(_bookmarkKey, _bookmarks);

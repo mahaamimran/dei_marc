@@ -92,7 +92,7 @@ class _ContentScreenState extends State<ContentScreen> {
     final contentProvider = Provider.of<ContentProvider>(context);
     final bookmarkProvider = Provider.of<BookmarkProvider>(context);
 
-    final String bookmarkId = '${widget.bookId}-${widget.categoryId}';
+    final String bookmarkId = '${widget.bookId}-${widget.categoryId}-${widget.categoryName}';
     final bool isBookmarked = bookmarkProvider.isBookmarked(bookmarkId);
 
     return Scaffold(
