@@ -1,13 +1,16 @@
-import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/models/subcategory.dart';
-import 'package:dei_marc/widgets/content_list_widget.dart';
-import 'package:dei_marc/widgets/jump_to_category.dart';
+import 'package:dei_marc/providers/config_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:dei_marc/providers/bookmark_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
-import 'package:dei_marc/providers/config_provider.dart';
+import 'package:dei_marc/config/enums.dart';
+import 'package:dei_marc/helpers/helpers.dart';
+import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/widgets/content_list_widget.dart';
+import 'package:dei_marc/widgets/font_adjuster_widget.dart';
+import 'package:dei_marc/widgets/jump_to_category.dart';
 import 'package:dei_marc/config/color_constants.dart';
 
 class ContentScreen extends StatefulWidget {
@@ -33,7 +36,6 @@ class ContentScreen extends StatefulWidget {
 class _ContentScreenState extends State<ContentScreen> {
   final ScrollController _scrollController = ScrollController();
   final Map<String, GlobalKey> _keyMap = {};
-  bool _isLoading = true;
 
   @override
   void initState() {
@@ -65,10 +67,6 @@ class _ContentScreenState extends State<ContentScreen> {
         }
       }
     }
-
-    setState(() {
-      _isLoading = false;
-    });
   }
 
   void _scrollToIndex(int index) {
@@ -90,9 +88,16 @@ class _ContentScreenState extends State<ContentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final subcategoryProvider = Provider.of<SubcategoryProvider>(context);
+    final contentProvider = Provider.of<ContentProvider>(context);
+    final bookmarkProvider = Provider.of<BookmarkProvider>(context);
+
+    final String bookmarkId = '${widget.bookId}-${widget.categoryId}';
+    final bool isBookmarked = bookmarkProvider.isBookmarked(bookmarkId);
+
     return Scaffold(
       backgroundColor: Colors.white,
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: widget.appBarColor,
         foregroundColor: Colors.white,
         title: Text(
@@ -100,30 +105,62 @@ class _ContentScreenState extends State<ContentScreen> {
           style: TextStyles.appBarTitle,
         ),
         actions: [
-          Consumer<SubcategoryProvider>(
-            builder: (context, subcategoryProvider, child) {
-              return IconButton(
-                icon: const Icon(Icons.list),
-                onPressed: () => _showCategoryList(
-                  context,
-                  subcategoryProvider.subcategories,
-                ),
-              );
+          IconButton(
+            icon: const Icon(Icons.text_fields),
+            onPressed: () => _showFontSizeAdjuster(context),
+          ),
+          IconButton(
+            icon: const Icon(Icons.list),
+            onPressed: () => _showCategoryList(
+              context,
+              subcategoryProvider.subcategories,
+            ),
+          ),
+          IconButton(
+            icon: Icon(
+              isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              if (isBookmarked) {
+                bookmarkProvider.removeBookmark(bookmarkId);
+              } else {
+                bookmarkProvider.addBookmark(bookmarkId);
+              }
             },
           ),
         ],
       ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : ContentListWidget(
-              categoryId: widget.categoryId,
-              appBarColor: widget.appBarColor,
-              secondaryColor: widget.secondaryColor,
-              categoryName: widget.categoryName,
-              scrollController: _scrollController,
-              keyMap: _keyMap,
-            ),
+      body: _buildBody(subcategoryProvider, contentProvider),
     );
+  }
+
+  Widget _buildBody(
+      SubcategoryProvider subcategoryProvider, ContentProvider contentProvider) {
+    if (subcategoryProvider.dataStatus == DataStatus.loading ||
+        contentProvider.dataStatus == DataStatus.loading) {
+      return const Center(child: CircularProgressIndicator());
+    } else if (subcategoryProvider.dataStatus == DataStatus.failure ||
+        contentProvider.dataStatus == DataStatus.failure) {
+      return const Center(
+        child: Text(
+          'Failed to load content',
+          style: TextStyle(color: Colors.red, fontSize: 18),
+        ),
+      );
+    } else if (subcategoryProvider.dataStatus == DataStatus.loaded &&
+        contentProvider.dataStatus == DataStatus.loaded) {
+      return ContentListWidget(
+        categoryId: widget.categoryId,
+        appBarColor: widget.appBarColor,
+        secondaryColor: widget.secondaryColor,
+        categoryName: widget.categoryName,
+        scrollController: _scrollController,
+        keyMap: _keyMap,
+      );
+    } else {
+      return Container();
+    }
   }
 
   void _showCategoryList(
@@ -148,6 +185,19 @@ class _ContentScreenState extends State<ContentScreen> {
             });
           },
           backgroundColor: backgroundColor,
+        );
+      },
+    );
+  }
+
+  void _showFontSizeAdjuster(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isDismissible: true,
+      builder: (context) {
+        return FontSizeAdjusterWidget(
+          appBarColor: widget.appBarColor,
+          secondaryColor: widget.secondaryColor,
         );
       },
     );
