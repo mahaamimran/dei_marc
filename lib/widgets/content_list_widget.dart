@@ -5,7 +5,7 @@ import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/helpers/helpers.dart';
-import 'package:dei_marc/config/text_styles.dart';  
+import 'package:dei_marc/config/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -29,6 +29,7 @@ class ContentListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ScrollController scrollController = ScrollController();
     return Consumer<SubcategoryProvider>(
       builder: (context, subcategoryProvider, child) {
         if (subcategoryProvider.subcategories.isEmpty) {
@@ -39,6 +40,7 @@ class ContentListWidget extends StatelessWidget {
         return Scrollbar(
           interactive: true,
           thickness: 5,
+          controller: scrollController,
           child: ListView.builder(
             controller: scrollController,
             padding: const EdgeInsets.all(16.0),
@@ -47,7 +49,7 @@ class ContentListWidget extends StatelessWidget {
               final subcategory = subcategoryProvider.subcategories[index];
               final key = GlobalKey();
               keyMap['$categoryId-$index'] = key;
-          
+
               return Padding(
                 key: key,
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -68,9 +70,12 @@ class ContentListWidget extends StatelessWidget {
                           const SizedBox(width: 18.0),
                           Expanded(
                             child: Text(
-                              Helpers.capitalizeTitle(categoryName).toUpperCase(),
+                              Helpers.capitalizeTitle(categoryName)
+                                  .toUpperCase(),
                               style: TextStyles.heading(context).copyWith(
-                                fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5,
+                                fontSize: Provider.of<SettingsProvider>(context)
+                                        .fontSize *
+                                    1.5,
                               ),
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,
@@ -83,37 +88,39 @@ class ContentListWidget extends StatelessWidget {
                     // Image before subcategory title
                     Consumer<ContentProvider>(
                       builder: (context, contentProvider, child) {
-                        final contents = contentProvider.contents[
-                                '$categoryId-${index + 1}'] ??
+                        final contents = contentProvider
+                                .contents['$categoryId-${index + 1}'] ??
                             [];
-          
+
                         if (contents.isNotEmpty &&
                             contents.first.image != null) {
                           return _buildImage(contents.first.image, context);
                         }
-          
+
                         return SizedBox.shrink();
                       },
                     ),
                     Text(
                       Helpers.capitalizeTitle(subcategory.name),
                       style: TextStyles.subheading(context).copyWith(
-                        fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.5,
+                        fontSize:
+                            Provider.of<SettingsProvider>(context).fontSize *
+                                1.5,
                         color: appBarColor,
                       ),
                     ),
                     Consumer<ContentProvider>(
                       builder: (context, contentProvider, child) {
-                        final contents = contentProvider.contents[
-                                '$categoryId-${index + 1}'] ??
+                        final contents = contentProvider
+                                .contents['$categoryId-${index + 1}'] ??
                             [];
-          
+
                         if (contents.isEmpty) {
                           return const Text('No content available.');
                         }
-          
+
                         final firstItem = contents.first;
-          
+
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -125,7 +132,10 @@ class ContentListWidget extends StatelessWidget {
                                 child: Text(
                                   firstItem.description!,
                                   style: TextStyles.content(context).copyWith(
-                                    fontSize: Provider.of<SettingsProvider>(context).fontSize * 1.1,
+                                    fontSize:
+                                        Provider.of<SettingsProvider>(context)
+                                                .fontSize *
+                                            1.1,
                                   ),
                                 ),
                               ),
@@ -168,11 +178,13 @@ class ContentListWidget extends StatelessWidget {
           'assets/$imagePath',
           fit: BoxFit.cover,
           errorBuilder: (context, error, stackTrace) {
+            print('Error loading image: $error'); // Add this line for logging
             return Text('Image not found');
           },
         ),
       );
     } else {
+      print('Image path is null for $imageName'); // Add this line for logging
       return Text('Image not found');
     }
   }
