@@ -48,75 +48,77 @@ class JumpToCategory extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.3),
-                    blurRadius: 10,
-                    spreadRadius: 2,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-              constraints: BoxConstraints(
-                maxHeight: MediaQuery.of(context).size.height * 0.5,
-              ),
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: subcategories.length,
-                itemBuilder: (context, index) {
-                  final subcategory = subcategories[index];
-                  final displayName = Helpers.capitalizeTitle(subcategory.name);
+            Flexible(
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.3),
+                      blurRadius: 10,
+                      spreadRadius: 2,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                constraints: BoxConstraints(
+                  maxHeight: MediaQuery.of(context).size.height * 0.5,
+                ),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: subcategories.length,
+                  itemBuilder: (context, index) {
+                    final subcategory = subcategories[index];
+                    final displayName = Helpers.capitalizeTitle(subcategory.name);
 
-                  return Column(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          onCategorySelected(index);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: Row(
-                            children: [
-                              const SizedBox(width: 10),
-                              Container(
-                                width: 5,
-                                height: 30,
-                                decoration: BoxDecoration(
-                                  color: backgroundColor,
-                                  borderRadius: BorderRadius.circular(2.0),
-                                ),
-                              ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Text(
-                                  '${index + 1}. $displayName',
-                                  style: TextStyles.caption(context).copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
+                    return Column(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            onCategorySelected(index);
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Row(
+                              children: [
+                                const SizedBox(width: 10),
+                                Container(
+                                  width: 5,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: backgroundColor,
+                                    borderRadius: BorderRadius.circular(2.0),
                                   ),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 2,
                                 ),
-                              ),
-                            ],
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Text(
+                                    '${index + 1}. $displayName',
+                                    style: TextStyles.caption(context).copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      const Divider(
-                        height: 1,
-                        thickness: 1,
-                        color: Colors.grey,
-                      ),
-                      const SizedBox(height: 8),
-                    ],
-                  );
-                },
+                        const Divider(
+                          height: 1,
+                          thickness: 1,
+                          color: Colors.grey,
+                        ),
+                        const SizedBox(height: 8),
+                      ],
+                    );
+                  },
+                ),
               ),
             ),
           ],

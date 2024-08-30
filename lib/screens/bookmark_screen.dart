@@ -32,7 +32,7 @@ class BookmarksScreen extends StatelessWidget {
           ),
           title: Text(
             'Bookmarks',
-            style: TextStyles.appBarTitle(context).copyWith(color: Colors.black),
+            style: TextStyles.appBarTitle.copyWith(color: Colors.black),
           ),
           backgroundColor: Colors.white,
           elevation: 0,

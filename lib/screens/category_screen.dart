@@ -4,7 +4,6 @@ import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/screens/content_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../config/text_styles.dart';
 
 class CategoryScreen extends StatefulWidget {
@@ -40,8 +39,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 Navigator.pop(context);
               },
             ),
-            backgroundColor: widget.appBarColor,
-            title: Text("Categories", style: TextStyles.appBarTitle(context)),
+            backgroundColor: widget.appBarColor, 
+            title: Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               Consumer<SettingsProvider>(
                 builder: (context, settingsProvider, child) {
@@ -60,7 +59,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             ],
           ),
           body: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0),
             child: Consumer2<CategoryProvider, SettingsProvider>(
               builder: (context, categoryProvider, settingsProvider, child) {
                 if (categoryProvider.categories.isEmpty) {
@@ -69,7 +68,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 12.0),
                     Expanded(
                       child: settingsProvider.isGridView
                           ? _buildGridView(context, categoryProvider)
@@ -123,7 +121,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 children: [
                   Text(
                     '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
-                    style: TextStyles.caption(context).copyWith(
+                    style: TextStyles.appCaption.copyWith(
                       fontWeight: FontWeight.bold,
                       color: widget.appBarColor,
                     ),
@@ -137,7 +135,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   const SizedBox(height: 8.0),
                   Text(
                     category.name,
-                    style: TextStyles.caption(context),
+                    style: TextStyles.appCaption.copyWith(
+                      color: Colors.black,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ],

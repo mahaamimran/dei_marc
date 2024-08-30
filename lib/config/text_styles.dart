@@ -3,15 +3,28 @@ import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 
 class TextStyles {
-  static TextStyle appBarTitle(BuildContext context) {
-    return TextStyle(
-      fontFamily: Provider.of<SettingsProvider>(context).fontFamily,
-      fontSize: 26,
-      fontWeight: FontWeight.bold,
-      color: Color.fromARGB(255, 248, 247, 247),
-    );
-  }
+  // App-wide TextStyles (do not depend on BuildContext)
+  static const TextStyle appBarTitle = TextStyle(
+    fontFamily: 'Raleway',
+    fontSize: 26,
+    fontWeight: FontWeight.bold,
+    color: Color.fromARGB(255, 248, 247, 247),
+  );
 
+  static const TextStyle appTitle = TextStyle(
+    fontFamily: 'Raleway',
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static const TextStyle appCaption = TextStyle(
+    fontFamily: 'Raleway',
+    fontSize: 14,
+    color: Colors.grey,
+  );
+
+  // Content-specific TextStyles (depend on BuildContext and user settings)
   static TextStyle heading(BuildContext context) {
     return TextStyle(
       fontFamily: Provider.of<SettingsProvider>(context).fontFamily,

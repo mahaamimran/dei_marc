@@ -15,7 +15,7 @@ class SettingsScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: Text(
             'Settings',
-            style: TextStyles.appBarTitle(context).copyWith(color: Colors.black),
+            style: TextStyles.appBarTitle.copyWith(color: Colors.black),
           ),
           backgroundColor: Colors.transparent,
           elevation: 0,

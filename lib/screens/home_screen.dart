@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           scrolledUnderElevation: 0,
           title: Text(
             'Home',
-            style: TextStyles.appBarTitle(context).copyWith(color: Colors.black),
+            style: TextStyles.appBarTitle.copyWith(color: Colors.black),
           ),
         ),
         body: Padding(
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                    Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: Text('Books', style: TextStyles.heading(context)),
+                    child: Text('Books', style: TextStyles.appTitle.copyWith(fontSize:24)),
                   ),
                   Expanded(
                     child: ListView.builder(
@@ -77,13 +77,14 @@ class HomeScreen extends StatelessWidget {
                                   const SizedBox(height: 8.0),
                                   Text(
                                     book.title,
-                                    style: TextStyles.title
-                                        (context).copyWith(color: primaryColor),
+                                    style: TextStyles.appTitle.copyWith(
+                                      color: primaryColor,
+                                    ),
                                   ),
                                   const SizedBox(height: 4.0),
                                   Text(
                                     'By ${book.author}',
-                                    style: TextStyles.caption(context),
+                                    style: TextStyles.appCaption,
                                   ),
                                   const SizedBox(height: 4.0),
                                 ],
