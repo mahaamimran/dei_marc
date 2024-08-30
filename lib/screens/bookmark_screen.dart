@@ -215,11 +215,11 @@ class BookmarksScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return CupertinoAlertDialog(
-          title: const Text("Clear All Bookmarks", style: TextStyles.appTitle),
-          content: const Text("Are you sure you want to clear all bookmarks?", style: TextStyles.appCaption),
+          title: const Text("Clear All Bookmarks"),
+          content: const Text("Are you sure you want to clear all bookmarks?"),
           actions: [
             CupertinoDialogAction(
-              child: const Text("Cancel", style: TextStyles.appTitle),
+              child: const Text("Cancel"),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -230,8 +230,7 @@ class BookmarksScreen extends StatelessWidget {
                 Navigator.of(context).pop();
               },
               isDestructiveAction: true,
-              child: Text("Clear All", style: TextStyles.appTitle.copyWith(
-                color: Colors.red,
+              child: Text("Clear All", style: TextStyle(color: Colors.red
               )),
             ),
           ],

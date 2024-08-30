@@ -14,11 +14,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: ColorConstants.primaryColor,
+          backgroundColor: Colors.grey[100],
           // to avoid color change on scroll
           scrolledUnderElevation: 0,
           title: Text(
@@ -36,9 +37,10 @@ class HomeScreen extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Padding(
+                  Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Text('Books', style: TextStyles.appTitle.copyWith(fontSize:24)),
+                    child: Text('Books',
+                        style: TextStyles.appTitle.copyWith(fontSize: 24)),
                   ),
                   Expanded(
                     child: ListView.builder(

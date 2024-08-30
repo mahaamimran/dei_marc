@@ -29,7 +29,8 @@ class _TabBarScreenState extends State<TabBarScreen> {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
         backgroundColor: Colors.white,
         body: _widgetOptions.elementAt(_selectedIndex),
@@ -37,7 +38,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           fixedColor: Colors.black,
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.grey[100],
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),

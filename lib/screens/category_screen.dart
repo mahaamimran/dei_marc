@@ -1,5 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'dart:ffi';
+
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/providers/category_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
@@ -28,7 +30,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: ChangeNotifierProvider(
         create: (context) =>
             CategoryProvider()..loadCategories(widget.bookFileName),
@@ -41,8 +44,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 Navigator.pop(context);
               },
             ),
-            backgroundColor: widget.appBarColor, 
-            title: const Text("Categories", style: TextStyles.appBarTitle),
+            backgroundColor: widget.appBarColor,
+            title: Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               Consumer<SettingsProvider>(
                 builder: (context, settingsProvider, child) {
@@ -60,25 +63,15 @@ class _CategoryScreenState extends State<CategoryScreen> {
               ),
             ],
           ),
-          body: Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0),
-            child: Consumer2<CategoryProvider, SettingsProvider>(
-              builder: (context, categoryProvider, settingsProvider, child) {
-                if (categoryProvider.categories.isEmpty) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: settingsProvider.isGridView
-                          ? _buildGridView(context, categoryProvider)
-                          : _buildListView(context, categoryProvider),
-                    ),
-                  ],
-                );
-              },
-            ),
+          body: Consumer2<CategoryProvider, SettingsProvider>(
+            builder: (context, categoryProvider, settingsProvider, child) {
+              if (categoryProvider.categories.isEmpty) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              return settingsProvider.isGridView
+                  ? _buildGridView(context, categoryProvider)
+                  : _buildListView(context, categoryProvider);
+            },
           ),
         ),
       ),
@@ -88,6 +81,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget _buildGridView(
       BuildContext context, CategoryProvider categoryProvider) {
     return GridView.builder(
+      padding: const EdgeInsets.all(8.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 1.2,
@@ -154,6 +148,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget _buildListView(
       BuildContext context, CategoryProvider categoryProvider) {
     return ListView.builder(
+      padding: const EdgeInsets.all(8.0),
       itemCount: categoryProvider.categories.length,
       itemBuilder: (context, index) {
         final category = categoryProvider.categories[index];
