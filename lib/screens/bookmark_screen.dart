@@ -3,6 +3,7 @@ import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'content_screen.dart';
@@ -21,7 +22,7 @@ class BookmarksScreen extends StatelessWidget {
           leading: Consumer<BookmarkProvider>(
             builder: (context, bookmarkProvider, child) {
               return IconButton(
-                icon: Icon(Icons.delete_rounded, color: Colors.red),
+                icon: const Icon(Icons.delete_rounded, color: Colors.red),
                 onPressed: () {
                   if (bookmarkProvider.bookmarks.isNotEmpty) {
                     _showClearAllDialog(context, bookmarkProvider);
@@ -58,8 +59,8 @@ class BookmarksScreen extends StatelessWidget {
       
             // Display the appropriate view (grid or list) based on user preference
             return settingsProvider.isGridView
-                ? _buildGridView(context, bookmarkProvider)
-                : _buildListView(context, bookmarkProvider);
+                ? _buildGridView(bookmarkProvider)
+                : _buildListView(bookmarkProvider);
           },
         ),
       ),
@@ -67,7 +68,7 @@ class BookmarksScreen extends StatelessWidget {
   }
 
   // Build the grid view for bookmarks
-  Widget _buildGridView(BuildContext context, BookmarkProvider bookmarkProvider) {
+  Widget _buildGridView(BookmarkProvider bookmarkProvider) {
     return GridView.builder(
       padding: const EdgeInsets.all(8.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -85,7 +86,7 @@ class BookmarksScreen extends StatelessWidget {
   }
 
   // Build the list view for bookmarks
-  Widget _buildListView(BuildContext context, BookmarkProvider bookmarkProvider) {
+  Widget _buildListView(BookmarkProvider bookmarkProvider) {
     return ListView.builder(
       padding: const EdgeInsets.all(8.0),
       itemCount: bookmarkProvider.bookmarks.length,
@@ -134,7 +135,7 @@ class BookmarksScreen extends StatelessWidget {
             children: [
               Text(
                 '${Helpers.getTitle(bookId)} $categoryId',
-                style: TextStyles.caption(context).copyWith(
+                style: TextStyles.appCaption.copyWith(
                   fontWeight: FontWeight.bold,
                   color: bookPrimaryColor,
                 ),
@@ -148,7 +149,9 @@ class BookmarksScreen extends StatelessWidget {
               const SizedBox(height: 8.0),
               Text(
                 categoryName,
-                style: TextStyles.caption(context),
+                style: TextStyles.appCaption.copyWith(
+                  color: Colors.black,
+                ),
                 textAlign: TextAlign.center,
               ),
             ],
@@ -190,14 +193,14 @@ class BookmarksScreen extends StatelessWidget {
         child: ListTile(
           title: Text(
             '${Helpers.getTitle(bookId)} $categoryId',
-            style: TextStyles.caption(context).copyWith(
+            style: TextStyles.appCaption.copyWith(
               color: bookPrimaryColor,
               fontWeight: FontWeight.bold,
             ),
           ),
           subtitle: Text(
             categoryName,
-            style: TextStyles.caption(context).copyWith(
+            style: TextStyles.appCaption.copyWith(
               color: Colors.black,
               fontWeight: FontWeight.normal,
             ),
@@ -207,27 +210,29 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
-  // Show a confirmation dialog to clear all bookmarks
   void _showClearAllDialog(BuildContext context, BookmarkProvider bookmarkProvider) {
-    showDialog(
+    showCupertinoDialog(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text("Clear All Bookmarks"),
-          content: const Text("Are you sure you want to clear all bookmarks?"),
+        return CupertinoAlertDialog(
+          title: const Text("Clear All Bookmarks", style: TextStyles.appTitle),
+          content: const Text("Are you sure you want to clear all bookmarks?", style: TextStyles.appCaption),
           actions: [
-            TextButton(
-              child: const Text("Cancel"),
+            CupertinoDialogAction(
+              child: const Text("Cancel", style: TextStyles.appTitle),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
-            TextButton(
-              child: const Text("Clear All"),
+            CupertinoDialogAction(
               onPressed: () {
                 bookmarkProvider.clearAllBookmarks();
                 Navigator.of(context).pop();
               },
+              isDestructiveAction: true,
+              child: Text("Clear All", style: TextStyles.appTitle.copyWith(
+                color: Colors.red,
+              )),
             ),
           ],
         );

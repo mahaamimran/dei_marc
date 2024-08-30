@@ -34,6 +34,8 @@ class _TabBarScreenState extends State<TabBarScreen> {
         backgroundColor: Colors.white,
         body: _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
           fixedColor: Colors.black,
           backgroundColor: Colors.white,
           items: const <BottomNavigationBarItem>[

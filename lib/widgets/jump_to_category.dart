@@ -10,12 +10,12 @@ class JumpToCategory extends StatelessWidget {
   final Color backgroundColor;
 
   const JumpToCategory({
-    Key? key,
+    super.key,
     required this.subcategories,
     required this.onCategorySelected,
     required this.categoryName,
     required this.backgroundColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class JumpToCategory extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: Text(
                 categoryName,
                 style: const TextStyle(

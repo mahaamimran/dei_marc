@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:dei_marc/config/image_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: ColorConstants.primaryColor,
           // to avoid color change on scroll
           scrolledUnderElevation: 0,
           title: Text(
@@ -35,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                    Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Text('Books', style: TextStyles.appTitle.copyWith(fontSize:24)),
                   ),
                   Expanded(
@@ -65,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                             );
                           },
                           child: Card(
-                            color: Colors.white,
+                            color: secondaryColor,
                             margin: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -84,7 +86,9 @@ class HomeScreen extends StatelessWidget {
                                   const SizedBox(height: 4.0),
                                   Text(
                                     'By ${book.author}',
-                                    style: TextStyles.appCaption,
+                                    style: TextStyles.appCaption.copyWith(
+                                      color: Colors.black,
+                                    ),
                                   ),
                                   const SizedBox(height: 4.0),
                                 ],

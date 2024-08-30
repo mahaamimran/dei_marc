@@ -1,5 +1,6 @@
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,100 +9,176 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
-      child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Text(
-            'Settings',
-            style: TextStyles.appBarTitle.copyWith(color: Colors.black),
-          ),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text(
+          'Settings',
+          style: TextStyles.appBarTitle.copyWith(color: Colors.black),
         ),
-        body: Consumer<SettingsProvider>(
+        backgroundColor: Colors.white,
+        border: null,
+      ),
+      backgroundColor: Colors.white,
+      child: SafeArea(
+        child: Consumer<SettingsProvider>(
           builder: (context, settingsProvider, child) {
-            return Padding(
+            return ListView(
               padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Font Size',
-                    style: TextStyles.heading(context).copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18, // Fixed font size
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'Aa',
-                        style: TextStyle(
-                          fontSize: settingsProvider.fontSize,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Expanded(
-                        child: Slider(
-                          value: settingsProvider.fontSize,
-                          min: 14.0,
-                          max: 24.0,
-                          divisions: 10,
-                          label: settingsProvider.fontSize.round().toString(),
-                          onChanged: (double value) {
-                            settingsProvider.setFontSize(value);
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  SettingsOption(
-                    title: 'Notifications',
-                    onTap: () {
-                      // Handle tap here
-                    },
-                  ),
-                  SettingsOption(
-                    title: 'Support',
-                    onTap: () {
-                      // Handle tap here
-                    },
-                  ),
-                  SettingsOption(
-                    title: 'About',
-                    onTap: () {
-                      // Handle tap here
-                    },
-                  ),
-                  SettingsOption(
-                    title: 'Privacy and Security',
-                    onTap: () {
-                      // Handle tap here
-                    },
-                  ),
-                  SettingsOption(
-                    title: 'Copyright',
-                    onTap: () {
-                      // Handle tap here
-                    },
-                  ),
-                  SettingsOption(
-                    title: 'Share App',
-                    onTap: () {
-                      // Handle tap here
-                    },
-                  ),
-                ],
-              ),
+              children: [
+                _buildFontSizeSection(settingsProvider),
+                const SizedBox(height: 20),
+                _buildFontPreview(settingsProvider),
+                const SizedBox(height: 20),
+                _buildFontFamilySection(settingsProvider, context),
+                const Divider(height: 40, thickness: 2),
+                ..._buildSettingsOptions(),
+              ],
             );
           },
         ),
       ),
     );
+  }
+
+  Widget _buildFontSizeSection(SettingsProvider settingsProvider) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Font Size',
+          style: TextStyles.appTitle,
+        ),
+        const SizedBox(height: 10),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0), 
+          child: Slider(
+            value: settingsProvider.fontSize,
+            min: 14.0,
+            max: 24.0,
+            divisions: 10,
+            activeColor: CupertinoColors.black,
+            thumbColor: CupertinoColors.black,
+            onChanged: (double value) {
+              settingsProvider.setFontSize(value);
+            },
+          ),
+        ),
+        Align(
+          alignment: Alignment.centerRight,
+          child: Text(
+            settingsProvider.fontSize.toString(),
+            style: const TextStyle(
+              fontSize: 16,
+              color: Colors.black,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildFontPreview(SettingsProvider settingsProvider) {
+    return Center(
+      child: Text(
+        'DEI MARC',
+        style: TextStyle(
+          fontFamily: settingsProvider.fontFamily,
+          fontSize: settingsProvider.fontSize,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFontFamilySection(SettingsProvider settingsProvider,
+      BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Font Family',
+          style: TextStyles.appTitle,
+        ),
+        const SizedBox(height: 10),
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () {
+            _showFontFamilyPicker(context, settingsProvider);
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey.shade300),
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  settingsProvider.fontFamily,
+                  style: TextStyle(
+                    fontFamily: settingsProvider.fontFamily,
+                    color: Colors.black,
+                    fontSize: 16,
+                  ),
+                ),
+                const Icon(
+                  CupertinoIcons.chevron_down,
+                  color: Colors.black,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  void _showFontFamilyPicker(
+      BuildContext context, SettingsProvider settingsProvider) {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 200.0,
+          color: Colors.white,
+          child: CupertinoPicker(
+            backgroundColor: Colors.white,
+            itemExtent: 32.0,
+            onSelectedItemChanged: (int index) {
+              const fontOptions = ['Raleway', 'Roboto', 'Arial'];
+              settingsProvider.setFontFamily(fontOptions[index]);
+            },
+            children: const [
+              Text('Raleway', style: TextStyle(fontFamily: 'Raleway')),
+              Text('Roboto', style: TextStyle(fontFamily: 'Roboto')),
+              Text('Arial', style: TextStyle(fontFamily: 'Arial')),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  List<Widget> _buildSettingsOptions() {
+    final options = [
+      'Notifications',
+      'Support',
+      'About',
+      'Privacy and Security',
+      'Copyright',
+      'Share App',
+    ];
+
+    return options.map((option) {
+      return SettingsOption(
+        title: option,
+        onTap: () {
+          // Handle option tap here
+        },
+      );
+    }).toList();
   }
 }
 
@@ -109,7 +186,7 @@ class SettingsOption extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
 
-  const SettingsOption({
+  const SettingsOption({super.key, 
     required this.title,
     required this.onTap,
   });
@@ -118,16 +195,25 @@ class SettingsOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          title: Text(
-            title,
-            style: TextStyle(
-              fontSize: 16, // Fixed font size
-              color: Colors.black,
-            ),
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: onTap,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: TextStyles.appCaption.copyWith(
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
+              ),
+              const Icon(
+                CupertinoIcons.forward,
+                color: Colors.black,
+              ),
+            ],
           ),
-          trailing: Icon(Icons.arrow_forward_ios_rounded, color: Colors.black),
-          onTap: onTap,
         ),
         Divider(
           color: Colors.grey[300],

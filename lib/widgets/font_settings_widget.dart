@@ -7,17 +7,17 @@ class FontSettingsWidget extends StatelessWidget {
   final Color secondaryColor;
 
   const FontSettingsWidget({
-    Key? key,
+    super.key,
     required this.appBarColor,
     required this.secondaryColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Consumer<SettingsProvider>(
       builder: (context, settingsProvider, child) {
         return Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20.0),
@@ -52,7 +52,7 @@ class FontSettingsWidget extends StatelessWidget {
                   ),
                   Text(
                     settingsProvider.fontSize.toString(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       color: Colors.black,
                     ),
@@ -78,7 +78,7 @@ class FontSettingsWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8.0),
-              Container(
+              SizedBox(
                 height: 150.0, // Adjust the height to your needs
                 child: ListView(
                   children: [

@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/screens/tab_bar_screen.dart';
@@ -22,7 +24,8 @@ class SplashScreenState extends State<SplashScreen> with SingleTickerProviderSta
     )..repeat(reverse: true);
 
     _animation = Tween<Offset>(
-      begin: Offset(0, 0),
+      begin: const Offset(0, 0),
+      // ignore: prefer_const_constructors
       end: Offset(0, -0.3),
     ).animate(CurvedAnimation(
       parent: _animationController,

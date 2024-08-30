@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/providers/category_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
@@ -40,7 +42,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               },
             ),
             backgroundColor: widget.appBarColor, 
-            title: Text("Categories", style: TextStyles.appBarTitle),
+            title: const Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               Consumer<SettingsProvider>(
                 builder: (context, settingsProvider, child) {

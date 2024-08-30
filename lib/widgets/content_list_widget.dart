@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:dei_marc/models/content_item.dart';
 import 'package:dei_marc/models/quote.dart';
 import 'package:dei_marc/providers/config_provider.dart';
@@ -18,14 +20,14 @@ class ContentListWidget extends StatelessWidget {
   final Map<String, GlobalKey> keyMap;
 
   const ContentListWidget({
-    Key? key,
+    super.key,
     required this.categoryId,
     required this.appBarColor,
     required this.secondaryColor,
     required this.categoryName,
     required this.scrollController,
     required this.keyMap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +100,7 @@ class ContentListWidget extends StatelessWidget {
                             return _buildImage(contents.first.image, context);
                           }
 
-                          return SizedBox.shrink();
+                          return const SizedBox.shrink();
                         },
                       ),
                       Text(
@@ -146,7 +148,7 @@ class ContentListWidget extends StatelessWidget {
                                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                                   child: _buildContentItem(contentItem, context),
                                 );
-                              }).toList(),
+                              }),
                             ],
                           );
                         },
@@ -167,7 +169,7 @@ class ContentListWidget extends StatelessWidget {
   }
 
   Widget _buildImage(String? imageName, BuildContext context) {
-    if (imageName == null) return SizedBox.shrink();
+    if (imageName == null) return const SizedBox.shrink();
 
     final configProvider = Provider.of<ConfigProvider>(context, listen: false);
     final imagePath = configProvider.getImagePath(imageName);
@@ -180,13 +182,13 @@ class ContentListWidget extends StatelessWidget {
           fit: BoxFit.cover,
           errorBuilder: (context, error, stackTrace) {
             print('Error loading image: $error'); // Add this line for logging
-            return Text('Image not found');
+            return const Text('Image not found');
           },
         ),
       );
     } else {
       print('Image path is null for $imageName'); // Add this line for logging
-      return Text('Image not found');
+      return const Text('Image not found');
     }
   }
 
@@ -227,7 +229,7 @@ class ContentListWidget extends StatelessWidget {
                     return _buildImage(nestedQuote.text, context);
                   }
                   return _buildQuote(nestedQuote, context, fontSize);
-                }).toList(),
+                }),
               ],
             );
           } else if (quote.type == 'image') {
@@ -235,7 +237,7 @@ class ContentListWidget extends StatelessWidget {
           } else {
             return _buildQuote(quote, context, fontSize);
           }
-        }).toList(),
+        }),
       ],
     );
   }

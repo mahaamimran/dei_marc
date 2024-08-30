@@ -48,7 +48,6 @@ class ContentProvider extends ChangeNotifier {
       }
       _dataStatus = DataStatus.loaded;
     } catch (e) {
-      print("Error loading content: $e");
       _dataStatus = DataStatus.failure;
     }
 

@@ -13,7 +13,7 @@ class Helpers {
   }
 
   static String capitalizeTitle(String input) {
-    final List<String> exceptions = ['an', 'and', 'or', 'the', 'of', 'in', 'to', 'that', 'by'];
+    final List<String> exceptions = ['an', 'and', 'or', 'the', 'of', 'in', 'to', 'that', 'by', ];
 
     List<String> words = input.split(' ');
 
