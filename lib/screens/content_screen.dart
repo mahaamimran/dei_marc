@@ -36,6 +36,7 @@ class ContentScreen extends StatefulWidget {
 class _ContentScreenState extends State<ContentScreen> {
   final ScrollController _scrollController = ScrollController();
   final Map<String, GlobalKey> _keyMap = {};
+  bool _layoutCompleted = false;
 
   @override
   void initState() {
@@ -57,8 +58,7 @@ class _ContentScreenState extends State<ContentScreen> {
     for (int i = 0; i < subcategoryProvider.subcategories.length; i++) {
       await contentProvider.loadContent(widget.bookId, widget.categoryId, i + 1);
 
-      final contents =
-          contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
+      final contents = contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
 
       for (var content in contents) {
         if (content.image != null) {
@@ -69,16 +69,31 @@ class _ContentScreenState extends State<ContentScreen> {
         }
       }
     }
+
+    // After data is loaded, ensure layout is completed
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setState(() {
+        _layoutCompleted = true;
+      });
+    });
   }
 
   void _scrollToIndex(int index) {
-    final key = _keyMap['${widget.categoryId}-$index'];
-    if (key != null && key.currentContext != null) {
-      Scrollable.ensureVisible(
-        key.currentContext!,
-        duration: const Duration(seconds: 1),
-        curve: Curves.easeInOut,
-      );
+    if (_layoutCompleted) {
+      final key = _keyMap['${widget.categoryId}-$index'];
+      if (key != null && key.currentContext != null) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          final RenderBox renderBox = key.currentContext!.findRenderObject() as RenderBox;
+          final Offset offset = renderBox.localToGlobal(Offset.zero, ancestor: null);
+          final double yPosition = offset.dy;
+
+          _scrollController.animateTo(
+            _scrollController.offset + yPosition - kToolbarHeight - MediaQuery.of(context).padding.top,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+          );
+        });
+      }
     }
   }
 
@@ -140,8 +155,8 @@ class _ContentScreenState extends State<ContentScreen> {
     );
   }
 
-  Widget _buildBody(
-      SubcategoryProvider subcategoryProvider, ContentProvider contentProvider) {
+  Widget _buildBody(SubcategoryProvider subcategoryProvider,
+      ContentProvider contentProvider) {
     if (subcategoryProvider.dataStatus == DataStatus.loading ||
         contentProvider.dataStatus == DataStatus.loading) {
       return const Center(child: CircularProgressIndicator());

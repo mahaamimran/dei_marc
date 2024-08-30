@@ -29,7 +29,6 @@ class ContentListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ScrollController scrollController = ScrollController();
     return Consumer<SubcategoryProvider>(
       builder: (context, subcategoryProvider, child) {
         if (subcategoryProvider.subcategories.isEmpty) {
@@ -41,124 +40,126 @@ class ContentListWidget extends StatelessWidget {
           interactive: true,
           thickness: 5,
           controller: scrollController,
-          child: ListView.builder(
+          child: SingleChildScrollView(
             controller: scrollController,
             padding: const EdgeInsets.all(16.0),
-            itemCount: subcategoryProvider.subcategories.length,
-            itemBuilder: (context, index) {
-              final subcategory = subcategoryProvider.subcategories[index];
-              final key = GlobalKey();
-              keyMap['$categoryId-$index'] = key;
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: subcategoryProvider.subcategories.asMap().entries.map((entry) {
+                final index = entry.key;
+                final subcategory = entry.value;
+                final key = GlobalKey();
+                keyMap['$categoryId-$index'] = key;
 
-              return Padding(
-                key: key,
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (index == 0) ...[
-                      Row(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 6,
-                            decoration: BoxDecoration(
-                              color: appBarColor,
-                              borderRadius: BorderRadius.circular(3.0),
-                            ),
-                          ),
-                          const SizedBox(width: 18.0),
-                          Expanded(
-                            child: Text(
-                              Helpers.capitalizeTitle(categoryName)
-                                  .toUpperCase(),
-                              style: TextStyles.heading(context).copyWith(
-                                fontSize: Provider.of<SettingsProvider>(context)
-                                        .fontSize *
-                                    1.5,
-                              ),
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 16),
-                    ],
-                    // Image before subcategory title
-                    Consumer<ContentProvider>(
-                      builder: (context, contentProvider, child) {
-                        final contents = contentProvider
-                                .contents['$categoryId-${index + 1}'] ??
-                            [];
-
-                        if (contents.isNotEmpty &&
-                            contents.first.image != null) {
-                          return _buildImage(contents.first.image, context);
-                        }
-
-                        return SizedBox.shrink();
-                      },
-                    ),
-                    Text(
-                      Helpers.capitalizeTitle(subcategory.name),
-                      style: TextStyles.subheading(context).copyWith(
-                        fontSize:
-                            Provider.of<SettingsProvider>(context).fontSize *
-                                1.5,
-                        color: appBarColor,
-                      ),
-                    ),
-                    Consumer<ContentProvider>(
-                      builder: (context, contentProvider, child) {
-                        final contents = contentProvider
-                                .contents['$categoryId-${index + 1}'] ??
-                            [];
-
-                        if (contents.isEmpty) {
-                          return const Text('No content available.');
-                        }
-
-                        final firstItem = contents.first;
-
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                return Padding(
+                  key: key,
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (index == 0) ...[
+                        Row(
                           children: [
-                            if (firstItem.description != null &&
-                                firstItem.description!.isNotEmpty)
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: Text(
-                                  firstItem.description!,
-                                  style: TextStyles.content(context).copyWith(
-                                    fontSize:
-                                        Provider.of<SettingsProvider>(context)
-                                                .fontSize *
-                                            1.1,
+                            Container(
+                              height: 50,
+                              width: 6,
+                              decoration: BoxDecoration(
+                                color: appBarColor,
+                                borderRadius: BorderRadius.circular(3.0),
+                              ),
+                            ),
+                            const SizedBox(width: 18.0),
+                            Expanded(
+                              child: Text(
+                                Helpers.capitalizeTitle(categoryName)
+                                    .toUpperCase(),
+                                style: TextStyles.heading(context).copyWith(
+                                  fontSize: Provider.of<SettingsProvider>(context)
+                                          .fontSize *
+                                      1.5,
+                                ),
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 16),
+                      ],
+                      // Image before subcategory title
+                      Consumer<ContentProvider>(
+                        builder: (context, contentProvider, child) {
+                          final contents = contentProvider
+                                  .contents['$categoryId-${index + 1}'] ??
+                              [];
+
+                          if (contents.isNotEmpty &&
+                              contents.first.image != null) {
+                            return _buildImage(contents.first.image, context);
+                          }
+
+                          return SizedBox.shrink();
+                        },
+                      ),
+                      Text(
+                        Helpers.capitalizeTitle(subcategory.name),
+                        style: TextStyles.subheading(context).copyWith(
+                          fontSize:
+                              Provider.of<SettingsProvider>(context).fontSize *
+                                  1.5,
+                          color: appBarColor,
+                        ),
+                      ),
+                      Consumer<ContentProvider>(
+                        builder: (context, contentProvider, child) {
+                          final contents = contentProvider
+                                  .contents['$categoryId-${index + 1}'] ??
+                              [];
+
+                          if (contents.isEmpty) {
+                            return const Text('No content available.');
+                          }
+
+                          final firstItem = contents.first;
+
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              if (firstItem.description != null &&
+                                  firstItem.description!.isNotEmpty)
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8.0),
+                                  child: Text(
+                                    firstItem.description!,
+                                    style: TextStyles.content(context).copyWith(
+                                      fontSize:
+                                          Provider.of<SettingsProvider>(context)
+                                                  .fontSize *
+                                              1.1,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            _buildContentItem(firstItem, context),
-                            ...contents.skip(1).map((contentItem) {
-                              return Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: _buildContentItem(contentItem, context),
-                              );
-                            }).toList(),
-                          ],
-                        );
-                      },
-                    ),
-                    Divider(
-                      color: secondaryColor,
-                      thickness: 0.5,
-                    ),
-                  ],
-                ),
-              );
-            },
+                              _buildContentItem(firstItem, context),
+                              ...contents.skip(1).map((contentItem) {
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                  child: _buildContentItem(contentItem, context),
+                                );
+                              }).toList(),
+                            ],
+                          );
+                        },
+                      ),
+                      Divider(
+                        color: secondaryColor,
+                        thickness: 0.5,
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
+            ),
           ),
         );
       },
