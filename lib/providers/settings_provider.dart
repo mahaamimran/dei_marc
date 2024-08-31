@@ -5,10 +5,13 @@ class SettingsProvider with ChangeNotifier {
   double _fontSize = 16.0;
   String _fontFamily = 'Raleway';
   bool _isGridView = true;
+  bool _isListView = false;
 
   double get fontSize => _fontSize;
   String get fontFamily => _fontFamily;
   bool get isGridView => _isGridView;
+  bool get isListView => _isListView;
+
 
   SettingsProvider() {
     _loadSettings();
@@ -19,6 +22,7 @@ class SettingsProvider with ChangeNotifier {
     _fontSize = prefs.getDouble('fontSize') ?? 16.0;
     _fontFamily = prefs.getString('fontFamily') ?? 'Raleway';
     _isGridView = prefs.getBool('isGridView') ?? true;
+    _isListView = prefs.getBool('isListView') ?? false;
     notifyListeners();
   }
 

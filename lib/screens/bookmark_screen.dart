@@ -18,6 +18,7 @@ class BookmarksScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          backgroundColor: Colors.grey[100],
           scrolledUnderElevation: 0,
           leading: Consumer<BookmarkProvider>(
             builder: (context, bookmarkProvider, child) {
@@ -35,7 +36,6 @@ class BookmarksScreen extends StatelessWidget {
             'Bookmarks',
             style: TextStyles.appBarTitle.copyWith(color: Colors.black),
           ),
-          backgroundColor: Colors.white,
           elevation: 0,
           actions: [
             Consumer<SettingsProvider>(
@@ -215,7 +215,7 @@ class BookmarksScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return CupertinoAlertDialog(
-          title: const Text("Clear All Bookmarks"),
+          title: const Text("Clear all Bookmarks"),
           content: const Text("Are you sure you want to clear all bookmarks?"),
           actions: [
             CupertinoDialogAction(

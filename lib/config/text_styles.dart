@@ -5,21 +5,21 @@ import 'package:dei_marc/providers/settings_provider.dart';
 class TextStyles {
   // App-wide TextStyles (do not depend on BuildContext)
   static const TextStyle appBarTitle = TextStyle(
-    fontFamily: 'Raleway',
+    fontFamily: 'Lexend',
     fontSize: 26,
-    fontWeight: FontWeight.bold,
-    color: Color.fromARGB(255, 248, 247, 247),
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
   );
 
   static const TextStyle appTitle = TextStyle(
-    fontFamily: 'Raleway',
+    fontFamily: 'Lexend',
     fontSize: 18,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
 
   static const TextStyle appCaption = TextStyle(
-    fontFamily: 'Raleway',
+    fontFamily: 'Lexend',
     fontSize: 14,
     color: Colors.grey,
   );

@@ -9,33 +9,101 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text(
-          'Settings',
-          style: TextStyles.appBarTitle.copyWith(color: Colors.black),
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Settings',
+            style: TextStyles.appBarTitle.copyWith(color: Colors.black),
+          ),
+          backgroundColor: Colors.grey[100],
         ),
         backgroundColor: Colors.white,
-        border: null,
-      ),
-      backgroundColor: Colors.white,
-      child: SafeArea(
-        child: Consumer<SettingsProvider>(
-          builder: (context, settingsProvider, child) {
-            return ListView(
-              padding: const EdgeInsets.all(16.0),
-              children: [
-                _buildFontSizeSection(settingsProvider),
-                const SizedBox(height: 20),
-                _buildFontPreview(settingsProvider),
-                const SizedBox(height: 20),
-                _buildFontFamilySection(settingsProvider, context),
-                const Divider(height: 40, thickness: 2),
-                ..._buildSettingsOptions(),
-              ],
-            );
-          },
+        body: SafeArea(
+          child: Consumer<SettingsProvider>(
+            builder: (context, settingsProvider, child) {
+              return Scrollbar(
+                child: ListView(
+                  padding: const EdgeInsets.all(16.0),
+                  children: [
+                    _buildSectionTitle('General'),
+                    const SizedBox(height: 10),
+                    _buildSettingsOption('Notifications', CupertinoIcons.bell,
+                        () {
+                      // Handle Notifications tap
+                    }),
+                    _buildSettingsOption(
+                        'Privacy and Security', CupertinoIcons.lock, () {
+                      // Handle Privacy and Security tap
+                    }),
+                    _buildSettingsOption(
+                        'Support', CupertinoIcons.question_circle, () {
+                      // Handle Support tap
+                    }),
+                    const Divider(height: 40, thickness: 2),
+                    _buildSectionTitle('Font Settings'),
+                    const SizedBox(height: 10),
+                    _buildFontSizeSection(settingsProvider),
+                    const SizedBox(height: 20),
+                    _buildFontFamilySection(settingsProvider, context),
+                    const Divider(height: 40, thickness: 2),
+                    _buildSectionTitle('About'),
+                    const SizedBox(height: 10),
+                    _buildSettingsOption('About', CupertinoIcons.info, () {
+                      // Handle About tap
+                    }),
+                    _buildSettingsOption('Copyright', CupertinoIcons.circle, () {
+                      // Handle Copyright tap
+                    }),
+                    _buildSettingsOption('Share App', CupertinoIcons.share, () {
+                      // Handle Share App tap
+                    }),
+                  ],
+                ),
+              );
+            },
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(String title) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Text(
+        title,
+        style: TextStyles.appTitle.copyWith(fontSize: 18, color: Colors.black),
+      ),
+    );
+  }
+
+  Widget _buildSettingsOption(String title, IconData icon, VoidCallback onTap) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      onPressed: onTap,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Icon(icon, color: Colors.black),
+              const SizedBox(width: 10),
+              Text(
+                title,
+                style: TextStyles.appCaption.copyWith(
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+          const Icon(
+            CupertinoIcons.forward,
+            color: Colors.black,
+          ),
+        ],
       ),
     );
   }
@@ -44,61 +112,55 @@ class SettingsScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Font Size',
-          style: TextStyles.appTitle,
+          style: TextStyles.appCaption.copyWith(
+            fontSize: 16,
+            color: Colors.black,
+          ),
         ),
         const SizedBox(height: 10),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0), 
-          child: Slider(
-            value: settingsProvider.fontSize,
-            min: 14.0,
-            max: 24.0,
-            divisions: 10,
-            activeColor: CupertinoColors.black,
-            thumbColor: CupertinoColors.black,
-            onChanged: (double value) {
-              settingsProvider.setFontSize(value);
-            },
-          ),
-        ),
-        Align(
-          alignment: Alignment.centerRight,
-          child: Text(
-            settingsProvider.fontSize.toString(),
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.black,
+        Row(
+          children: [
+            Expanded(
+              child: CupertinoSlider(
+                value: settingsProvider.fontSize,
+                min: 14.0,
+                max: 24.0,
+                activeColor: CupertinoColors.black,
+                thumbColor: CupertinoColors.black,
+                onChanged: (double value) {
+                  settingsProvider.setFontSize(value);
+                },
+              ),
             ),
-          ),
+            const SizedBox(width: 10),
+            Text(
+              settingsProvider.fontSize
+                  .toInt()
+                  .toString(), // Display as integer
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            ),
+          ],
         ),
       ],
     );
   }
 
-  Widget _buildFontPreview(SettingsProvider settingsProvider) {
-    return Center(
-      child: Text(
-        'DEI MARC',
-        style: TextStyle(
-          fontFamily: settingsProvider.fontFamily,
-          fontSize: settingsProvider.fontSize,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildFontFamilySection(SettingsProvider settingsProvider,
-      BuildContext context) {
+  Widget _buildFontFamilySection(
+      SettingsProvider settingsProvider, BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Font Family',
-          style: TextStyles.appTitle,
+          style: TextStyles.appCaption.copyWith(
+            fontSize: 16,
+            color: Colors.black,
+          ),
         ),
         const SizedBox(height: 10),
         CupertinoButton(
@@ -111,7 +173,8 @@ class SettingsScreen extends StatelessWidget {
               border: Border.all(color: Colors.grey.shade300),
               borderRadius: BorderRadius.circular(8.0),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -147,79 +210,17 @@ class SettingsScreen extends StatelessWidget {
             backgroundColor: Colors.white,
             itemExtent: 32.0,
             onSelectedItemChanged: (int index) {
-              const fontOptions = ['Raleway', 'Roboto', 'Arial'];
+              const fontOptions = ['Raleway', 'Roboto', 'Lexend'];
               settingsProvider.setFontFamily(fontOptions[index]);
             },
             children: const [
               Text('Raleway', style: TextStyle(fontFamily: 'Raleway')),
               Text('Roboto', style: TextStyle(fontFamily: 'Roboto')),
-              Text('Arial', style: TextStyle(fontFamily: 'Arial')),
+              Text('Lexend', style: TextStyle(fontFamily: 'Lexend')),
             ],
           ),
         );
       },
-    );
-  }
-
-  List<Widget> _buildSettingsOptions() {
-    final options = [
-      'Notifications',
-      'Support',
-      'About',
-      'Privacy and Security',
-      'Copyright',
-      'Share App',
-    ];
-
-    return options.map((option) {
-      return SettingsOption(
-        title: option,
-        onTap: () {
-          // Handle option tap here
-        },
-      );
-    }).toList();
-  }
-}
-
-class SettingsOption extends StatelessWidget {
-  final String title;
-  final VoidCallback onTap;
-
-  const SettingsOption({super.key, 
-    required this.title,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CupertinoButton(
-          padding: EdgeInsets.zero,
-          onPressed: onTap,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                title,
-                style: TextStyles.appCaption.copyWith(
-                  fontSize: 16,
-                  color: Colors.black,
-                ),
-              ),
-              const Icon(
-                CupertinoIcons.forward,
-                color: Colors.black,
-              ),
-            ],
-          ),
-        ),
-        Divider(
-          color: Colors.grey[300],
-          thickness: 1.0,
-        ),
-      ],
     );
   }
 }

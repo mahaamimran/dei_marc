@@ -1,7 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'dart:ffi';
-
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/providers/category_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
@@ -80,112 +78,126 @@ class _CategoryScreenState extends State<CategoryScreen> {
 
   Widget _buildGridView(
       BuildContext context, CategoryProvider categoryProvider) {
-    return GridView.builder(
-      padding: const EdgeInsets.all(8.0),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 1.2,
-        crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
-      ),
-      itemCount: categoryProvider.categories.length,
-      itemBuilder: (context, index) {
-        final category = categoryProvider.categories[index];
-        return GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ContentScreen(
-                    appBarColor: widget.appBarColor,
-                    secondaryColor: widget.secondaryColor,
-                    bookId: widget.bookFileName,
-                    categoryId: index + 1,
-                    categoryName: category.name),
-              ),
-            );
-          },
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.0),
-            ),
-            color: widget.secondaryColor,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
-                    style: TextStyles.appCaption.copyWith(
-                      fontWeight: FontWeight.bold,
+    return Scrollbar(
+      child: GridView.builder(
+        padding: const EdgeInsets.all(10.0),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 1.3,
+          crossAxisSpacing: 15.0,
+          mainAxisSpacing: 15.0,
+        ),
+        itemCount: categoryProvider.categories.length,
+        itemBuilder: (context, index) {
+          final category = categoryProvider.categories[index];
+          return Material(
+            color: widget.secondaryColor, // background color
+            borderRadius: BorderRadius.circular(16.0), // same as Card shape
+            elevation: 2.0, // elevation for shadow
+            child: InkWell(
+              borderRadius: BorderRadius.circular(16.0), // ripple effect shape
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ContentScreen(
+                        appBarColor: widget.appBarColor,
+                        secondaryColor: widget.secondaryColor,
+                        bookId: widget.bookFileName,
+                        categoryId: index + 1,
+                        categoryName: category.name),
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
+                      style: TextStyles.appCaption.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: widget.appBarColor,
+                      ),
+                    ),
+                    const SizedBox(height: 4.0),
+                    Container(
+                      height: 2.0,
+                      width: 40.0,
                       color: widget.appBarColor,
                     ),
-                  ),
-                  const SizedBox(height: 4.0),
-                  Container(
-                    height: 2.0,
-                    width: 40.0,
-                    color: widget.appBarColor,
-                  ),
-                  const SizedBox(height: 8.0),
-                  Text(
-                    category.name,
-                    style: TextStyles.appCaption.copyWith(
-                      color: Colors.black,
+                    const SizedBox(height: 8.0),
+                    Text(
+                      category.name,
+                      style: TextStyles.appCaption.copyWith(
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 
-  Widget _buildListView(
+   Widget _buildListView(
       BuildContext context, CategoryProvider categoryProvider) {
-    return ListView.builder(
-      padding: const EdgeInsets.all(8.0),
-      itemCount: categoryProvider.categories.length,
-      itemBuilder: (context, index) {
-        final category = categoryProvider.categories[index];
-        return GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ContentScreen(
-                    appBarColor: widget.appBarColor,
-                    secondaryColor: widget.secondaryColor,
-                    bookId: widget.bookFileName,
-                    categoryId: index + 1,
-                    categoryName: category.name),
-              ),
-            );
-          },
-          child: Card(
-            color: widget.secondaryColor,
-            margin: const EdgeInsets.symmetric(vertical: 8.0),
-            child: ListTile(
-              title: Text(
-                '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
-                style: TextStyles.caption(context).copyWith(
-                  color: widget.appBarColor,
-                  fontWeight: FontWeight.bold,
+    return Scrollbar(
+      child: ListView.builder(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+        itemCount: categoryProvider.categories.length,
+        itemBuilder: (context, index) {
+          final category = categoryProvider.categories[index];
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Material(
+              color: widget.secondaryColor,
+              borderRadius: BorderRadius.circular(16.0),
+              elevation: 2.0,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(16.0),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ContentScreen(
+                        appBarColor: widget.appBarColor,
+                        secondaryColor: widget.secondaryColor,
+                        bookId: widget.bookFileName,
+                        categoryId: index + 1,
+                        categoryName: category.name,
+                      ),
+                    ),
+                  );
+                },
+                child: ListTile(
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
+                  title: Text(
+                    '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
+                    style: TextStyles.appCaption.copyWith(
+                      color: widget.appBarColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  subtitle: Text(
+                    category.name,
+                    style: TextStyles.appCaption.copyWith(
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
                 ),
               ),
-              subtitle: Text(
-                category.name,
-                style: TextStyles.caption(context).copyWith(
-                    color: Colors.black, fontWeight: FontWeight.normal),
-              ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

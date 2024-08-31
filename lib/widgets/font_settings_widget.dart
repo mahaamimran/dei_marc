@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:dei_marc/config/text_styles.dart'; // Import your custom TextStyles
 import 'package:dei_marc/providers/settings_provider.dart';
 
 class FontSettingsWidget extends StatelessWidget {
@@ -14,100 +16,94 @@ class FontSettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<SettingsProvider>(
-      builder: (context, settingsProvider, child) {
-        return Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20.0),
-              topRight: Radius.circular(20.0),
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      child: Consumer<SettingsProvider>(
+        builder: (context, settingsProvider, child) {
+          return Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20.0),
+                topRight: Radius.circular(20.0),
+              ),
             ),
-          ),
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'Adjust Font Size',
-                style: TextStyle(
-                  color: appBarColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Adjust Font Size',
+                  style: TextStyles.appTitle.copyWith(
+                    color: appBarColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 16.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.remove),
-                    onPressed: () {
-                      double newSize = settingsProvider.fontSize - 2;
-                      if (newSize >= 14.0) {
-                        settingsProvider.setFontSize(newSize);
-                      }
-                    },
-                  ),
-                  Text(
-                    settingsProvider.fontSize.toString(),
-                    style: const TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                    ),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.add),
-                    onPressed: () {
-                      double newSize = settingsProvider.fontSize + 2;
-                      if (newSize <= 24.0) {
-                        settingsProvider.setFontSize(newSize);
-                      }
-                    },
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16.0),
-              Text(
-                'Select Font Family',
-                style: TextStyle(
-                  color: appBarColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 8.0),
-              SizedBox(
-                height: 150.0, // Adjust the height to your needs
-                child: ListView(
+                const SizedBox(height: 16.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _buildFontOption('Raleway', settingsProvider),
-                    _buildFontOption('Roboto', settingsProvider),
-                    _buildFontOption('Arial', settingsProvider),
-                    // Add more font options if needed
+                    IconButton(
+                      icon: const Icon(Icons.remove),
+                      onPressed: () {
+                        double newSize = settingsProvider.fontSize - 2;
+                        if (newSize >= 14.0) {
+                          settingsProvider.setFontSize(newSize);
+                        }
+                      },
+                    ),
+                    Text(
+                      settingsProvider.fontSize.toString(),
+                      style: TextStyles.appTitle.copyWith(
+                        fontSize: 20,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w300
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.add),
+                      onPressed: () {
+                        double newSize = settingsProvider.fontSize + 2;
+                        if (newSize <= 24.0) {
+                          settingsProvider.setFontSize(newSize);
+                        }
+                      },
+                    ),
                   ],
                 ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _buildFontOption(String fontName, SettingsProvider settingsProvider) {
-    return ListTile(
-      title: Text(
-        fontName,
-        style: TextStyle(fontFamily: fontName),
+                const SizedBox(height: 16.0),
+                Text(
+                  'Select Font Family',
+                  style: TextStyles.appTitle.copyWith(
+                    color: appBarColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                SizedBox(
+                  height: 150.0,
+                  child: CupertinoPicker(
+                    backgroundColor: Colors.white,
+                    itemExtent: 32.0,
+                    onSelectedItemChanged: (int index) {
+                      const fontOptions = ['Raleway', 'Roboto', 'Lexend'];
+                      settingsProvider.setFontFamily(fontOptions[index]);
+                    },
+                    children: const [
+                      Text('Raleway', style: TextStyle(fontFamily: 'Raleway')),
+                      Text('Roboto', style: TextStyle(fontFamily: 'Roboto')),
+                      Text('Lexend', style: TextStyle(fontFamily: 'Lexend')),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
       ),
-      trailing: settingsProvider.fontFamily == fontName
-          ? Icon(Icons.check, color: appBarColor)
-          : null,
-      onTap: () {
-        settingsProvider.setFontFamily(fontName);
-      },
     );
   }
 }
