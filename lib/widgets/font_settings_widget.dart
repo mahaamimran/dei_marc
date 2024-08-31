@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:dei_marc/config/text_styles.dart'; // Import your custom TextStyles
+import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 
 class FontSettingsWidget extends StatelessWidget {
@@ -49,24 +49,24 @@ class FontSettingsWidget extends StatelessWidget {
                       icon: const Icon(Icons.remove),
                       onPressed: () {
                         double newSize = settingsProvider.fontSize - 2;
-                        if (newSize >= 14.0) {
+                        if (newSize >= 10.0) {  // Adjusted the lower bound
                           settingsProvider.setFontSize(newSize);
                         }
                       },
                     ),
                     Text(
-                      settingsProvider.fontSize.toString(),
+                      settingsProvider.fontSize.toInt().toString(),
                       style: TextStyles.appTitle.copyWith(
                         fontSize: 20,
                         color: Colors.black,
-                        fontWeight: FontWeight.w300
+                        fontWeight: FontWeight.w300,
                       ),
                     ),
                     IconButton(
                       icon: const Icon(Icons.add),
                       onPressed: () {
                         double newSize = settingsProvider.fontSize + 2;
-                        if (newSize <= 24.0) {
+                        if (newSize <= 32.0) {  // Adjusted the upper bound
                           settingsProvider.setFontSize(newSize);
                         }
                       },

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -125,8 +126,8 @@ class SettingsScreen extends StatelessWidget {
             Expanded(
               child: CupertinoSlider(
                 value: settingsProvider.fontSize,
-                min: 14.0,
-                max: 24.0,
+                min: 10.0,
+                max: 32.0,
                 activeColor: CupertinoColors.black,
                 thumbColor: CupertinoColors.black,
                 onChanged: (double value) {

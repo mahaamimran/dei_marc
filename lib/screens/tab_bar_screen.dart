@@ -41,15 +41,15 @@ class _TabBarScreenState extends State<TabBarScreen> {
           backgroundColor: Colors.grey[100],
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home_rounded),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark),
+              icon: Icon(Icons.bookmark_rounded),
               label: 'Bookmarks',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.settings_rounded),
               label: 'Settings',
             ),
           ],

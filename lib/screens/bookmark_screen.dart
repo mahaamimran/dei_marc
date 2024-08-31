@@ -23,7 +23,7 @@ class BookmarksScreen extends StatelessWidget {
           leading: Consumer<BookmarkProvider>(
             builder: (context, bookmarkProvider, child) {
               return IconButton(
-                icon: const Icon(Icons.delete_rounded, color: Colors.red),
+                icon: const Icon(Icons.delete_outline_rounded, color: CupertinoColors.systemRed),
                 onPressed: () {
                   if (bookmarkProvider.bookmarks.isNotEmpty) {
                     _showClearAllDialog(context, bookmarkProvider);
@@ -41,7 +41,8 @@ class BookmarksScreen extends StatelessWidget {
             Consumer<SettingsProvider>(
               builder: (context, settingsProvider, child) {
                 return IconButton(
-                  icon: Icon(settingsProvider.isGridView ? Icons.list : Icons.grid_view),
+                  icon: Icon(settingsProvider.isGridView? 
+                         Icons.grid_view_rounded:Icons.list_rounded),
                   onPressed: () {
                     settingsProvider.setViewPreference(!settingsProvider.isGridView);
                   },
@@ -56,7 +57,7 @@ class BookmarksScreen extends StatelessWidget {
             if (bookmarkProvider.bookmarks.isEmpty) {
               return const Center(child: Text('No bookmarks yet.'));
             }
-      
+
             // Display the appropriate view (grid or list) based on user preference
             return settingsProvider.isGridView
                 ? _buildGridView(bookmarkProvider)
@@ -67,33 +68,37 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
-  // Build the grid view for bookmarks
+  // Build the grid view for bookmarks with a scrollbar
   Widget _buildGridView(BookmarkProvider bookmarkProvider) {
-    return GridView.builder(
-      padding: const EdgeInsets.all(8.0),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 1.2,
-        crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
+    return Scrollbar(
+      child: GridView.builder(
+        padding: const EdgeInsets.all(8.0),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 1.2,
+          crossAxisSpacing: 8.0,
+          mainAxisSpacing: 8.0,
+        ),
+        itemCount: bookmarkProvider.bookmarks.length,
+        itemBuilder: (context, index) {
+          final bookmark = bookmarkProvider.bookmarks[index];
+          return _buildGridBookmarkCard(context, bookmark);
+        },
       ),
-      itemCount: bookmarkProvider.bookmarks.length,
-      itemBuilder: (context, index) {
-        final bookmark = bookmarkProvider.bookmarks[index];
-        return _buildGridBookmarkCard(context, bookmark);
-      },
     );
   }
 
-  // Build the list view for bookmarks
+  // Build the list view for bookmarks with a scrollbar
   Widget _buildListView(BookmarkProvider bookmarkProvider) {
-    return ListView.builder(
-      padding: const EdgeInsets.all(8.0),
-      itemCount: bookmarkProvider.bookmarks.length,
-      itemBuilder: (context, index) {
-        final bookmark = bookmarkProvider.bookmarks[index];
-        return _buildListBookmarkCard(context, bookmark);
-      },
+    return Scrollbar(
+      child: ListView.builder(
+        padding: const EdgeInsets.all(8.0),
+        itemCount: bookmarkProvider.bookmarks.length,
+        itemBuilder: (context, index) {
+          final bookmark = bookmarkProvider.bookmarks[index];
+          return _buildListBookmarkCard(context, bookmark);
+        },
+      ),
     );
   }
 
@@ -230,8 +235,7 @@ class BookmarksScreen extends StatelessWidget {
                 Navigator.of(context).pop();
               },
               isDestructiveAction: true,
-              child: Text("Clear All", style: TextStyle(color: Colors.red
-              )),
+              child: const Text("Clear", style: TextStyle(color: CupertinoColors.systemRed)),
             ),
           ],
         );

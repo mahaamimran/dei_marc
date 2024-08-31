@@ -14,8 +14,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _isListView = true;
-
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
@@ -30,19 +28,19 @@ class _HomeScreenState extends State<HomeScreen> {
             'Home',
             style: TextStyles.appBarTitle.copyWith(color: Colors.black),
           ),
-          actions: [
-            IconButton(
-              icon: Icon(
-                _isListView ? Icons.view_module : Icons.view_list,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                setState(() {
-                  _isListView = !_isListView; // Toggle the view
-                });
-              },
-            ),
-          ],
+          // actions: [
+          //   IconButton(
+          //     icon: Icon(
+          //       _isListView ? Icons.view_module : Icons.view_list,
+          //       color: Colors.black,
+          //     ),
+          //     onPressed: () {
+          //       setState(() {
+          //         _isListView = !_isListView; // Toggle the view
+          //       });
+          //     },
+          //   ),
+          // ],
         ),
         body: Padding(
           padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
@@ -60,9 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyles.appTitle.copyWith(fontSize: 24)),
                   ),
                   Expanded(
-                    child: _isListView
-                        ? _buildListView(bookProvider)
-                        : _buildGridView(bookProvider),
+                    child: _buildGridView(bookProvider),
                   ),
                 ],
               );
@@ -83,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
               .booksPrimary[index % ColorConstants.booksPrimary.length];
           final secondaryColor = ColorConstants
               .booksSecondary[index % ColorConstants.booksSecondary.length];
-      
+
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Material(
@@ -111,9 +107,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8.0),
                       image: DecorationImage(
-                        image: AssetImage(
-                            ImageAssets.bookCovers[index % ImageAssets.bookCovers.length]),
-                        fit: BoxFit.cover, // Ensures the image fits based on height
+                        image: AssetImage(ImageAssets
+                            .bookCovers[index % ImageAssets.bookCovers.length]),
+                        fit: BoxFit
+                            .cover, // Ensures the image fits based on height
                       ),
                     ),
                   ),
@@ -144,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
               .booksPrimary[index % ColorConstants.booksPrimary.length];
           final secondaryColor = ColorConstants
               .booksSecondary[index % ColorConstants.booksSecondary.length];
-      
+
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Material(

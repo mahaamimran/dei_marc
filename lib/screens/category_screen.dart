@@ -50,8 +50,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   return IconButton(
                     color: Colors.white,
                     icon: Icon(settingsProvider.isGridView
-                        ? Icons.list
-                        : Icons.grid_view),
+                        ? Icons.list_rounded
+                        : Icons.grid_view_rounded),
                     onPressed: () {
                       settingsProvider
                           .setViewPreference(!settingsProvider.isGridView);
