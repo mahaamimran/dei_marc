@@ -20,6 +20,9 @@ class FontSettingsWidget extends StatelessWidget {
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: Consumer<SettingsProvider>(
         builder: (context, settingsProvider, child) {
+          final fontOptions = ['Raleway', 'Roboto', 'Lexend'];
+          final initialFontIndex = fontOptions.indexOf(settingsProvider.fontFamily);
+
           return Container(
             decoration: const BoxDecoration(
               color: Colors.white,
@@ -46,13 +49,18 @@ class FontSettingsWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     IconButton(
-                      icon: const Icon(Icons.remove),
-                      onPressed: () {
-                        double newSize = settingsProvider.fontSize - 2;
-                        if (newSize >= 10.0) {  // Adjusted the lower bound
-                          settingsProvider.setFontSize(newSize);
-                        }
-                      },
+                      icon: Icon(
+                        Icons.remove,
+                        color: settingsProvider.fontSize <= 11.0
+                            ? Colors.grey.shade300
+                            : Colors.black,
+                      ),
+                      onPressed: settingsProvider.fontSize <= 11.0
+                          ? null
+                          : () {
+                              settingsProvider.setFontSize(
+                                  settingsProvider.fontSize - 2);
+                            },
                     ),
                     Text(
                       settingsProvider.fontSize.toInt().toString(),
@@ -63,13 +71,18 @@ class FontSettingsWidget extends StatelessWidget {
                       ),
                     ),
                     IconButton(
-                      icon: const Icon(Icons.add),
-                      onPressed: () {
-                        double newSize = settingsProvider.fontSize + 2;
-                        if (newSize <= 32.0) {  // Adjusted the upper bound
-                          settingsProvider.setFontSize(newSize);
-                        }
-                      },
+                      icon: Icon(
+                        Icons.add,
+                        color: settingsProvider.fontSize >= 32.0
+                            ? Colors.grey.shade300
+                            : Colors.black,
+                      ),
+                      onPressed: settingsProvider.fontSize >= 32.0
+                          ? null
+                          : () {
+                              settingsProvider.setFontSize(
+                                  settingsProvider.fontSize + 2);
+                            },
                     ),
                   ],
                 ),
@@ -88,15 +101,14 @@ class FontSettingsWidget extends StatelessWidget {
                   child: CupertinoPicker(
                     backgroundColor: Colors.white,
                     itemExtent: 32.0,
+                    scrollController: FixedExtentScrollController(
+                        initialItem: initialFontIndex),
                     onSelectedItemChanged: (int index) {
-                      const fontOptions = ['Raleway', 'Roboto', 'Lexend'];
                       settingsProvider.setFontFamily(fontOptions[index]);
                     },
-                    children: const [
-                      Text('Raleway', style: TextStyle(fontFamily: 'Raleway')),
-                      Text('Roboto', style: TextStyle(fontFamily: 'Roboto')),
-                      Text('Lexend', style: TextStyle(fontFamily: 'Lexend')),
-                    ],
+                    children: fontOptions.map((font) {
+                      return Text(font, style: TextStyle(fontFamily: font));
+                    }).toList(),
                   ),
                 ),
               ],

@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -30,16 +29,13 @@ class SettingsScreen extends StatelessWidget {
                   children: [
                     _buildSectionTitle('General'),
                     const SizedBox(height: 10),
-                    _buildSettingsOption('Notifications', CupertinoIcons.bell,
-                        () {
+                    _buildSettingsOption('Notifications', CupertinoIcons.bell, () {
                       // Handle Notifications tap
                     }),
-                    _buildSettingsOption(
-                        'Privacy and Security', CupertinoIcons.lock, () {
+                    _buildSettingsOption('Privacy and Security', CupertinoIcons.lock, () {
                       // Handle Privacy and Security tap
                     }),
-                    _buildSettingsOption(
-                        'Support', CupertinoIcons.question_circle, () {
+                    _buildSettingsOption('Support', CupertinoIcons.question_circle, () {
                       // Handle Support tap
                     }),
                     const Divider(height: 40, thickness: 2),
@@ -201,6 +197,9 @@ class SettingsScreen extends StatelessWidget {
 
   void _showFontFamilyPicker(
       BuildContext context, SettingsProvider settingsProvider) {
+    final fontOptions = ['Raleway', 'Roboto', 'Lexend'];
+    final initialFontIndex = fontOptions.indexOf(settingsProvider.fontFamily);
+
     showCupertinoModalPopup(
       context: context,
       builder: (BuildContext context) {
@@ -210,15 +209,15 @@ class SettingsScreen extends StatelessWidget {
           child: CupertinoPicker(
             backgroundColor: Colors.white,
             itemExtent: 32.0,
+            scrollController: FixedExtentScrollController(
+              initialItem: initialFontIndex,
+            ),
             onSelectedItemChanged: (int index) {
-              const fontOptions = ['Raleway', 'Roboto', 'Lexend'];
               settingsProvider.setFontFamily(fontOptions[index]);
             },
-            children: const [
-              Text('Raleway', style: TextStyle(fontFamily: 'Raleway')),
-              Text('Roboto', style: TextStyle(fontFamily: 'Roboto')),
-              Text('Lexend', style: TextStyle(fontFamily: 'Lexend')),
-            ],
+            children: fontOptions.map((font) {
+              return Text(font, style: TextStyle(fontFamily: font));
+            }).toList(),
           ),
         );
       },

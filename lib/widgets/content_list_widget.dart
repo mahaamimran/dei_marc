@@ -1,4 +1,7 @@
-// ignore_for_file: avoid_print
+import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import 'package:dei_marc/models/content_item.dart';
 import 'package:dei_marc/models/quote.dart';
@@ -8,8 +11,21 @@ import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
+class ConnectionUtil {
+  Future<bool> isConnected() async {
+    bool isConnected = false;
+    try {
+      final result = await InternetAddress.lookup('google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        isConnected = true;
+      }
+    } on SocketException catch (_) {
+      isConnected = false;
+    }
+    return isConnected;
+  }
+}
 
 class ContentListWidget extends StatelessWidget {
   final int categoryId;
@@ -227,6 +243,8 @@ class ContentListWidget extends StatelessWidget {
                 ...?quote.content?.map((nestedQuote) {
                   if (nestedQuote.type == 'image') {
                     return _buildImage(nestedQuote.text, context);
+                  } else if (nestedQuote.type == 'video') {
+                    return _buildVideo(nestedQuote.text, context);
                   }
                   return _buildQuote(nestedQuote, context, fontSize);
                 }),
@@ -234,6 +252,8 @@ class ContentListWidget extends StatelessWidget {
             );
           } else if (quote.type == 'image') {
             return _buildImage(quote.text, context);
+          } else if (quote.type == 'video') {
+            return _buildVideo(quote.text, context);
           } else {
             return _buildQuote(quote, context, fontSize);
           }
@@ -317,6 +337,63 @@ class ContentListWidget extends StatelessWidget {
           style: TextStyles.content(context).copyWith(fontSize: fontSize),
         ),
       );
+    }
+  }
+
+  Widget _buildVideo(String? videoUrl, BuildContext context) {
+    if (videoUrl == null) return const SizedBox.shrink();
+
+    final videoId = YoutubePlayer.convertUrlToId(videoUrl);
+    if (videoId == null) return const Text('Invalid video URL');
+
+    return FutureBuilder<bool>(
+      future: ConnectionUtil().isConnected(), // Check internet connection
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          // While the connection check is ongoing, you can show a loading indicator
+          return const CircularProgressIndicator();
+        } else if (snapshot.hasData && snapshot.data == true) {
+          // If connected, show the embedded video
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: YoutubePlayer(
+              controller: YoutubePlayerController(
+                initialVideoId: videoId,
+                flags: const YoutubePlayerFlags(
+                  autoPlay: false,
+                  mute: false,
+                  controlsVisibleAtStart: true,
+                ),
+              ),
+              showVideoProgressIndicator: true,
+              progressIndicatorColor: Theme.of(context).primaryColor,
+            ),
+          );
+        } else {
+          // If not connected, show a clickable link
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: GestureDetector(
+              onTap: () => _launchURL(videoUrl),
+              child: const Text(
+                'No internet connection. Click here to watch the video.',
+                style: TextStyle(
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+          );
+        }
+      },
+    );
+  }
+
+  void _launchURL(String url) async {
+    try {
+       _launchURL(url);
+    } catch (e) {
+      print('Error launching URL: $e');
     }
   }
 }
