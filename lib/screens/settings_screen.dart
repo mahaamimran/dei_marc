@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_declarations
+
+import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -122,8 +125,8 @@ class SettingsScreen extends StatelessWidget {
             Expanded(
               child: CupertinoSlider(
                 value: settingsProvider.fontSize,
-                min: 10.0,
-                max: 32.0,
+                min: Constants.FONT_SIZE_MIN,
+                max: Constants.FONT_SIZE_MAX,
                 activeColor: CupertinoColors.black,
                 thumbColor: CupertinoColors.black,
                 onChanged: (double value) {
@@ -197,7 +200,7 @@ class SettingsScreen extends StatelessWidget {
 
   void _showFontFamilyPicker(
       BuildContext context, SettingsProvider settingsProvider) {
-    final fontOptions = ['Raleway', 'Roboto', 'Lexend'];
+    final fontOptions = Constants.FONT_FAMILIES;
     final initialFontIndex = fontOptions.indexOf(settingsProvider.fontFamily);
 
     showCupertinoModalPopup(

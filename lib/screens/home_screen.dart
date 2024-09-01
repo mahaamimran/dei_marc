@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:dei_marc/config/image_assets.dart';
+import 'package:dei_marc/config/asset_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/book_provider.dart';
@@ -109,8 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
   //                   decoration: BoxDecoration(
   //                     borderRadius: BorderRadius.circular(8.0),
   //                     image: DecorationImage(
-  //                       image: AssetImage(ImageAssets
-  //                           .bookCovers[index % ImageAssets.bookCovers.length]),
+  //                       image: AssetImage(AssetPaths
+  //                           .bookCovers[index % AssetPaths.bookCovers.length]),
   //                       fit: BoxFit
   //                           .cover, // Ensures the image fits based on height
   //                     ),
@@ -173,8 +173,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius:
                             BorderRadius.circular(8.0), // Rounded corners
                         child: Image.asset(
-                          ImageAssets.bookCovers[
-                              index % ImageAssets.bookCovers.length],
+                          AssetPaths.bookCovers[
+                              index % AssetPaths.bookCovers.length],
                           fit: BoxFit.cover,
                         ),
                       ),

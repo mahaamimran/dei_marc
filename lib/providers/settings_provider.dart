@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:dei_marc/config/constants.dart';
 
 class SettingsProvider with ChangeNotifier {
   double _fontSize = 16.0;
-  String _fontFamily = 'Raleway';
+  String _fontFamily = Constants.FONT_FAMILY_LEXEND;
   bool _isGridView = true;
   bool _isListView = false;
 
@@ -12,38 +13,37 @@ class SettingsProvider with ChangeNotifier {
   bool get isGridView => _isGridView;
   bool get isListView => _isListView;
 
-
   SettingsProvider() {
     _loadSettings();
   }
 
   Future<void> _loadSettings() async {
     final prefs = await SharedPreferences.getInstance();
-    _fontSize = prefs.getDouble('fontSize') ?? 16.0;
-    _fontFamily = prefs.getString('fontFamily') ?? 'Raleway';
-    _isGridView = prefs.getBool('isGridView') ?? true;
-    _isListView = prefs.getBool('isListView') ?? false;
+    _fontSize = prefs.getDouble(Constants.FONT_SIZE_KEY) ?? 16.0;
+    _fontFamily = prefs.getString(Constants.FONT_FAMILY_KEY) ?? Constants.FONT_FAMILY_RALEWAY;
+    _isGridView = prefs.getBool(Constants.IS_GRID_VIEW_KEY) ?? true;
+    _isListView = prefs.getBool(Constants.IS_LIST_VIEW_KEY) ?? false;
     notifyListeners();
   }
 
   void setFontSize(double size) async {
     _fontSize = size;
     final prefs = await SharedPreferences.getInstance();
-    prefs.setDouble('fontSize', size);
+    prefs.setDouble(Constants.FONT_SIZE_KEY, size);
     notifyListeners();
   }
 
   void setFontFamily(String fontFamily) async {
     _fontFamily = fontFamily;
     final prefs = await SharedPreferences.getInstance();
-    prefs.setString('fontFamily', fontFamily);
+    prefs.setString(Constants.FONT_FAMILY_KEY, fontFamily);
     notifyListeners();
   }
 
   void setViewPreference(bool isGridView) async {
     _isGridView = isGridView;
     final prefs = await SharedPreferences.getInstance();
-    prefs.setBool('isGridView', isGridView);
+    prefs.setBool(Constants.IS_GRID_VIEW_KEY, isGridView);
     notifyListeners();
   }
 }

@@ -1,3 +1,5 @@
+import 'package:dei_marc/config/constants.dart';
+
 class Helpers {
   static String getTitle(String bookId) {
     switch (bookId) {
@@ -13,7 +15,8 @@ class Helpers {
   }
 
   static String capitalizeTitle(String input) {
-    final List<String> exceptions = ['an', 'and', 'or', 'the', 'of', 'in', 'to', 'that', 'by', ];
+    // ignore: prefer_const_declarations
+    final List<String> exceptions = Constants.TITLE_EXCEPTIONS;
 
     List<String> words = input.split(' ');
 
