@@ -31,87 +31,102 @@ class FontSettingsWidget extends StatelessWidget {
                 topRight: Radius.circular(20.0),
               ),
             ),
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Adjust Font Size',
-                  style: TextStyles.appTitle.copyWith(
-                    color: appBarColor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 16.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        Icons.remove,
-                        color: settingsProvider.fontSize <= 11.0
-                            ? Colors.grey.shade300
-                            : Colors.black,
-                      ),
-                      onPressed: settingsProvider.fontSize <= 11.0
-                          ? null
-                          : () {
-                              settingsProvider.setFontSize(
-                                  settingsProvider.fontSize - 2);
-                            },
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            child: SingleChildScrollView( // Added SingleChildScrollView
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: 40.0,
+                    height: 5.0,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
-                    Text(
-                      settingsProvider.fontSize.toInt().toString(),
-                      style: TextStyles.appTitle.copyWith(
-                        fontSize: 20,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        Icons.add,
-                        color: settingsProvider.fontSize >= 32.0
-                            ? Colors.grey.shade300
-                            : Colors.black,
-                      ),
-                      onPressed: settingsProvider.fontSize >= 32.0
-                          ? null
-                          : () {
-                              settingsProvider.setFontSize(
-                                  settingsProvider.fontSize + 2);
-                            },
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16.0),
-                Text(
-                  'Select Font Family',
-                  style: TextStyles.appTitle.copyWith(
-                    color: appBarColor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
                   ),
-                ),
-                const SizedBox(height: 8.0),
-                SizedBox(
-                  height: 150.0,
-                  child: CupertinoPicker(
-                    backgroundColor: Colors.white,
-                    itemExtent: 32.0,
-                    scrollController: FixedExtentScrollController(
-                        initialItem: initialFontIndex),
-                    onSelectedItemChanged: (int index) {
-                      settingsProvider.setFontFamily(fontOptions[index]);
-                    },
-                    children: fontOptions.map((font) {
-                      return Text(font, style: TextStyle(fontFamily: font));
-                    }).toList(),
+                  const SizedBox(height: 10.0),
+                  Text(
+                    'Adjust Font Size',
+                    style: TextStyles.appTitle.copyWith(
+                      color: appBarColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 16.0),
+                  Flex(
+                    direction: Axis.horizontal,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.remove,
+                          color: settingsProvider.fontSize <= 11.0
+                              ? Colors.grey.shade300
+                              : Colors.black,
+                        ),
+                        onPressed: settingsProvider.fontSize <= 11.0
+                            ? null
+                            : () {
+                                settingsProvider.setFontSize(
+                                    settingsProvider.fontSize - 2);
+                              },
+                      ),
+                      Flexible(
+                        child: Center(
+                          child: Text(
+                            settingsProvider.fontSize.toInt().toString(),
+                            style: TextStyles.appTitle.copyWith(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.add,
+                          color: settingsProvider.fontSize >= 32.0
+                              ? Colors.grey.shade300
+                              : Colors.black,
+                        ),
+                        onPressed: settingsProvider.fontSize >= 32.0
+                            ? null
+                            : () {
+                                settingsProvider.setFontSize(
+                                    settingsProvider.fontSize + 2);
+                              },
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16.0),
+                  Text(
+                    'Select Font Family',
+                    style: TextStyles.appTitle.copyWith(
+                      color: appBarColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+                  SizedBox(
+                    height: 100.0,  // Limit the height to make it more compact
+                    child: CupertinoPicker(
+                      backgroundColor: Colors.white,
+                      itemExtent: 32.0,
+                      scrollController: FixedExtentScrollController(
+                          initialItem: initialFontIndex),
+                      onSelectedItemChanged: (int index) {
+                        settingsProvider.setFontFamily(fontOptions[index]);
+                      },
+                      children: fontOptions.map((font) {
+                        return Text(font, style: TextStyle(fontFamily: font));
+                      }).toList(),
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },

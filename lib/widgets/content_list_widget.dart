@@ -83,8 +83,6 @@ class ContentListWidget extends StatelessWidget {
                                           .fontSize *
                                       1.5,
                                 ),
-                                maxLines: 3,
-                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                           ],
