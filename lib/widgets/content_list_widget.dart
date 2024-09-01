@@ -316,12 +316,21 @@ class ContentListWidget extends StatelessWidget {
           style: TextStyles.bold(context).copyWith(fontSize: fontSize),
         ),
       );
-    } else {
+    } else if (quote.type == 'paragraph') {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
-          Helpers.capitalizeTitle(quote.text),
+          quote.text,
           style: TextStyles.content(context).copyWith(fontSize: fontSize),
+        ),
+      );
+    }
+    else {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4.0),
+        child: Text(
+          quote.text,
+          style: TextStyles.content(context).copyWith(fontSize: fontSize, color: Colors.red),
         ),
       );
     }
