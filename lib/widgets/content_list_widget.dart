@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:dei_marc/config/asset_paths.dart';
+import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/utils/connection_util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -213,7 +214,7 @@ class ContentListWidget extends StatelessWidget {
             ),
           ),
         ...contentItem.content.map((quote) {
-          if (quote.type == 'subheading') {
+          if (quote.type == Constants.SUBHEADING) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -227,18 +228,18 @@ class ContentListWidget extends StatelessWidget {
                   ),
                 ),
                 ...?quote.content?.map((nestedQuote) {
-                  if (nestedQuote.type == 'image') {
+                  if (nestedQuote.type == Constants.IMAGE) {
                     return _buildImage(nestedQuote.text, context);
-                  } else if (nestedQuote.type == 'video') {
+                  } else if (nestedQuote.type == Constants.VIDEO) {
                     return _buildVideo(nestedQuote.text, context);
                   }
                   return _buildQuote(nestedQuote, context, fontSize);
                 }),
               ],
             );
-          } else if (quote.type == 'image') {
+          } else if (quote.type == Constants.IMAGE) {
             return _buildImage(quote.text, context);
-          } else if (quote.type == 'video') {
+          } else if (quote.type == Constants.VIDEO) {
             return _buildVideo(quote.text, context);
           } else {
             return _buildQuote(quote, context, fontSize);
@@ -250,7 +251,7 @@ class ContentListWidget extends StatelessWidget {
 
   Widget _buildQuote(Quote quote, BuildContext context, double fontSize) {
     // Determine if the quote is a bullet or a standard quote
-    if (quote.type == 'bullet') {
+    if (quote.type == Constants.BULLET) {
       // Handle bullet points
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
@@ -275,7 +276,7 @@ class ContentListWidget extends StatelessWidget {
           ],
         ),
       );
-    } else if (quote.type == 'quote') {
+    } else if (quote.type == Constants.QUOTE) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
         child: Container(
@@ -307,7 +308,7 @@ class ContentListWidget extends StatelessWidget {
           ),
         ),
       );
-    } else if (quote.type == 'bold') {
+    } else if (quote.type == Constants.BOLD) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
@@ -315,7 +316,7 @@ class ContentListWidget extends StatelessWidget {
           style: TextStyles.bold(context).copyWith(fontSize: fontSize),
         ),
       );
-    } else if (quote.type == 'paragraph') {
+    } else if (quote.type == Constants.PARAGRAPH) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
