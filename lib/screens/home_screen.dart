@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.grey[100],
+          backgroundColor: Colors.grey[200],
           scrolledUnderElevation: 0,
           title: Text(
             'Home',

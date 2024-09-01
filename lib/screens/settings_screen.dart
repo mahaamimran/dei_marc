@@ -15,14 +15,14 @@ class SettingsScreen extends StatelessWidget {
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
             'Settings',
             style: TextStyles.appBarTitle.copyWith(color: Colors.black),
           ),
-          backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.grey[200],
         ),
-        backgroundColor: Colors.white,
         body: SafeArea(
           child: Consumer<SettingsProvider>(
             builder: (context, settingsProvider, child) {

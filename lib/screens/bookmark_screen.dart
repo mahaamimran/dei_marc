@@ -18,7 +18,7 @@ class BookmarksScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.grey[100],
+          backgroundColor: Colors.grey[200],
           scrolledUnderElevation: 0,
           leading: Consumer<BookmarkProvider>(
             builder: (context, bookmarkProvider, child) {

@@ -32,13 +32,12 @@ class _TabBarScreenState extends State<TabBarScreen> {
       data: MediaQuery.of(context)
           .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
-        backgroundColor: Colors.white,
         body: _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
           showSelectedLabels: false,
           showUnselectedLabels: false,
           fixedColor: Colors.black,
-          backgroundColor: Colors.grey[100],
+          backgroundColor: Colors.grey[200],
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home_rounded),
