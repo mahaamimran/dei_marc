@@ -14,7 +14,7 @@ class ConfigProvider extends ChangeNotifier {
   Map<String, String> _imagePaths = {};
 
   Future<void> loadConfig() async {
-    final String response = await rootBundle.loadString('assets/config.json');
+    final String response = await rootBundle.loadString('assets/data/config.json');
     final data = json.decode(response);
 
     _imagePaths = Map<String, String>.from(data['image_paths']);

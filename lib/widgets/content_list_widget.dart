@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/utils/connection_util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -179,10 +180,10 @@ class ContentListWidget extends StatelessWidget {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Image.asset(
-          'assets/$imagePath',
+          AssetPaths.image(imagePath),
           fit: BoxFit.cover,
           errorBuilder: (context, error, stackTrace) {
-            print('Error loading image: $error'); // Add this line for logging
+            print('Error loading image: $error'); 
             return const Text('Image not found');
           },
         ),

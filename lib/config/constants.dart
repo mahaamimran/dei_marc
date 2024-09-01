@@ -23,6 +23,14 @@ class Constants {
     FONT_FAMILY_LEXEND,
   ];
 
+  // Content Item Types
+  static const String CONTENT_TYPE_BULLET = 'bullet';
+  static const String CONTENT_TYPE_QUOTE = 'quote';
+  static const String CONTENT_TYPE_BOLD = 'bold';
+  static const String CONTENT_TYPE_PARAGRAPH = 'paragraph';
+  static const String CONTENT_TYPE_IMAGE = 'image';
+  static const String CONTENT_TYPE_VIDEO = 'video';
+
   // Exceptions for Title Capitalization
   static const List<String> TITLE_EXCEPTIONS = [
     'an',

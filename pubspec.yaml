@@ -1,6 +1,6 @@
 name: dei_marc
 description: "A new Flutter project."
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 environment:
   sdk: '>=3.5.0-266.0.dev <4.0.0'
@@ -13,7 +13,6 @@ dependencies:
   shared_preferences: ^2.2.3
   youtube_player_flutter: ^8.0.0
   url_launcher: ^6.0.20
-
 
 dev_dependencies:
   flutter_test:
@@ -29,17 +28,17 @@ flutter:
     - assets/data/contents/book1/
     - assets/data/contents/book2/
     - assets/data/contents/book3/
-    - assets/images/placeholder.png
-    - assets/images/book_covers/
-    - assets/images/book1/
-    - assets/images/book1/categories/
-    - assets/images/book1/logos/
-    - assets/images/book1/team/
-    - assets/images/book2/
-    - assets/images/book2/categories/
-    - assets/images/book2/logos/
-    - assets/images/book2/team/
-    - assets/config.json
+    - assets/data/images/book_covers/
+    - assets/data/images/book1/
+    - assets/data/images/book1/categories/
+    - assets/data/images/book1/logos/
+    - assets/data/images/book1/team/
+    - assets/data/images/book2/
+    - assets/data/images/book2/categories/
+    - assets/data/images/book2/logos/
+    - assets/data/images/book2/team/
+    - assets/data/config.json
+
   fonts:
     - family: Raleway
       fonts:
