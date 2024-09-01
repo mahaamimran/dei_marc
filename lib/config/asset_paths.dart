@@ -9,4 +9,5 @@ class AssetPaths {
   static String subcategoriesJson(String bookId, int categoryId) => 'assets/data/subcategories/book${bookId}_cat${categoryId}_subcategories.json';
   static String contentJson(String bookId, int categoryId, int subcategoryId) => 'assets/data/contents/book$bookId/book${bookId}_cat${categoryId}_sub${subcategoryId}_content.json';
   static String image(String imagePath) => 'assets/$imagePath';
+  static String launchScreenBackground = 'assets/launch_screen/launch_screen.png';  
 }
