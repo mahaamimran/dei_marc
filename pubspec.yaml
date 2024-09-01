@@ -12,7 +12,7 @@ dependencies:
   provider: ^6.1.2
   shared_preferences: ^2.2.3
   youtube_player_flutter: ^8.0.0
-  url_laucher: ^6.3.0
+  url_launcher: ^6.0.20
 
 
 dev_dependencies:

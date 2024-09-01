@@ -43,7 +43,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               },
             ),
             backgroundColor: widget.appBarColor,
-            title: Text("Categories", style: TextStyles.appBarTitle),
+            title: const Text("Categories", style: TextStyles.appBarTitle),
             actions: [
               Consumer<SettingsProvider>(
                 builder: (context, settingsProvider, child) {

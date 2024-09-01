@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:dei_marc/config/image_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -69,67 +71,67 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildListView(BookProvider bookProvider) {
-    return Scrollbar(
-      child: ListView.builder(
-        itemCount: bookProvider.books.length,
-        itemBuilder: (context, index) {
-          final book = bookProvider.books[index];
-          final primaryColor = ColorConstants
-              .booksPrimary[index % ColorConstants.booksPrimary.length];
-          final secondaryColor = ColorConstants
-              .booksSecondary[index % ColorConstants.booksSecondary.length];
+  // Widget _buildListView(BookProvider bookProvider) {
+  //   return Scrollbar(
+  //     child: ListView.builder(
+  //       itemCount: bookProvider.books.length,
+  //       itemBuilder: (context, index) {
+  //         final book = bookProvider.books[index];
+  //         final primaryColor = ColorConstants
+  //             .booksPrimary[index % ColorConstants.booksPrimary.length];
+  //         final secondaryColor = ColorConstants
+  //             .booksSecondary[index % ColorConstants.booksSecondary.length];
 
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Material(
-              color: secondaryColor,
-              borderRadius: BorderRadius.circular(16.0),
-              elevation: 2.0,
-              child: InkWell(
-                borderRadius: BorderRadius.circular(16.0),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CategoryScreen(
-                        bookFileName: book.bookId.toString(),
-                        appBarColor: primaryColor,
-                        secondaryColor: secondaryColor,
-                      ),
-                    ),
-                  );
-                },
-                child: ListTile(
-                  leading: Container(
-                    width: 80, // Fixed width
-                    height: 100, // Fixed height
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: AssetImage(ImageAssets
-                            .bookCovers[index % ImageAssets.bookCovers.length]),
-                        fit: BoxFit
-                            .cover, // Ensures the image fits based on height
-                      ),
-                    ),
-                  ),
-                  title: Text(
-                    book.title,
-                    style: TextStyles.appTitle.copyWith(color: primaryColor),
-                  ),
-                  subtitle: Text(
-                    'By ${book.author}',
-                    style: TextStyles.appCaption.copyWith(color: Colors.black),
-                  ),
-                ),
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
+  //         return Padding(
+  //           padding: const EdgeInsets.symmetric(vertical: 8.0),
+  //           child: Material(
+  //             color: secondaryColor,
+  //             borderRadius: BorderRadius.circular(16.0),
+  //             elevation: 2.0,
+  //             child: InkWell(
+  //               borderRadius: BorderRadius.circular(16.0),
+  //               onTap: () {
+  //                 Navigator.push(
+  //                   context,
+  //                   MaterialPageRoute(
+  //                     builder: (context) => CategoryScreen(
+  //                       bookFileName: book.bookId.toString(),
+  //                       appBarColor: primaryColor,
+  //                       secondaryColor: secondaryColor,
+  //                     ),
+  //                   ),
+  //                 );
+  //               },
+  //               child: ListTile(
+  //                 leading: Container(
+  //                   width: 80, // Fixed width
+  //                   height: 100, // Fixed height
+  //                   decoration: BoxDecoration(
+  //                     borderRadius: BorderRadius.circular(8.0),
+  //                     image: DecorationImage(
+  //                       image: AssetImage(ImageAssets
+  //                           .bookCovers[index % ImageAssets.bookCovers.length]),
+  //                       fit: BoxFit
+  //                           .cover, // Ensures the image fits based on height
+  //                     ),
+  //                   ),
+  //                 ),
+  //                 title: Text(
+  //                   book.title,
+  //                   style: TextStyles.appTitle.copyWith(color: primaryColor),
+  //                 ),
+  //                 subtitle: Text(
+  //                   'By ${book.author}',
+  //                   style: TextStyles.appCaption.copyWith(color: Colors.black),
+  //                 ),
+  //               ),
+  //             ),
+  //           ),
+  //         );
+  //       },
+  //     ),
+  //   );
+  // }
 
   Widget _buildGridView(BookProvider bookProvider) {
     return Scrollbar(
@@ -167,8 +169,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image.asset(ImageAssets
-                          .bookCovers[index % ImageAssets.bookCovers.length]),
+                      ClipRRect(
+                        borderRadius:
+                            BorderRadius.circular(8.0), // Rounded corners
+                        child: Image.asset(
+                          ImageAssets.bookCovers[
+                              index % ImageAssets.bookCovers.length],
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                       const SizedBox(height: 8.0),
                       Text(
                         book.title,

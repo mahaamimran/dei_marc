@@ -17,7 +17,7 @@ class FontSettingsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Consumer<SettingsProvider>(
         builder: (context, settingsProvider, child) {
           final fontOptions = ['Raleway', 'Roboto', 'Lexend'];

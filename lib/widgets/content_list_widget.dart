@@ -1,4 +1,6 @@
-import 'dart:io';
+// ignore_for_file: avoid_print
+
+import 'package:dei_marc/utils/connection_util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -11,21 +13,6 @@ import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/config/text_styles.dart';
-
-class ConnectionUtil {
-  Future<bool> isConnected() async {
-    bool isConnected = false;
-    try {
-      final result = await InternetAddress.lookup('google.com');
-      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-        isConnected = true;
-      }
-    } on SocketException catch (_) {
-      isConnected = false;
-    }
-    return isConnected;
-  }
-}
 
 class ContentListWidget extends StatelessWidget {
   final int categoryId;
