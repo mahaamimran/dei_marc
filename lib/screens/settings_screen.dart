@@ -13,7 +13,8 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -21,7 +22,7 @@ class SettingsScreen extends StatelessWidget {
             'Settings',
             style: TextStyles.appBarTitle.copyWith(color: Colors.black),
           ),
-        backgroundColor: Colors.grey[200],
+          backgroundColor: Colors.grey[200],
         ),
         body: SafeArea(
           child: Consumer<SettingsProvider>(
@@ -32,17 +33,22 @@ class SettingsScreen extends StatelessWidget {
                   children: [
                     _buildSectionTitle('General'),
                     const SizedBox(height: 10),
-                    _buildSettingsOption('Notifications', CupertinoIcons.bell, () {
+                    _buildSettingsOption('Notifications', CupertinoIcons.bell,
+                        () {
                       // Handle Notifications tap
                     }),
-                    _buildSettingsOption('Privacy and Security', CupertinoIcons.lock, () {
+                    _buildSettingsOption(
+                        'Privacy and Security', CupertinoIcons.lock, () {
                       // Handle Privacy and Security tap
                     }),
-                    _buildSettingsOption('Support', CupertinoIcons.question_circle, () {
+                    _buildSettingsOption(
+                        'Support', CupertinoIcons.question_circle, () {
                       // Handle Support tap
                     }),
                     const Divider(height: 40, thickness: 2),
                     _buildSectionTitle('Font Settings'),
+                    const SizedBox(height: 10),
+                    _buildPreviewText(settingsProvider),
                     const SizedBox(height: 10),
                     _buildFontSizeSection(settingsProvider),
                     const SizedBox(height: 20),
@@ -53,7 +59,8 @@ class SettingsScreen extends StatelessWidget {
                     _buildSettingsOption('About', CupertinoIcons.info, () {
                       // Handle About tap
                     }),
-                    _buildSettingsOption('Copyright', CupertinoIcons.circle, () {
+                    _buildSettingsOption('Copyright', CupertinoIcons.circle,
+                        () {
                       // Handle Copyright tap
                     }),
                     _buildSettingsOption('Share App', CupertinoIcons.share, () {
@@ -64,6 +71,19 @@ class SettingsScreen extends StatelessWidget {
               );
             },
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPreviewText(SettingsProvider settingsProvider) {
+    return Center(
+      child: Text(
+        'DEI MARC',
+        style: TextStyle(
+          fontFamily: settingsProvider.fontFamily,
+          fontSize: settingsProvider.fontSize,
+          color: Colors.black,
         ),
       ),
     );
