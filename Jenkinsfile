@@ -1,64 +1,43 @@
 pipeline {
     agent any
 
-    tools {
-        // Install the Flutter SDK
-        flutter 'flutter-sdk'
-    }
-
     environment {
-        // Define environment variables
-        ANDROID_HOME = "${env.HOME}/Android/Sdk"
-        PATH = "$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin"
+        FLUTTER_HOME = "${env.WORKSPACE}/flutter"
+        PATH = "${env.PATH}:${FLUTTER_HOME}/bin"
     }
 
     stages {
-        stage('Checkout') {
+        stage('Setup Flutter') {
             steps {
-                // Clone the repository
-                checkout scm
+                script {
+                    // Check if Flutter is already installed
+                    if (!fileExists("${FLUTTER_HOME}/bin/flutter")) {
+                        sh 'git clone https://github.com/flutter/flutter.git -b stable ${FLUTTER_HOME}'
+                        sh '${FLUTTER_HOME}/bin/flutter doctor'
+                    } else {
+                        echo "Flutter is already installed"
+                    }
+                }
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Dependencies') {
             steps {
-                script {
-                    // Install Flutter dependencies
-                    sh 'flutter pub get'
-                }
+                sh 'flutter pub get'
             }
         }
 
         stage('Build APK') {
             steps {
-                script {
-                    // Build the APK
-                    sh 'flutter build apk --release'
-                }
-            }
-        }
-
-        stage('Archive APK') {
-            steps {
-                // Archive the APK file to Jenkins artifacts
-                archiveArtifacts artifacts: 'build/app/outputs/flutter-apk/app-release.apk', allowEmptyArchive: true
-            }
-        }
-
-        stage('Clean Up') {
-            steps {
-                // Clean up the workspace after the build
-                cleanWs()
+                sh 'flutter build apk --release'
             }
         }
     }
 
     post {
-        success {
-            echo 'APK build successful!'
-        }
-        failure {
-            echo 'APK build failed.'
+        always {
+            echo 'Cleaning up...'
+            cleanWs()
         }
     }
 }
