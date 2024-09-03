@@ -12,7 +12,7 @@ pipeline {
                 script {
                     // Check if Flutter is already installed
                     if (!fileExists("${FLUTTER_HOME}/bin/flutter")) {
-                        sh 'git clone https://github.com/flutter/flutter.git -b stable ${FLUTTER_HOME}'
+                        sh 'git clone -b stable https://github.com/flutter/flutter.git ${FLUTTER_HOME}'
                         sh '${FLUTTER_HOME}/bin/flutter doctor'
                     } else {
                         echo "Flutter is already installed"
