@@ -50,6 +50,7 @@ class Helpers {
       'Engro',
       'JS Bank',
       'Mobilink Microfinance Bank',
+      'Microfinance Bank Limited',
       'HRSG',
       'PPAF',
       'TPLCorp',
