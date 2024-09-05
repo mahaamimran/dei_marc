@@ -3,7 +3,7 @@ import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:dei_marc/widgets/platform_alert_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'content_screen.dart';
@@ -23,7 +23,7 @@ class BookmarksScreen extends StatelessWidget {
           leading: Consumer<BookmarkProvider>(
             builder: (context, bookmarkProvider, child) {
               return IconButton(
-                icon: const Icon(Icons.delete_outline_rounded, color: CupertinoColors.systemRed),
+                icon: const Icon(Icons.delete_outline_rounded, color: Colors.red),
                 onPressed: () {
                   if (bookmarkProvider.bookmarks.isNotEmpty) {
                     _showClearAllDialog(context, bookmarkProvider);
@@ -41,8 +41,7 @@ class BookmarksScreen extends StatelessWidget {
             Consumer<SettingsProvider>(
               builder: (context, settingsProvider, child) {
                 return IconButton(
-                  icon: Icon(settingsProvider.isGridView? 
-                         Icons.grid_view_rounded:Icons.list_rounded),
+                  icon: Icon(settingsProvider.isGridView ? Icons.list_rounded : Icons.grid_view_rounded),
                   onPressed: () {
                     settingsProvider.setViewPreference(!settingsProvider.isGridView);
                   },
@@ -53,12 +52,10 @@ class BookmarksScreen extends StatelessWidget {
         ),
         body: Consumer2<BookmarkProvider, SettingsProvider>(
           builder: (context, bookmarkProvider, settingsProvider, child) {
-            // If there are no bookmarks, display a message
             if (bookmarkProvider.bookmarks.isEmpty) {
               return const Center(child: Text('No bookmarks yet.'));
             }
 
-            // Display the appropriate view (grid or list) based on user preference
             return settingsProvider.isGridView
                 ? _buildGridView(bookmarkProvider)
                 : _buildListView(bookmarkProvider);
@@ -68,16 +65,15 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
-  // Build the grid view for bookmarks with a scrollbar
   Widget _buildGridView(BookmarkProvider bookmarkProvider) {
     return Scrollbar(
       child: GridView.builder(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(10.0),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 1.2,
-          crossAxisSpacing: 8.0,
-          mainAxisSpacing: 8.0,
+          crossAxisCount: 2, // Same grid layout as CategoryScreen
+          childAspectRatio: 1.3, // Same aspect ratio as CategoryScreen
+          crossAxisSpacing: 15.0,
+          mainAxisSpacing: 15.0,
         ),
         itemCount: bookmarkProvider.bookmarks.length,
         itemBuilder: (context, index) {
@@ -88,11 +84,10 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
-  // Build the list view for bookmarks with a scrollbar
   Widget _buildListView(BookmarkProvider bookmarkProvider) {
     return Scrollbar(
       child: ListView.builder(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
         itemCount: bookmarkProvider.bookmarks.length,
         itemBuilder: (context, index) {
           final bookmark = bookmarkProvider.bookmarks[index];
@@ -102,7 +97,6 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
-  // Build the bookmark card for grid view
   Widget _buildGridBookmarkCard(BuildContext context, String bookmark) {
     final parts = bookmark.split('-');
     final bookId = parts[0];
@@ -113,26 +107,26 @@ class BookmarksScreen extends StatelessWidget {
     final bookPrimaryColor = ColorConstants.booksPrimary[bookIdIndex % ColorConstants.booksSecondary.length];
     final bookSecondaryColor = ColorConstants.booksSecondary[bookIdIndex % ColorConstants.booksSecondary.length];
 
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ContentScreen(
-              bookId: bookId,
-              categoryId: categoryId,
-              appBarColor: bookPrimaryColor,
-              secondaryColor: bookSecondaryColor,
-              categoryName: categoryName,
+    return Material(
+      color: bookSecondaryColor, // background color for the card
+      borderRadius: BorderRadius.circular(16.0), // Card shape
+      elevation: 2.0, // Elevation for shadow
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16.0), // Ripple effect shape
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ContentScreen(
+                bookId: bookId,
+                categoryId: categoryId,
+                appBarColor: bookPrimaryColor,
+                secondaryColor: bookSecondaryColor,
+                categoryName: categoryName,
+              ),
             ),
-          ),
-        );
-      },
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0),
-        ),
-        color: bookSecondaryColor,
+          );
+        },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -166,7 +160,6 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
-  // Build the bookmark card for list view
   Widget _buildListBookmarkCard(BuildContext context, String bookmark) {
     final parts = bookmark.split('-');
     final bookId = parts[0];
@@ -177,25 +170,28 @@ class BookmarksScreen extends StatelessWidget {
     final bookPrimaryColor = ColorConstants.booksPrimary[bookIdIndex % ColorConstants.booksSecondary.length];
     final bookSecondaryColor = ColorConstants.booksSecondary[bookIdIndex % ColorConstants.booksSecondary.length];
 
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ContentScreen(
-              bookId: bookId,
-              categoryId: categoryId,
-              appBarColor: bookPrimaryColor,
-              secondaryColor: bookSecondaryColor,
-              categoryName: categoryName,
+    return Material(
+      color: bookSecondaryColor,
+      borderRadius: BorderRadius.circular(16.0),
+      elevation: 2.0, // Add elevation for shadow
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16.0),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ContentScreen(
+                bookId: bookId,
+                categoryId: categoryId,
+                appBarColor: bookPrimaryColor,
+                secondaryColor: bookSecondaryColor,
+                categoryName: categoryName,
+              ),
             ),
-          ),
-        );
-      },
-      child: Card(
-        color: bookSecondaryColor,
-        margin: const EdgeInsets.symmetric(vertical: 8.0),
+          );
+        },
         child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
           title: Text(
             '${Helpers.getTitle(bookId)} $categoryId',
             style: TextStyles.appCaption.copyWith(
@@ -216,28 +212,15 @@ class BookmarksScreen extends StatelessWidget {
   }
 
   void _showClearAllDialog(BuildContext context, BookmarkProvider bookmarkProvider) {
-    showCupertinoDialog(
+    showDialog(
       context: context,
       builder: (BuildContext context) {
-        return CupertinoAlertDialog(
-          title: const Text("Clear all Bookmarks"),
-          content: const Text("Are you sure you want to clear all bookmarks?"),
-          actions: [
-            CupertinoDialogAction(
-              child: const Text("Cancel"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            CupertinoDialogAction(
-              onPressed: () {
-                bookmarkProvider.clearAllBookmarks();
-                Navigator.of(context).pop();
-              },
-              isDestructiveAction: true,
-              child: const Text("Clear", style: TextStyle(color: CupertinoColors.systemRed)),
-            ),
-          ],
+        return PlatformAlertDialog(
+          title: "Clear all Bookmarks",
+          content: "Are you sure you want to clear all bookmarks?",
+          onClear: () {
+            bookmarkProvider.clearAllBookmarks();
+          },
         );
       },
     );

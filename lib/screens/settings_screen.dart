@@ -18,6 +18,7 @@ class SettingsScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          scrolledUnderElevation: 0,
           title: Text(
             'Settings',
             style: TextStyles.appBarTitle.copyWith(color: Colors.black),
@@ -59,8 +60,7 @@ class SettingsScreen extends StatelessWidget {
                     _buildSettingsOption('About', CupertinoIcons.info, () {
                       // Handle About tap
                     }),
-                    _buildSettingsOption('Copyright', CupertinoIcons.circle,
-                        () {
+                    _buildSettingsOption('Copyright', Icons.copyright, () {
                       // Handle Copyright tap
                     }),
                     _buildSettingsOption('Share App', CupertinoIcons.share, () {

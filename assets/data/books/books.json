@@ -12,17 +12,17 @@
             "book_id": 2,
             "Volume": 2,
             "title": "GENDER DEI TOOLKIT: A GUIDE TO RESOLVE IMPLEMENTATION CHALLENGES | Volume 2",
-            "author": "Sadia Nadeem,Imaan Fayyaz,Muiz Ahmad, Nabeeha Misbah, Sarah Sohail",
-            "citation": "Nadeem, S. Fayyaz, I, Ahmad, M, Misbah, N., & Sohail, S. (2023). Gender DEI Toolkit: A guide to resolve implementation challenges. Islamabad: Management Advancement Research Centre, FAST-NUCES.",
+            "author": "Sadia Nadeem, Imaan Fayyaz, Muiz Ahmad, Nabeeha Misbah, Sarah Sohail",
+            "citation": "Nadeem, S., Fayyaz, I., Ahmad, M., Misbah, N., & Sohail, S. (2023). Gender DEI Toolkit: A guide to resolve implementation challenges. Islamabad: Management Advancement Research Centre, FAST-NUCES.",
             "image_path": "book_2"
         },
         {
-            "book_id":3,
-            "Volume":3,
-            "title":"GENDER DEI TOOLKIT: A TRAINING MANUAL FOR HR PROFESSIONALS | Volume 3",
-            "author":"Sadia Nadeem, Ashbeel Khan, Mahnoor Irfan, Meerab Sarfaraz",
-            "citation":"Nadeem, S. Khan, A, Irfan, M, & Sarfaraz, M. (2024). Gender DEI Toolkit: A training manual for HR professional. Islamabad: Management Advancement Research Centre, FAST-NUCES.",
-            "image_path":"book_3"
+            "book_id": 3,
+            "Volume": 3,
+            "title": "GENDER DEI TOOLKIT: A TRAINING MANUAL FOR HR PROFESSIONALS | Volume 3",
+            "author": "Sadia Nadeem, Ashbeel Khan, Mahnoor Irfan, Meerab Sarfaraz",
+            "citation": "Nadeem, S., Khan, A., Irfan, M., & Sarfaraz, M. (2024). Gender DEI Toolkit: A training manual for HR professionals. Islamabad: Management Advancement Research Centre, FAST-NUCES.",
+            "image_path": "book_3"
         }
     ]
 }

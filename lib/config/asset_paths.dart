@@ -2,6 +2,7 @@ class AssetPaths {
    static const List<String> bookCovers = [
     'assets/data/images/book_covers/toolkit1.png',
     'assets/data/images/book_covers/toolkit2.png',
+    'assets/data/images/book_covers/toolkit3.png',
   ];
   static const String booksJson = 'assets/data/books/books.json';
   static const String placeholderImage = 'assets/data/images/placeholder.png';
