@@ -1,4 +1,4 @@
-import 'package:dei_marc/config/constants.dart';
+import 'package:flutter/material.dart';
 
 class Helpers {
   static String getTitle(String bookId) {
@@ -15,23 +15,74 @@ class Helpers {
   }
 
   static String capitalizeTitle(String input) {
-    // ignore: prefer_const_declarations
-    final List<String> exceptions = Constants.TITLE_EXCEPTIONS;
-
+    const List<String> exceptions = ["of", "the", "in", "and", "a", "an"];
     List<String> words = input.split(' ');
 
     for (int i = 0; i < words.length; i++) {
       if (i == 0 || !exceptions.contains(words[i].toLowerCase())) {
-        // Capitalize the word if it's the first word or not in the exceptions list
         if (words[i] != words[i].toUpperCase()) {
-          words[i] = words[i][0].toUpperCase() + words[i].substring(1).toLowerCase();
+          words[i] =
+              words[i][0].toUpperCase() + words[i].substring(1).toLowerCase();
         }
       } else {
-        // Otherwise, make it lowercase
         words[i] = words[i].toLowerCase();
       }
     }
 
     return words.join(' ');
+  }
+
+  static List<TextSpan> highlightCompanies(
+      String text, TextStyle baseStyle, Color highlightColor) {
+    final companies = [
+      'Jazz',
+      'Bank Alfalah',
+      'Telenor',
+      'British Council',
+      'Abacus',
+      'Unilever',
+      'Teradata',
+      'S&P Global',
+      'Interloop',
+      'Finca',
+      'Hashoo Group',
+      'PTCL',
+      'Engro',
+      'JS Bank',
+      'Mobilink Microfinance Bank',
+      'HRSG',
+      'PPAF',
+      'TPLCorp',
+      'Feroze1888',
+      'EPCL',
+      'MMBL',
+      'TPL Corp',
+    ];
+
+    // Create a regex pattern that matches any of the companies, case-insensitive
+    final pattern = RegExp(
+        companies.map((company) => RegExp.escape(company)).join('|'),
+        caseSensitive: false);
+
+    List<TextSpan> spans = [];
+
+    // Split the text using the RegExp
+    text.splitMapJoin(
+      pattern,
+      onMatch: (match) {
+        // If it's a match, highlight the company
+        spans.add(TextSpan(
+            text: match.group(0),
+            style: baseStyle.copyWith(color: highlightColor)));
+        return match.group(0) ?? '';
+      },
+      onNonMatch: (nonMatch) {
+        // Otherwise, use the normal style
+        spans.add(TextSpan(text: nonMatch, style: baseStyle));
+        return nonMatch;
+      },
+    );
+
+    return spans;
   }
 }

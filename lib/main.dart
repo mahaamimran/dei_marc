@@ -9,7 +9,7 @@ import 'package:dei_marc/screens/splash_screen.dart';
 import 'package:dei_marc/providers/book_provider.dart';
 import 'package:dei_marc/providers/category_provider.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';
-//jenkins
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());

@@ -6,7 +6,6 @@ import 'package:dei_marc/utils/connection_util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-
 import 'package:dei_marc/models/content_item.dart';
 import 'package:dei_marc/models/quote.dart';
 import 'package:dei_marc/providers/config_provider.dart';
@@ -52,7 +51,10 @@ class ContentListWidget extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: subcategoryProvider.subcategories.asMap().entries.map((entry) {
+              children: subcategoryProvider.subcategories
+                  .asMap()
+                  .entries
+                  .map((entry) {
                 final index = entry.key;
                 final subcategory = entry.value;
                 final key = GlobalKey();
@@ -81,9 +83,10 @@ class ContentListWidget extends StatelessWidget {
                                 Helpers.capitalizeTitle(categoryName)
                                     .toUpperCase(),
                                 style: TextStyles.heading(context).copyWith(
-                                  fontSize: Provider.of<SettingsProvider>(context)
-                                          .fontSize *
-                                      1.5,
+                                  fontSize:
+                                      Provider.of<SettingsProvider>(context)
+                                              .fontSize *
+                                          1.5,
                                 ),
                               ),
                             ),
@@ -148,8 +151,10 @@ class ContentListWidget extends StatelessWidget {
                               _buildContentItem(firstItem, context),
                               ...contents.skip(1).map((contentItem) {
                                 return Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                                  child: _buildContentItem(contentItem, context),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8.0),
+                                  child:
+                                      _buildContentItem(contentItem, context),
                                 );
                               }),
                             ],
@@ -184,7 +189,7 @@ class ContentListWidget extends StatelessWidget {
           AssetPaths.image(imagePath),
           fit: BoxFit.cover,
           errorBuilder: (context, error, stackTrace) {
-            print('Error loading image: $error'); 
+            print('Error loading image: $error');
             return const Text('Image not found');
           },
         ),
@@ -197,7 +202,6 @@ class ContentListWidget extends StatelessWidget {
 
   Widget _buildContentItem(ContentItem contentItem, BuildContext context) {
     final fontSize = Provider.of<SettingsProvider>(context).fontSize;
-
     if (contentItem.content.isEmpty) return Container();
 
     return Column(
@@ -242,7 +246,24 @@ class ContentListWidget extends StatelessWidget {
           } else if (quote.type == Constants.VIDEO) {
             return _buildVideo(quote.text, context);
           } else {
-            return _buildQuote(quote, context, fontSize);
+            // Apply Helpers.highlightCompanies to the description (assuming type Constants.PARAGRAPH)
+            if (quote.type == Constants.PARAGRAPH) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4.0),
+                child: RichText(
+                  text: TextSpan(
+                    children: Helpers.highlightCompanies(
+                      quote.text,
+                      TextStyles.content(context).copyWith(fontSize: fontSize),
+                      appBarColor, // highlightColor
+                    ),
+                  ),
+                ),
+              );
+            } else {
+              return _buildQuote(
+                  quote, context, fontSize); // Fallback to the original method
+            }
           }
         }),
       ],
@@ -268,9 +289,15 @@ class ContentListWidget extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Expanded(
-              child: Text(
-                quote.text,
-                style: TextStyles.bullet(context).copyWith(fontSize: fontSize),
+              child: RichText(
+                text: TextSpan(
+                  style:
+                      TextStyles.bullet(context).copyWith(fontSize: fontSize),
+                  children: Helpers.highlightCompanies(
+                      quote.text,
+                      TextStyles.bullet(context).copyWith(fontSize: fontSize),
+                      appBarColor),
+                ),
               ),
             ),
           ],
@@ -299,9 +326,15 @@ class ContentListWidget extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Expanded(
-                child: Text(
-                  quote.text,
-                  style: TextStyles.quote(context).copyWith(fontSize: fontSize),
+                child: RichText(
+                  text: TextSpan(
+                    style:
+                        TextStyles.quote(context).copyWith(fontSize: fontSize),
+                    children: Helpers.highlightCompanies(
+                        quote.text,
+                        TextStyles.quote(context).copyWith(fontSize: fontSize),
+                        appBarColor),
+                  ),
                 ),
               ),
             ],
@@ -319,18 +352,23 @@ class ContentListWidget extends StatelessWidget {
     } else if (quote.type == Constants.PARAGRAPH) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
-        child: Text(
-          quote.text,
-          style: TextStyles.content(context).copyWith(fontSize: fontSize),
+        child: RichText(
+          text: TextSpan(
+            style: TextStyles.content(context).copyWith(fontSize: fontSize),
+            children: Helpers.highlightCompanies(
+                quote.text,
+                TextStyles.content(context).copyWith(fontSize: fontSize),
+                appBarColor),
+          ),
         ),
       );
-    }
-    else {
+    } else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
           quote.text,
-          style: TextStyles.content(context).copyWith(fontSize: fontSize, color: Colors.red),
+          style: TextStyles.content(context)
+              .copyWith(fontSize: fontSize, color: Colors.red),
         ),
       );
     }
@@ -387,7 +425,7 @@ class ContentListWidget extends StatelessWidget {
 
   void _launchURL(String url) async {
     try {
-       _launchURL(url);
+      _launchURL(url);
     } catch (e) {
       print('Error launching URL: $e');
     }
