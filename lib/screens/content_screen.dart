@@ -3,6 +3,7 @@
 import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/models/subcategory.dart';
 import 'package:dei_marc/providers/config_provider.dart';
+import 'package:dei_marc/screens/pdf_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';
@@ -56,18 +57,22 @@ class _ContentScreenState extends State<ContentScreen> {
         Provider.of<ContentProvider>(context, listen: false);
     final configProvider = Provider.of<ConfigProvider>(context, listen: false);
 
-    await subcategoryProvider.loadSubcategories(widget.bookId, widget.categoryId);
+    await subcategoryProvider.loadSubcategories(
+        widget.bookId, widget.categoryId);
 
     for (int i = 0; i < subcategoryProvider.subcategories.length; i++) {
-      await contentProvider.loadContent(widget.bookId, widget.categoryId, i + 1);
+      await contentProvider.loadContent(
+          widget.bookId, widget.categoryId, i + 1);
 
-      final contents = contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
+      final contents =
+          contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
 
       for (var content in contents) {
         if (content.image != null) {
           final imagePath = configProvider.getImagePath(content.image!);
           if (imagePath != null) {
-            await precacheImage(AssetImage('${AssetPaths.dataDirectory}$imagePath'), context);
+            await precacheImage(
+                AssetImage('${AssetPaths.dataDirectory}$imagePath'), context);
           }
         }
       }
@@ -86,12 +91,17 @@ class _ContentScreenState extends State<ContentScreen> {
       final key = _keyMap['${widget.categoryId}-$index'];
       if (key != null && key.currentContext != null) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          final RenderBox renderBox = key.currentContext!.findRenderObject() as RenderBox;
-          final Offset offset = renderBox.localToGlobal(Offset.zero, ancestor: null);
+          final RenderBox renderBox =
+              key.currentContext!.findRenderObject() as RenderBox;
+          final Offset offset =
+              renderBox.localToGlobal(Offset.zero, ancestor: null);
           final double yPosition = offset.dy;
 
           _scrollController.animateTo(
-            _scrollController.offset + yPosition - kToolbarHeight - MediaQuery.of(context).padding.top,
+            _scrollController.offset +
+                yPosition -
+                kToolbarHeight -
+                MediaQuery.of(context).padding.top,
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOut,
           );
@@ -112,11 +122,13 @@ class _ContentScreenState extends State<ContentScreen> {
     final contentProvider = Provider.of<ContentProvider>(context);
     final bookmarkProvider = Provider.of<BookmarkProvider>(context);
 
-    final String bookmarkId = '${widget.bookId}-${widget.categoryId}-${widget.categoryName}';
+    final String bookmarkId =
+        '${widget.bookId}-${widget.categoryId}-${widget.categoryName}';
     final bool isBookmarked = bookmarkProvider.isBookmarked(bookmarkId);
 
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -154,6 +166,28 @@ class _ContentScreenState extends State<ContentScreen> {
           ],
         ),
         body: _buildBody(subcategoryProvider, contentProvider),
+        floatingActionButton: widget.bookId == '3'
+            ? FloatingActionButton(
+              shape: const CircleBorder(),
+                backgroundColor: widget.appBarColor,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PDFScreen(
+                        appBarColor: widget.appBarColor,
+                        pdfUrl:
+                            'https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx',
+                      ),
+                    ),
+                  );
+                },
+                child: const Icon(
+                  Icons.picture_as_pdf_rounded,
+                  color: Colors.white,
+                ),
+              )
+            : null,
       ),
     );
   }

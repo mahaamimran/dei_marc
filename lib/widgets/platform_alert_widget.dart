@@ -8,11 +8,11 @@ class PlatformAlertDialog extends StatelessWidget {
   final VoidCallback onClear;
 
   const PlatformAlertDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.content,
     required this.onClear,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

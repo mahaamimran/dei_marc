@@ -91,11 +91,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
         itemBuilder: (context, index) {
           final category = categoryProvider.categories[index];
           return Material(
-            color: widget.secondaryColor, // background color
-            borderRadius: BorderRadius.circular(16.0), // same as Card shape
-            elevation: 2.0, // elevation for shadow
+            color: widget.secondaryColor, 
+            borderRadius: BorderRadius.circular(16.0), 
+            elevation: 2.0, 
             child: InkWell(
-              borderRadius: BorderRadius.circular(16.0), // ripple effect shape
+              borderRadius: BorderRadius.circular(16.0), 
               onTap: () {
                 Navigator.push(
                   context,
