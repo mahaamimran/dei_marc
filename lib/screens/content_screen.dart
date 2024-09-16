@@ -4,6 +4,7 @@ import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/models/subcategory.dart';
 import 'package:dei_marc/providers/config_provider.dart';
 import 'package:dei_marc/screens/pdf_screen.dart';
+import 'package:dei_marc/widgets/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';
@@ -166,29 +167,10 @@ class _ContentScreenState extends State<ContentScreen> {
           ],
         ),
         body: _buildBody(subcategoryProvider, contentProvider),
-        floatingActionButton: widget.bookId == '3'
-            ? FloatingActionButton(
-              shape: const CircleBorder(),
-                backgroundColor: widget.appBarColor,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PDFScreen(
-                        appBarColor: widget.appBarColor,
-                        pdfUrl:
-                            'https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx',
-                      ),
-                    ),
-                  );
-                },
-                child: const Icon(
-                  Icons.picture_as_pdf_rounded,
-                  color: Colors.white,
-                ),
-              )
-            : null,
-      ),
+         floatingActionButton: widget.bookId == '3'
+          ? CustomFloatingActionButton(appBarColor: widget.appBarColor)
+          : null,
+    ),
     );
   }
 

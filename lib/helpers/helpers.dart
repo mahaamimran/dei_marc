@@ -13,6 +13,18 @@ class Helpers {
         return 'Category';
     }
   }
+    static String getAppBarTitle(String bookId) {
+    switch (bookId) {
+      case '1':
+        return 'Categories';
+      case '2':
+        return 'Groups';
+      case '3':
+        return 'Modules';
+      default:
+        return 'Categories';
+    }
+  }
 
   static String capitalizeTitle(String input) {
     const List<String> exceptions = ["of", "the", "in", "and", "a", "an"];

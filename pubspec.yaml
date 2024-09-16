@@ -15,6 +15,7 @@ dependencies:
   url_launcher: ^6.0.20
   share_plus: ^10.0.2
   syncfusion_flutter_pdfviewer: ^20.4.38
+  flutter_speed_dial: ^7.0.0
 
 
 dev_dependencies:
