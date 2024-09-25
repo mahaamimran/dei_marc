@@ -13,6 +13,19 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace? "
+                },
+                {
+                    "type": "bullet",
+                    "text": "In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -46,19 +59,6 @@
                 {
                     "type": "paragraph",
                     "text": "The discussion highlights the importance of continuous self-reflection and vigilance in recognizing one’s own biases. The speaker’s realization of her bias against women leaders, despite being one herself, serves as a call to action for everyone to examine their unconscious biases."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace? "
-                },
-                {
-                    "type": "bullet",
-                    "text": "In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
                 }
             ]
         }

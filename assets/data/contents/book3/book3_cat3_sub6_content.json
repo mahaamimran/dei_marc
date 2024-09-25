@@ -13,6 +13,19 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -30,19 +43,6 @@
                 {
                     "type": "paragraph",
                     "text": "Participants will understand the importance of addressing sexism in the workplace to create a more inclusive and equitable environment for all employees, as emphasized in the TEDx Talk. They will explore how tackling sexism not only benefits women but also contributes to organizational success by encouraging diversity of perspectives, enhancing employee morale and engagement, and promoting innovation and creativity."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
                 }
             ]
         }

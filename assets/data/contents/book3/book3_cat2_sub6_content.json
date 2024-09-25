@@ -13,6 +13,19 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace? "
+                },
+                {
+                    "type": "bullet",
+                    "text": "In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -30,19 +43,6 @@
                 {
                     "type": "paragraph",
                     "text": "Participants will understand the importance of promoting gender diversity and inclusion in organizational leadership to create fairer and more equitable workplaces. They will explore the benefits of having diverse perspectives and skills represented in leadership positions and how initiatives such as laws mandating gender diversity on company boards can help address gender disparities and promote gender equality in corporate settings. "
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace? "
-                },
-                {
-                    "type": "bullet",
-                    "text": "In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
                 }
             ]
         }

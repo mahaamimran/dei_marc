@@ -13,6 +13,19 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content":[
+                {
+                    "type":"bullet",
+                    "text":"Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace? "
+                },
+                {
+                    "type":"bullet",
+                    "text":"In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content":[
                 {
@@ -48,19 +61,6 @@
                     "text":"Trainees will understand the importance of equal gender representation in leadership roles and learn how to support and advocate for balanced leadership. This involves recognizing the value that diverse leadership brings to organizations and the ways in which biases can hinder this diversity."
                 }
 
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content":[
-                {
-                    "type":"bullet",
-                    "text":"Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace? "
-                },
-                {
-                    "type":"bullet",
-                    "text":"In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
-                }
             ]
         }
     ]
