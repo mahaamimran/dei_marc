@@ -3,6 +3,23 @@
     "subcategory": "Caselet | A Determined Saleswoman In Peshawar | 25 Min",
     "content": [
         {
+            "heading": "Caselet Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "How did Fatima overcome biases and succeed?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "In industries, professions, or regions dominated by men, what can organizations do to mitigate gender-based discrimination?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "What can leaders like Fatima do to advocate for systemic changes that empower women in traditionally conservative settings?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -28,23 +45,6 @@
                 {
                     "type": "paragraph",
                     "text": "Trainees will learn about the role of women leaders in advocating for systemic changes that empower women in traditionally conservative settings. They will explore strategies such as advocating for gender-inclusive policies and practices within the organization and leveraging their influence to mentor and support other women."
-                }
-            ]
-        },
-        {
-            "heading": "Caselet Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "How did Fatima overcome biases and succeed?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "In industries, professions, or regions dominated by men, what can organizations do to mitigate gender-based discrimination?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "What can leaders like Fatima do to advocate for systemic changes that empower women in traditionally conservative settings?"
                 }
             ]
         }

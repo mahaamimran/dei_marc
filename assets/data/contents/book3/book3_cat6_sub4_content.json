@@ -45,6 +45,23 @@
             ]
         },
         {
+            "heading": "Caselet Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "For what reason were other male employees and Amir highly dissatisfied with the new transportation policy?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How can encouraging dialogue in the workplace about issues relating to DEI help to develop understanding and empathy?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "What steps can organizations take to ensure that their DEI efforts are inclusive and consider the diverse needs of all employees, irrespective of gender?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -78,23 +95,6 @@
                 {
                     "type": "paragraph",
                     "text": "Trainees will learn the process of continuous evaluation and adaptation of policies to ensure they remain fair, inclusive, and effective. This involves regular reviews, incorporating feedback from all stakeholders, and making necessary adjustments to align with the evolving needs of the workforce."
-                }
-            ]
-        },
-        {
-            "heading": "Caselet Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "For what reason were other male employees and Amir highly dissatisfied with the new transportation policy?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "How can encouraging dialogue in the workplace about issues relating to DEI help to develop understanding and empathy?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "What steps can organizations take to ensure that their DEI efforts are inclusive and consider the diverse needs of all employees, irrespective of gender?"
                 }
             ]
         }
