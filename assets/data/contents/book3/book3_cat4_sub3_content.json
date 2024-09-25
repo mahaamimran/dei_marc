@@ -13,6 +13,19 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Reflect on the long-term implications for children and families if paternity leave becomes more widely accepted and supported. What are the potential social and emotional benefits for children when fathers are actively involved from the early stages of their lives?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How can organizations balance the need for productivity with the benefits of offering paternity leave to employees?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -38,19 +51,6 @@
                 {
                     "type": "paragraph",
                     "text": "Explore strategies for promoting inclusive leadership practices and fostering a culture of fairness and equal opportunities for all employees, regardless of gender or family status."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "Reflect on the long-term implications for children and families if paternity leave becomes more widely accepted and supported. What are the potential social and emotional benefits for children when fathers are actively involved from the early stages of their lives?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "How can organizations balance the need for productivity with the benefits of offering paternity leave to employees?"
                 }
             ]
         }

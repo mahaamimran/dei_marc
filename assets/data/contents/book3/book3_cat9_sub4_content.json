@@ -13,6 +13,27 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "How does Sana's negative self-perception affect her professional behavior and opportunities? Can you relate to her experience, and how have you seen similar perceptions impact others in the workplace?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "What role does supportive feedback from colleagues and supervisors, like the encouragement Sana receives from Mr. Saad, play in combating negative self-perceptions? Discuss examples where positive reinforcement has made a difference in your or a colleague's career."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Sana struggles with self-doubt despite clear signs of her competence and potential. What strategies can individuals adopt to overcome such doubts and build confidence in their professional abilities?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How might cultural, gender, or background influences shape one’s self-perception in professional settings? Discuss how these factors could contribute to the challenges Sana faces."
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -38,27 +59,6 @@
                 {
                     "type": "paragraph",
                     "text": "Participants will learn strategies to boost their self-confidence and assertiveness. This includes practical steps to challenge self-doubt, such as maintaining a record of achievements, seeking feedback, and setting realistic performance goals."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "How does Sana's negative self-perception affect her professional behavior and opportunities? Can you relate to her experience, and how have you seen similar perceptions impact others in the workplace?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "What role does supportive feedback from colleagues and supervisors, like the encouragement Sana receives from Mr. Saad, play in combating negative self-perceptions? Discuss examples where positive reinforcement has made a difference in your or a colleague's career."
-                },
-                {
-                    "type": "bullet",
-                    "text": "Sana struggles with self-doubt despite clear signs of her competence and potential. What strategies can individuals adopt to overcome such doubts and build confidence in their professional abilities?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "How might cultural, gender, or background influences shape one’s self-perception in professional settings? Discuss how these factors could contribute to the challenges Sana faces."
                 }
             ]
         }
