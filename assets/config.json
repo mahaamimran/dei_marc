@@ -89,8 +89,22 @@
         "tedxtalk_UnconsciousBias":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
         "tedxtalk_Stereotyping":"https://www.youtube.com/watch?v=9ZFNsJ0-aco",
         "tedxtalk_WomenInStem":"https://www.youtube.com/watch?v=l8pnmrR4zPI",
-        "tedxtalk_MaternityLeave":"https://www.youtube.com/watch?v=9ZFNsJ0-aco",
-        "tedxtalk_Leadership":"https://www.youtube.com/watch?v=lPtPG2lAmm4"
+        "tedxtalk_MaternityLeave":"",
+        "tedxtalk_Leadership":"https://www.youtube.com/watch?v=lPtPG2lAmm4",
+        "tedxtalk_WomenAndNewFactsOfLife":"",
+
+        "video_RethinkingAssumptions":"",
+        "video_RedefiningNarrative":"",
+        "video_WomenInStem":"",
+        "video_EqualityStartsAtHome":"",
+        "video_AreYouListeningToYourGenderBiasTooMuch":"",
+        "video_GenderBias":"",
+        "video_ATaleOfDoubleStandards":"",
+        "video_MicroaggressionsInTheWorkPlace":"",
+        "video_SeeingClearly":"",
+        "video_WageDisparity":""
+
+
 
     }
 }
