@@ -12,6 +12,19 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Can you share any personal experiences of encountering microaggressions in the workplace or elsewhere?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "What are some initiatives that can be taken to foster an inclusive workplace culture?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -29,19 +42,6 @@
                 {
                     "type": "paragraph",
                     "text": "Participants will explore initiatives and strategies for creating a more inclusive workplace culture. They will brainstorm ideas such as diversity training programs, inclusive language guidelines, bias awareness workshops, mentorship programs, and employee resource groups to promote awareness, understanding, and acceptance of diversity in the workplace."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "Can you share any personal experiences of encountering microaggressions in the workplace or elsewhere?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "What are some initiatives that can be taken to foster an inclusive workplace culture?"
                 }
             ]
         }

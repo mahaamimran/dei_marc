@@ -12,6 +12,19 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "In what ways can leaders demonstrate genuine commitment to DEI beyond public statements and mandatory programs? How does leadership behavior influence organizational culture?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How can organizations ensure that their DEI initiatives promote inclusion without inadvertently causing division or resentment among employees? What steps can be taken to mitigate such risks?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -37,19 +50,6 @@
                 {
                     "type": "paragraph",
                     "text": "Developing the capacity for critical analysis is essential in evaluating the efficacy of unconscious bias training initiatives. Assessing their effectiveness in meeting corporate diversity objectives requires a multifaceted approach, considering factors such as the relevance of content to organizational goals, the duration of training sessions, the characteristics of the target audience, and the alignment with broader diversity and inclusion efforts."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "In what ways can leaders demonstrate genuine commitment to DEI beyond public statements and mandatory programs? How does leadership behavior influence organizational culture?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "How can organizations ensure that their DEI initiatives promote inclusion without inadvertently causing division or resentment among employees? What steps can be taken to mitigate such risks?"
                 }
             ]
         }

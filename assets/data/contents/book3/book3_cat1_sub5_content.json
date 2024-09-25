@@ -12,27 +12,6 @@
             ]
         },
         {
-            "heading": "Learning Outcomes",
-            "content":[
-                {
-                    "type":"subheading",
-                    "text":"Recognizing Unconscious Biases:"
-                },
-                {
-                    "type":"paragraph",
-                    "text":"It is imperative to acknowledge that biases are inherent to human nature. Understanding and acknowledging their existence is crucial, particularly in workplace contexts such as hiring processes or performance evaluations. By identifying and actively working to eliminate these biases, organizations can foster fairer and more inclusive environments conducive to talent recognition and development."
-                },
-                {
-                    "type":"subheading",
-                    "text":"Effective Training Content:"
-                },
-                {
-                    "type":"paragraph",
-                    "text":"Effective training content should prioritize practical workplace scenarios over abstract psychological concepts or demographic categorizations. By grounding the training in real-world situations, employees can better grasp the implications of unconscious biases and their impact on decision-making processes. This approach enhances engagement and comprehension, facilitating meaningful behaviour change and promoting a culture of inclusivity within the organization."
-                }
-            ]
-        },
-        {
             "heading": "Discussion Questions",
             "content":[
                 {
@@ -50,6 +29,27 @@
                 {
                     "type":"bullet",
                     "text":"After reading about the importance and challenges of managing unconscious bias, have you identified any biases of your own that you were previously unaware of? How might you address these biases in your professional or personal life?"
+                }
+            ]
+        },
+        {
+            "heading": "Learning Outcomes",
+            "content":[
+                {
+                    "type":"subheading",
+                    "text":"Recognizing Unconscious Biases:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"It is imperative to acknowledge that biases are inherent to human nature. Understanding and acknowledging their existence is crucial, particularly in workplace contexts such as hiring processes or performance evaluations. By identifying and actively working to eliminate these biases, organizations can foster fairer and more inclusive environments conducive to talent recognition and development."
+                },
+                {
+                    "type":"subheading",
+                    "text":"Effective Training Content:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Effective training content should prioritize practical workplace scenarios over abstract psychological concepts or demographic categorizations. By grounding the training in real-world situations, employees can better grasp the implications of unconscious biases and their impact on decision-making processes. This approach enhances engagement and comprehension, facilitating meaningful behaviour change and promoting a culture of inclusivity within the organization."
                 }
             ]
         }
