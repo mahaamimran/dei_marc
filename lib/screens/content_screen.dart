@@ -1,15 +1,21 @@
-import 'package:dei_marc/config/color_constants.dart';
-import 'package:dei_marc/helpers/helpers.dart';
-import 'package:dei_marc/models/content_item.dart';
-import 'package:dei_marc/models/quote.dart';
+// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
+
+import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/models/subcategory.dart';
 import 'package:dei_marc/providers/config_provider.dart';
-import 'package:dei_marc/widgets/jump_to_category.dart';
+import 'package:dei_marc/widgets/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:dei_marc/providers/bookmark_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
+import 'package:dei_marc/config/enums.dart';
+import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/widgets/content_widgets/content_list_widget.dart';
+import 'package:dei_marc/widgets/font_settings_widget.dart';
+import 'package:dei_marc/widgets/jump_to_category.dart';
+import 'package:dei_marc/config/color_constants.dart';
 
 class ContentScreen extends StatefulWidget {
   final String bookId;
@@ -34,6 +40,75 @@ class ContentScreen extends StatefulWidget {
 class _ContentScreenState extends State<ContentScreen> {
   final ScrollController _scrollController = ScrollController();
   final Map<String, GlobalKey> _keyMap = {};
+  bool _layoutCompleted = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _initializeData();
+    });
+  }
+
+  Future<void> _initializeData() async {
+    final subcategoryProvider =
+        Provider.of<SubcategoryProvider>(context, listen: false);
+    final contentProvider =
+        Provider.of<ContentProvider>(context, listen: false);
+    final configProvider = Provider.of<ConfigProvider>(context, listen: false);
+
+    await subcategoryProvider.loadSubcategories(
+        widget.bookId, widget.categoryId);
+
+    for (int i = 0; i < subcategoryProvider.subcategories.length; i++) {
+      await contentProvider.loadContent(
+          widget.bookId, widget.categoryId, i + 1);
+
+      final contents =
+          contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
+
+      for (var content in contents) {
+        if (content.image != null) {
+          final imagePath = configProvider.getImagePath(content.image!);
+          if (imagePath != null) {
+            await precacheImage(
+                AssetImage('${AssetPaths.dataDirectory}$imagePath'), context);
+          }
+        }
+      }
+    }
+
+    // After data is loaded, ensure layout is completed
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setState(() {
+        _layoutCompleted = true;
+      });
+    });
+  }
+
+  void _scrollToIndex(int index) {
+    if (_layoutCompleted) {
+      final key = _keyMap['${widget.categoryId}-$index'];
+      if (key != null && key.currentContext != null) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          final RenderBox renderBox =
+              key.currentContext!.findRenderObject() as RenderBox;
+          final Offset offset =
+              renderBox.localToGlobal(Offset.zero, ancestor: null);
+          final double yPosition = offset.dy;
+
+          _scrollController.animateTo(
+            _scrollController.offset +
+                yPosition -
+                kToolbarHeight -
+                MediaQuery.of(context).padding.top,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+          );
+        });
+      }
+    }
+  }
 
   @override
   void dispose() {
@@ -42,333 +117,88 @@ class _ContentScreenState extends State<ContentScreen> {
   }
 
   @override
-  void initState() {
-    super.initState();
+  Widget build(BuildContext context) {
+    final subcategoryProvider = Provider.of<SubcategoryProvider>(context);
+    final contentProvider = Provider.of<ContentProvider>(context);
+    final bookmarkProvider = Provider.of<BookmarkProvider>(context);
 
-    final subcategoryProvider =
-        Provider.of<SubcategoryProvider>(context, listen: false);
-    final contentProvider =
-        Provider.of<ContentProvider>(context, listen: false);
-    final configProvider = Provider.of<ConfigProvider>(context, listen: false);
+    final String bookmarkId =
+        '${widget.bookId}-${widget.categoryId}-${widget.categoryName}';
+    final bool isBookmarked = bookmarkProvider.isBookmarked(bookmarkId);
 
-    subcategoryProvider
-        .loadSubcategories(widget.bookId, widget.categoryId)
-        .then((_) {
-      for (int i = 0; i < subcategoryProvider.subcategories.length; i++) {
-        contentProvider
-            .loadContent(widget.bookId, widget.categoryId, i + 1)
-            .then((_) {
-          final contents =
-              contentProvider.contents['${widget.categoryId}-${i + 1}'] ?? [];
-          for (var content in contents) {
-            if (content.image != null) {
-              final imagePath = configProvider.getImagePath(content.image!);
-              if (imagePath != null) {
-                precacheImage(AssetImage('assets/$imagePath'), context);
-              }
-            }
-          }
-        });
-      }
-    });
-  }
-
-  void _scrollToIndex(int index) {
-    final key = _keyMap['${widget.bookId}-${widget.categoryId}-$index'];
-    if (key != null && key.currentContext != null) {
-      Scrollable.ensureVisible(
-        key.currentContext!,
-        duration: const Duration(seconds: 1),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
-
-  Widget _buildImage(String? imageName) {
-    if (imageName == null) return SizedBox.shrink();
-
-    final configProvider = Provider.of<ConfigProvider>(context, listen: false);
-    final imagePath = configProvider.getImagePath(imageName);
-
-    if (imagePath != null) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Image.asset(
-          'assets/$imagePath',
-          fit: BoxFit.cover,
-          errorBuilder: (context, error, stackTrace) {
-            return Text('Image not found');
-          },
+    return MediaQuery(
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: widget.appBarColor,
+          foregroundColor: Colors.white,
+          title: Text(
+            '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
+            style: TextStyles.appBarTitle,
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(
+                isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                if (isBookmarked) {
+                  bookmarkProvider.removeBookmark(bookmarkId);
+                } else {
+                  bookmarkProvider.addBookmark(bookmarkId);
+                }
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.text_fields),
+              onPressed: () => _showFontSettings(context),
+            ),
+            IconButton(
+              icon: const Icon(Icons.list),
+              onPressed: () => _showCategoryList(
+                context,
+                subcategoryProvider.subcategories,
+              ),
+            ),
+          ],
         ),
+        body: _buildBody(subcategoryProvider, contentProvider),
+        floatingActionButton: widget.bookId == '3'
+            ? CustomFloatingActionButton(appBarColor: widget.appBarColor)
+            : null,
+      ),
+    );
+  }
+
+  Widget _buildBody(SubcategoryProvider subcategoryProvider,
+      ContentProvider contentProvider) {
+    if (subcategoryProvider.dataStatus == DataStatus.loading ||
+        contentProvider.dataStatus == DataStatus.loading) {
+      return const Center(child: CircularProgressIndicator());
+    } else if (subcategoryProvider.dataStatus == DataStatus.failure ||
+        contentProvider.dataStatus == DataStatus.failure) {
+      return const Center(
+        child: Text(
+          'Failed to load content',
+          style: TextStyle(color: Colors.red, fontSize: 18),
+        ),
+      );
+    } else if (subcategoryProvider.dataStatus == DataStatus.loaded &&
+        contentProvider.dataStatus == DataStatus.loaded) {
+      return ContentListWidget(
+        categoryId: widget.categoryId,
+        appBarColor: widget.appBarColor,
+        secondaryColor: widget.secondaryColor,
+        categoryName: widget.categoryName,
+        scrollController: _scrollController,
+        keyMap: _keyMap,
       );
     } else {
-      return Text('Image not found');
+      return Container();
     }
-  }
-
-  Widget _buildContentItem(ContentItem contentItem) {
-    if (contentItem.content.isEmpty) return Container();
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (contentItem.heading != null && contentItem.heading!.isNotEmpty)
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text(
-              contentItem.heading!,
-              style: TextStyles.title.copyWith(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ...contentItem.content.map((quote) {
-          if (quote.type == 'subheading') {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    quote.text,
-                    style: TextStyles.subheading.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                ...?quote.content?.map((nestedQuote) {
-                  return _buildQuote(nestedQuote);
-                }).toList(),
-              ],
-            );
-          } else {
-            return _buildQuote(quote);
-          }
-        }).toList(),
-      ],
-    );
-  }
-
-  Widget _buildQuote(Quote quote) {
-    switch (quote.type) {
-      case 'image':
-        return _buildImage(quote.text);
-      case 'bullet':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text("• "),
-              Expanded(
-                child: Text(
-                  quote.text,
-                  style: TextStyles.caption.copyWith(
-                    color: Colors.grey[800],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      case 'paragraph':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(
-            quote.text,
-            style: TextStyles.caption.copyWith(
-              color: Colors.grey[800],
-            ),
-          ),
-        );
-      case 'subheading':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text(
-            quote.text,
-            style: TextStyles.subheading.copyWith(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        );
-      case 'quote':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(
-            "\"${quote.text}\"",
-            style: TextStyles.caption.copyWith(color: Colors.grey[800]),
-          ),
-        );
-      case 'heading':
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(
-            quote.text,
-            style: TextStyles.caption.copyWith(color: Colors.grey[800]),
-          ),
-        );
-      default:
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(
-            quote.text,
-            style: TextStyles.caption.copyWith(
-              color: Colors.grey[800],
-            ),
-          ),
-        );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: widget.appBarColor,
-        foregroundColor: Colors.white,
-        title: Text(
-          '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
-          style: TextStyles.appBarTitle,
-        ),
-        actions: [
-          Consumer<SubcategoryProvider>(
-            builder: (context, subcategoryProvider, child) {
-              return IconButton(
-                icon: const Icon(Icons.list),
-                onPressed: () => _showCategoryList(
-                  context,
-                  subcategoryProvider.subcategories,
-                ),
-              );
-            },
-          ),
-        ],
-      ),
-      body: Consumer<SubcategoryProvider>(
-        builder: (context, subcategoryProvider, child) {
-          if (subcategoryProvider.subcategories.isEmpty) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          _keyMap.clear();
-
-          return ListView.builder(
-            controller: _scrollController,
-            padding: const EdgeInsets.all(16.0),
-            itemCount: subcategoryProvider.subcategories.length,
-            itemBuilder: (context, index) {
-              final subcategory = subcategoryProvider.subcategories[index];
-              final key = GlobalKey();
-              _keyMap['${widget.bookId}-${widget.categoryId}-$index'] = key;
-
-              return Padding(
-                key: key,
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (index == 0) ...[
-                      Row(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 6,
-                            decoration: BoxDecoration(
-                              color: widget.appBarColor,
-                              borderRadius: BorderRadius.circular(3.0),
-                            ),
-                          ),
-                          const SizedBox(width: 18.0),
-                          Expanded(
-                            child: Text(
-                              Helpers.capitalizeTitle(widget.categoryName)
-                                  .toUpperCase(),
-                              style: TextStyles.heading.copyWith(
-                                color: Colors.black,
-                              ),
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 16),
-                    ],
-                    // Image before subcategory title
-                    Consumer<ContentProvider>(
-                      builder: (context, contentProvider, child) {
-                        final contents = contentProvider.contents[
-                                '${widget.categoryId}-${index + 1}'] ??
-                            [];
-
-                        if (contents.isNotEmpty &&
-                            contents.first.image != null) {
-                          return _buildImage(contents.first.image);
-                        }
-
-                        return SizedBox.shrink();
-                      },
-                    ),
-                    Text(
-                      Helpers.capitalizeTitle(subcategory.name),
-                      style: TextStyles.heading.copyWith(
-                        color: widget.appBarColor,
-                      ),
-                    ),
-                    Consumer<ContentProvider>(
-                      builder: (context, contentProvider, child) {
-                        final contents = contentProvider.contents[
-                                '${widget.categoryId}-${index + 1}'] ??
-                            [];
-
-                        if (contents.isEmpty) {
-                          return const Text('No content available.');
-                        }
-
-                        final firstItem = contents.first;
-
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (firstItem.description != null &&
-                                firstItem.description!.isNotEmpty)
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: Text(
-                                  firstItem.description!,
-                                  style: TextStyles.caption.copyWith(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            _buildContentItem(firstItem),
-                            ...contents.skip(1).map((contentItem) {
-                              return Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: _buildContentItem(contentItem),
-                              );
-                            }).toList(),
-                          ],
-                        );
-                      },
-                    ),
-                    Divider(
-                      color: widget.secondaryColor,
-                      thickness: 0.5,
-                    ),
-                  ],
-                ),
-              );
-            },
-          );
-        },
-      ),
-    );
   }
 
   void _showCategoryList(
@@ -388,11 +218,24 @@ class _ContentScreenState extends State<ContentScreen> {
           subcategories: subcategories,
           onCategorySelected: (index) {
             Navigator.pop(context);
-            Future.delayed(Duration(milliseconds: 200), () {
+            Future.delayed(const Duration(milliseconds: 200), () {
               _scrollToIndex(index);
             });
           },
           backgroundColor: backgroundColor,
+        );
+      },
+    );
+  }
+
+  void _showFontSettings(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isDismissible: true,
+      builder: (context) {
+        return FontSettingsWidget(
+          appBarColor: widget.appBarColor,
+          secondaryColor: widget.secondaryColor,
         );
       },
     );

@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_declarations
+
+import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,109 +12,238 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => SettingsProvider(),
+    return MediaQuery(
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
-       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomLeft,
-              colors: [
-                Color(0xFFB52556),
-                Color.fromARGB(255, 108, 160, 166),
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          scrolledUnderElevation: 0,
+          title: Text(
+            'Settings',
+            style: TextStyles.appBarTitle.copyWith(color: Colors.black),
+          ),
+          backgroundColor: Colors.grey[200],
+        ),
+        body: SafeArea(
+          child: Consumer<SettingsProvider>(
+            builder: (context, settingsProvider, child) {
+              return Scrollbar(
+                child: ListView(
+                  padding: const EdgeInsets.all(16.0),
+                  children: [
+                    _buildSectionTitle('General'),
+                    const SizedBox(height: 10),
+                    _buildSettingsOption('Notifications', CupertinoIcons.bell,
+                        () {
+                      // Handle Notifications tap
+                    }),
+                    _buildSettingsOption(
+                        'Privacy and Security', CupertinoIcons.lock, () {
+                      // Handle Privacy and Security tap
+                    }),
+                    _buildSettingsOption(
+                        'Support', CupertinoIcons.question_circle, () {
+                      // Handle Support tap
+                    }),
+                    const Divider(height: 40, thickness: 2),
+                    _buildSectionTitle('Font Settings'),
+                    const SizedBox(height: 10),
+                    _buildPreviewText(settingsProvider),
+                    const SizedBox(height: 10),
+                    _buildFontSizeSection(settingsProvider),
+                    const SizedBox(height: 20),
+                    _buildFontFamilySection(settingsProvider, context),
+                    const Divider(height: 40, thickness: 2),
+                    _buildSectionTitle('About'),
+                    const SizedBox(height: 10),
+                    _buildSettingsOption('About', CupertinoIcons.info, () {
+                      // Handle About tap
+                    }),
+                    _buildSettingsOption('Copyright', Icons.copyright, () {
+                      // Handle Copyright tap
+                    }),
+                    _buildSettingsOption('Share App', CupertinoIcons.share, () {
+                      // Handle Share App tap
+                    }),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPreviewText(SettingsProvider settingsProvider) {
+    return Center(
+      child: Text(
+        'DEI MARC',
+        style: TextStyle(
+          fontFamily: settingsProvider.fontFamily,
+          fontSize: settingsProvider.fontSize,
+          color: Colors.black,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(String title) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Text(
+        title,
+        style: TextStyles.appTitle.copyWith(fontSize: 18, color: Colors.black),
+      ),
+    );
+  }
+
+  Widget _buildSettingsOption(String title, IconData icon, VoidCallback onTap) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      onPressed: onTap,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Icon(icon, color: Colors.black),
+              const SizedBox(width: 10),
+              Text(
+                title,
+                style: TextStyles.appCaption.copyWith(
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+          const Icon(
+            CupertinoIcons.forward,
+            color: Colors.black,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFontSizeSection(SettingsProvider settingsProvider) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Font Size',
+          style: TextStyles.appCaption.copyWith(
+            fontSize: 16,
+            color: Colors.black,
+          ),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          children: [
+            Expanded(
+              child: CupertinoSlider(
+                value: settingsProvider.fontSize,
+                min: Constants.FONT_SIZE_MIN,
+                max: Constants.FONT_SIZE_MAX,
+                activeColor: CupertinoColors.black,
+                thumbColor: CupertinoColors.black,
+                onChanged: (double value) {
+                  settingsProvider.setFontSize(value);
+                },
+              ),
+            ),
+            const SizedBox(width: 10),
+            Text(
+              settingsProvider.fontSize
+                  .toInt()
+                  .toString(), // Display as integer
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildFontFamilySection(
+      SettingsProvider settingsProvider, BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Font Family',
+          style: TextStyles.appCaption.copyWith(
+            fontSize: 16,
+            color: Colors.black,
+          ),
+        ),
+        const SizedBox(height: 10),
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () {
+            _showFontFamilyPicker(context, settingsProvider);
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey.shade300),
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  settingsProvider.fontFamily,
+                  style: TextStyle(
+                    fontFamily: settingsProvider.fontFamily,
+                    color: Colors.black,
+                    fontSize: 16,
+                  ),
+                ),
+                const Icon(
+                  CupertinoIcons.chevron_down,
+                  color: Colors.black,
+                ),
               ],
             ),
           ),
         ),
-        title: Text(
-          'Settings',
-          style: TextStyles.appBarTitle
-              .copyWith(color: const Color.fromARGB(255, 248, 246, 246)),
-        ),
-        backgroundColor: Colors.transparent,
-      ),
-        body: Consumer<SettingsProvider>(
-          builder: (context, settingsProvider, child) {
-            return ListView(
-              padding: const EdgeInsets.all(
-                  8.0), // Padding around the entire ListView
-              children: [
-                _buildFontSizeTile(context, settingsProvider),
-                //_buildNotificationsTile(context, settingsProvider),
-                _buildNavigationTile(
-                  context,
-                  title: 'Privacy Policy',
-                  icon: Icons.arrow_forward_ios,
-                  onTap: () {
-                    // Navigate to privacy policy screen or display modal
-                  },
-                ),
-                _buildNavigationTile(
-                  context,
-                  title: 'Copyrights',
-                  icon: Icons.arrow_forward_ios,
-                  onTap: () {
-                    // Navigate to copyrights screen or display modal
-                  },
-                ),
-                _buildNavigationTile(
-                  context,
-                  title: 'Share App',
-                  icon: Icons.share,
-                  onTap: () {
-                    // Implement sharing functionality
-                  },
-                ),
-              ],
-            );
-          },
-        ),
-      ),
+      ],
     );
   }
 
-  Widget _buildFontSizeTile(
+  void _showFontFamilyPicker(
       BuildContext context, SettingsProvider settingsProvider) {
-    return Padding(
-      padding:
-          const EdgeInsets.symmetric(vertical: 4.0), // Padding between tiles
-      child: ListTile(
-        tileColor: Colors.grey[200], // Light grey background color for the tile
-        title: const Text('Font size'),
-        trailing: DropdownButton<double>(
-          value: settingsProvider.fontSize,
-          items: [14.0, 16.0, 18.0, 20.0].map((double value) {
-            return DropdownMenuItem<double>(
-              value: value,
-              child: Text(value.toString()),
-            );
-          }).toList(),
-          onChanged: (value) {
-            if (value != null) {
-              settingsProvider.setFontSize(value);
-            }
-          },
-        ),
-      ),
-    );
-  }
+    final fontOptions = Constants.FONT_FAMILIES;
+    final initialFontIndex = fontOptions.indexOf(settingsProvider.fontFamily);
 
-  Widget _buildNavigationTile(BuildContext context,
-      {required String title,
-      required IconData icon,
-      required VoidCallback onTap}) {
-    return Padding(
-      padding:
-          const EdgeInsets.symmetric(vertical: 4.0), // Padding between tiles
-      child: ListTile(
-        tileColor: Colors.grey[200], // Light grey background color for the tile
-        title: Text(title),
-        trailing: Icon(icon),
-        onTap: onTap,
-      ),
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 200.0,
+          color: Colors.white,
+          child: CupertinoPicker(
+            backgroundColor: Colors.white,
+            itemExtent: 32.0,
+            scrollController: FixedExtentScrollController(
+              initialItem: initialFontIndex,
+            ),
+            onSelectedItemChanged: (int index) {
+              settingsProvider.setFontFamily(fontOptions[index]);
+            },
+            children: fontOptions.map((font) {
+              return Text(font, style: TextStyle(fontFamily: font));
+            }).toList(),
+          ),
+        );
+      },
     );
   }
 }

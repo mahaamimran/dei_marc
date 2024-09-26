@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Helpers {
   static String getTitle(String bookId) {
     switch (bookId) {
@@ -11,24 +13,89 @@ class Helpers {
         return 'Category';
     }
   }
+    static String getAppBarTitle(String bookId) {
+    switch (bookId) {
+      case '1':
+        return 'Categories';
+      case '2':
+        return 'Groups';
+      case '3':
+        return 'Modules';
+      default:
+        return 'Categories';
+    }
+  }
 
   static String capitalizeTitle(String input) {
-    final List<String> exceptions = ['a', 'an', 'and', 'or', 'the', 'of', 'in', 'to', 'that'];
-
+    const List<String> exceptions = ["of", "the", "in", "and", "a", "an"];
     List<String> words = input.split(' ');
 
     for (int i = 0; i < words.length; i++) {
       if (i == 0 || !exceptions.contains(words[i].toLowerCase())) {
-        // Capitalize the word if it's the first word or not in the exceptions list
         if (words[i] != words[i].toUpperCase()) {
-          words[i] = words[i][0].toUpperCase() + words[i].substring(1).toLowerCase();
+          words[i] =
+              words[i][0].toUpperCase() + words[i].substring(1).toLowerCase();
         }
       } else {
-        // Otherwise, make it lowercase
         words[i] = words[i].toLowerCase();
       }
     }
 
     return words.join(' ');
+  }
+
+  static List<TextSpan> highlightCompanies(
+      String text, TextStyle baseStyle, Color highlightColor) {
+    final companies = [
+      'Jazz',
+      'Bank Alfalah',
+      'Telenor',
+      'British Council',
+      'Abacus',
+      'Unilever',
+      'Teradata',
+      'S&P Global',
+      'Interloop',
+      'Finca',
+      'Hashoo Group',
+      'PTCL',
+      'Engro',
+      'JS Bank',
+      'Mobilink Microfinance Bank',
+      'Microfinance Bank Limited',
+      'HRSG',
+      'PPAF',
+      'TPLCorp',
+      'Feroze1888',
+      'EPCL',
+      'MMBL',
+      'TPL Corp',
+    ];
+
+    // Create a regex pattern that matches any of the companies, case-insensitive
+    final pattern = RegExp(
+        companies.map((company) => RegExp.escape(company)).join('|'),
+        caseSensitive: false);
+
+    List<TextSpan> spans = [];
+
+    // Split the text using the RegExp
+    text.splitMapJoin(
+      pattern,
+      onMatch: (match) {
+        // If it's a match, highlight the company
+        spans.add(TextSpan(
+            text: match.group(0),
+            style: baseStyle.copyWith(color: highlightColor)));
+        return match.group(0) ?? '';
+      },
+      onNonMatch: (nonMatch) {
+        // Otherwise, use the normal style
+        spans.add(TextSpan(text: nonMatch, style: baseStyle));
+        return nonMatch;
+      },
+    );
+
+    return spans;
   }
 }

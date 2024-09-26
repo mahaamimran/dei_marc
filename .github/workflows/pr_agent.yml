@@ -21,4 +21,6 @@ jobs:
           OPENAI.ORG: "<Your organization name under your OpenAI account>"
           PR_REVIEWER.REQUIRE_TESTS_REVIEW: "false"
           PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS: 6
-          OPENAI.MODEL: "gpt-3.5-turbo"
+          CONFIG.MODEL: "gpt-3.5-turbo"
+          CONFIG.MODEL_TURBO: "gpt-3.5-turbo"
+          CONFIG.FALLBACKMODEL: "gpt-3.5"

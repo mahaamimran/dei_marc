@@ -3,14 +3,19 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/models/content_item.dart';
 import 'package:dei_marc/config/asset_paths.dart';
+import 'package:dei_marc/config/enums.dart'; 
 
 class ContentProvider extends ChangeNotifier {
   final Map<String, List<ContentItem>> _contents = {};
+  DataStatus _dataStatus = DataStatus.initial;
 
   Map<String, List<ContentItem>> get contents => _contents;
+  DataStatus get dataStatus => _dataStatus;
 
-  Future<void> loadContent(
-      String bookId, int categoryId, int subcategoryId) async {
+  Future<void> loadContent(String bookId, int categoryId, int subcategoryId) async {
+    _dataStatus = DataStatus.loading;
+    notifyListeners();
+
     try {
       final String response = await rootBundle.loadString(
           AssetPaths.contentJson(bookId, categoryId, subcategoryId));
@@ -41,10 +46,11 @@ class ContentProvider extends ChangeNotifier {
           }).toList(),
         ];
       }
+      _dataStatus = DataStatus.loaded;
     } catch (e) {
-      print("Error loading content: $e");
-      _contents['$categoryId-$subcategoryId'] = [];
+      _dataStatus = DataStatus.failure;
     }
+
     notifyListeners();
   }
 

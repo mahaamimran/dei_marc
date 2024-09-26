@@ -1,6 +1,6 @@
 name: dei_marc
 description: "A new Flutter project."
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 environment:
   sdk: '>=3.5.0-266.0.dev <4.0.0'
@@ -9,32 +9,86 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  provider:
+  provider: ^6.1.2
   shared_preferences: ^2.2.3
+  youtube_player_flutter: ^8.0.0
+  url_launcher: ^6.0.20
+  share_plus: ^10.0.2
+  syncfusion_flutter_pdfviewer: ^20.4.38
+  flutter_speed_dial: ^7.0.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: 'assets/app_logo/app_logo.png'
+  # flutter pub run flutter_launcher_icons:main
 
 flutter:
   assets:
-    - assets/data/ 
+    - assets/data/
     - assets/data/books/
     - assets/data/categories/
     - assets/data/subcategories/
     - assets/data/contents/book1/
     - assets/data/contents/book2/
     - assets/data/contents/book3/
-    - assets/images/placeholder.png
-    - assets/images/book_covers/
-    - assets/images/book1/
-    - assets/images/book1/categories/
-    - assets/images/book1/logos/
-    - assets/images/book1/team/
-    - assets/images/book2/
-    - assets/images/book2/categories/
-    - assets/images/book2/logos/
-    - assets/images/book2/team/
-    - assets/config.json
+    - assets/data/images/book_covers/
+    - assets/data/images/book1/
+    - assets/data/images/book1/categories/
+    - assets/data/images/book1/logos/
+    - assets/data/images/book1/team/
+    - assets/data/images/book2/
+    - assets/data/images/book2/categories/
+    - assets/data/images/book2/logos/
+    - assets/data/images/book2/team/
+    - assets/data/config.json
+    - assets/launch_screen/launch_screen.png
+
+
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-Regular.ttf
+        - asset: assets/fonts/Raleway-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Raleway-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Raleway-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Raleway-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Raleway-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Raleway-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Raleway-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Raleway-Heavy.ttf
+          weight: 900
+    - family: Lexend
+      fonts:
+        - asset: assets/fonts/Lexend-Regular.ttf
+        - asset: assets/fonts/Lexend-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Lexend-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Lexend-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Lexend-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Lexend-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Lexend-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Lexend-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Lexend-Black.ttf
+          weight: 900
   uses-material-design: true
