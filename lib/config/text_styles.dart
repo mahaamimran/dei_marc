@@ -55,7 +55,7 @@ class TextStyles {
   static TextStyle caption(BuildContext context) {
     return TextStyle(
       fontFamily: Provider.of<SettingsProvider>(context).fontFamily,
-      fontSize: 14,
+      fontSize: 16,
       color: Colors.grey[900],
     );
   }

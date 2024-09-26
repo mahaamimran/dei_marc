@@ -20,7 +20,8 @@ class JumpToCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: ClipRRect(
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         child: Container(
@@ -40,10 +41,7 @@ class JumpToCategory extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  categoryName,
-                  style: TextStyles.appTitle
-                ),
+                child: Text(categoryName, style: TextStyles.appTitle),
               ),
               const SizedBox(height: 10),
               Flexible(
@@ -51,7 +49,8 @@ class JumpToCategory extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(20)),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.3),
@@ -69,8 +68,9 @@ class JumpToCategory extends StatelessWidget {
                     itemCount: subcategories.length,
                     itemBuilder: (context, index) {
                       final subcategory = subcategories[index];
-                      final displayName = Helpers.capitalizeTitle(subcategory.name);
-      
+                      final displayName =
+                          Helpers.capitalizeTitle(subcategory.name);
+
                       return Column(
                         children: [
                           InkWell(
@@ -78,7 +78,8 @@ class JumpToCategory extends StatelessWidget {
                               onCategorySelected(index);
                             },
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8.0),
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 8.0),
                               child: Row(
                                 children: [
                                   const SizedBox(width: 10),
@@ -94,7 +95,8 @@ class JumpToCategory extends StatelessWidget {
                                   Expanded(
                                     child: Text(
                                       '${index + 1}. $displayName',
-                                      style: TextStyles.caption(context).copyWith(
+                                      style: TextStyles.appCaption.copyWith(
+                                        color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
                                       ),

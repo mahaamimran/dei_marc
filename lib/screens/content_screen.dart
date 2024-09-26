@@ -3,7 +3,6 @@
 import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/models/subcategory.dart';
 import 'package:dei_marc/providers/config_provider.dart';
-import 'package:dei_marc/screens/pdf_screen.dart';
 import 'package:dei_marc/widgets/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +12,7 @@ import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/config/enums.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/widgets/content_list_widget.dart';
+import 'package:dei_marc/widgets/content_widgets/content_list_widget.dart';
 import 'package:dei_marc/widgets/font_settings_widget.dart';
 import 'package:dei_marc/widgets/jump_to_category.dart';
 import 'package:dei_marc/config/color_constants.dart';
@@ -167,10 +166,10 @@ class _ContentScreenState extends State<ContentScreen> {
           ],
         ),
         body: _buildBody(subcategoryProvider, contentProvider),
-         floatingActionButton: widget.bookId == '3'
-          ? CustomFloatingActionButton(appBarColor: widget.appBarColor)
-          : null,
-    ),
+        floatingActionButton: widget.bookId == '3'
+            ? CustomFloatingActionButton(appBarColor: widget.appBarColor)
+            : null,
+      ),
     );
   }
 

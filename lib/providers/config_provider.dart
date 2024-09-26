@@ -21,7 +21,7 @@ class ConfigProvider extends ChangeNotifier {
     _imagePaths = Map<String, String>.from(data['image_paths']);
   }
 
-  String? getImagePath(String key) {
+  String? getImagePath(String? key) {
     return _imagePaths[key];
   }
 }

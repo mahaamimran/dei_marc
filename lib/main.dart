@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ConfigProvider()..loadConfig()),
       ],
       child: MaterialApp(
-        title: 'DEI MARC',
         home: const SplashScreen(),
         routes: {
           '/home': (context) => const TabBarScreen(),

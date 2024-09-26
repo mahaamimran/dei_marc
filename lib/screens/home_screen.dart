@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.grey[200],
           scrolledUnderElevation: 0,
           title: Text(
-            'Home',
+            'Books',
             style: TextStyles.appBarTitle.copyWith(color: Colors.black),
           ),
           // actions: [
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // ],
         ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
+          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
           child: Consumer<BookProvider>(
             builder: (context, bookProvider, child) {
               if (bookProvider.books.isEmpty) {
@@ -54,11 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Text('Books',
-                        style: TextStyles.appTitle.copyWith(fontSize: 24)),
-                  ),
                   Expanded(
                     child: _buildGridView(bookProvider),
                   ),
@@ -173,8 +168,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius:
                             BorderRadius.circular(8.0), // Rounded corners
                         child: Image.asset(
-                          AssetPaths.bookCovers[
-                              index % AssetPaths.bookCovers.length],
+                          AssetPaths
+                              .bookCovers[index % AssetPaths.bookCovers.length],
                           fit: BoxFit.cover,
                         ),
                       ),
