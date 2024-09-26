@@ -8,7 +8,24 @@
             "content": [
                 {
                     "type": "video",
-                    "text": ""
+                    "text": "video_MicroaggressionsInTheWorkPlace"
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "How would you define a microaggression based on the examples given in the video? Can you share personal experiences or observations of microaggressions in your own workplace or social settings?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "The video discusses how cumulative microaggressions can weigh heavily on individuals. Can you discuss the potential long-term effects of repeated microaggressions on a person's professional performance and mental health?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "The video suggests several ways to interrupt microaggressions, such as asking questions, acknowledging the incident, and explaining the negative impact. Which of these strategies do you find most effective, and why? Can you think of any other ways to address microaggressions?"
                 }
             ]
         },
@@ -46,23 +63,6 @@
                 {
                     "type":"paragraph",
                     "text":"Participants will learn how to be active bystanders who not only notice harmful behaviors but also feel empowered and equipped to address and prevent them. This includes developing the confidence to speak up against microaggressions without escalating the situation."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "How would you define a microaggression based on the examples given in the video? Can you share personal experiences or observations of microaggressions in your own workplace or social settings?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "The video discusses how cumulative microaggressions can weigh heavily on individuals. Can you discuss the potential long-term effects of repeated microaggressions on a person's professional performance and mental health?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "The video suggests several ways to interrupt microaggressions, such as asking questions, acknowledging the incident, and explaining the negative impact. Which of these strategies do you find most effective, and why? Can you think of any other ways to address microaggressions?"
                 }
             ]
         }

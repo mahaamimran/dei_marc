@@ -12,6 +12,23 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "How might organizational policies, practices, and leadership styles contribute to the challenges faced by women in the workplace?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "Can you explain the concept of the “glass ceiling” and other forms of systemic bias and discrimination that may hinder women’s professional growth and development?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How important are flexible work arrangements, mentorship programs, leadership development initiatives, and other measures in supporting women’s career advancement and retention?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -37,23 +54,6 @@
                 {
                     "type": "paragraph",
                     "text": "Trainees will assess the importance of flexible work arrangements, mentorship programs, leadership development initiatives, and other supportive measures in promoting women's career advancement and retention. They will explore how these initiatives can help address the unique challenges faced by women in the workplace, empower them to overcome barriers to advancement and create a more inclusive and equitable work environment for all employees. Through this evaluation, participants will gain insights into effective strategies for supporting women's professional growth and development within organizations."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "How might organizational policies, practices, and leadership styles contribute to the challenges faced by women in the workplace?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "Can you explain the concept of the “glass ceiling” and other forms of systemic bias and discrimination that may hinder women’s professional growth and development?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "How important are flexible work arrangements, mentorship programs, leadership development initiatives, and other measures in supporting women’s career advancement and retention?"
                 }
             ]
         }

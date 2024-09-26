@@ -8,6 +8,23 @@
             "content": [
                 {
                     "type": "video",
+                    "text": "tedxtalk_WomenAndNewFactsOfLife"
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
+                    "text": ""
+                },
+                {
+                    "type": "bullet",
                     "text": ""
                 }
             ]
@@ -45,23 +62,6 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
                     "text": ""
                 }
             ]

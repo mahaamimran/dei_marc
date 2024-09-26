@@ -72,6 +72,19 @@
             ]
         },
         {
+            "heading": "Caselet Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "What factors may influence women's decision to apply for technical jobs at TechOne?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "To attract more female candidates for technical roles, what can HR do to improve its recruitment strategies and practices?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -97,19 +110,6 @@
                 {
                     "type": "paragraph",
                     "text": "Trainees will acquire skills to design and implement inclusive recruitment and retention strategies aimed at attracting and retaining female talent in technical positions. They will explore methods such as inclusive language in job advertisements, targeted outreach to underrepresented groups, and creating supportive workplace cultures that value diversity and inclusion."
-                }
-            ]
-        },
-        {
-            "heading": "Caselet Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "What factors may influence women's decision to apply for technical jobs at TechOne?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "To attract more female candidates for technical roles, what can HR do to improve its recruitment strategies and practices?"
                 }
             ]
         }

@@ -12,6 +12,23 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "What are some common gender-biased assumptions in the workplace regarding the career ambitions and retention of women?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How do gender-biased assumptions about retention influence promotion rates for women compared to men?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "What specific retention strategies could organizations implement to ensure they are not taking their standout women employees for granted?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -37,23 +54,6 @@
                 {
                     "type": "paragraph",
                     "text": "Developing the capacity for critical analysis is essential in evaluating the efficacy of unconscious bias training initiatives. Assessing their effectiveness in meeting corporate diversity objectives requires a multifaceted approach, considering factors such as the relevance of content to organizational goals, the duration of training sessions, the characteristics of the target audience, and the alignment with broader diversity and inclusion efforts."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "What are some common gender-biased assumptions in the workplace regarding the career ambitions and retention of women?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "How do gender-biased assumptions about retention influence promotion rates for women compared to men?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "What specific retention strategies could organizations implement to ensure they are not taking their standout women employees for granted?"
                 }
             ]
         }

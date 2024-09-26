@@ -8,7 +8,20 @@
             "content": [
                 {
                     "type": "video",
-                    "text": ""
+                    "text": "video_WageDisparity"
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "What factors contribute to this wage gap, and how does it impact Sara's attitude towards her work?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "What methods can be used to raise awareness and advocate for equal pay in the workplace?"
                 }
             ]
         },
@@ -30,19 +43,6 @@
                 {
                     "type": "paragraph",
                     "text": "Participants will learn about effective methods for raising awareness and advocating for equal pay in the workplace. They will explore strategies such as conducting pay audits to identify and address wage gaps, promoting transparency in salary negotiations and compensation practices, and fostering a culture of accountability and fairness in addressing wage disparities."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "What factors contribute to this wage gap, and how does it impact Sara's attitude towards her work?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "What methods can be used to raise awareness and advocate for equal pay in the workplace?"
                 }
             ]
         }

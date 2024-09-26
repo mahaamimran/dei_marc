@@ -86,7 +86,25 @@
         "book2_cat4_sub1": "images/book2/categories/cat4_sub1.jpeg",
         "book2_cat4_sub2": "images/book2/categories/cat4_sub2.jpeg",
 
-        "book_3":""
+        "tedxtalk_AreYouBiased":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "tedxtalk_HowToAvoidGenderStereotyping":"https://www.youtube.com/watch?v=9ZFNsJ0-aco",
+        "tedxtalk_FemalesInStem":"https://www.youtube.com/watch?v=l8pnmrR4zPI",
+        "tedxtalk_HowToAvoidGenderStereotypes":"",
+        "tedxtalk_WomenAndNewFactsOfLife":"",
+        "tedxtalk_HowDiversityMakesTeamsMoreInnovative":"https://www.youtube.com/watch?v=lPtPG2lAmm4",
+
+        "video_RethinkingAssumptions":"",
+        "video_RedefiningNarrative":"",
+        "video_WomenInStem":"",
+        "video_EqualityStartsAtHome":"",
+        "video_AreYouListeningToYourGenderBiasTooMuch":"",
+        "video_GenderBias":"",
+        "video_ATaleOfDoubleStandards":"",
+        "video_MicroaggressionsInTheWorkPlace":"",
+        "video_SeeingClearly":"",
+        "video_WageDisparity":""
+
+
 
     }
 }

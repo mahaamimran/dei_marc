@@ -8,7 +8,16 @@
             "content": [
                 {
                     "type": "video",
-                    "text": ""
+                    "text": "video_GenderBias"
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "How can organizations ensure that their flexible work policies are applied equitably across all genders?"
                 }
             ]
         },
@@ -38,15 +47,6 @@
                 {
                     "type": "paragraph",
                     "text": "Explore strategies for promoting inclusive leadership practices and fostering a culture of fairness and equal opportunities for all employees, regardless of gender or family status."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "How can organizations ensure that their flexible work policies are applied equitably across all genders?"
                 }
             ]
         }

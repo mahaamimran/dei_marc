@@ -21,6 +21,19 @@
             ]
         },
         {
+            "heading": "Caselet Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "How can managers be better equipped to handle leave requests fairly and consistently, especially in times of emergency?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "In what ways can employees contribute to a culture of support and understanding, particularly when a colleague is facing personal challenges?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -46,19 +59,6 @@
                 {
                     "type": "paragraph",
                     "text": "Learners will understand how to contribute to a culture that supports employees during personal crises. This involves training on empathy, collective responsibility, and the importance of a supportive network within the workplace to help cover duties during a colleague’s absence."
-                }
-            ]
-        },
-        {
-            "heading": "Caselet Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "How can managers be better equipped to handle leave requests fairly and consistently, especially in times of emergency?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "In what ways can employees contribute to a culture of support and understanding, particularly when a colleague is facing personal challenges?"
                 }
             ]
         }

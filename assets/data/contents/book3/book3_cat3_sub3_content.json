@@ -8,7 +8,28 @@
             "content": [
                 {
                     "type": "video",
-                    "text": ""
+                    "text": "video_WomenInStem"
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "What stereotypes about gender roles are depicted in each scene of the video? How do these stereotypes potentially influence the aspirations and behaviors of young girls and boys differently?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How might the responses from the adults in the video affect the self-esteem and confidence of the girls involved in STEM activities? Discuss the possible long-term impacts on their educational and career choices."
+                },
+                {
+                    "type": "bullet",
+                    "text": "How do cultural expectations about gender roles contribute to the reactions of the adults in the video? Discuss how cultural shifts could help change the narrative around girls and women in STEM."
+                },
+                {
+                    "type": "bullet",
+                    "text": "Have you ever witnessed or experienced similar situations to those depicted in the video? How did they make you feel, and what was the outcome?"
                 }
             ]
         },
@@ -46,27 +67,6 @@
                 {
                     "type": "paragraph",
                     "text": "Participants will explore practical ways to empower women and girls to pursue and succeed in STEM careers. This includes creating supportive environments, mentoring programs, and showcasing role models who exemplify diverse success stories in STEM."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "What stereotypes about gender roles are depicted in each scene of the video? How do these stereotypes potentially influence the aspirations and behaviors of young girls and boys differently?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "How might the responses from the adults in the video affect the self-esteem and confidence of the girls involved in STEM activities? Discuss the possible long-term impacts on their educational and career choices."
-                },
-                {
-                    "type": "bullet",
-                    "text": "How do cultural expectations about gender roles contribute to the reactions of the adults in the video? Discuss how cultural shifts could help change the narrative around girls and women in STEM."
-                },
-                {
-                    "type": "bullet",
-                    "text": "Have you ever witnessed or experienced similar situations to those depicted in the video? How did they make you feel, and what was the outcome?"
                 }
             ]
         }

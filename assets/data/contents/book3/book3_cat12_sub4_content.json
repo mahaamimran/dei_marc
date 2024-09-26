@@ -12,6 +12,23 @@
             ]
         },
         {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "How important is it for leadership to take ownership of DEI progress within the organization?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "What is the role of DEI leaders in advocating for and educating leadership on the value of diversity and inclusion?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "What are the risks associated with deprioritizing DEI programs during cost-cutting measures?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -37,23 +54,6 @@
                 {
                     "type": "paragraph",
                     "text": "Trainees will assess the risks associated with deprioritizing DEI programs during cost-cutting measures. They will explore the potential negative impacts on organizational culture, employee morale and engagement, talent acquisition and retention, reputation and brand image, and overall business performance. Through this assessment, participants will gain insights into the importance of maintaining commitment to DEI efforts even in challenging economic circumstances."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "How important is it for leadership to take ownership of DEI progress within the organization?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "What is the role of DEI leaders in advocating for and educating leadership on the value of diversity and inclusion?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "What are the risks associated with deprioritizing DEI programs during cost-cutting measures?"
                 }
             ]
         }

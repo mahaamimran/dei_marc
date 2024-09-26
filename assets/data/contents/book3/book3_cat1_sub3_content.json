@@ -8,7 +8,20 @@
             "content": [
                 {
                     "type": "video",
-                    "text": ""
+                    "text": "video_RethinkingAssumptions"
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Can you recall a time when you faced similar unconscious biasedness?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "If yes, how did it impact you and those around you?"
                 }
             ]
         },
@@ -30,19 +43,6 @@
                 {
                     "type": "paragraph",
                     "text": "Participants will reflect on their own experiences, considering times when they may have been subject to biased assumptions in the workplace. They will analyze the impact of unconscious bias on themselves and those around them, understanding the broader implications of biased behaviors on individual careers and organizational culture."
-                }
-            ]
-        },
-        {
-            "heading": "Discussion Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "Can you recall a time when you faced similar unconscious biasedness?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "If yes, how did it impact you and those around you?"
                 }
             ]
         }

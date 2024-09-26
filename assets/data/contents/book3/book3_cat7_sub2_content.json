@@ -22,6 +22,23 @@
             ]
         },
         {
+            "heading": "Caselet Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "What strategies can Mariam employ to communicate her needs and boundaries more effectively with her team and management?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How can Mariam pursue her career development goals without feeling that she is compromising her family responsibilities? What role can mentorship play in navigating these challenges?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How can the organization cultivate a culture that truly values work-life balance and recognizes the diverse needs of its workforce?"
+                }
+            ]
+        },
+        {
             "heading": "Learning Outcomes",
             "content": [
                 {
@@ -47,23 +64,6 @@
                 {
                     "type": "paragraph",
                     "text": "Learners will be equipped to help cultivate an organizational culture that genuinely values and supports work-life balance. This includes understanding the different needs of employees, such as those with caregiving responsibilities, and how to create policies that accommodate these needs without reducing workplace productivity."
-                }
-            ]
-        },
-        {
-            "heading": "Caselet Questions",
-            "content": [
-                {
-                    "type": "bullet",
-                    "text": "What strategies can Mariam employ to communicate her needs and boundaries more effectively with her team and management?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "How can Mariam pursue her career development goals without feeling that she is compromising her family responsibilities? What role can mentorship play in navigating these challenges?"
-                },
-                {
-                    "type": "bullet",
-                    "text": "How can the organization cultivate a culture that truly values work-life balance and recognizes the diverse needs of its workforce?"
                 }
             ]
         }
