@@ -100,12 +100,16 @@ class Helpers {
     return spans;
   }
 
-  static String getCategoryLabel(int index, int totalCategories) {
-    // If it's the last category, return 'About'
-    if (index == totalCategories - 1) {
-      return 'About';
+  static String getVolume(String bookFileName) {
+    switch (bookFileName) {
+      case '1':
+        return 'I';
+      case '2':
+        return 'II';
+      case '3':
+        return 'III';
+      default:
+        return '';
     }
-    // Otherwise, return 'Category {index + 1}'
-    return '${getTitle('')} ${index + 1}';
   }
 }

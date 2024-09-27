@@ -41,7 +41,8 @@ class QuoteWidget extends StatelessWidget {
             Expanded(
               child: RichText(
                 text: TextSpan(
-                  style: TextStyles.quote(context).copyWith(fontSize: fontSize),
+                  style: TextStyles.quote(context)
+                      .copyWith(fontSize: fontSize + 2),
                   children: Helpers.highlightCompanies(
                     quote,
                     TextStyles.quote(context).copyWith(fontSize: fontSize + 2),

@@ -91,8 +91,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
         itemCount: categoryProvider.categories.length,
         itemBuilder: (context, index) {
           final category = categoryProvider.categories[index];
-          final label = Helpers.getCategoryLabel(index,
-              categoryProvider.categories.length); // Use the helper function
+          final isLast = index == categoryProvider.categories.length - 1;
+          final label = isLast
+              ? 'ABOUT THE GENDER DEI TOOLKIT VOLUME ${Helpers.getVolume(widget.bookFileName)}'
+              : '${Helpers.getTitle(widget.bookFileName)} ${index + 1}'; // Use dynamic label for last item
 
           return Material(
             color: widget.secondaryColor,
@@ -109,7 +111,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         secondaryColor: widget.secondaryColor,
                         bookId: widget.bookFileName,
                         categoryId: index + 1,
-                        categoryName: category.name),
+                        categoryName: isLast
+                            ? "About"
+                            : category
+                                .name), // CategoryName as About for the last item
                   ),
                 );
               },
@@ -119,26 +124,29 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      label, // Display the dynamic label
+                      label,
                       style: TextStyles.appCaption.copyWith(
                         fontWeight: FontWeight.bold,
                         color: widget.appBarColor,
                       ),
+                      textAlign: TextAlign.center, // Center text
                     ),
-                    const SizedBox(height: 4.0),
-                    Container(
-                      height: 2.0,
-                      width: 40.0,
-                      color: widget.appBarColor,
-                    ),
-                    const SizedBox(height: 8.0),
-                    Text(
-                      category.name,
-                      style: TextStyles.appCaption.copyWith(
-                        color: Colors.black,
+                    if (!isLast) ...[
+                      const SizedBox(height: 4.0),
+                      Container(
+                        height: 2.0,
+                        width: 40.0,
+                        color: widget.appBarColor,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
+                      const SizedBox(height: 8.0),
+                      Text(
+                        category.name,
+                        style: TextStyles.appCaption.copyWith(
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ],
                 ),
               ),
@@ -157,8 +165,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
         itemCount: categoryProvider.categories.length,
         itemBuilder: (context, index) {
           final category = categoryProvider.categories[index];
-          final label = Helpers.getCategoryLabel(index,
-              categoryProvider.categories.length); // Use the helper function
+          final isLast = index == categoryProvider.categories.length - 1;
+          final label = isLast
+              ? 'ABOUT THE GENDER DEI TOOLKIT VOLUME ${Helpers.getVolume(widget.bookFileName)}'
+              : '${Helpers.getTitle(widget.bookFileName)} ${index + 1}'; // Use dynamic label for last item
 
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -177,7 +187,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         secondaryColor: widget.secondaryColor,
                         bookId: widget.bookFileName,
                         categoryId: index + 1,
-                        categoryName: category.name,
+                        categoryName: isLast
+                            ? "About"
+                            : category
+                                .name, // CategoryName as About for the last item
                       ),
                     ),
                   );
@@ -189,16 +202,23 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     label,
                     style: TextStyles.appCaption.copyWith(
                       color: widget.appBarColor,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing:
+                          1.5, // Add letter spacing for better readability
                     ),
+                    textAlign: TextAlign.center, // Center the text
                   ),
-                  subtitle: Text(
-                    category.name,
-                    style: TextStyles.appCaption.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
+                  subtitle: !isLast
+                      ? Text(
+                          category.name,
+                          style: TextStyles.appCaption.copyWith(
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
+                          ),
+                          textAlign:
+                              TextAlign.center, // Center the subtitle as well
+                        )
+                      : null, // Skip subtitle for the last item
                 ),
               ),
             ),

@@ -33,11 +33,6 @@ class SettingsScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   children: [
                     _buildSectionTitle('General'),
-                    const SizedBox(height: 10),
-                    _buildSettingsOption('Notifications', CupertinoIcons.bell,
-                        () {
-                      // Handle Notifications tap
-                    }),
                     _buildSettingsOption(
                         'Privacy and Security', CupertinoIcons.lock, () {
                       // Handle Privacy and Security tap

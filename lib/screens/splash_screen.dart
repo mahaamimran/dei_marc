@@ -23,7 +23,7 @@ class SplashScreenState extends State<SplashScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2), // Smoother and slower animation
+      duration: const Duration(milliseconds: 600), // Faster bounce effect
     )..repeat(reverse: true);
 
     _animation = Tween<Offset>(
@@ -34,13 +34,9 @@ class SplashScreenState extends State<SplashScreen>
       curve: Curves.easeInOut,
     ));
 
-    // Navigate to the home screen after the splash screen
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const TabBarScreen(),
-        ),
-      );
+    // Navigate to the home screen after 1 second
+    Future.delayed(const Duration(seconds: 1), () {
+      _navigateToHome();
     });
   }
 
@@ -48,6 +44,22 @@ class SplashScreenState extends State<SplashScreen>
   void dispose() {
     _animationController.dispose();
     super.dispose();
+  }
+
+  void _navigateToHome() {
+    Navigator.of(context).pushReplacement(
+      PageRouteBuilder(
+        transitionDuration:
+            const Duration(milliseconds: 400), // Quicker fade transition
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const TabBarScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          final opacityAnimation =
+              Tween<double>(begin: 0.0, end: 1.0).animate(animation);
+          return FadeTransition(opacity: opacityAnimation, child: child);
+        },
+      ),
+    );
   }
 
   @override
@@ -66,32 +78,34 @@ class SplashScreenState extends State<SplashScreen>
           child: Center(
             child: SlideTransition(
               position: _animation,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'Gender DEI Toolkits',
-                    textAlign: TextAlign.center,
-                    style: TextStyles.appBarTitle.copyWith(
-                      fontWeight: FontWeight.w700, // Bold font weight
-                      fontSize: 30, // Larger font size for emphasis
-                      letterSpacing: 1.5, // Slightly more letter spacing
-                      color: Colors.white, // White color for contrast
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'GENDER DEI TOOLKITS',
+                      textAlign: TextAlign.center,
+                      style: TextStyles.appBarTitle.copyWith(
+                        fontWeight: FontWeight.w700, // Bold font weight
+                        fontSize: 28, // Larger font size for emphasis
+                        color: Colors.white, // White color for contrast
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 8), // Space between the two lines
-                  Text(
-                    'By MARC',
-                    textAlign: TextAlign.center,
-                    style: TextStyles.appBarTitle.copyWith(
-                      fontWeight:
-                          FontWeight.w400, // Regular weight for subtitle
-                      fontSize: 24, // Smaller font size for subtitle
-                      letterSpacing: 1.0, // Slight letter spacing
-                      color: Colors.white70, // Lighter shade of white
+                    const SizedBox(height: 8), // Space between the two lines
+                    Text(
+                      'By MARC',
+                      textAlign: TextAlign.center,
+                      style: TextStyles.appBarTitle.copyWith(
+                        fontWeight:
+                            FontWeight.w400, // Regular weight for subtitle
+                        fontSize: 24, // Smaller font size for subtitle
+                        letterSpacing: 1.0, // Slight letter spacing
+                        color: Colors.white70, // Lighter shade of white
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

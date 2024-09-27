@@ -19,7 +19,7 @@ class HeadingWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         Helpers.capitalizeTitle(heading),
-        style: TextStyles.heading(context).copyWith(fontSize: fontSize + 4),
+        style: TextStyles.heading(context).copyWith(fontSize: fontSize + 6),
       ),
     );
   }

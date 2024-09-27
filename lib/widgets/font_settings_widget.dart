@@ -17,11 +17,13 @@ class FontSettingsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Consumer<SettingsProvider>(
         builder: (context, settingsProvider, child) {
           final fontOptions = ['Raleway', 'Roboto', 'Lexend'];
-          final initialFontIndex = fontOptions.indexOf(settingsProvider.fontFamily);
+          final initialFontIndex =
+              fontOptions.indexOf(settingsProvider.fontFamily);
 
           return Container(
             decoration: const BoxDecoration(
@@ -31,8 +33,9 @@ class FontSettingsWidget extends StatelessWidget {
                 topRight: Radius.circular(20.0),
               ),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            child: SingleChildScrollView( // Added SingleChildScrollView
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -68,8 +71,8 @@ class FontSettingsWidget extends StatelessWidget {
                         onPressed: settingsProvider.fontSize <= 11.0
                             ? null
                             : () {
-                                settingsProvider.setFontSize(
-                                    settingsProvider.fontSize - 2);
+                                settingsProvider
+                                    .setFontSize(settingsProvider.fontSize - 2);
                               },
                       ),
                       Flexible(
@@ -94,8 +97,8 @@ class FontSettingsWidget extends StatelessWidget {
                         onPressed: settingsProvider.fontSize >= 32.0
                             ? null
                             : () {
-                                settingsProvider.setFontSize(
-                                    settingsProvider.fontSize + 2);
+                                settingsProvider
+                                    .setFontSize(settingsProvider.fontSize + 2);
                               },
                       ),
                     ],
@@ -111,7 +114,7 @@ class FontSettingsWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 8.0),
                   SizedBox(
-                    height: 100.0,  // Limit the height to make it more compact
+                    height: 100.0,
                     child: CupertinoPicker(
                       backgroundColor: Colors.white,
                       itemExtent: 32.0,

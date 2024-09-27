@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.grey[200],
           scrolledUnderElevation: 0,
           title: Text(
-            'Books',
+            'Toolkits',
             style: TextStyles.appBarTitle.copyWith(color: Colors.black),
           ),
           // actions: [
