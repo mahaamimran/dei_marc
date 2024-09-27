@@ -13,7 +13,8 @@ class Helpers {
         return 'Category';
     }
   }
-    static String getAppBarTitle(String bookId) {
+
+  static String getAppBarTitle(String bookId) {
     switch (bookId) {
       case '1':
         return 'Categories';
@@ -97,5 +98,14 @@ class Helpers {
     );
 
     return spans;
+  }
+
+  static String getCategoryLabel(int index, int totalCategories) {
+    // If it's the last category, return 'About'
+    if (index == totalCategories - 1) {
+      return 'About';
+    }
+    // Otherwise, return 'Category {index + 1}'
+    return '${getTitle('')} ${index + 1}';
   }
 }

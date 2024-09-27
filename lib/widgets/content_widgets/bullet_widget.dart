@@ -1,5 +1,4 @@
 // widgets/bullet_widget.dart
-import 'package:dei_marc/config/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/config/text_styles.dart';
 
@@ -34,7 +33,8 @@ class BulletWidget extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: TextStyles.bullet(context).copyWith(fontSize: fontSize),
+              style:
+                  TextStyles.bullet(context).copyWith(fontSize: fontSize + 2),
             ),
           ),
         ],

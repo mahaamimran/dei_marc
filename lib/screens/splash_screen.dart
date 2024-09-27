@@ -23,19 +23,19 @@ class SplashScreenState extends State<SplashScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(seconds: 2), // Smoother and slower animation
     )..repeat(reverse: true);
 
     _animation = Tween<Offset>(
       begin: const Offset(0, 0),
-      end: const Offset(0, -0.3),
+      end: const Offset(0, -0.1), // Gentle bounce effect
     ).animate(CurvedAnimation(
       parent: _animationController,
       curve: Curves.easeInOut,
     ));
 
     // Navigate to the home screen after the splash screen
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => const TabBarScreen(),
@@ -66,10 +66,32 @@ class SplashScreenState extends State<SplashScreen>
           child: Center(
             child: SlideTransition(
               position: _animation,
-              child: Text(
-                'DEI MARC',
-                style: TextStyles.appBarTitle
-                    .copyWith(fontWeight: FontWeight.w600, fontSize: 30),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Gender DEI Toolkits',
+                    textAlign: TextAlign.center,
+                    style: TextStyles.appBarTitle.copyWith(
+                      fontWeight: FontWeight.w700, // Bold font weight
+                      fontSize: 30, // Larger font size for emphasis
+                      letterSpacing: 1.5, // Slightly more letter spacing
+                      color: Colors.white, // White color for contrast
+                    ),
+                  ),
+                  const SizedBox(height: 8), // Space between the two lines
+                  Text(
+                    'By MARC',
+                    textAlign: TextAlign.center,
+                    style: TextStyles.appBarTitle.copyWith(
+                      fontWeight:
+                          FontWeight.w400, // Regular weight for subtitle
+                      fontSize: 24, // Smaller font size for subtitle
+                      letterSpacing: 1.0, // Slight letter spacing
+                      color: Colors.white70, // Lighter shade of white
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

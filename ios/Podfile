@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '12.0'
+platform :ios, '12.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -28,17 +28,32 @@ require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelpe
 flutter_ios_podfile_setup
 
 target 'Runner' do
-  use_frameworks!
-  use_modular_headers!
+  use_frameworks!  # Enable dynamic frameworks for Swift plugins
+  use_modular_headers!  # Keep modular headers for certain plugins
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+  # Your test target configuration
   target 'RunnerTests' do
     inherit! :search_paths
   end
 end
 
+# Single post_install block to avoid conflicts
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+
+    # Enable modules explicitly for all targets
+    target.build_configurations.each do |config|
+      config.build_settings['CLANG_ENABLE_MODULES'] = 'YES'  # Enable modules explicitly
+    end
+
+    # Ensure all your necessary frameworks are set to be dynamic
+    if ['PathProviderPlugin', 'FPPSharePlusPlugin', 'SharedPreferencesPlugin', 'SyncfusionFlutterPdfViewerPlugin', 'URLLauncherPlugin'].include?(target.name)
+      target.build_configurations.each do |config|
+        config.build_settings['DEFINES_MODULE'] = 'YES'
+      end
+    end
   end
 end

@@ -43,7 +43,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
               },
             ),
             backgroundColor: widget.appBarColor,
-            title: Text(Helpers.getAppBarTitle(widget.bookFileName), style: TextStyles.appBarTitle),
+            title: Text(Helpers.getAppBarTitle(widget.bookFileName),
+                style: TextStyles.appBarTitle),
             actions: [
               Consumer<SettingsProvider>(
                 builder: (context, settingsProvider, child) {
@@ -90,12 +91,15 @@ class _CategoryScreenState extends State<CategoryScreen> {
         itemCount: categoryProvider.categories.length,
         itemBuilder: (context, index) {
           final category = categoryProvider.categories[index];
+          final label = Helpers.getCategoryLabel(index,
+              categoryProvider.categories.length); // Use the helper function
+
           return Material(
-            color: widget.secondaryColor, 
-            borderRadius: BorderRadius.circular(16.0), 
-            elevation: 2.0, 
+            color: widget.secondaryColor,
+            borderRadius: BorderRadius.circular(16.0),
+            elevation: 2.0,
             child: InkWell(
-              borderRadius: BorderRadius.circular(16.0), 
+              borderRadius: BorderRadius.circular(16.0),
               onTap: () {
                 Navigator.push(
                   context,
@@ -115,7 +119,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
+                      label, // Display the dynamic label
                       style: TextStyles.appCaption.copyWith(
                         fontWeight: FontWeight.bold,
                         color: widget.appBarColor,
@@ -145,7 +149,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     );
   }
 
-   Widget _buildListView(
+  Widget _buildListView(
       BuildContext context, CategoryProvider categoryProvider) {
     return Scrollbar(
       child: ListView.builder(
@@ -153,6 +157,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
         itemCount: categoryProvider.categories.length,
         itemBuilder: (context, index) {
           final category = categoryProvider.categories[index];
+          final label = Helpers.getCategoryLabel(index,
+              categoryProvider.categories.length); // Use the helper function
+
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Material(
@@ -176,13 +183,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   );
                 },
                 child: ListTile(
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
+                  contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 5.0),
                   title: Text(
-                    '${Helpers.getTitle(widget.bookFileName)} ${index + 1}',
+                    label,
                     style: TextStyles.appCaption.copyWith(
                       color: widget.appBarColor,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
                   subtitle: Text(
