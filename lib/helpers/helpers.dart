@@ -28,7 +28,15 @@ class Helpers {
   }
 
   static String capitalizeTitle(String input) {
-    const List<String> exceptions = ["of", "the", "in", "and", "a", "an"];
+    const List<String> exceptions = [
+      "of",
+      "the",
+      "in",
+      "and",
+      "a",
+      "an",
+      "min"
+    ];
     List<String> words = input.split(' ');
 
     for (int i = 0; i < words.length; i++) {

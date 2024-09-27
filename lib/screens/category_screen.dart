@@ -203,10 +203,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     style: TextStyles.appCaption.copyWith(
                       color: widget.appBarColor,
                       fontWeight: FontWeight.bold,
-                      letterSpacing:
-                          1.5, // Add letter spacing for better readability
                     ),
-                    textAlign: TextAlign.center, // Center the text
+                    // Removed the TextAlign.center for left alignment
                   ),
                   subtitle: !isLast
                       ? Text(
@@ -215,8 +213,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                             color: Colors.black,
                             fontWeight: FontWeight.normal,
                           ),
-                          textAlign:
-                              TextAlign.center, // Center the subtitle as well
+                          // Removed the TextAlign.center for left alignment
                         )
                       : null, // Skip subtitle for the last item
                 ),

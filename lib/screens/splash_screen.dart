@@ -50,7 +50,7 @@ class SplashScreenState extends State<SplashScreen>
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         transitionDuration:
-            const Duration(milliseconds: 400), // Quicker fade transition
+            const Duration(milliseconds: 200), // Quicker fade transition
         pageBuilder: (context, animation, secondaryAnimation) =>
             const TabBarScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -84,7 +84,7 @@ class SplashScreenState extends State<SplashScreen>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'GENDER DEI TOOLKITS',
+                      'GENDER\nDEI TOOLKITS',
                       textAlign: TextAlign.center,
                       style: TextStyles.appBarTitle.copyWith(
                         fontWeight: FontWeight.w700, // Bold font weight
