@@ -1,6 +1,6 @@
 # Gender DEI Toolkit App
 
-Welcome to the Gender DEI Toolkit App! This app is designed to provide HR teams across Pakistan with valuable resources to foster gender diversity, equity, and inclusion (DEI) in the workplace. It offers practical toolkits that guide companies in implementing and enhancing gender equality initiatives. This app is built using Flutter, ensuring a seamless and user-friendly experience.
+Welcome to the Gender DEI Toolkit App! This app is designed to provide HR teams across Pakistan with valuable resources to foster gender diversity, equity, and inclusion (DEI) in the workplace. It offers practical toolkits that guide companies in implementing and enhancing gender equality initiatives. This app is built using Flutter, ensuring a seamless and user-friendly experience :)
 
 ## 🌟 Features
 
