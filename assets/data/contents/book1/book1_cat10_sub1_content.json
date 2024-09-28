@@ -2,13 +2,36 @@
     "category" : "DEI Learning and Development",
     "image": [
         {
-        "type": "image",
-        "text": "book1_cat10"
+            "type": "image",
+            "text": "book1_cat10"
+        },
+        {
+            "type":"caption",
+            "text":"© Gender DEI Toolkit MARC"
         }
     ],
     "subcategory": "Popular DEI trainings",
-    "description":"Popular DEI trainings that are offered by many organizations include:\nGender sensitization training\nUnconscious bias training\nSexual harassment training",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Popular DEI trainings that are offered by many organizations include:"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Gender sensitization training"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Unconscious bias training"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Sexual harassment training"
+                }
+            ]
+        },
         {
             "heading":"Bank Alfalah",
             "content":[

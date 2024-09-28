@@ -1,5 +1,13 @@
 {
     "subcategory": "DEI discussions in town hall meetings",
-    "description": "A town hall meeting is a company-wide event hosted by members of the upper management, with the intention to keep the workforce updated about business results, changes, and the general direction of the company. Several organizations use general town hall meetings to discuss DEI issues, or hold specific town hall meetings on DEI. In Teradata, the topic of values and DEI is included at every town hall meeting which is conducted to include all employees in broad DEI discussions. Similarly, S&P Global conducts town hall meetings to communicate the company’s DEI values and efforts."
-
+    "content":[
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"A town hall meeting is a company-wide event hosted by members of the upper management, with the intention to keep the workforce updated about business results, changes, and the general direction of the company. Several organizations use general town hall meetings to discuss DEI issues, or hold specific town hall meetings on DEI. In Teradata, the topic of values and DEI is included at every town hall meeting which is conducted to include all employees in broad DEI discussions. Similarly, S&P Global conducts town hall meetings to communicate the company’s DEI values and efforts."
+                }
+            ]
+        }
+    ]
 }

@@ -1,9 +1,13 @@
 {
-    "category" : "Community, Government Relations and Philanthropy",
+    "category" : "Community,Government Relations and Philanthropy",
     "image": [
         {
-        "type": "image",
-        "text": "book1_cat12"
+            "type": "image",
+            "text": "book1_cat12"
+        },
+        {
+            "type":"caption",
+            "text":"© Gender DEI Toolkit MARC"
         }
     ],
     "subcategory": "Support for women-led businesses",

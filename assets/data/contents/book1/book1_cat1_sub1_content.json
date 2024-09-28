@@ -2,13 +2,24 @@
     "category" : "Vision, Strategy and Business Impact",
     "image": [
         {
-        "type": "image",
-        "text": "book1_cat1"
+            "type": "image",
+            "text": "book1_cat1"
+        },
+        {
+            "type":"caption",
+            "text":"© Gender DEI Toolkit MARC"
         }
     ],
     "subcategory":"A DEI vision and mission statement",
-    "description": "Many of the participating organizations have developed DEI vision and mission statements to extend systematic efforts towards the cause of fostering DEI in the respective organizations. Some examples are listed below.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Many of the participating organizations have developed DEI vision and mission statements to extend systematic efforts towards the cause of fostering DEI in the respective organizations. Some examples are listed below."
+                }
+            ]
+        },
         {
             "heading": "Hashoo Foundation: DEI Vision statement",
             "content": [

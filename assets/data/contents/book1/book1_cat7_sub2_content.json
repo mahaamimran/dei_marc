@@ -1,7 +1,14 @@
 {
     "subcategory": "Flexible Working Hours",
-    "description": "Organizations are offering various flexible working arrangements and policies to work from home to help female employees maintain their work-life balance",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Organizations are offering various flexible working arrangements and policies to work from home to help female employees maintain their work-life balance"
+                }
+            ]
+        },
         {
             "heading": "Examples of flexible working hours policies devised by organizations",
             "content": [

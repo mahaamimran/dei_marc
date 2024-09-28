@@ -1,5 +1,13 @@
 {
     "subcategory": "Internal IVRs and SMSs for DEI",
-    "description": "Interactive voice response (IVR) is an automated business phone system feature that interacts with callers and gathers information by giving them choices via a menu. It then performs actions based on the answers of the caller through the telephone keypad or their voice response. This system is also used by organizations to embrace DEI in their routine operations. Along with IVRs, SMSs also facilitate in disseminating specific tailored messages to different groups in PTCL Group, while adapting language (English for management and Urdu for non-management staff) for better understanding amongst employees."
-
+    "content":[
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Interactive voice response (IVR) is an automated business phone system feature that interacts with callers and gathers information by giving them choices via a menu. It then performs actions based on the answers of the caller through the telephone keypad or their voice response. This system is also used by organizations to embrace DEI in their routine operations. Along with IVRs, SMSs also facilitate in disseminating specific tailored messages to different groups in PTCL Group, while adapting language (English for management and Urdu for non-management staff) for better understanding amongst employees."
+                }
+            ]
+        }
+    ]
 }

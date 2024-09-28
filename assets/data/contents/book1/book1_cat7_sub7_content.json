@@ -74,8 +74,17 @@
             ]
         },
         {
-            "type":"image",
-            "image_path":"book1_cat7_sub7"
+            "content":[
+                {
+                    "type":"image",
+                    "text":"book1_cat7_sub7"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
+                }
+            ]
+            
         }
     ]
 }
