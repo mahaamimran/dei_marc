@@ -35,6 +35,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             CategoryProvider()..loadCategories(widget.bookFileName),
         child: Scaffold(
           appBar: AppBar(
+            centerTitle: true,
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios_new_rounded,
                   color: Colors.white),

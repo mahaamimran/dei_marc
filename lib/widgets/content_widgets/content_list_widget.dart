@@ -16,7 +16,6 @@ import 'package:dei_marc/widgets/content_widgets/image_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/player_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/quote_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/bold_widget.dart';
-import 'package:dei_marc/widgets/content_widgets/description_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/category_title_widget.dart';
 import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/config/text_styles.dart';

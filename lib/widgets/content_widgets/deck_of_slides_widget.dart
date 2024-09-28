@@ -1,5 +1,4 @@
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/widgets/content_widgets/subcategory_heading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/screens/pdf_screen.dart';
 

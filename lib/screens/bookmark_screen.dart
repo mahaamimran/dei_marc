@@ -14,16 +14,19 @@ class BookmarksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.grey[200],
           scrolledUnderElevation: 0,
           leading: Consumer<BookmarkProvider>(
             builder: (context, bookmarkProvider, child) {
               return IconButton(
-                icon: const Icon(Icons.delete_outline_rounded, color: Colors.red),
+                icon:
+                    const Icon(Icons.delete_outline_rounded, color: Colors.red),
                 onPressed: () {
                   if (bookmarkProvider.bookmarks.isNotEmpty) {
                     _showClearAllDialog(context, bookmarkProvider);
@@ -41,9 +44,12 @@ class BookmarksScreen extends StatelessWidget {
             Consumer<SettingsProvider>(
               builder: (context, settingsProvider, child) {
                 return IconButton(
-                  icon: Icon(settingsProvider.isGridView ? Icons.list_rounded : Icons.grid_view_rounded),
+                  icon: Icon(settingsProvider.isGridView
+                      ? Icons.list_rounded
+                      : Icons.grid_view_rounded),
                   onPressed: () {
-                    settingsProvider.setViewPreference(!settingsProvider.isGridView);
+                    settingsProvider
+                        .setViewPreference(!settingsProvider.isGridView);
                   },
                 );
               },
@@ -104,8 +110,10 @@ class BookmarksScreen extends StatelessWidget {
     final categoryName = parts.length > 2 ? parts.sublist(2).join('-') : '';
 
     final int bookIdIndex = int.parse(bookId) - 1;
-    final bookPrimaryColor = ColorConstants.booksPrimary[bookIdIndex % ColorConstants.booksSecondary.length];
-    final bookSecondaryColor = ColorConstants.booksSecondary[bookIdIndex % ColorConstants.booksSecondary.length];
+    final bookPrimaryColor = ColorConstants
+        .booksPrimary[bookIdIndex % ColorConstants.booksSecondary.length];
+    final bookSecondaryColor = ColorConstants
+        .booksSecondary[bookIdIndex % ColorConstants.booksSecondary.length];
 
     return Material(
       color: bookSecondaryColor, // background color for the card
@@ -167,8 +175,10 @@ class BookmarksScreen extends StatelessWidget {
     final categoryName = parts.length > 2 ? parts.sublist(2).join('-') : '';
 
     final int bookIdIndex = int.parse(bookId) - 1;
-    final bookPrimaryColor = ColorConstants.booksPrimary[bookIdIndex % ColorConstants.booksSecondary.length];
-    final bookSecondaryColor = ColorConstants.booksSecondary[bookIdIndex % ColorConstants.booksSecondary.length];
+    final bookPrimaryColor = ColorConstants
+        .booksPrimary[bookIdIndex % ColorConstants.booksSecondary.length];
+    final bookSecondaryColor = ColorConstants
+        .booksSecondary[bookIdIndex % ColorConstants.booksSecondary.length];
 
     return Material(
       color: bookSecondaryColor,
@@ -191,7 +201,8 @@ class BookmarksScreen extends StatelessWidget {
           );
         },
         child: ListTile(
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
           title: Text(
             '${Helpers.getTitle(bookId)} $categoryId',
             style: TextStyles.appCaption.copyWith(
@@ -211,7 +222,8 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
-  void _showClearAllDialog(BuildContext context, BookmarkProvider bookmarkProvider) {
+  void _showClearAllDialog(
+      BuildContext context, BookmarkProvider bookmarkProvider) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
