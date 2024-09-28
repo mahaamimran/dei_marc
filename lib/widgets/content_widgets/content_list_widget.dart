@@ -126,7 +126,7 @@ class ContentListWidget extends StatelessWidget {
                           return const SizedBox.shrink();
                         },
                       ),
-                      const SizedBox(height: 16),
+                        const SizedBox(height: 16),
                       // Subcategory heading
                       SubcategoryNameWidget(
                         subcategoryName: subcategory.name,
@@ -147,11 +147,7 @@ class ContentListWidget extends StatelessWidget {
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: contents.map((contentItem) {
-                              return Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: _buildContentItem(contentItem, context),
-                              );
+                              return _buildContentItem(contentItem, context);
                             }).toList(),
                           );
                         },

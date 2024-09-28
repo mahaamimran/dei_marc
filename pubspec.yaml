@@ -39,6 +39,7 @@ flutter:
     - assets/data/contents/book1/
     - assets/data/contents/book2/
     - assets/data/contents/book3/
+    - assets/data/images/book3/categories/
     - assets/data/images/book_covers/
     - assets/data/images/book1/
     - assets/data/images/book1/categories/
