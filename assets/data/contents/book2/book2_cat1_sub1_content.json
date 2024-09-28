@@ -68,10 +68,6 @@
                 {
                     "type": "image",
                     "text": "book2_cat1_sub1"
-                },
-                {
-                    "type": "caption",
-                    "text": "Image Caption"
                 }
             ]
         }
