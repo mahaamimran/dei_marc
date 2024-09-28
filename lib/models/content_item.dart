@@ -8,6 +8,7 @@ class ContentItem {
   final String? text;
   final List<Quote> content;
   final String? image;
+  final String? caption; // Add caption field
 
   ContentItem({
     this.category,
@@ -17,6 +18,7 @@ class ContentItem {
     this.text,
     required this.content,
     this.image,
+    this.caption, // Add caption to constructor
   });
 
   factory ContentItem.fromJson(Map<String, dynamic> json) {
@@ -34,6 +36,10 @@ class ContentItem {
         (img) => img['type'] == 'image',
         orElse: () => null,
       )?['text'],
+      caption: (json['image'] as List<dynamic>?)?.firstWhere(
+        (img) => img['type'] == 'caption',
+        orElse: () => null,
+      )?['text'], // Add caption parsing logic
     );
   }
 }

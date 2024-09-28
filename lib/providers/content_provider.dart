@@ -33,6 +33,7 @@ class ContentProvider extends ChangeNotifier {
             text: data['text'], // Capture the text here
             content: [], // Empty content list
             image: _parseImagePath(data['image']), // Parse image path
+            caption: _parseCaption(data['image']), // Parse caption
           ),
         ];
       } else {
@@ -45,6 +46,7 @@ class ContentProvider extends ChangeNotifier {
             text: data['text'], // Capture the text here
             content: [], // Initially empty list for the root level
             image: _parseImagePath(data['image']), // Parse image path
+            caption: _parseCaption(data['image']), // Parse caption
           ),
           ...data['content'].map<ContentItem>((item) {
             return ContentItem.fromJson(item);
@@ -59,6 +61,7 @@ class ContentProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  // Parse image path
   String? _parseImagePath(List<dynamic>? imageData) {
     if (imageData != null && imageData.isNotEmpty) {
       final imageEntry = imageData.firstWhere(
@@ -66,6 +69,19 @@ class ContentProvider extends ChangeNotifier {
           orElse: () => null);
       if (imageEntry != null) {
         return imageEntry['text'];
+      }
+    }
+    return null;
+  }
+
+  // Parse caption
+  String? _parseCaption(List<dynamic>? imageData) {
+    if (imageData != null && imageData.isNotEmpty) {
+      final captionEntry = imageData.firstWhere(
+          (element) => element['type'] == 'caption',
+          orElse: () => null);
+      if (captionEntry != null) {
+        return captionEntry['text'];
       }
     }
     return null;

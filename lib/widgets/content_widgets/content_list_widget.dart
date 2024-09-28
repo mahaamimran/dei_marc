@@ -74,7 +74,7 @@ class ContentListWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (index == 0) ...[
-                        // Category title widget
+                        // Category Title
                         CategoryTitleWidget(
                           categoryName: categoryName,
                           barColor: appBarColor,
@@ -83,7 +83,7 @@ class ContentListWidget extends StatelessWidget {
                         const SizedBox(height: 16),
                       ],
 
-                      // Fetch first content item (image and deck of slides)
+                      // Display first content (image, caption, deck of slides)
                       Consumer<ContentProvider>(
                         builder: (context, contentProvider, child) {
                           final contents = contentProvider
@@ -98,6 +98,16 @@ class ContentListWidget extends StatelessWidget {
                               children: [
                                 if (firstItem.image != null)
                                   ImageWidget(imageName: firstItem.image),
+
+                                // Display the caption under the image
+                                if (firstItem.caption != null && firstItem.caption!.isNotEmpty)
+                                  CaptionWidget(
+                                    text: firstItem.caption!,
+                                    fontSize:
+                                        Provider.of<SettingsProvider>(context)
+                                            .fontSize,
+                                  ),
+
                                 if (firstItem.type == 'deckofslides')
                                   Consumer<ConfigProvider>(
                                     builder: (context, configProvider, child) {
@@ -127,7 +137,7 @@ class ContentListWidget extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
 
-                      // Subcategory name
+                      // Subcategory Name
                       SubcategoryNameWidget(
                         subcategoryName: subcategory.name,
                         color: appBarColor,
@@ -154,7 +164,7 @@ class ContentListWidget extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
 
-                      // Render the content items
+                      // Render the remaining content items
                       Consumer<ContentProvider>(
                         builder: (context, contentProvider, child) {
                           final contents = contentProvider
@@ -198,7 +208,7 @@ class ContentListWidget extends StatelessWidget {
         if (contentItem.heading != null && contentItem.heading!.isNotEmpty)
           HeadingWidget(heading: contentItem.heading!, fontSize: fontSize),
 
-        // Paragraph, bullet, quote, and other content items
+        // Render nested content like paragraphs, bullets, quotes, etc.
         ...contentItem.content.map((quote) {
           if (quote.type == Constants.SUBHEADING) {
             return Column(
@@ -248,6 +258,8 @@ class ContentListWidget extends StatelessWidget {
       );
     } else if (quote.type == Constants.BOLD) {
       return BoldWidget(text: quote.text, fontSize: fontSize);
+    } else if (quote.type == Constants.CAPTION) {
+      return CaptionWidget(text: quote.text, fontSize: fontSize);
     } else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
