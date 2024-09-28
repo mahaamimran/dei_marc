@@ -41,12 +41,6 @@
         "logo_teradata": "images/book1/logos/teradata.png",
         "logo_tpl": "images/book1/logos/tpl.png",
         "logo_unilever": "images/book1/logos/unilever.png",
-        "book1_team_member1": "images/book1/team/member1.png",
-        "book1_team_member2": "images/book1/team/member2.png",
-        "book1_team_member3": "images/book1/team/member3.png",
-        "book1_team_member4": "images/book1/team/member4.png",
-        "book1_team_member5": "images/book1/team/member5.png",
-        "book1_team_member6": "images/book1/team/member6.png",
 
 
         "book2": "images/book2/home.jpeg",
@@ -100,12 +94,9 @@
         "book3_cat11":"images/book3/categories/cat11.jpg",
         "book3_cat12":"images/book3/categories/cat12.jpg",
 
-        "book1_team1":"",
-        "book1_team2":"",
-        "book1_team3":"",
-        "book1_team4":"",
-        "book1_team5":"",
-        "book1_team6":""
+        "book1_team":"images/book1/team/team.png",
+        "book2_team":"images/book2/team/team.png",
+        "book3_team":"images/book3/team.png"
     },
 
     "video_paths":{

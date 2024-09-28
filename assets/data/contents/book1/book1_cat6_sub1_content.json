@@ -7,6 +7,11 @@
         }
     ],
     "subcategory": "Gender pay parity",
-    "description": "Organizations such as EPCL, Feroze1888, JS Bank, PPAF and Abacus, put in effort to have compensation packages that are unbiased and free of discrimination. These organizations are frequently involved in conducting market research and health- checks to ensure that market competitive compensation is given to their employees. Telenor is directly and actively monitoring pay parity. Telenor conducted a pay parity exercise in 2020 and has made it a policy to provide equal salaries for equal work, regardless of gender. Telenor Group publishes gender pay analysis annually to exhibit its commitment to this area. It has an annual salary review processes in place, whereby, salaries of both male and female employees are reviewed to ensure that no group is disadvantaged."
+    "content":[
+        {
+            "type":"paragraph",
+            "text":"Organizations such as EPCL, Feroze1888, JS Bank, PPAF and Abacus, put in effort to have compensation packages that are unbiased and free of discrimination. These organizations are frequently involved in conducting market research and health- checks to ensure that market competitive compensation is given to their employees. Telenor is directly and actively monitoring pay parity. Telenor conducted a pay parity exercise in 2020 and has made it a policy to provide equal salaries for equal work, regardless of gender. Telenor Group publishes gender pay analysis annually to exhibit its commitment to this area. It has an annual salary review processes in place, whereby, salaries of both male and female employees are reviewed to ensure that no group is disadvantaged."
+        }
 
+    ]
 }

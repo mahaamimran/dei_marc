@@ -3,31 +3,10 @@
     "subcategory":"Meet the Team",
     "content":[
         {
-            "heading":"",
             "content":[
                 {
                     "type":"image",
-                    "text":"book2_team1"
-
-                },
-                {
-                    "type":"image",
-                    "text":"book2_team2"
-
-                },
-                {
-                    "type":"image",
-                    "text":"book2_team3"
-
-                },
-                {
-                    "type":"image",
-                    "text":"book2_team4"
-
-                },
-                {
-                    "type":"image",
-                    "text":"book2_team5"
+                    "text":"book3_team"
 
                 }
             ]
