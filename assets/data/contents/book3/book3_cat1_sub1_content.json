@@ -1,73 +1,81 @@
 {
     "category": "Unconscious Bias | 2-2.5 hrs",
+    "type":"deckofslides",
+    "text":"deck_cat1",
+    "image": [
+        {
+        "type": "image",
+        "text": "book3_cat1"
+        }
+    ],
     "subcategory": "Activity 1 | Professions And Roles | 30 Min",
     "content": [
         {
             "heading": "Aim",
-            "content": [
+            "content":[
                 {
-                    "type": "paragraph",
-                    "text": "To reveal unconscious gender biases through a profession-gender matching exercise."
+                    "type":"paragraph",
+                    "text":"To reveal unconscious gender biases through a profession-gender matching exercise."
                 }
             ]
         },
         {
             "heading": "Learning Outcomes",
-            "content": [
+            "content":[
                 {
-                    "type": "bullet",
-                    "text": "To engage participants in a matching exercise that challenges gender stereotypes."
+                    "type":"bullet",
+                    "text":"To engage participants in a matching exercise that challenges gender stereotypes."
                 },
                 {
-                    "type": "bullet",
-                    "text": "To start a discussion on the idea of women being employed in non-traditional professions."
+                    "type":"bullet",
+                    "text":"To start a discussion on the idea of women being employed in non-traditional professions."
                 }
             ]
         },
         {
             "heading": "Materials Required",
-            "content": [
+            "content":[
                 {
-                    "type": "paragraph",
-                    "text": "Printed copy of the profession-gender matching exercise table for each participant."
+                    "type":"paragraph",
+                    "text":"Printed copy of the profession-gender matching exercise table for each participant."
                 }
             ]
         },
         {
             "heading": "Sequence",
-            "content": [
+            "content":[
                 {
-                    "type": "bold",
-                    "text": "Step 1: "
+                    "type":"bold",
+                    "text":"Step 1: "
                 },
                 {
-                    "type": "paragraph",
-                    "text": "Distribute the profession-gender matching exercise table to each participant."
+                    "type":"paragraph",
+                    "text":"Distribute the profession-gender matching exercise table to each participant."
                 },
                 {
-                    "type": "bold",
-                    "text": "Step 2: "
+                    "type":"bold",
+                    "text":"Step 2: "
                 },
                 {
-                    "type": "paragraph",
-                    "text": "Instruct the participants to tick the box consisting of the gender they believe would be most suited for each profession."
+                    "type":"paragraph",
+                    "text":"Instruct the participants to tick the box consisting of the gender they believe would be most suited for each profession."
                 },
                 {
-                    "type": "bold",
-                    "text": "Step 3: "
+                    "type":"bold",
+                    "text":"Step 3: "
                 },
                 {
-                    "type": "paragraph",
-                    "text": "Initiate a discussion about the choices made and the assumptions behind them."
+                    "type":"paragraph",
+                    "text":"Initiate a discussion about the choices made and the assumptions behind them."
                 }
             ]
         },
         {
             "heading": "Evaluation",
-            "content": [
+            "content":[
                 {
-                    "type": "paragraph",
-                    "text": "Assess the depth of the discussion and the perceptions shared about gender roles and stereotypes."
+                    "type":"paragraph",
+                    "text":"Assess the depth of the discussion and the perceptions shared about gender roles and stereotypes."
                 }
             ]
         }

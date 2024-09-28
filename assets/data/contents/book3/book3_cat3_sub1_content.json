@@ -1,5 +1,13 @@
 {
     "category": "Women in Stem | 2-2.5 hrs",
+    "type":"deckofslides",
+    "text":"deck_cat3",
+    "image": [
+        {
+        "type": "image",
+        "text": "book3_cat3"
+        }
+    ],
     "subcategory": "Activity 1 | Hopes And Fears | 60 Min",
     "content": [
         {

@@ -1,6 +1,15 @@
 {
     "category": "Double Shift | 2-2.5 hrs",
+    "type":"deckofslides",
+    "text":"deck_cat7",
+    "image": [
+        {
+        "type": "image",
+        "text": "book3_cat7"
+        }
+    ],
     "subcategory": "Activity | My Wife Does Not Work | 35-40 Min",
+    "description":"",
     "content": [
         {
             "heading":"Training Scenario: Understanding Homemaking as Work",
