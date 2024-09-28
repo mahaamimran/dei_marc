@@ -1,5 +1,6 @@
 import 'package:dei_marc/models/quote.dart';
 import 'package:dei_marc/widgets/content_widgets/caption_widget.dart';
+import 'package:dei_marc/widgets/content_widgets/description_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/subcategory_heading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -73,32 +74,31 @@ class ContentListWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (index == 0) ...[
-                        // Use CategoryTitleWidget for the category title and container
+                        // Category title widget
                         CategoryTitleWidget(
                           categoryName: categoryName,
                           barColor: appBarColor,
                           textColor: appBarColor,
                         ),
-                        // const SizedBox(height: 16),
+                        const SizedBox(height: 16),
                       ],
+
+                      // Fetch first content item (image and deck of slides)
                       Consumer<ContentProvider>(
                         builder: (context, contentProvider, child) {
                           final contents = contentProvider
                                   .contents['$categoryId-${index + 1}'] ??
                               [];
 
-                          // Handle the image and deck of slides for the first content item
-                          final firstItem =
-                              contents.isNotEmpty ? contents.first : null;
+                          if (contents.isNotEmpty) {
+                            final firstItem = contents.first;
 
-                          if (firstItem != null) {
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                if (firstItem.image != null) // Image Widget
+                                if (firstItem.image != null)
                                   ImageWidget(imageName: firstItem.image),
-                                if (firstItem.type ==
-                                    'deckofslides') // Deck of Slides Widget
+                                if (firstItem.type == 'deckofslides')
                                   Consumer<ConfigProvider>(
                                     builder: (context, configProvider, child) {
                                       final deckOfSlidesUrl = configProvider
@@ -122,18 +122,39 @@ class ContentListWidget extends StatelessWidget {
                               ],
                             );
                           }
-
                           return const SizedBox.shrink();
                         },
                       ),
-                        const SizedBox(height: 16),
-                      // Subcategory heading
+                      const SizedBox(height: 16),
+
+                      // Subcategory name
                       SubcategoryNameWidget(
                         subcategoryName: subcategory.name,
                         color: appBarColor,
                       ),
 
-                      // Content items
+                      // Description if available
+                      Consumer<ContentProvider>(
+                        builder: (context, contentProvider, child) {
+                          final contents = contentProvider
+                                  .contents['$categoryId-${index + 1}'] ??
+                              [];
+
+                          if (contents.isNotEmpty &&
+                              contents.first.description != null &&
+                              contents.first.description!.isNotEmpty) {
+                            return DescriptionWidget(
+                              description: contents.first.description!,
+                              fontSize: Provider.of<SettingsProvider>(context)
+                                  .fontSize,
+                            );
+                          }
+                          return const SizedBox.shrink();
+                        },
+                      ),
+                      const SizedBox(height: 16),
+
+                      // Render the content items
                       Consumer<ContentProvider>(
                         builder: (context, contentProvider, child) {
                           final contents = contentProvider
@@ -173,8 +194,11 @@ class ContentListWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Heading Widget
         if (contentItem.heading != null && contentItem.heading!.isNotEmpty)
           HeadingWidget(heading: contentItem.heading!, fontSize: fontSize),
+
+        // Paragraph, bullet, quote, and other content items
         ...contentItem.content.map((quote) {
           if (quote.type == Constants.SUBHEADING) {
             return Column(
@@ -200,7 +224,13 @@ class ContentListWidget extends StatelessWidget {
 
   Widget _buildNestedContent(
       Quote quote, BuildContext context, double fontSize) {
-    if (quote.type == Constants.IMAGE) {
+    if (quote.type == Constants.PARAGRAPH) {
+      return ParagraphWidget(
+        text: quote.text,
+        fontSize: fontSize,
+        highlightColor: appBarColor,
+      );
+    } else if (quote.type == Constants.IMAGE) {
       return ImageWidget(imageName: quote.text);
     } else if (quote.type == Constants.VIDEO) {
       return PlayerWidget(videoUrl: quote.text);
@@ -210,12 +240,6 @@ class ContentListWidget extends StatelessWidget {
         bulletColor: appBarColor,
         fontSize: fontSize,
       );
-    } else if (quote.type == Constants.PARAGRAPH) {
-      return ParagraphWidget(
-        text: quote.text,
-        fontSize: fontSize,
-        highlightColor: appBarColor,
-      );
     } else if (quote.type == Constants.QUOTE) {
       return QuoteWidget(
         quote: quote.text,
@@ -224,8 +248,6 @@ class ContentListWidget extends StatelessWidget {
       );
     } else if (quote.type == Constants.BOLD) {
       return BoldWidget(text: quote.text, fontSize: fontSize);
-    } else if (quote.type == Constants.CAPTION) {
-      return CaptionWidget(text: quote.text, fontSize: fontSize);
     } else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
