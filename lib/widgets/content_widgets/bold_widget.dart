@@ -18,7 +18,8 @@ class BoldWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Text(
-        Helpers.capitalizeTitle(text),
+        // Helpers.capitalizeTitle(text),
+        text,
         style: TextStyles.bold(context).copyWith(fontSize: fontSize + 2),
       ),
     );
