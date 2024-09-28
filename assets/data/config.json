@@ -47,6 +47,7 @@
         "book1_team_member4": "images/book1/team/member4.png",
         "book1_team_member5": "images/book1/team/member5.png",
         "book1_team_member6": "images/book1/team/member6.png",
+
         "book2": "images/book2/home.jpeg",
         "book2_cat1": "images/book2/categories/cat1.jpeg",
         "book2_cat1_sub1": "images/book2/categories/cat1_sub1.jpeg",
@@ -84,24 +85,26 @@
         "book2_cat4": "images/book2/categories/cat4.png",
         "book2_cat4_sub1": "images/book2/categories/cat4_sub1.jpeg",
         "book2_cat4_sub2": "images/book2/categories/cat4_sub2.jpeg",
-        "tedxtalk_AreYouBiased": "https://www.youtube.com/watch?v=Bq_xYSOZrgU",
-        "tedxtalk_HowToAvoidGenderStereotyping": "https://www.youtube.com/watch?v=9ZFNsJ0-aco",
-        "tedxtalk_FemalesInStem": "https://www.youtube.com/watch?v=l8pnmrR4zPI",
-        "tedxtalk_HowToAvoidGenderStereotypes": "",
-        "tedxtalk_WomenAndNewFactsOfLife": "",
-        "tedxtalk_HowDiversityMakesTeamsMoreInnovative": "https://www.youtube.com/watch?v=lPtPG2lAmm4",
-        "video_RethinkingAssumptions": "",
-        "video_RedefiningNarrative": "",
-        "video_WomenInStem": "",
-        "video_EqualityStartsAtHome": "",
-        "video_AreYouListeningToYourGenderBiasTooMuch": "",
-        "video_GenderBias": "",
-        "video_ATaleOfDoubleStandards": "",
-        "video_MicroaggressionsInTheWorkPlace": "",
-        "video_SeeingClearly": "",
-        "video_WageDisparity": ""
-    },
-    "pdf_paths": {
-        "Deck-of-Slides": "https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx"
+
+        "tedxtalk_AreYouBiased":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "tedxtalk_HowToAvoidGenderStereotyping":"https://www.youtube.com/watch?v=9ZFNsJ0-aco",
+        "tedxtalk_FemalesInStem":"https://www.youtube.com/watch?v=l8pnmrR4zPI",
+        "tedxtalk_HowToAvoidGenderStereotypes":"",
+        "tedxtalk_WomenAndNewFactsOfLife":"",
+        "tedxtalk_HowDiversityMakesTeamsMoreInnovative":"https://www.youtube.com/watch?v=lPtPG2lAmm4",
+
+        "video_RethinkingAssumptions":"",
+        "video_RedefiningNarrative":"",
+        "video_WomenInStem":"",
+        "video_EqualityStartsAtHome":"",
+        "video_AreYouListeningToYourGenderBiasTooMuch":"",
+        "video_GenderBias":"",
+        "video_ATaleOfDoubleStandards":"",
+        "video_MicroaggressionsInTheWorkPlace":"",
+        "video_SeeingClearly":"",
+        "video_WageDisparity":""
+
+
+
     }
 }
