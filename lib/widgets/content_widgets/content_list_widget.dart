@@ -6,6 +6,7 @@ import 'package:dei_marc/models/content_item.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/providers/subcategory_provider.dart';
+import 'package:dei_marc/providers/config_provider.dart';
 import 'package:dei_marc/widgets/content_widgets/heading_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/subheading_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/paragraph_widget.dart';
@@ -18,6 +19,7 @@ import 'package:dei_marc/widgets/content_widgets/description_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/category_title_widget.dart';
 import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/widgets/content_widgets/deck_of_slides_widget.dart';
 
 class ContentListWidget extends StatelessWidget {
   final int categoryId;
@@ -45,9 +47,6 @@ class ContentListWidget extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
         keyMap.clear();
-        print(
-          appBarColor,
-        );
 
         return Scrollbar(
           interactive: true,
@@ -87,19 +86,54 @@ class ContentListWidget extends StatelessWidget {
                           final contents = contentProvider
                                   .contents['$categoryId-${index + 1}'] ??
                               [];
-                          if (contents.isNotEmpty &&
-                              contents.first.image != null) {
-                            return ImageWidget(imageName: contents.first.image);
+
+                          // Handle the image and deck of slides for the first content item
+                          final firstItem =
+                              contents.isNotEmpty ? contents.first : null;
+
+                          if (firstItem != null) {
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                if (firstItem.image != null) // Image Widget
+                                  ImageWidget(imageName: firstItem.image),
+                                if (firstItem.type ==
+                                    'deckofslides') // Deck of Slides Widget
+                                  Consumer<ConfigProvider>(
+                                    builder: (context, configProvider, child) {
+                                      final deckOfSlidesUrl = configProvider
+                                          .getDeckOfSlidesPath(firstItem.text);
+
+                                      if (deckOfSlidesUrl != null) {
+                                        return DeckOfSlidesWidget(
+                                          text: 'Deck of Slides',
+                                          fontSize:
+                                              Provider.of<SettingsProvider>(
+                                                      context)
+                                                  .fontSize,
+                                          secondaryColor: secondaryColor,
+                                          primaryColor: appBarColor,
+                                          pdfUrl: deckOfSlidesUrl,
+                                        );
+                                      }
+                                      return const SizedBox.shrink();
+                                    },
+                                  ),
+                              ],
+                            );
                           }
 
                           return const SizedBox.shrink();
                         },
                       ),
-                      // Use SubcategoryNameWidget for the subcategory name
+                      const SizedBox(height: 16),
+                      // Subcategory heading
                       SubcategoryNameWidget(
                         subcategoryName: subcategory.name,
                         color: appBarColor,
                       ),
+
+                      // Content items
                       Consumer<ContentProvider>(
                         builder: (context, contentProvider, child) {
                           final contents = contentProvider
@@ -110,29 +144,15 @@ class ContentListWidget extends StatelessWidget {
                             return const Text('No content available.');
                           }
 
-                          final firstItem = contents.first;
-
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              if (firstItem.description != null &&
-                                  firstItem.description!.isNotEmpty)
-                                DescriptionWidget(
-                                  description: firstItem.description!,
-                                  fontSize: Provider.of<SettingsProvider>(
-                                    context,
-                                  ).fontSize,
-                                ),
-                              _buildContentItem(firstItem, context),
-                              ...contents.skip(1).map((contentItem) {
-                                return Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 8.0),
-                                  child:
-                                      _buildContentItem(contentItem, context),
-                                );
-                              }),
-                            ],
+                            children: contents.map((contentItem) {
+                              return Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 8.0),
+                                child: _buildContentItem(contentItem, context),
+                              );
+                            }).toList(),
                           );
                         },
                       ),

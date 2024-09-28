@@ -4,6 +4,8 @@ class ContentItem {
   final String? category;
   final String? description;
   final String? heading;
+  final String? type;
+  final String? text;
   final List<Quote> content;
   final String? image;
 
@@ -11,6 +13,8 @@ class ContentItem {
     this.category,
     this.description,
     this.heading,
+    this.type,
+    this.text,
     required this.content,
     this.image,
   });
@@ -20,16 +24,16 @@ class ContentItem {
       category: json['category'],
       description: json['description'],
       heading: json['heading'],
+      type: json['type'],
+      text: json['text'],
       content: (json['content'] as List<dynamic>?)
               ?.map((quoteJson) => Quote.fromJson(quoteJson))
               .toList() ??
           [],
-      image: (json['image'] as List<dynamic>?)
-              ?.firstWhere(
-                (img) => img['type'] == 'image',
-                orElse: () => null,
-              )?['text'],
+      image: (json['image'] as List<dynamic>?)?.firstWhere(
+        (img) => img['type'] == 'image',
+        orElse: () => null,
+      )?['text'],
     );
   }
 }
-

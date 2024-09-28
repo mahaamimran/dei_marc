@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/models/content_item.dart';
 import 'package:dei_marc/config/asset_paths.dart';
-import 'package:dei_marc/config/enums.dart'; 
+import 'package:dei_marc/config/enums.dart';
 
 class ContentProvider extends ChangeNotifier {
   final Map<String, List<ContentItem>> _contents = {};
@@ -12,7 +12,8 @@ class ContentProvider extends ChangeNotifier {
   Map<String, List<ContentItem>> get contents => _contents;
   DataStatus get dataStatus => _dataStatus;
 
-  Future<void> loadContent(String bookId, int categoryId, int subcategoryId) async {
+  Future<void> loadContent(
+      String bookId, int categoryId, int subcategoryId) async {
     _dataStatus = DataStatus.loading;
     notifyListeners();
 
@@ -27,7 +28,9 @@ class ContentProvider extends ChangeNotifier {
           ContentItem(
             category: data['category'],
             description: data['description'],
-            heading: data['heading'], // Capture the heading if it exists
+            heading: data['heading'],
+            type: data['type'], // Capture the type here
+            text: data['text'], // Capture the text here
             content: [], // Empty content list
             image: _parseImagePath(data['image']), // Parse image path
           ),
@@ -38,7 +41,9 @@ class ContentProvider extends ChangeNotifier {
             category: data['category'],
             description: data['description'],
             heading: data['heading'],
-            content: [],
+            type: data['type'], // Capture the type here
+            text: data['text'], // Capture the text here
+            content: [], // Initially empty list for the root level
             image: _parseImagePath(data['image']), // Parse image path
           ),
           ...data['content'].map<ContentItem>((item) {

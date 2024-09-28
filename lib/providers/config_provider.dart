@@ -13,15 +13,28 @@ class ConfigProvider extends ChangeNotifier {
   ConfigProvider._internal();
 
   Map<String, String> _imagePaths = {};
+  Map<String, String> _pdfPaths = {};
 
   Future<void> loadConfig() async {
     final String response = await rootBundle.loadString(AssetPaths.configJson);
     final data = json.decode(response);
 
-    _imagePaths = Map<String, String>.from(data['image_paths']);
+    // Check if 'image_paths' exists in the JSON
+    if (data['image_paths'] != null && data['image_paths'] is Map) {
+      _imagePaths = Map<String, String>.from(data['image_paths']);
+    }
+
+    // Check if 'pdf_paths' exists in the JSON
+    if (data['pdf_paths'] != null && data['pdf_paths'] is Map) {
+      _pdfPaths = Map<String, String>.from(data['pdf_paths']);
+    }
   }
 
   String? getImagePath(String? key) {
     return _imagePaths[key];
+  }
+
+  String? getDeckOfSlidesPath(String? key) {
+    return _pdfPaths[key];
   }
 }
