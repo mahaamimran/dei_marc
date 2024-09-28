@@ -1,7 +1,14 @@
 {
     "subcategory": "Executives' involvement in DEI",
-    "description":"Members of the board of directors and other senior executives of different organizations are actively engaged in the promotion of DEI.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Members of the board of directors and other senior executives of different organizations are actively engaged in the promotion of DEI."
+                }
+            ]
+        },
         {
             "heading":"EPCL's",
             "content":[

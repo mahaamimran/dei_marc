@@ -1,7 +1,14 @@
 {
     "subcategory": "Confidence building initiatives for women",
-    "description": "Organizations that have embraced DEI are deeply committed to providing initiatives that build confidence of women. These initiatives can be divided into three types; DEI networks and clubs, mentorship and sponsorship for women, and support to overcome psychological barriers.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Organizations that have embraced DEI are deeply committed to providing initiatives that build confidence of women. These initiatives can be divided into three types; DEI networks and clubs, mentorship and sponsorship for women, and support to overcome psychological barriers."
+                }
+            ]
+        },
         {
             "heading": "PTCL Group",
             "content": [

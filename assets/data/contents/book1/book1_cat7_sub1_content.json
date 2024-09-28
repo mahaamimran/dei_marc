@@ -2,13 +2,24 @@
     "category" : "Work-life Integration, Flexibility and Benefits",
     "image": [
         {
-        "type": "image",
-        "text": "book1_cat7"
+            "type": "image",
+            "text": "book1_cat7"
+        },
+        {
+            "type":"caption",
+            "text":"© Gender DEI Toolkit MARC"
         }
     ],
     "subcategory": "Maternity Leave",
-    "description": "Maternity leave applies to expectant or new mothers who require time off for pregnancy, childbirth and childcare. The maternity leave comprises of statutory or extended leave depending upon the organization. Organizations that are supporting gender DEI are providing fully paid, partially paid, or unpaid maternity leave of varying time period exceeding legislative requirements.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Maternity leave applies to expectant or new mothers who require time off for pregnancy, childbirth and childcare. The maternity leave comprises of statutory or extended leave depending upon the organization. Organizations that are supporting gender DEI are providing fully paid, partially paid, or unpaid maternity leave of varying time period exceeding legislative requirements."
+                }
+            ]
+        },
         {
             "heading": "Examples of maternity leave duration in organizations",
             "content": [
@@ -17,7 +28,7 @@
                     "text":"Bank Alfalah"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"6 months (full-paid)"
                 },
                 {
@@ -25,7 +36,7 @@
                     "text":"EPCL"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"6 months (full-paid)"
                 },
                 {
@@ -33,7 +44,7 @@
                     "text":"FINCA Microfinance Bank Limited"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"3 months (full-paid) + an extendable leave of 2 months or work from home"
                 },
                 {
@@ -41,7 +52,7 @@
                     "text":"Jazz"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"6 months (full-paid for full term) \n4 weeks (full paid in case of early miscarriage) \n6 months (full paid in case of miscarriage in third trimester or still birth)"
                 },
                 {
@@ -49,7 +60,7 @@
                     "text":"MMBL"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"3 months (full-paid) + an extendable facilitation of up to 3 months with\nwork from home two days a week (full-paid)"
                 },
                 {
@@ -57,7 +68,7 @@
                     "text":"PTCL Group"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"3 months"
                 },
                 {
@@ -65,7 +76,7 @@
                     "text":"Teradata"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"6 months (full-paid) + an extended unpaid leave of 12 months"
                 },
                 {
@@ -73,7 +84,7 @@
                     "text":"Unilever"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"6 months (full-paid)"
                 }
             ]

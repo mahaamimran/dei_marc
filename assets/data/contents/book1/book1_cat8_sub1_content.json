@@ -2,8 +2,12 @@
     "category" : "Assessment, Measurement and Research DEI",
     "image": [
         {
-        "type": "image",
-        "text": "book1_cat8"
+            "type": "image",
+            "text": "book1_cat8"
+        },
+        {
+            "type":"caption",
+            "text":"© Gender DEI Toolkit MARC"
         }
     ],
     "subcategory": "Gender DEI Analytics",
@@ -34,10 +38,6 @@
                 {
                     "type":"bullet",
                     "text":"Region wise gender ratio"
-                },
-                {
-                    "type":"image",
-                    "text":"book1_cat8_sub1"
                 }
             ]
 
@@ -46,13 +46,58 @@
             "heading": "Examples of additional dei analytics used by organizations",
             "content": [
                 {
-                    "type": "paragraph",
-                    "text":"1. Number of females in people management workforce. \n2. Number of voluntary trainings and on-demand trainings provided to females. \n3. Number of females in the head office. \n4. Time to hire females. \n5. Cost to hire females. \n6. Number of females eligible for promotion but not being promoted. \n7. Number of females hired each month. \n8. Percentage of female hiring out of the overall hiring. \n9. Comparison of the number of females inducted with the number of females who have left position-wise. \n10. Scrutiny of positions replaced by a male hire after the exit of the previous female position. \nholder and vice versa. \n11. Detection of gender discrimination in grades awarded to male versus female employees in their performance appraisals. \n12. Number of mentorships given to female employees. \n13. Pay gap (induction, promotion, and exit)"
+                    "type": "bullet",
+                    "text":"Number of females in people management workforce."
                 },
                 {
-                    "type":"image",
-                    "text":"book1_cat8_sub1"
+                    "type":"bullet",
+                    "text":"Number of voluntary trainings and on-demand trainings provided to females."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Number of females in the head office."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Time to hire females."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Cost to hire females."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Number of females eligible for promotion but not being promoted."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Number of females hired each month."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Percentage of female hiring out of the overall hiring. "
+                },
+                {
+                    "type":"bullet",
+                    "text":"Comparison of the number of females inducted with the number of females who have left position-wise."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Scrutiny of positions replaced by a male hire after the exit of the previous female position holder and vice versa."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Detection of gender discrimination in grades awarded to male versus female employees in their performance appraisals."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Number of mentorships given to female employees."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Pay gap (induction, promotion, and exit)"
                 }
+                
             ]
         }
     ]

@@ -1,7 +1,14 @@
 {
     "subcategory": "Paternity Leave",
-    "description": "Paternity leave is a period of absence from work granted to a father after or shortly before the birth of his child. Organizations are offering paternity leaves to male employees so that they can spend time with their newly born child.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Paternity leave is a period of absence from work granted to a father after or shortly before the birth of his child. Organizations are offering paternity leaves to male employees so that they can spend time with their newly born child."
+                }
+            ]
+        },
         {
             "heading": "Examples of paternity leave policy of organizations",
             "content": [
@@ -10,7 +17,7 @@
                     "text":"Bank Alfalah"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"7 days"
                 },
                 {
@@ -18,7 +25,7 @@
                     "text":"EPCL"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"15 days of leave which can be used in the first three months of the child’s birth."
                 },
                 {
@@ -26,7 +33,7 @@
                     "text":"Hashoo Foundation"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"3 days"
                 },
                 {
@@ -34,7 +41,7 @@
                     "text":"Jazz"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"30 days to support the family whether it is a healthy pregnancy, a complex one, or if the mother has lost the child."
                 },
                 {
@@ -42,7 +49,7 @@
                     "text":"PTCL Group"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"5 consecutive days"
                 },
                 {
@@ -50,7 +57,7 @@
                     "text":"S&P Global"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"26 weeks of paid parental leave for all parents, regardless of gender."
                 },
                 {
@@ -58,7 +65,7 @@
                     "text":"Unilever"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"3 weeks"
                 }
             ]

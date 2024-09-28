@@ -1,10 +1,21 @@
 {
-    "subcategory": "External DEI communication using social media",
-    "description": "Businesses create their own social media marketing strategy to promote DEI externally. For example, Bank Alfalah has a \"Women who Inspire\" and \"Women of Resilience\" series that are used as a platform to empower women by sharing real life inspiring women's journey with external audiences. The Women who Inspire series is focused more on the top management, where women share messages and advice for the lower level female employees to grow in their career. The Women of Resilience series is focused more on the women in the lower hierarchal level, to understand their struggles. Posts are made which include the name, picture, designation, and message of the employee and are shared on LinkedIn. Jazz also runs public awareness ad campaigns on transgender rights, women rights and mental health issues on social media. Regular press releases are issued on various platforms for external communication, as well as for public disclosure of its DEI practices.",
+    "subcategory": "External DEI communication using social media",    
     "content":[
         {
-            "type":"image",
-            "image_path":"book1_cat9_sub7"
+            "content":[
+                {
+                    "type":"image",
+                    "text":"book1_cat9_sub7"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Businesses create their own social media marketing strategy to promote DEI externally. For example, Bank Alfalah has a \"Women who Inspire\" and \"Women of Resilience\" series that are used as a platform to empower women by sharing real life inspiring women's journey with external audiences. The Women who Inspire series is focused more on the top management, where women share messages and advice for the lower level female employees to grow in their career. The Women of Resilience series is focused more on the women in the lower hierarchal level, to understand their struggles. Posts are made which include the name, picture, designation, and message of the employee and are shared on LinkedIn. Jazz also runs public awareness ad campaigns on transgender rights, women rights and mental health issues on social media. Regular press releases are issued on various platforms for external communication, as well as for public disclosure of its DEI practices."
+                }
+            ]
         }
     ]
 }

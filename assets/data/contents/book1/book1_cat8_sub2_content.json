@@ -1,7 +1,14 @@
 {
     "subcategory": "Gender DEI Research",
-    "description": "Organizations use various surveys and data collection techniques to conduct research and assess their DEI initiatives. Data and analytics provide the ability to identify whether there are any gaps, prioritize areas for action and enable ongoing measurement of progress. The tools used for gender DEI research include DEI items in employee engagement surveys, focus group discussions on DEI, pulse surveys on DEI, coverage of DEI in exit interviews, DEI one of the themes in 360-degree appraisals and benchmarking for DEI.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Organizations use various surveys and data collection techniques to conduct research and assess their DEI initiatives. Data and analytics provide the ability to identify whether there are any gaps, prioritize areas for action and enable ongoing measurement of progress. The tools used for gender DEI research include DEI items in employee engagement surveys, focus group discussions on DEI, pulse surveys on DEI, coverage of DEI in exit interviews, DEI one of the themes in 360-degree appraisals and benchmarking for DEI."
+                }
+            ]
+        },
         {
             "heading": "DEI items in employee engagement surveys",
             "content": [

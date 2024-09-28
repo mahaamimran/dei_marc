@@ -1,7 +1,14 @@
 {
     "subcategory": "Women's leadership development programs",
-    "description": "Organizations that are committed to gender DEI offer women's leadership development programs that aim to equip potential future leaders with the required skills and abilities. These programs facilitate women in qualifying for senior positions and help them in becoming successful leaders. Table 3 provides examples of women leadership development programs in various organizations.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Organizations that are committed to gender DEI offer women's leadership development programs that aim to equip potential future leaders with the required skills and abilities. These programs facilitate women in qualifying for senior positions and help them in becoming successful leaders. Table 3 provides examples of women leadership development programs in various organizations."
+                }
+            ]
+        },
         {
             "heading": "Abacus",
             "content": [

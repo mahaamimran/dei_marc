@@ -1,7 +1,14 @@
 {
     "subcategory": "Equitable recruitment process",
-    "description":"Many organizations in Pakistan are rigorously trying to maintain an equitable recruitment process. Examples of such efforts include targets for female applicants per job posting, targets for short-listing females, avoid stereotyping while short-listing, aggressively headhunting for females, pre-employment training for females, targeted recruitment drives for females and monitoring gender ratios at all stages of recruitment. Some industry examples are presented.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Many organizations in Pakistan are rigorously trying to maintain an equitable recruitment process. Examples of such efforts include targets for female applicants per job posting, targets for short-listing females, avoid stereotyping while short-listing, aggressively headhunting for females, pre-employment training for females, targeted recruitment drives for females and monitoring gender ratios at all stages of recruitment. Some industry examples are presented."
+                }
+            ]
+        },
         {
             "heading":"Abacus",
             "content":[

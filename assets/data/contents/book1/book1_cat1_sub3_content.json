@@ -1,7 +1,14 @@
 {
     "subcategory": "Organizational values that promote DEI",
-    "description":"Organizations aim at creating an ideal workplace environment and culture where employees feel included and rewarded for their efforts.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Organizations aim at creating an ideal workplace environment and culture where employees feel included and rewarded for their efforts."
+                }
+            ]
+        },
         {
             "heading": "Abacus",
             "content": [

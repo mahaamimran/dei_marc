@@ -1,7 +1,14 @@
 {
     "subcategory": "Returnship programs",
-    "description":"Several organizations in Pakistan have introduced returnship programs for females who have taken a career break and want to resume their career. Companies tap in the female talent and provide ease of access needed to return to the corporate sector. These programs are aimed to not only offer skills - uplift, but indulge in providing a meaningful and real role to women, while offering emotional and social support alongside as well.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Several organizations in Pakistan have introduced returnship programs for females who have taken a career break and want to resume their career. Companies tap in the female talent and provide ease of access needed to return to the corporate sector. These programs are aimed to not only offer skills - uplift, but indulge in providing a meaningful and real role to women, while offering emotional and social support alongside as well."
+                }
+            ]
+        },
         {
             "heading":"Examples of returnship programs",
             "content":[
@@ -10,7 +17,7 @@
                     "text":"Bank Alfalah"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"Welcome Back"
                 },
                 {
@@ -18,7 +25,7 @@
                     "text":"EPCL"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"Break Kay Baad (After the break)"
                 },
                 {
@@ -26,7 +33,7 @@
                     "text":"Jazz"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"She’s Back"
                 },
                 {
@@ -34,7 +41,7 @@
                     "text":"JS Bank"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"Reboot Program"
                 },
                 {
@@ -42,7 +49,7 @@
                     "text":"Telenor"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"Naya Aghaaz (New beginnings)"
                 },
                 {
@@ -50,7 +57,7 @@
                     "text":"Unilever"
                 },
                 {
-                    "type":"paragraph",
+                    "type":"bullet",
                     "text":"Career by Choice"
                 }
 

@@ -1,7 +1,14 @@
 {
     "subcategory": "Connecting DEI and sustainability internally",
-    "description": "Organizations that have DEI best practices also take initiatives which connect DEI with sustainability internally with an aim of embedding it deep into the organizational culture. The domestic violence support offered by Unilever is an example of such practices.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Organizations that have DEI best practices also take initiatives which connect DEI with sustainability internally with an aim of embedding it deep into the organizational culture. The domestic violence support offered by Unilever is an example of such practices."
+                }
+            ]
+        },
         {
             "heading": "Domestic violence support for women",
             "content": [

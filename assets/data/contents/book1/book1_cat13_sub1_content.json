@@ -2,8 +2,12 @@
     "category" : "Services and Products, Marketing and Responsible Sourcing",
     "image": [
         {
-        "type": "image",
-        "text": "book1_cat13"
+            "type": "image",
+            "text": "book1_cat13"
+        },
+        {
+            "type":"caption",
+            "text":"© Gender DEI Toolkit MARC"
         }
     ],
     "subcategory": "Industry Examples of Tools for Services and Products, Marketing and Responsible Sourcing",
