@@ -10,7 +10,8 @@
             "text":"© Gender DEI Toolkit MARC"
         }
     ],
-    "subcategory":"A DEI vision and mission statement",
+    "subcategory":"A DEI Vision and Mission Statement",
+    "description": "Many of the participating organizations have developed DEI vision and mission statements to extend systematic efforts towards the cause of fostering DEI in the respective organizations. Some examples are listed below.",
     "content": [
         {
             "content":[
@@ -21,7 +22,7 @@
             ]
         },
         {
-            "heading": "Hashoo Foundation: DEI Vision statement",
+            "heading": "Hashoo Foundation: DEI Vision Statement",
             "content": [
                 {
                 "type":"quote",
@@ -30,7 +31,7 @@
             ]
         },
         {
-            "heading":"Jazz: DEI Mission statement",
+            "heading":"Jazz: DEI Mission Statement",
             "content":[
                 {
                     "type":"quote",
@@ -39,7 +40,7 @@
             ]
         },
         {
-            "heading":"PTCL Group: DEI Vision statement",
+            "heading":"PTCL Group: DEI Vision Statement",
             "content":[
                 {
                     "type":"quote",
@@ -48,7 +49,7 @@
             ]
         },
         {
-            "heading":"PTCL Group: DEI Mission statement",
+            "heading":"PTCL Group: DEI Mission Statement",
             "content":[
                 {
                     "type":"quote",
@@ -57,7 +58,7 @@
             ]
         },
         {
-            "heading":"Telenor: DEI Vision statement",
+            "heading":"Telenor: DEI Vision Statement",
             "content":[
                 {
                     "type":"quote",
@@ -66,7 +67,7 @@
             ]
         },
         {
-            "heading":"Teradata: DEI Vision statement",
+            "heading":"Teradata: DEI Vision Statement",
             "content":[
                 {
                     "type":"quote",

@@ -1,5 +1,6 @@
 {
-    "subcategory":"A DEI motto",
+    "subcategory":"A DEI Motto",
+    "description":"Few organizations have formed DEI mottos implying the importance of synergy that is created when diverse groups of people collaborate and work together. These mottos serve as a declaration of the organization's commitment to furthering DEI",
     "content":[
         {
             "content":[
@@ -14,7 +15,7 @@
             "content":[
                 {
                     "type":"quote",
-                    "text":"Together we make a difference"
+                    "text":"Together we make a difference."
                 }
             ]
         },
