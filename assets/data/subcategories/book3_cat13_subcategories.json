@@ -1,8 +1,20 @@
 {
-    "category":"About",
+    "category":"About the Gender DEI Toolkit Volume III",
     "subcategories":[
         {
-            "name":""
+            "name":"About"
+        },
+        {
+            "name":"Meet the Team"
+        },
+        {
+            "name":"Acknowledgements"
+        },
+        {
+            "name":"Special Thanks"
+        },
+        {
+            "name":"Methodology"
         }
 
     ]

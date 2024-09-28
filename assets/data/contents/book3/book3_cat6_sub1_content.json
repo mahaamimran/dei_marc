@@ -1,5 +1,13 @@
 {
     "category": "Organizational Culture | 2-2.5 hrs",
+    "type":"deckofslides",
+    "text":"deck_cat6",
+    "image": [
+        {
+        "type": "image",
+        "text": "book3_cat6"
+        }
+    ],
     "subcategory": "Activity 1 | Deeply Held Perceptions | 30 Min",
     "content": [
         {

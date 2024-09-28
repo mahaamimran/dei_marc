@@ -1,5 +1,13 @@
 {
     "category": "Negative Self Perception | 2-2.5 hrs",
+    "type":"deckofslides",
+    "text":"deck_cat9",
+    "image": [
+        {
+        "type": "image",
+        "text": "book3_cat9"
+        }
+    ],
     "subcategory": "Activity | Mix And Match | 15-20 Min",
     "content": [
         {

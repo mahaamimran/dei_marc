@@ -1,14 +1,23 @@
 {
-    "category":"About",
-    "subcategory":"",
+    "category":"About the Gender DEI Toolkit Volume III",
+    "subcategory":"About",
     "content":[
         {
             "heading":"",
             "content":[
                 {
-                    "type":"",
-                    "text":""
+                    "type":"link",
+                    "text":"book3_doc"
 
+                },
+                {
+                    "type":"video",
+                    "text":"book3_video"
+
+                },
+                {
+                    "type":"paragraph",
+                    "text":"The Gender DEI Toolkit Volume III builds on the foundation laid by Volumes I and II. Volume I presented 47 tools across 13 categories, showcasing best practices from 19 organizations in Pakistan. Volume II identified 30 challenges and provided solutions to help organizations implement gender DEI initiatives. Volume III continues this work by offering 12 training modules on topics such as unconscious bias, microaggressions, the double shift, leadership, and organizational culture. It presents over 40 resources, including activities, caselets, articles, and links to videos and TEDx Talks, each accompanied by discussion questions and learning outcomes. Each module lists suggested resources, but users can follow or adapt the material to suit their specific needs. Overall, through this Gender DEI Toolkit series, the MARC team aims to contribute to the Fifth Sustainable Development Goal (SDG 5), ‘gender equality,’ by envisioning a future where men and women work side by side as equals in all spheres of life in Pakistan."
                 }
             ]
         }

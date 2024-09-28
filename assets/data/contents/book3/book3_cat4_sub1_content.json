@@ -1,5 +1,13 @@
 {
     "category": "Maternity / Paternity Leave | 2-2.5 hrs",
+    "type":"deckofslides",
+    "text":"deck_cat4",
+    "image": [
+        {
+        "type": "image",
+        "text": "book3_cat4"
+        }
+    ],
     "subcategory": "Activity 1 | Mix And Match | 15-20 Min",
     "content": [
         {

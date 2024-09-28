@@ -48,6 +48,7 @@
         "book1_team_member5": "images/book1/team/member5.png",
         "book1_team_member6": "images/book1/team/member6.png",
 
+
         "book2": "images/book2/home.jpeg",
         "book2_cat1": "images/book2/categories/cat1.jpeg",
         "book2_cat1_sub1": "images/book2/categories/cat1_sub1.jpeg",
@@ -86,10 +87,31 @@
         "book2_cat4_sub1": "images/book2/categories/cat4_sub1.jpeg",
         "book2_cat4_sub2": "images/book2/categories/cat4_sub2.jpeg",
 
+        "book3_cat1":"images/book3/categories/cat1.jpg",
+        "book3_cat2":"images/book3/categories/cat2.jpg",
+        "book3_cat3":"images/book3/categories/cat3.jpg",
+        "book3_cat4":"images/book3/categories/cat4.jpg",
+        "book3_cat5":"images/book3/categories/cat5.jpg",
+        "book3_cat6":"images/book3/categories/cat6.jpg",
+        "book3_cat7":"images/book3/categories/cat7.jpg",
+        "book3_cat8":"images/book3/categories/cat8.jpg",
+        "book3_cat9":"images/book3/categories/cat9.jpg",
+        "book3_cat10":"images/book3/categories/cat10.jpg",
+        "book3_cat11":"images/book3/categories/cat11.jpg",
+        "book3_cat12":"images/book3/categories/cat12.jpg",
+
+        "book1_team1":"",
+        "book1_team2":"",
+        "book1_team3":"",
+        "book1_team4":"",
+        "book1_team5":"",
+        "book1_team6":""
+    },
+
+    "video_paths":{
         "tedxtalk_AreYouBiased":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
         "tedxtalk_HowToAvoidGenderStereotyping":"https://www.youtube.com/watch?v=9ZFNsJ0-aco",
         "tedxtalk_FemalesInStem":"https://www.youtube.com/watch?v=l8pnmrR4zPI",
-        "tedxtalk_HowToAvoidGenderStereotypes":"",
         "tedxtalk_WomenAndNewFactsOfLife":"",
         "tedxtalk_HowDiversityMakesTeamsMoreInnovative":"https://www.youtube.com/watch?v=lPtPG2lAmm4",
 
@@ -102,9 +124,29 @@
         "video_ATaleOfDoubleStandards":"",
         "video_MicroaggressionsInTheWorkPlace":"",
         "video_SeeingClearly":"",
-        "video_WageDisparity":""
+        "video_WageDisparity":"",
 
+        "book1_video":"",
+        "book2_video":"",
+        "book3_video":""
+    },
 
-
+    "pdf_paths":{
+        "book1_doc":"",
+        "book2_doc":"",
+        "book3_doc":"",
+        "deck_cat1":"",
+        "deck_cat2":"",
+        "deck_cat3":"",
+        "deck_cat4":"",
+        "deck_cat5":"",
+        "deck_cat6":"",
+        "deck_cat7":"",
+        "deck_cat8":"",
+        "deck_cat9":"",
+        "deck_cat10":"",
+        "deck_cat11":"",
+        "deck_cat12":""
     }
+
 }

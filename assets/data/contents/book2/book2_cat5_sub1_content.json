@@ -1,13 +1,23 @@
 {
-    "category":"About",
-    "subcategory":"",
+    "category":"About the Gender DEI Toolkit Volume II",
+    "subcategory":"About",
     "content":[
         {
             "heading":"",
             "content":[
                 {
-                    "type":"",
-                    "text":""
+                    "type":"link",
+                    "text":"book2_doc"
+
+                },
+                {
+                    "type":"video",
+                    "text":"book2_video"
+
+                },
+                {
+                    "type":"paragraph",
+                    "text":"The Gender DEI Toolkit Volume II is developed on the basis of information gathered about the challenges faced by individuals or organizations in implementing DEI practices in Pakistan. Initial information about these challenges was collected during the launch of the Gender DEI Toolkit Volume I, where 37 respondents listed challenges based on their experiences and perceptions. This was followed by 25 detailed interviews during which the interviewees shared their views on the causes of these challenges and suggested solutions to overcome them. Volume II presents 30 challenges, along with ideas to overcome each, under the four groups of Foundation, Internal, Bridging and External as presented by the Global Diversity, Equity and Inclusion Benchmarks (GDEIB) 2021 standards published by the Centre for Global Inclusion, USA. Overall, through these toolkits, the MARC team aims to contribute towards the Fifth Sustainable Development Goal (SDG 5), namely ‘gender equality’, by imagineering a future where men and women are working side by side as equals, in all spheres of life in Pakistan."
 
                 }
             ]

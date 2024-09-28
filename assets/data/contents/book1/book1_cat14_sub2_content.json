@@ -1,0 +1,42 @@
+{
+    "category":"About the Gender DEI Toolkit Volume I",
+    "subcategory":"Meet the Team",
+    "content":[
+        {
+            "heading":"",
+            "content":[
+                {
+                    "type":"image",
+                    "text":"book1_team1"
+
+                },
+                {
+                    "type":"image",
+                    "text":"book1_team2"
+
+                },
+                {
+                    "type":"image",
+                    "text":"book1_team3"
+
+                },
+                {
+                    "type":"image",
+                    "text":"book1_team4"
+
+                },
+                {
+                    "type":"image",
+                    "text":"book1_team5"
+
+                },
+                {
+                    "type":"image",
+                    "text":"book1_team6"
+
+                }
+            ]
+        }
+
+    ]
+}
