@@ -50,7 +50,7 @@ class SplashScreenState extends State<SplashScreen>
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         transitionDuration:
-            const Duration(milliseconds: 200), // Quicker fade transition
+            const Duration(milliseconds: 400), // Quicker fade transition
         pageBuilder: (context, animation, secondaryAnimation) =>
             const TabBarScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {

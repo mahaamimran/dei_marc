@@ -30,12 +30,13 @@ class Helpers {
   static String capitalizeTitle(String input) {
     const List<String> exceptions = [
       "of",
-      "the",
+      "| the",
       "in",
       "and",
-      "a",
+      "| a",
       "an",
       "min"
+      "on"
     ];
     List<String> words = input.split(' ');
 

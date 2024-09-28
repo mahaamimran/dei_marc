@@ -73,47 +73,52 @@ class JumpToCategory extends StatelessWidget {
 
                       return Column(
                         children: [
-                          InkWell(
-                            onTap: () {
-                              onCategorySelected(index);
-                            },
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 8.0),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 10),
-                                  Container(
-                                    width: 5,
-                                    height: 30,
-                                    decoration: BoxDecoration(
-                                      color: backgroundColor,
-                                      borderRadius: BorderRadius.circular(2.0),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 12),
-                                  Expanded(
-                                    child: Text(
-                                      '${index + 1}. $displayName',
-                                      style: TextStyles.appCaption.copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
+                          Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () {
+                                onCategorySelected(index);
+                              },
+                              splashColor:
+                                  backgroundColor.withOpacity(0.3), // Ripple effect
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 8.0),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(width: 10),
+                                    Container(
+                                      width: 5,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        color: backgroundColor,
+                                        borderRadius: BorderRadius.circular(2.0),
                                       ),
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 2,
                                     ),
-                                  ),
-                                ],
+                                    const SizedBox(width: 12),
+                                    Expanded(
+                                      child: Text(
+                                        '${index + 1}. $displayName',
+                                        style: TextStyles.appCaption.copyWith(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 2,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          const Divider(
-                            height: 1,
-                            thickness: 1,
-                            color: Colors.grey,
-                          ),
-                          const SizedBox(height: 8),
+                          if (index != subcategories.length - 1)
+                            const Divider(
+                              height: 1,
+                              thickness: 0.5,
+                              color: Colors.grey,
+                            ),
                         ],
                       );
                     },

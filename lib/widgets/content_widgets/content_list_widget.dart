@@ -79,7 +79,7 @@ class ContentListWidget extends StatelessWidget {
                           barColor: appBarColor,
                           textColor: appBarColor,
                         ),
-                        const SizedBox(height: 16),
+                        // const SizedBox(height: 16),
                       ],
                       Consumer<ContentProvider>(
                         builder: (context, contentProvider, child) {
