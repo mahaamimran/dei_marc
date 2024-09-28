@@ -1,4 +1,5 @@
 import 'package:dei_marc/models/quote.dart';
+import 'package:dei_marc/widgets/content_widgets/caption_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/subcategory_heading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -228,6 +229,8 @@ class ContentListWidget extends StatelessWidget {
       );
     } else if (quote.type == Constants.BOLD) {
       return BoldWidget(text: quote.text, fontSize: fontSize);
+    } else if (quote.type == Constants.CAPTION) {
+      return CaptionWidget(text: quote.text, fontSize: fontSize);
     } else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
