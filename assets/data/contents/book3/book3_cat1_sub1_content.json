@@ -1,7 +1,6 @@
 {
     "category": "Unconscious Bias | 2-2.5 hrs",
-    "type":"deckofslides",
-    "text":"deck_cat1",
+    "deckofslides":"deck_cat1",
     "image": [
         {
         "type": "image",

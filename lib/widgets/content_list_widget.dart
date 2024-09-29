@@ -80,11 +80,8 @@ class ContentListWidget extends StatelessWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // 2a. Image (if available)
                           if (firstItem.image != null)
                             ImageWidget(imageName: firstItem.image),
-
-                          // 2b. Caption (if available)
                           if (firstItem.caption != null &&
                               firstItem.caption!.isNotEmpty)
                             CaptionWidget(
@@ -93,12 +90,12 @@ class ContentListWidget extends StatelessWidget {
                                   .fontSize,
                             ),
 
-                          // 2c. Deck of Slides (if available)
-                          if (firstItem.type == 'deckofslides')
+                          // Deck of Slides (if available)
+                          if (firstItem.deckOfSlides != null)
                             Consumer<ConfigProvider>(
                               builder: (context, configProvider, child) {
                                 final deckOfSlidesUrl = configProvider
-                                    .getDeckOfSlidesPath(firstItem.text);
+                                    .getPdfPath(firstItem.deckOfSlides);
 
                                 if (deckOfSlidesUrl != null) {
                                   return DeckOfSlidesWidget(
@@ -120,7 +117,6 @@ class ContentListWidget extends StatelessWidget {
                     return const SizedBox.shrink();
                   },
                 ),
-                const SizedBox(height: 16),
 
                 // 3. Show Main Description before Subcategories using DescriptionWidget
                 if (subcategoryProvider.description != null &&

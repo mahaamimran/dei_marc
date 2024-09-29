@@ -34,7 +34,7 @@ class ConfigProvider extends ChangeNotifier {
     return _imagePaths[key];
   }
 
-  String? getDeckOfSlidesPath(String? key) {
+  String? getPdfPath(String? key) {
     return _pdfPaths[key];
   }
 }
