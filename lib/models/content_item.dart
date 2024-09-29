@@ -4,21 +4,21 @@ class ContentItem {
   final String? category;
   final String? description;
   final String? heading;
-  final String? type;
+  final String? deckOfSlides;
   final String? text;
   final List<Quote> content;
   final String? image;
-  final String? caption; // Add caption field
+  final String? caption;
 
   ContentItem({
     this.category,
     this.description,
     this.heading,
-    this.type,
+    this.deckOfSlides,
     this.text,
     required this.content,
     this.image,
-    this.caption, // Add caption to constructor
+    this.caption,
   });
 
   factory ContentItem.fromJson(Map<String, dynamic> json) {
@@ -26,7 +26,7 @@ class ContentItem {
       category: json['category'],
       description: json['description'],
       heading: json['heading'],
-      type: json['type'],
+      deckOfSlides: json['deckofslides'],
       text: json['text'],
       content: (json['content'] as List<dynamic>?)
               ?.map((quoteJson) => Quote.fromJson(quoteJson))
@@ -39,7 +39,7 @@ class ContentItem {
       caption: (json['image'] as List<dynamic>?)?.firstWhere(
         (img) => img['type'] == 'caption',
         orElse: () => null,
-      )?['text'], // Add caption parsing logic
+      )?['text'],
     );
   }
 }

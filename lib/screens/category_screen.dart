@@ -113,7 +113,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         bookId: widget.bookFileName,
                         categoryId: index + 1,
                         categoryName: isLast
-                            ? "About"
+                            ? label
                             : category
                                 .name), // CategoryName as About for the last item
                   ),

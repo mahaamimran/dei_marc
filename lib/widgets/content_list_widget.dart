@@ -20,7 +20,7 @@ import 'package:dei_marc/widgets/content_widgets/bold_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/category_title_widget.dart';
 import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/widgets/content_widgets/deck_of_slides_widget.dart';
+import 'package:dei_marc/widgets/content_widgets/pdf_download_button.dart';
 
 class ContentListWidget extends StatelessWidget {
   final int categoryId;
@@ -80,11 +80,8 @@ class ContentListWidget extends StatelessWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // 2a. Image (if available)
                           if (firstItem.image != null)
                             ImageWidget(imageName: firstItem.image),
-
-                          // 2b. Caption (if available)
                           if (firstItem.caption != null &&
                               firstItem.caption!.isNotEmpty)
                             CaptionWidget(
@@ -93,19 +90,16 @@ class ContentListWidget extends StatelessWidget {
                                   .fontSize,
                             ),
 
-                          // 2c. Deck of Slides (if available)
-                          if (firstItem.type == 'deckofslides')
+                          // Deck of Slides (if available)
+                          if (firstItem.deckOfSlides != null)
                             Consumer<ConfigProvider>(
                               builder: (context, configProvider, child) {
                                 final deckOfSlidesUrl = configProvider
-                                    .getDeckOfSlidesPath(firstItem.text);
+                                    .getPdfPath(firstItem.deckOfSlides);
 
                                 if (deckOfSlidesUrl != null) {
-                                  return DeckOfSlidesWidget(
-                                    text: 'Deck of Slides',
-                                    fontSize:
-                                        Provider.of<SettingsProvider>(context)
-                                            .fontSize,
+                                  return PDFDownloadButton(
+                                    text: 'Download Deck of Slides',
                                     secondaryColor: secondaryColor,
                                     primaryColor: appBarColor,
                                     pdfUrl: deckOfSlidesUrl,
@@ -120,7 +114,6 @@ class ContentListWidget extends StatelessWidget {
                     return const SizedBox.shrink();
                   },
                 ),
-                const SizedBox(height: 16),
 
                 // 3. Show Main Description before Subcategories using DescriptionWidget
                 if (subcategoryProvider.description != null &&
@@ -252,7 +245,15 @@ class ContentListWidget extends StatelessWidget {
       return BoldWidget(text: quote.text, fontSize: fontSize);
     } else if (quote.type == Constants.CAPTION) {
       return CaptionWidget(text: quote.text, fontSize: fontSize);
-    } else {
+    } else if (quote.type == 'pdf') {
+      return PDFDownloadButton(
+        text: 'Download',
+        secondaryColor: secondaryColor,
+        primaryColor: appBarColor,
+        pdfUrl: quote.text,
+      );
+    }
+    else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(

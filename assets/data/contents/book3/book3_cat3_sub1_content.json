@@ -1,7 +1,6 @@
 {
     "category": "Women in Stem | 2-2.5 hrs",
-    "type":"deckofslides",
-    "text":"deck_cat3",
+    "deckofslides":"deck_cat3",
     "image": [
         {
         "type": "image",

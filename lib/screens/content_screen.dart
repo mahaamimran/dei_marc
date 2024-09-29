@@ -12,7 +12,7 @@ import 'package:dei_marc/providers/content_provider.dart';
 import 'package:dei_marc/config/enums.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/widgets/content_widgets/content_list_widget.dart';
+import 'package:dei_marc/widgets/content_list_widget.dart';
 import 'package:dei_marc/widgets/font_settings_widget.dart';
 import 'package:dei_marc/widgets/jump_to_category.dart';
 import 'package:dei_marc/config/color_constants.dart';

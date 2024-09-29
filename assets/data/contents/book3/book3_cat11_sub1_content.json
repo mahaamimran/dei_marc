@@ -1,7 +1,6 @@
 {
     "category": "Gender Pay Gap and Budgetary Constraints | 2-2.5 hrs",
-    "type":"deckofslides",
-    "text":"deck_cat11",
+    "deckofslides":"deck_cat11",
     "image": [
         {
         "type": "image",

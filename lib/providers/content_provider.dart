@@ -29,8 +29,7 @@ class ContentProvider extends ChangeNotifier {
             category: data['category'],
             description: data['description'],
             heading: data['heading'],
-            type: data['type'], // Capture the type here
-            text: data['text'], // Capture the text here
+            deckOfSlides: data['deckofslides'], // Capture the text here
             content: [], // Empty content list
             image: _parseImagePath(data['image']), // Parse image path
             caption: _parseCaption(data['image']), // Parse caption
@@ -42,8 +41,7 @@ class ContentProvider extends ChangeNotifier {
             category: data['category'],
             description: data['description'],
             heading: data['heading'],
-            type: data['type'], // Capture the type here
-            text: data['text'], // Capture the text here
+            deckOfSlides: data['deckofslides'], // Capture the text here
             content: [], // Initially empty list for the root level
             image: _parseImagePath(data['image']), // Parse image path
             caption: _parseCaption(data['image']), // Parse caption

@@ -1,7 +1,6 @@
 {
     "category": "Work Life Balance | 2-2.5 hrs",
-    "type":"deckofslides",
-    "text":"deck_cat5",
+    "deckofslides":"deck_cat5",
     "image": [
         {
         "type": "image",

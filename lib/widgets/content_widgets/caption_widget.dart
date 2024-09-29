@@ -1,7 +1,6 @@
 // widgets/content_widgets/bold_widget.dart
 import 'package:flutter/material.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/helpers/helpers.dart';
 
 class CaptionWidget extends StatelessWidget {
   final String text;
