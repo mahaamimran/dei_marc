@@ -3,7 +3,7 @@
         {
             "book_id": 1,
             "Volume": 1,
-            "title": "GENDER DEI TOOLKIT: BEST PRACTICES TO ENHANCE GENDER EQUALITY IN PAKISTAN | Volume I",
+            "title": "BEST PRACTICES TO ENHANCE GENDER EQUALITY IN PAKISTAN",
             "author": "Sadia Nadeem, Ayesha Siddiqa, Javeria Jamil, Neeha Khan, Razeen Fawad, Ayesha Bano",
             "citation": "Nadeem, S., Siddiqa, A., Jamil, J., Khan, N., Fawad, R., & Bano, A. (2022). Toolkit: Best practices to enhance gender equality in Pakistan. Islamabad: Management Advancement Research Centre, FAST-NUCES.",
             "image_path": "book_1"
@@ -11,7 +11,7 @@
         {
             "book_id": 2,
             "Volume": 2,
-            "title": "GENDER DEI TOOLKIT: A GUIDE TO RESOLVE IMPLEMENTATION CHALLENGES | Volume II",
+            "title": "A GUIDE TO RESOLVE IMPLEMENTATION CHALLENGES",
             "author": "Sadia Nadeem, Imaan Fayyaz, Muiz Ahmad, Nabeeha Misbah, Sarah Sohail",
             "citation": "Nadeem, S., Fayyaz, I., Ahmad, M., Misbah, N., & Sohail, S. (2023). Gender DEI Toolkit: A guide to resolve implementation challenges. Islamabad: Management Advancement Research Centre, FAST-NUCES.",
             "image_path": "book_2"
@@ -19,7 +19,7 @@
         {
             "book_id": 3,
             "Volume": 3,
-            "title": "GENDER DEI TOOLKIT: A TRAINING MANUAL FOR HR PROFESSIONALS | Volume III",
+            "title": "A TRAINING MANUAL FOR HR PROFESSIONALS",
             "author": "Sadia Nadeem, Ashbeel Khan, Mahnoor Irfan, Meerab Sarfaraz",
             "citation": "Nadeem, S., Khan, A., Irfan, M., & Sarfaraz, M. (2024). Gender DEI Toolkit: A training manual for HR professionals. Islamabad: Management Advancement Research Centre, FAST-NUCES.",
             "image_path": "book_3"

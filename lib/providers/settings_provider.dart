@@ -6,12 +6,12 @@ class SettingsProvider with ChangeNotifier {
   double _fontSize = 15.0;
   String _fontFamily = Constants.FONT_FAMILY_LEXEND;
   bool _isGridView = true;
-  bool _isListView = false;
+  bool _isListView = false; // home page view preference
 
   double get fontSize => _fontSize;
   String get fontFamily => _fontFamily;
   bool get isGridView => _isGridView;
-  bool get isListView => _isListView;
+  bool get isListView => _isListView; 
 
   SettingsProvider() {
     _loadSettings();
@@ -23,7 +23,8 @@ class SettingsProvider with ChangeNotifier {
     _fontFamily = prefs.getString(Constants.FONT_FAMILY_KEY) ??
         Constants.FONT_FAMILY_LEXEND;
     _isGridView = prefs.getBool(Constants.IS_GRID_VIEW_KEY) ?? true;
-    _isListView = prefs.getBool(Constants.IS_LIST_VIEW_KEY) ?? false;
+    _isListView = prefs.getBool(Constants.IS_LIST_VIEW_KEY) ??
+        false; 
     notifyListeners();
   }
 
@@ -45,6 +46,13 @@ class SettingsProvider with ChangeNotifier {
     _isGridView = isGridView;
     final prefs = await SharedPreferences.getInstance();
     prefs.setBool(Constants.IS_GRID_VIEW_KEY, isGridView);
+    notifyListeners();
+  }
+
+  void setListViewPreference(bool isListView) async {
+    _isListView = isListView;
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool(Constants.IS_LIST_VIEW_KEY, isListView);
     notifyListeners();
   }
 }

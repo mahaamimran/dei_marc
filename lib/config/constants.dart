@@ -33,17 +33,4 @@ class Constants {
   static const String PARAGRAPH = 'paragraph';
   static const String CAPTION = 'caption';
   static const String DECKOFSLIDES = 'deckofslides';
-
-  // Exceptions for Title Capitalization
-  static const List<String> TITLE_EXCEPTIONS = [
-    'an',
-    'and',
-    'or',
-    'the',
-    'of',
-    'in',
-    'to',
-    'that',
-    'by',
-  ];
 }
