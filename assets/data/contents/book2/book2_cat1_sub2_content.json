@@ -86,12 +86,24 @@
                     "text":"book2_cat1_sub2"
                 },
                 {
+                    "type":"caption",
+                    "text":"© Adapted from empathizethis.co"
+                },
+                {
                     "type":"image",
                     "text":"book2_cat1_sub2_2"
                 },
                 {
+                    "type":"caption",
+                    "text":"© Adapted from empathizethis.co"
+                },
+                {
                     "type":"image",
                     "text":"book2_cat1_sub2_3"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Adapted from freepik.com"
                 }
             ]
         }
