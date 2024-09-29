@@ -1,5 +1,4 @@
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/helpers/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/models/subcategory.dart';
 
@@ -69,7 +68,6 @@ class JumpToCategory extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final subcategory = subcategories[index];
                       final displayName = subcategory.name;
-                      // Helpers.capitalizeTitle(subcategory.name);
 
                       return Column(
                         children: [
