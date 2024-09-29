@@ -1,7 +1,6 @@
 // widgets/content_widgets/subheading_widget.dart
 import 'package:flutter/material.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/helpers/helpers.dart';
 
 class SubheadingWidget extends StatelessWidget {
   final String subheading;

@@ -2,14 +2,14 @@ import 'package:dei_marc/config/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/screens/pdf_screen.dart';
 
-class DeckOfSlidesWidget extends StatelessWidget {
+class PDFDownloadButton extends StatelessWidget {
   final String text;
   final double fontSize;
   final Color secondaryColor;
   final Color primaryColor;
   final String pdfUrl;
 
-  const DeckOfSlidesWidget({
+  const PDFDownloadButton({
     super.key,
     required this.text,
     required this.fontSize,
@@ -23,10 +23,6 @@ class DeckOfSlidesWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // SubcategoryNameWidget(
-        //   subcategoryName: text,
-        //   color: primaryColor,
-        // ),
         const SizedBox(height: 8),
         ElevatedButton.icon(
           onPressed: () {
@@ -42,7 +38,7 @@ class DeckOfSlidesWidget extends StatelessWidget {
             );
           },
           icon: const Icon(Icons.download, color: Colors.white),
-          label: Text('Download Deck of Slides',
+          label: Text(text,
               style: TextStyles.caption(context).copyWith(color: primaryColor)),
           style: ElevatedButton.styleFrom(backgroundColor: secondaryColor),
         ),

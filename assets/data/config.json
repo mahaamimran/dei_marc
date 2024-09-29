@@ -126,18 +126,21 @@
         "book1_doc":"",
         "book2_doc":"",
         "book3_doc":"",
-        "deck_cat1":"",
-        "deck_cat2":"",
-        "deck_cat3":"",
-        "deck_cat4":"",
-        "deck_cat5":"",
-        "deck_cat6":"",
-        "deck_cat7":"",
-        "deck_cat8":"",
-        "deck_cat9":"",
-        "deck_cat10":"",
-        "deck_cat11":"",
-        "deck_cat12":""
+
+        "deck_cat1":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat2":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat3":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat4":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat5":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat6":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat7":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat8":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat9":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat10":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat11":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+        "deck_cat12":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+
+        "cat1_sub1_pdf":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx"
     }
 
 }

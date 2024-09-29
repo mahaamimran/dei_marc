@@ -10,6 +10,14 @@
     "subcategory": "Activity 1 | Professions and Roles | 30 Min",
     "content": [
         {
+            "content": [
+                {
+                    "type": "pdf",
+                    "text": "cat1_sub1_pdf"
+                }
+            ]
+        },
+        {
             "heading": "Aim",
             "content":[
                 {

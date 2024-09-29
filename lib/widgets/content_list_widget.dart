@@ -20,7 +20,7 @@ import 'package:dei_marc/widgets/content_widgets/bold_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/category_title_widget.dart';
 import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/widgets/content_widgets/deck_of_slides_widget.dart';
+import 'package:dei_marc/widgets/content_widgets/pdf_download_button.dart';
 
 class ContentListWidget extends StatelessWidget {
   final int categoryId;
@@ -98,8 +98,8 @@ class ContentListWidget extends StatelessWidget {
                                     .getPdfPath(firstItem.deckOfSlides);
 
                                 if (deckOfSlidesUrl != null) {
-                                  return DeckOfSlidesWidget(
-                                    text: 'Deck of Slides',
+                                  return PDFDownloadButton(
+                                    text: 'Download Deck of Slides',
                                     fontSize:
                                         Provider.of<SettingsProvider>(context)
                                             .fontSize,
@@ -248,7 +248,16 @@ class ContentListWidget extends StatelessWidget {
       return BoldWidget(text: quote.text, fontSize: fontSize);
     } else if (quote.type == Constants.CAPTION) {
       return CaptionWidget(text: quote.text, fontSize: fontSize);
-    } else {
+    } else if (quote.type == 'pdf') {
+      return PDFDownloadButton(
+        text: 'Download PDF',
+        fontSize: fontSize,
+        secondaryColor: secondaryColor,
+        primaryColor: appBarColor,
+        pdfUrl: quote.text,
+      );
+    }
+    else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
