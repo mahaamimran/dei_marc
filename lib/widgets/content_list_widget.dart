@@ -100,9 +100,6 @@ class ContentListWidget extends StatelessWidget {
                                 if (deckOfSlidesUrl != null) {
                                   return PDFDownloadButton(
                                     text: 'Download Deck of Slides',
-                                    fontSize:
-                                        Provider.of<SettingsProvider>(context)
-                                            .fontSize,
                                     secondaryColor: secondaryColor,
                                     primaryColor: appBarColor,
                                     pdfUrl: deckOfSlidesUrl,
@@ -250,8 +247,7 @@ class ContentListWidget extends StatelessWidget {
       return CaptionWidget(text: quote.text, fontSize: fontSize);
     } else if (quote.type == 'pdf') {
       return PDFDownloadButton(
-        text: 'Download PDF',
-        fontSize: fontSize,
+        text: 'Download',
         secondaryColor: secondaryColor,
         primaryColor: appBarColor,
         pdfUrl: quote.text,
