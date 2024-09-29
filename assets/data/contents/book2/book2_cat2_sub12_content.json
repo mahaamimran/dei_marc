@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Gender Pay Gap because of Less Assertiveness in Initial Salary Negotiations by Females",
-    "description": "This refers to the discrepancy in pay between male and female employees in the workplace, which may primarily stem from the tendency for women to be less assertive and less likely to negotiate for higher pay or benefits when starting a new job or during performance reviews.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the discrepancy in pay between male and female employees in the workplace, which may primarily stem from the tendency for women to be less assertive and less likely to negotiate for higher pay or benefits when starting a new job or during performance reviews."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -54,6 +61,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub12"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

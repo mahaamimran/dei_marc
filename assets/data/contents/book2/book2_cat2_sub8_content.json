@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Limited Opportunities for Professional Advancement of Women in Organizations",
-    "description": "This refers to the systemic barriers women face in career advancement within an organization despite gender equality and diversity initiatives.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the systemic barriers women face in career advancement within an organization despite gender equality and diversity initiatives."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -48,8 +55,16 @@
                     "text":"book2_cat2_sub8"
                 },
                 {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
+                },
+                {
                     "type":"image",
                     "text":"book2_cat2_sub8_2"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

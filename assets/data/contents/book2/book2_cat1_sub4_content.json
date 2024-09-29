@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Lack of Awareness about the Business Impact of DEI",
-    "description": "This refers to a situation where the businesses and stakeholders are not entirely aware of the possible advantages that gender DEI can bring to their business functions, profitability, and objectives.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to a situation where the businesses and stakeholders are not entirely aware of the possible advantages that gender DEI can bring to their business functions, profitability, and objectives."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -46,6 +53,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat1_sub4"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

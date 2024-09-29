@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Inadequate Number of Females Available for Panel Interviews",
-    "description": "This refers to the phenomenon when there are not enough females who are able or willing to participate in panel interviews, which further creates gender bias in the workplace.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the phenomenon when there are not enough females who are able or willing to participate in panel interviews, which further creates gender bias in the workplace."
+                }
+            ]
+        },
         {
             
             "heading": "Causes",
@@ -47,6 +54,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub4"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

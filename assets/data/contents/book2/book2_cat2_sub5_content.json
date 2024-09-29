@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Insufficient Number of Female Applicants for Returnship Programs",
-    "description": "This refers to the situation when there aren't enough females applying for the programs that assist people in returning to the job after taking a career break.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the situation when there aren't enough females applying for the programs that assist people in returning to the job after taking a career break."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -46,6 +53,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub5"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

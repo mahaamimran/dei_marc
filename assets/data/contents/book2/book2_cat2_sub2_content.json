@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Limited Number of Females Applicants for Technical/STEM Jobs",
-    "description": "This refers to the lack of representation of women in technical jobs, including all jobs in STEM (Science, Technology, Engineering, and Mathematics), that can lead to a lack of diversity, innovation, and inclusivity in the organization.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the lack of representation of women in technical jobs, including all jobs in STEM (Science, Technology, Engineering, and Mathematics), that can lead to a lack of diversity, innovation, and inclusivity in the organization."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -50,6 +57,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub2"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

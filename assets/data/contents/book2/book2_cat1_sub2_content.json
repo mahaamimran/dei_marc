@@ -1,7 +1,14 @@
 {
     "subcategory": "Absence of an Organizational Culture Promoting DEI",
-    "description": "This refers to the constraints and barriers that organizations face while striving to create an inclusive and female friendly organizational culture.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the constraints and barriers that organizations face while striving to create an inclusive and female friendly organizational culture."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [

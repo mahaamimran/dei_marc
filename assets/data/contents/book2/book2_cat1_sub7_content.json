@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Budgetary Constraints for Implementation of DEI Strategies",
-    "description": "This refers to budgetary restrictions limiting an organization's ability to carry out DEI initiatives.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to budgetary restrictions limiting an organization's ability to carry out DEI initiatives."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -66,6 +73,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat1_sub7"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

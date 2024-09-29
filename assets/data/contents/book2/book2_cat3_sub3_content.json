@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Perceived Lack of Credibility in External DEI Communications",
-    "description": "This refers to the situation when the intended audience does not view an organization's messaging and communication efforts in DEI as trustworthy or dependable.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the situation when the intended audience does not view an organization's messaging and communication efforts in DEI as trustworthy or dependable."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -30,6 +37,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat3_sub3"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

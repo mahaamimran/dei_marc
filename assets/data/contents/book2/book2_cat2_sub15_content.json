@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Perception of Unfairness among Males when Females are Granted More Flexibility in the Workplace",
-    "description": "This refers to men feeling disadvantaged or unfairly treated when women are given greater flexibility in the workplace to deal with personal commitments.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to men feeling disadvantaged or unfairly treated when women are given greater flexibility in the workplace to deal with personal commitments."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -42,6 +49,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub15"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

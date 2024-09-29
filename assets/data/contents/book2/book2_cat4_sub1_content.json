@@ -4,11 +4,22 @@
         {
         "type": "image",
         "text": "book2_cat4"
+        },
+        {
+            "type":"caption",
+            "text":"© Gender DEI Toolkit MARC"
         }
     ],
     "subcategory": "National Culture Limiting Female Workforce Participation",
-    "description": "This refers to the limited participation of women in the labor force because of the national culture and associated stereotypes.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the limited participation of women in the labor force because of the national culture and associated stereotypes."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -56,6 +67,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat4_sub1"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

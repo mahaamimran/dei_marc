@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Challenges in Retaining Female Talent Amid Changes in their Circumstances",
-    "description": "This refers to the organizations struggling to retain or adjust female employees who need to take time off, adjust their schedule of work or place of work because of family or personal obligations.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the organizations struggling to retain or adjust female employees who need to take time off, adjust their schedule of work or place of work because of family or personal obligations."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -62,6 +69,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub11"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

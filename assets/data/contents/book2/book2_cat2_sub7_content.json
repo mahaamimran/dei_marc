@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Reluctance among Women to Pursue Top Management Positions",
-    "description": "This refers to the phenomenon where women are less likely to pursue or attain leadership roles in organizations. Despite some progress toward gender equality in the workplace, women continue to be underrepresented in top management positions, such as CEOs, executives, and board members,",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the phenomenon where women are less likely to pursue or attain leadership roles in organizations. Despite some progress toward gender equality in the workplace, women continue to be underrepresented in top management positions, such as CEOs, executives, and board members."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [

@@ -5,11 +5,22 @@
         {
         "type": "image",
         "text": "book2_cat2"
+        },
+        {
+            "type":"caption",
+            "text":"© Gender DEI Toolkit MARC"
         }
     ],
     "subcategory": "Limited Number of Females Applicants in response to Job Advertisements",
-    "description": "This refers to challenges organizations face in generating a sufficient suitable pool of female employees during recruitment that results in a lack of gender diversity and inclusion in the organization.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to challenges organizations face in generating a sufficient suitable pool of female employees during recruitment that results in a lack of gender diversity and inclusion in the organization."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -77,6 +88,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub1"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }
