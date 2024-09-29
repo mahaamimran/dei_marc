@@ -2,7 +2,7 @@ import 'package:dei_marc/models/content_item.dart';
 
 class Subcategory {
   final String name;
-  final String? description; 
+  final String? description;
   final List<ContentItem> content;
 
   Subcategory({
@@ -19,7 +19,7 @@ class Subcategory {
 
     return Subcategory(
       name: json['name'],
-      description: json['description'], 
+      description: json['description'] ?? '',
       content: contentList,
     );
   }
