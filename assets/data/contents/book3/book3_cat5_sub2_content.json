@@ -1,13 +1,14 @@
 {
     "category": "Work Life Balance | 2-2.5 hrs",
-    "subcategory": "Video 1 | Are You Listening To Your Gender Bias Too Much? | 10 Min",
+    "subcategory": "Video 1 | Gender Bias: Are You Overly Influenced By Your Own Prejudices? | 10 Min",
+    "description": "The video focuses on the challenges of workplace flexibility, particularly with regard to parenting responsibilities. It showcases various perspectives from both employers and employees about adjusting work hours to accommodate childcare needs, highlighting the differing attitudes towards male and female employees who request flexible work arrangements.",
     "content": [
         {
             "heading": "",
             "content": [
                 {
                     "type": "video",
-                    "text": "video_AreYouListeningToYourGenderBiasTooMuch?"
+                    "text": "video_GenderBias"
                 }
             ]
         },
@@ -16,15 +17,7 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
-                },
-                {
-                    "type": "bullet",
-                    "text": ""
+                    "text": "How can organizations ensure that their flexible work policies are applied equitably across all genders?"
                 }
             ]
         },
@@ -33,27 +26,27 @@
             "content": [
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Recognizing Unconscious Bias in the Workplace: "
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Develop the ability to identify instances of unconscious bias in workplace interactions and decisions, particularly regarding gender roles and family responsibilities."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Understanding the Impact of Unconscious Bias on Career Advancement:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Gain insight into how unconscious biases, such as assumptions about employees' capabilities after returning from maternity leave, can hinder career progression and contribute to inequality in the workplace."
                 },
                 {
                     "type": "subheading",
-                    "text": ""
+                    "text": "Promoting Inclusive Leadership and Fair Treatment:"
                 },
                 {
                     "type": "paragraph",
-                    "text": ""
+                    "text": "Explore strategies for promoting inclusive leadership practices and fostering a culture of fairness and equal opportunities for all employees, regardless of gender or family status."
                 }
             ]
         }

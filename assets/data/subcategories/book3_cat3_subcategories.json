@@ -1,6 +1,6 @@
 {
     "category": "Women in STEM | 2-2.5 Hrs",
-    "description": "The concept of 'Women in STEM' focuses on the representation, challenges, and opportunities for women in science, technology, engineering, and mathematics fields. Despite progress in recent years, women continue to be underrepresented in STEM professions due to various factors such as gender stereotypes, bias, and lack of support.",
+    "description": "This purpose of this module is to help the participants understand the unique challenges of Women in STEM such as gender stereotyping, bias, and lack of support. It also highlights the need to attract more talented women to the STEM field.",
     "subcategories": [
         {
             "name": "Activity 1 | Hopes and Fears | 60 Min"
@@ -18,7 +18,10 @@
             "name": "Article | Stop Undervaluing Exceptional Women | 25 Min"
         },
         {
-            "name": "TEDx Talk | Females in STEM - We Need More! | 10 Min"
+            "name": "TEDx Talk 1 | Females in STEM - We Need More! | 10 Min"
+        },
+        {
+            "name": "TEDx Talk 2 | The Future of STEM Depends on Diversity | 10 Min"
         }
     ]
 }

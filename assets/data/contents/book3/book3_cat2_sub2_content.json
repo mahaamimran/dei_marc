@@ -2,16 +2,7 @@
     "category": "Stereotyping | 2-2.5 hrs",
     "subcategory": "Activity 2 | My Wife Does Not Work | 35 Min",
     "content": [
-        {
-            "heading":"Training Scenario: Understanding Homemaking as Work",
-            "content":[
-                {
-                    "type":"image",
-                    "image":""
-                }
-
-            ]    
-        },
+        
         {
             "heading": "Aim",
             "content": [
@@ -127,6 +118,16 @@
                     "text": "Finally, participants will be asked to imagine themselves performing each task for a week, and to share how they would feel and what challenges they might encounter."
                 }
             ]
+        },
+        {
+            "heading":"Training Scenario: Understanding Homemaking as Work",
+            "content":[
+                {
+                    "type":"image",
+                    "text":"book3_cat2_sub2"
+                }
+
+            ]    
         }
     ]
 }

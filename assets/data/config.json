@@ -83,6 +83,7 @@
 
         "book3_cat1":"images/book3/categories/cat1.jpg",
         "book3_cat2":"images/book3/categories/cat2.jpg",
+        "book3_cat2_sub2":"images/book3/categories/cat2_sub2.png",
         "book3_cat3":"images/book3/categories/cat3.jpg",
         "book3_cat4":"images/book3/categories/cat4.jpg",
         "book3_cat5":"images/book3/categories/cat5.jpg",
@@ -105,6 +106,8 @@
         "tedxtalk_FemalesInStem":"https://www.youtube.com/watch?v=l8pnmrR4zPI",
         "tedxtalk_WomenAndNewFactsOfLife":"",
         "tedxtalk_HowDiversityMakesTeamsMoreInnovative":"https://www.youtube.com/watch?v=lPtPG2lAmm4",
+        "tedxtalk_TheFutureOfSTEMDependsOnDiversity":"https://youtu.be/-v8aDo4dV3Q?si=xVE6N_Cje4QaSRoi",
+        "tedxtalk_HowToDesignGenderBias":"",
 
         "video_RethinkingAssumptions":"",
         "video_RedefiningNarrative":"",
@@ -116,6 +119,7 @@
         "video_MicroaggressionsInTheWorkPlace":"",
         "video_SeeingClearly":"",
         "video_WageDisparity":"",
+        "video_SecondChances":"",
 
         "book1_video":"",
         "book2_video":"",

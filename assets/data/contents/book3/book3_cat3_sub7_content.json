@@ -1,0 +1,69 @@
+{
+    "category": "Women in Stem | 2-2.5 hrs",
+    "subcategory": "TEDx Talk 2 | The Future of STEM Depends on Diversity | 10 Min",
+    "content": [
+        {
+            "heading": "",
+            "content": [
+                {
+                    "type":"paragraph",
+                    "text":"This TEDx talk explores the profound challenges and biases that minorities and women face in the STEM fields—science, technology, engineering, and mathematics. The speaker, Nicole Cabrera Salazar, a PhD candidate in astronomy and an immigrant from Chile, shares her personal journey and the broader societal assumptions that often paint a stereotypical image of a scientist as white and male. She discusses the importance of diversity in fostering innovation and problem-solving in STEM and highlights both the institutional biases and socialization that deter a significant portion of the population from pursuing and persisting in STEM careers. Through her narrative, she underscores the critical need for representation and the benefits of a diverse scientific community."
+                },
+                {
+                    "type": "video",
+                    "text": "tedxtalk_TheFutureOfSTEMDependsOnDiversity"
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text":"Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace?"
+                },
+                {
+                    "type": "bullet",
+                    "text":"In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
+                }
+            ]
+        },
+        {
+            "heading": "Learning Outcomes",
+            "content": [
+                {
+                    "type": "subheading",
+                    "text":"Awareness of unconscious bias:"
+                },
+                {
+                    "type": "paragraph",
+                    "text":" Even individuals who advocate for equality and encourage women to assume leadership roles can harbor unconscious biases. Recognizing these biases is the first step toward addressing them. This recognition is crucial for personal and professional growth, especially for those in leadership and HR roles."
+                },
+                {
+                    "type": "subheading",
+                    "text":"Understanding the impact of social conditioning:"
+                },
+                {
+                    "type": "paragraph",
+                    "text":" The talk emphasizes that our brains are conditioned by societal norms and past experiences, leading to automatic patterns of thinking. This can further lead to gender stereotypes, such as viewing men as providers and women as caregivers."
+                },
+                {
+                    "type": "subheading",
+                    "text":"Use of mental flipping as a strategy: "
+                },
+                {
+                    "type": "paragraph",
+                    "text":"The strategy of \"flipping it to test it\" is presented as an effective tool to uncover and challenge one's own biases. By mentally swapping the roles or characteristics of people in given scenarios, individuals can gain insight into their subconscious prejudices and rethink their automatic responses."
+                },
+                {
+                    "type": "subheading",
+                    "text":"Importance of continuous self-reflection: "
+                },
+                {
+                    "type": "paragraph",
+                    "text":" The discussion highlights the importance of continuous self-reflection and vigilance in recognizing one’s own biases. The speaker’s realization of her bias against women leaders, despite being one herself, serves as a call to action for everyone to examine their unconscious biases."
+                }
+            ]
+        }
+    ]
+}

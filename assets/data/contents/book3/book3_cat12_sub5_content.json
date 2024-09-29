@@ -1,14 +1,53 @@
 {
     "category": "Leadership | 2-2.5 hrs",
-    "subcategory": "TEDx Talk | How Diversity Makes Teams More Innovative | Rocio Lorenzo | 15 Min",
-    "description": "This TEDx talk delves into the significant issue of diversity in the workplace, particularly in leadership roles. The speaker, a former management consultant who has worked across Europe and the US, shares her evolving understanding of diversity from her early academic days to her professional experiences where she often found herself as the only woman in the room. She discusses the initial skepticism about diversity's impact on innovation and describes a comprehensive study conducted with the Technical University of Munich to investigate the correlation between diversity and innovation in companies. The findings reveal a definitive link, suggesting that diverse companies are more innovative, which challenges existing corporate practices and highlights the need for greater inclusivity in leadership roles.",
+    "subcategory": "Article 3 | 10 Reasons Why DEI Efforts Fail (And How to Ensure They Succeed) | 15-20 Min",
     "content": [
         {
-            "heading": "",
+            "heading": "Summary",
             "content": [
                 {
-                    "type": "video",
-                    "text": "tedxtalk_HowDiversityMakesTeamsMoreInnovative"
+                    "type": "paragraph",
+                    "text":"Many companies begin their diversity, equity and inclusion (DEI) efforts with the best of intentions. They want to ensure that their employees feel included and supported, that the company has diverse points of view at the table and that customers feel represented in their marketing. But this doesn’t always mean these efforts are going to be successful. To help shed some light on why that is, the members of Young Entrepreneur Council share their insights on why many companies’ DEI efforts fail and what leaders can do to ensure they actually succeed."
+                },
+                {
+                    "type":"bullet",
+                    "text":"Unconscious bias was never addressed"
+                },
+                {
+                    "type":"bullet",
+                    "text":"There was a lack of commitment to the program"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Barriers to success were never resolved"
+                },
+                {
+                    "type":"bullet",
+                    "text":"The effort was treated like a 'check-box exercise'"
+                },
+                {
+                    "type":"bullet",
+                    "text":"The company didn't understand DEI's true importance"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Management didn't take the time to listen"
+                },
+                {
+                    "type":"bullet",
+                    "text":"Employees resisted the change"
+                },
+                {
+                    "type":"bullet",
+                    "text":"The root causes of problems were never identified"
+                },
+                {
+                    "type":"bullet",
+                    "text":"There were no clear goals or success indicators"
+                },
+                {
+                    "type":"bullet",
+                    "text":"There was too much focus on the 'rules'"
                 }
             ]
         },
@@ -17,11 +56,11 @@
             "content": [
                 {
                     "type": "bullet",
-                    "text": "Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace? "
+                    "text":"What distinguishes genuine commitment from performative actions in DEI initiatives?"
                 },
                 {
                     "type": "bullet",
-                    "text": "In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
+                    "text":"What strategies can be employed to promote accountability and drive meaningful change in DEI efforts?"
                 }
             ]
         },
@@ -30,35 +69,19 @@
             "content": [
                 {
                     "type": "subheading",
-                    "text": "Awareness of Unconscious Bias:"
+                    "text":"Differentiate between genuine commitment and performative actions in DEI initiatives:"
                 },
                 {
                     "type": "paragraph",
-                    "text": "Even individuals who advocate for equality and encourage women to assume leadership roles can harbor unconscious biases. Recognizing these biases is the first step towards addressing them. This recognition is crucial for personal and professional growth, especially for those in leadership and HR roles."
+                    "text":"Trainees will develop the ability to distinguish between genuine commitment and performative actions in DEI efforts, as outlined in the article. They will explore the characteristics of genuine commitment, such as addressing unconscious bias, resolving barriers to success, and actively listening to employees, as opposed to superficial or tokenistic approaches that treat DEI efforts as a 'check-box exercise'. "
                 },
                 {
                     "type": "subheading",
-                    "text": "Understanding the Impact of Social Conditioning:"
+                    "text":"Implement strategies to promote accountability and drive meaningful change in DEI efforts: "
                 },
                 {
                     "type": "paragraph",
-                    "text": "The talk emphasizes that our brains are conditioned by societal norms and past experiences, leading to automatic patterns of thinking. This can further lead to gender stereotypes, such as viewing men as providers and women as caregivers."
-                },
-                {
-                    "type": "subheading",
-                    "text": "Use of Mental Flipping as a Strategy:"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "The strategy of \"flipping it to test it\" is presented as an effective tool to uncover and challenge one's own biases. By mentally swapping the roles or characteristics of people in given scenarios, individuals can gain insight into their subconscious prejudices and rethink their automatic responses."
-                },
-                {
-                    "type": "subheading",
-                    "text": "Importance of Continuous Self-Reflection:"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "The discussion highlights the importance of continuous self-reflection and vigilance in recognizing one’s own biases. The speaker’s realization of her bias against women leaders, despite being one herself, serves as a call to action for everyone to examine their unconscious biases."
+                    "text":"Participants will discover effective strategies for enhancing accountability and fostering meaningful change in DEI initiatives. They'll explore methods like setting clear goals and success indicators, tackling root causes of issues, involving employees in the process, and nurturing a culture of ongoing learning and improvement. By applying these strategies, they'll gain the skills and knowledge needed to lead and support successful DEI efforts in their organizations."
                 }
             ]
         }

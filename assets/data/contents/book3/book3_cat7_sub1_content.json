@@ -11,16 +11,7 @@
     "subcategory": "Activity | My Wife Does Not Work | 35-40 Min",
     "description":"",
     "content": [
-        {
-            "heading":"Training Scenario: Understanding Homemaking as Work",
-            "content":[
-                {
-                    "type":"image",
-                    "image":""
-                }
-
-            ]    
-        },
+        
         {
             "heading": "Aim",
             "content": [
@@ -136,6 +127,16 @@
                     "text": "Finally, participants will be asked to imagine themselves performing each task for a week, and to share how they would feel and what challenges they might encounter."
                 }
             ]
+        },
+        {
+            "heading":"Training Scenario: Understanding Homemaking as Work",
+            "content":[
+                {
+                    "type":"image",
+                    "image":"book3_cat3_sub2"
+                }
+
+            ]    
         }
     ]
 }
