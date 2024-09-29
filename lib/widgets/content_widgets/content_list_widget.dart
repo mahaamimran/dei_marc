@@ -47,6 +47,7 @@ class ContentListWidget extends StatelessWidget {
         if (subcategoryProvider.subcategories.isEmpty) {
           return const Center(child: CircularProgressIndicator());
         }
+
         keyMap.clear();
 
         return Scrollbar(
@@ -58,139 +59,130 @@ class ContentListWidget extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: subcategoryProvider.subcategories
-                  .asMap()
-                  .entries
-                  .map((entry) {
-                final index = entry.key;
-                final subcategory = entry.value;
-                final key = GlobalKey();
-                keyMap['$categoryId-$index'] = key;
+              children: [
+                // 1. Category name
+                CategoryTitleWidget(
+                  categoryName: categoryName,
+                  barColor: appBarColor,
+                  textColor: appBarColor,
+                ),
+                const SizedBox(height: 16),
 
-                return Padding(
-                  key: key,
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      if (index == 0) ...[
-                        // Category Title
-                        CategoryTitleWidget(
-                          categoryName: categoryName,
-                          barColor: appBarColor,
-                          textColor: appBarColor,
-                        ),
-                        const SizedBox(height: 16),
-                      ],
+                // 2. Image, Caption, Deck of Slides (if available)
+                Consumer<ContentProvider>(
+                  builder: (context, contentProvider, child) {
+                    final contents =
+                        contentProvider.contents['$categoryId-1'] ?? [];
 
-                      // Display first content (image, caption, deck of slides)
-                      Consumer<ContentProvider>(
-                        builder: (context, contentProvider, child) {
-                          final contents = contentProvider
-                                  .contents['$categoryId-${index + 1}'] ??
-                              [];
+                    if (contents.isNotEmpty) {
+                      final firstItem = contents.first;
 
-                          if (contents.isNotEmpty) {
-                            final firstItem = contents.first;
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // 2a. Image (if available)
+                          if (firstItem.image != null)
+                            ImageWidget(imageName: firstItem.image),
 
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                if (firstItem.image != null)
-                                  ImageWidget(imageName: firstItem.image),
+                          // 2b. Caption (if available)
+                          if (firstItem.caption != null &&
+                              firstItem.caption!.isNotEmpty)
+                            CaptionWidget(
+                              text: firstItem.caption!,
+                              fontSize: Provider.of<SettingsProvider>(context)
+                                  .fontSize,
+                            ),
 
-                                // Display the caption under the image
-                                if (firstItem.caption != null && firstItem.caption!.isNotEmpty)
-                                  CaptionWidget(
-                                    text: firstItem.caption!,
+                          // 2c. Deck of Slides (if available)
+                          if (firstItem.type == 'deckofslides')
+                            Consumer<ConfigProvider>(
+                              builder: (context, configProvider, child) {
+                                final deckOfSlidesUrl = configProvider
+                                    .getDeckOfSlidesPath(firstItem.text);
+
+                                if (deckOfSlidesUrl != null) {
+                                  return DeckOfSlidesWidget(
+                                    text: 'Deck of Slides',
                                     fontSize:
                                         Provider.of<SettingsProvider>(context)
                                             .fontSize,
-                                  ),
+                                    secondaryColor: secondaryColor,
+                                    primaryColor: appBarColor,
+                                    pdfUrl: deckOfSlidesUrl,
+                                  );
+                                }
+                                return const SizedBox.shrink();
+                              },
+                            ),
+                        ],
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  },
+                ),
+                const SizedBox(height: 16),
 
-                                if (firstItem.type == 'deckofslides')
-                                  Consumer<ConfigProvider>(
-                                    builder: (context, configProvider, child) {
-                                      final deckOfSlidesUrl = configProvider
-                                          .getDeckOfSlidesPath(firstItem.text);
-
-                                      if (deckOfSlidesUrl != null) {
-                                        return DeckOfSlidesWidget(
-                                          text: 'Deck of Slides',
-                                          fontSize:
-                                              Provider.of<SettingsProvider>(
-                                                      context)
-                                                  .fontSize,
-                                          secondaryColor: secondaryColor,
-                                          primaryColor: appBarColor,
-                                          pdfUrl: deckOfSlidesUrl,
-                                        );
-                                      }
-                                      return const SizedBox.shrink();
-                                    },
-                                  ),
-                              ],
-                            );
-                          }
-                          return const SizedBox.shrink();
-                        },
-                      ),
-                      const SizedBox(height: 16),
-
-                      // Subcategory Name
-                      SubcategoryNameWidget(
-                        subcategoryName: subcategory.name,
-                        color: appBarColor,
-                      ),
-
-                      // Description if available
-                      Consumer<ContentProvider>(
-                        builder: (context, contentProvider, child) {
-                          final contents = contentProvider
-                                  .contents['$categoryId-${index + 1}'] ??
-                              [];
-
-                          if (contents.isNotEmpty &&
-                              contents.first.description != null &&
-                              contents.first.description!.isNotEmpty) {
-                            return DescriptionWidget(
-                              description: contents.first.description!,
-                              fontSize: Provider.of<SettingsProvider>(context)
-                                  .fontSize,
-                            );
-                          }
-                          return const SizedBox.shrink();
-                        },
-                      ),
-                      const SizedBox(height: 16),
-
-                      // Render the remaining content items
-                      Consumer<ContentProvider>(
-                        builder: (context, contentProvider, child) {
-                          final contents = contentProvider
-                                  .contents['$categoryId-${index + 1}'] ??
-                              [];
-
-                          if (contents.isEmpty) {
-                            return const Text('No content available.');
-                          }
-
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: contents.map((contentItem) {
-                              return _buildContentItem(contentItem, context);
-                            }).toList(),
-                          );
-                        },
-                      ),
-                      Divider(
-                        color: secondaryColor,
-                        thickness: 0.5,
-                      ),
-                    ],
+                // 3. Show Main Description before Subcategories using DescriptionWidget
+                if (subcategoryProvider.description != null &&
+                    subcategoryProvider.description!.isNotEmpty)
+                  DescriptionWidget(
+                    description: subcategoryProvider.description!,
+                    fontSize: Provider.of<SettingsProvider>(context).fontSize,
                   ),
-                );
-              }).toList(),
+
+                // 4. Iterate through subcategories
+                ...subcategoryProvider.subcategories
+                    .asMap()
+                    .entries
+                    .map((entry) {
+                  final index = entry.key;
+                  final subcategory = entry.value;
+                  final key = GlobalKey();
+                  keyMap['$categoryId-$index'] = key;
+
+                  return Padding(
+                    key: key,
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // 5. Subcategory Name
+                        SubcategoryNameWidget(
+                          subcategoryName: subcategory.name,
+                          color: appBarColor,
+                        ),
+
+                        const SizedBox(height: 16),
+
+                        // Render remaining content items
+                        Consumer<ContentProvider>(
+                          builder: (context, contentProvider, child) {
+                            final contents = contentProvider
+                                    .contents['$categoryId-${index + 1}'] ??
+                                [];
+
+                            if (contents.isEmpty) {
+                              return const Text('No content available.');
+                            }
+
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: contents.skip(1).map((contentItem) {
+                                return _buildContentItem(contentItem, context);
+                              }).toList(),
+                            );
+                          },
+                        ),
+
+                        Divider(
+                          color: secondaryColor,
+                          thickness: 0.5,
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+              ],
             ),
           ),
         );
