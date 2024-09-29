@@ -14,6 +14,7 @@ class ConfigProvider extends ChangeNotifier {
 
   Map<String, String> _imagePaths = {};
   Map<String, String> _pdfPaths = {};
+  Map<String, String> _videoPaths = {};
 
   Future<void> loadConfig() async {
     final String response = await rootBundle.loadString(AssetPaths.configJson);
@@ -28,6 +29,12 @@ class ConfigProvider extends ChangeNotifier {
     if (data['pdf_paths'] != null && data['pdf_paths'] is Map) {
       _pdfPaths = Map<String, String>.from(data['pdf_paths']);
     }
+
+    // Check if 'audio_paths' exists in the JSON
+    if (data['video_paths'] != null && data['video_paths'] is Map) {
+      _videoPaths = Map<String, String>.from(data['video_paths']);
+    }
+
   }
 
   String? getImagePath(String? key) {
@@ -36,5 +43,9 @@ class ConfigProvider extends ChangeNotifier {
 
   String? getPdfPath(String? key) {
     return _pdfPaths[key];
+  }
+
+  String? getVideoPath(String? key) {
+    return _videoPaths[key];
   }
 }
