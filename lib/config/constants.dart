@@ -32,6 +32,7 @@ class Constants {
   static const String BOLD = 'bold';
   static const String PARAGRAPH = 'paragraph';
   static const String CAPTION = 'caption';
+  static const String DECKOFSLIDES = 'deckofslides';
 
   // Exceptions for Title Capitalization
   static const List<String> TITLE_EXCEPTIONS = [
