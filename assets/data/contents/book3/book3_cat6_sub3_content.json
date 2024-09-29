@@ -1,8 +1,16 @@
 {
     "category": "Organizational Culture | 2-2.5 hrs",
     "subcategory": "Caselet 1 | Overcoming DEI Hurdles at FinTech Pioneers: A Strategic Initiative | 15-20 Min",
-    "description":"FinTech Pioneers, or FTP, is one of the fastest growing startups in the financial technology sector. The company is located in Lahore, Pakistan. Recently, FTP has made a public commitment to gender diversity, equity, and inclusion (DEI) within its workforce. The leadership team under the guidance of their dynamic CEO Amna Ali has developed a comprehensive DEI mission/vision statement. The statement pursues the following goals: promoting gender diversity, and maintaining an inclusive culture. However, the company faces a few challenges in achieving these objectives.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"FinTech Pioneers, or FTP, is one of the fastest growing startups in the financial technology sector. The company is located in Lahore, Pakistan. Recently, FTP has made a public commitment to gender diversity, equity, and inclusion (DEI) within its workforce. The leadership team under the guidance of their dynamic CEO Amna Ali has developed a comprehensive DEI mission/vision statement. The statement pursues the following goals: promoting gender diversity, and maintaining an inclusive culture. However, the company faces a few challenges in achieving these objectives."
+                }
+            ]
+
+        },
         {
             "heading": "Challenges",
             "content": [
@@ -92,6 +100,10 @@
                 {
                     "type": "paragraph",
                     "text":"Learners will gain insights into methods for measuring the effectiveness of DEI initiatives, particularly how these initiatives contribute to the company's success. This outcome focuses on developing metrics that reflect the direct business benefits of a diverse and inclusive work environment, such as enhanced innovation, better decision-making, and increased market reach."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit Vol III, MARC"
                 }
             ]
         }

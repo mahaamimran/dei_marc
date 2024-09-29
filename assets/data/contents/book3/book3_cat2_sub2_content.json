@@ -125,6 +125,10 @@
                 {
                     "type":"image",
                     "text":"book3_cat2_sub2"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Adapted from UNESCO Training Manual"
                 }
 
             ]    

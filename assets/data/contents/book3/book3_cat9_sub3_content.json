@@ -1,8 +1,16 @@
 {
     "category": "Negative Self Perception | 2-2.5 hrs",
     "subcategory": "Caselet 2 | Addressing Pay Disparity At Bank Xcellence | 15-20 Min",
-    "description": "At the esteemed Bank Xcellence, two skilled financial analysts, Amna and Umer, encountered an unforeseen circumstance. Despite their comparable experiences, they noticed a substantial salary gap. Umer, being assertive, negotiated his salary during the hiring process and secured a higher initial pay. On the other hand, Amna accepted the first offer without negotiation, assuming it was a fair assessment of her value and adequate for her requirements.\nThis initial salary difference had a compounding effect. During their performance evaluations, their salary increments were determined as a percentage of their existing salary. As a result, Umer’s increments were consistently slightly more than Amna’s, progressively increasing the wage gap each year, despite their equal dedication and contributions to their roles.\nIn an informal chat, Amna and Umer discovered the discrepancy in their salaries. Amna was taken by surprise and felt a sense of unfairness. She was aware that they had identical qualifications and their performance was on par. This disclosure led her to question the equity of the system.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"At the esteemed Bank Xcellence, two skilled financial analysts, Amna and Umer, encountered an unforeseen circumstance. Despite their comparable experiences, they noticed a substantial salary gap. Umer, being assertive, negotiated his salary during the hiring process and secured a higher initial pay. On the other hand, Amna accepted the first offer without negotiation, assuming it was a fair assessment of her value and adequate for her requirements.\nThis initial salary difference had a compounding effect. During their performance evaluations, their salary increments were determined as a percentage of their existing salary. As a result, Umer’s increments were consistently slightly more than Amna’s, progressively increasing the wage gap each year, despite their equal dedication and contributions to their roles.\nIn an informal chat, Amna and Umer discovered the discrepancy in their salaries. Amna was taken by surprise and felt a sense of unfairness. She was aware that they had identical qualifications and their performance was on par. This disclosure led her to question the equity of the system."
+                }
+            ]
+
+        },
         {
             "heading": "Caselet Questions",
             "content": [
@@ -46,6 +54,10 @@
                 {
                     "type": "paragraph",
                     "text": "Trainees will learn about proactive measures that organizations can implement to rectify pay disparities and promote gender equity. They will explore strategies such as implementing transparent salary structures, conducting regular pay audits to identify and address inequities, providing negotiation training and support for all employees, and fostering a culture of fairness and transparency in compensation practices."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit Vol III, MARC"
                 }
             ]
         }

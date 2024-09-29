@@ -104,22 +104,20 @@
         "tedxtalk_AreYouBiased":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
         "tedxtalk_HowToAvoidGenderStereotyping":"https://www.youtube.com/watch?v=9ZFNsJ0-aco",
         "tedxtalk_FemalesInStem":"https://www.youtube.com/watch?v=l8pnmrR4zPI",
-        "tedxtalk_WomenAndNewFactsOfLife":"",
         "tedxtalk_HowDiversityMakesTeamsMoreInnovative":"https://www.youtube.com/watch?v=lPtPG2lAmm4",
         "tedxtalk_TheFutureOfSTEMDependsOnDiversity":"https://youtu.be/-v8aDo4dV3Q?si=xVE6N_Cje4QaSRoi",
-        "tedxtalk_HowToDesignGenderBias":"",
+        "tedxtalk_HowToDesignGenderBias":"https://www.ted.com/talks/sara_sanford_how_to_design_gender_bias_out_of_your_workplace",
 
-        "video_RethinkingAssumptions":"",
-        "video_RedefiningNarrative":"",
-        "video_WomenInStem":"",
-        "video_EqualityStartsAtHome":"",
-        "video_AreYouListeningToYourGenderBiasTooMuch":"",
-        "video_GenderBias":"",
-        "video_ATaleOfDoubleStandards":"",
-        "video_MicroaggressionsInTheWorkPlace":"",
-        "video_SeeingClearly":"",
-        "video_WageDisparity":"",
-        "video_SecondChances":"",
+        "video_RethinkingAssumptions":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "video_RedefiningNarrative":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "video_WomenInStem":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "video_EqualityStartsAtHome":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "video_GenderBias":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "video_ATaleOfDoubleStandards":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "video_MicroaggressionsInTheWorkPlace":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "video_SeeingClearly":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "video_WageDisparity":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
+        "video_SecondChances":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
 
         "book1_video":"",
         "book2_video":"",
@@ -144,7 +142,9 @@
         "deck_cat11":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
         "deck_cat12":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
 
-        "cat1_sub1_pdf":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx"
+        "cat1_sub1_pdf":"https://drive.google.com/uc?export=download&id=0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx",
+
+        "article_RecognizingAndResponding":""
     }
 
 }

@@ -1,11 +1,14 @@
 {
     "category": "Stereotyping | 2-2.5 hrs",
     "subcategory": "Video | Redefining Narrative: Finding Your Voice | 10 Min",
-    "description": "In this video, a powerful message is conveyed about the internal struggles individuals face in finding their voice amidst societal pressures and biases. It highlights the importance of speaking up against discrimination, stereotypes, and biases, urging individuals to overcome self-doubt and make their voices heard to create positive change in the world.",
     "content": [
         {
-            "heading": "",
             "content": [
+                {
+                    "type":"paragraph",
+                    "text":"In this video, a powerful message is conveyed about the internal struggles individuals face in finding their voice amidst societal pressures and biases. It highlights the importance of speaking up against discrimination, stereotypes, and biases, urging individuals to overcome self-doubt and make their voices heard to create positive change in the world."
+
+                },
                 {
                     "type": "video",
                     "text": "video_RedefiningNarrative"

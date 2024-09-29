@@ -1,8 +1,16 @@
 {
     "category": "Maternity / Paternity Leave | 2-2.5 hrs",
     "subcategory": "Caselet | FutureLink Telecom's Maternity Leave Dilemma | 15-20 Min",
-    "description": "Situated in Karachi, Pakistan, Futurelink Telecom is a reputed telecommunication company known for its innovative trends and great customer service. Nevertheless, it recently faced a great difficulty after one of its best network operations team member named Ayesha declared that she was going on her maternity leave. Her knowledge in network management was excellent and finding a temporary replacement with the same or higher expertise level proved almost impossible. The firm’s efforts to replace her indicated how difficult it can be to get skilled individuals for specific roles, especially during maternity leave of any staff member. When Ayesha returned, she found that her absence had negatively affected her performance evaluation. Despite her years of dedication and hard work, there was a noticeable gap in her performance record due to the leave. This was considered as a continuation of the debate on how much maternity leave could affect women’s career inside the organization. This situation forced Futurelink Telecom to confront the need for a more supportive policy towards maternity leave and career progression for their female employees.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Situated in Karachi, Pakistan, Futurelink Telecom is a reputed telecommunication company known for its innovative trends and great customer service. Nevertheless, it recently faced a great difficulty after one of its best network operations team member named Ayesha declared that she was going on her maternity leave. Her knowledge in network management was excellent and finding a temporary replacement with the same or higher expertise level proved almost impossible. The firm’s efforts to replace her indicated how difficult it can be to get skilled individuals for specific roles, especially during maternity leave of any staff member. When Ayesha returned, she found that her absence had negatively affected her performance evaluation. Despite her years of dedication and hard work, there was a noticeable gap in her performance record due to the leave. This was considered as a continuation of the debate on how much maternity leave could affect women’s career inside the organization. This situation forced Futurelink Telecom to confront the need for a more supportive policy towards maternity leave and career progression for their female employees."
+                }
+            ]
+
+        },
         {
             "heading": "Caselet Questions",
             "content": [
@@ -50,6 +58,10 @@
                 {
                     "type": "paragraph",
                     "text": "Trainees will gain insight into how maternity leave can influence long-term career trajectories, specifically focusing on challenges related to performance evaluation and professional development during and after leave."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit Vol III, MARC "
                 }
             ]
         }

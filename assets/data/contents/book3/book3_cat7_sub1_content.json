@@ -8,7 +8,6 @@
         }
     ],
     "subcategory": "Activity | My Wife Does Not Work | 35-40 Min",
-    "description":"",
     "content": [
         
         {
@@ -133,6 +132,10 @@
                 {
                     "type":"image",
                     "image":"book3_cat3_sub2"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Adapted from UNESCO Training Manual"
                 }
 
             ]    

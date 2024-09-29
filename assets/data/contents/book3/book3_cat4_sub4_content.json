@@ -1,10 +1,17 @@
 {
     "category": "Maternity / Paternity Leave | 2-2.5 hrs",
     "subcategory": "Video 3 | Second Chances: Overcoming Workplace Bias Through Returnship | 10 Min",
-    "description": "The video portrays the challenges faced by Laiba, a woman in her late 30s who returns to her career after a break. As the video continues, it is clear that Laiba’s career break for family reasons has led to an unfair performance evaluation, stagnation in career development, and lack of promotional opportunities. The video emphasizes the bias and challenges faced by individuals returning to the workforce after significant breaks, advocating for fair treatment and genuine second chances in professional settings.",
     "content": [
         {
-            "heading": "",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"The video portrays the challenges faced by Laiba, a woman in her late 30s who returns to her career after a break. As the video continues, it is clear that Laiba’s career break for family reasons has led to an unfair performance evaluation, stagnation in career development, and lack of promotional opportunities. The video emphasizes the bias and challenges faced by individuals returning to the workforce after significant breaks, advocating for fair treatment and genuine second chances in professional settings."
+                }
+            ]
+
+        },
+        {
             "content": [
                 {
                     "type": "video",

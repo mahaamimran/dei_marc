@@ -1,10 +1,16 @@
 {
     "category": "Maternity / Paternity Leave | 2-2.5 hrs",
     "subcategory": "Video | Rethinking Assumptions: Supporting Working Parents | 10 Min",
-    "description":"The video is about a manager reflecting on his assumptions regarding a female employee’s capabilities after her returning from maternity leave, realizing his unconscious bias and the impact it may have on her career progression.",
     "content": [
         {
-            "heading": "",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"The video is about a manager reflecting on his assumptions regarding a female employee’s capabilities after her returning from maternity leave, realizing his unconscious bias and the impact it may have on her career progression."
+                }
+            ]
+        },
+        {
             "content": [
                 {
                     "type": "video",

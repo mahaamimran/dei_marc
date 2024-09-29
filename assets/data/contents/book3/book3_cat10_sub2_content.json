@@ -1,8 +1,16 @@
 {
     "category": "Communication and Analytics | 2-2.5 hrs",
     "subcategory": "Caselet 2 | Creative Horizon And The Struggle To Transform DEI Culture | 15-20 Min",
-    "description": "CreativeHorizon Marketing, known for its novel campaigns and diverse team, faces a problem that questions its core values. This issue refers to the struggle to engage employees in Diversity, Equity, and Inclusion (DEI) initiatives. Even though the higher-ups have done their best efforts to make DEI insights a part of the company’s culture through weekly DEI updates and mandatory trainings, employee involvement has been largely lacking. Moreover, messages intended to inform and motivate, such as DEI email messages and newsletter are often ignored.  Similarly, there exists an attitude whereby mandatory DEI training is seen to be a \"checking the box\" activity, not an opportunity for real development and learning. This attitude has negative implications for both the efficiency and effectiveness of the training as well as the company culture, with the value of DEI initiatives becoming uncertain. For example, in DEI training, it is common for participants to turn off their camera in virtual meetings; add very little or no input whenever any participation is required. In some cases, individuals might even schedule these sessions during times known for low activity or engagement, such as late Friday afternoons, to minimize the impact on their regular workday.\nThis widespread apathy is a challenge to CreativeHorizon's ambition towards a truly inclusive culture. It also points out a huge gap between the DEI aspirations of the company and the level of devotion demonstrated by the employees. As a result, this disparity may lead to many consequences that include damaging of the workplace collaboration, keeping innovation from a possibility, and lowering of the overall team morale. At this critical juncture, addressing the engagement gap is not just a policy issue but a strategic necessity for CreativeHorizon's growth and market competitiveness.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"CreativeHorizon Marketing, known for its novel campaigns and diverse team, faces a problem that questions its core values. This issue refers to the struggle to engage employees in Diversity, Equity, and Inclusion (DEI) initiatives. Even though the higher-ups have done their best efforts to make DEI insights a part of the company’s culture through weekly DEI updates and mandatory trainings, employee involvement has been largely lacking. Moreover, messages intended to inform and motivate, such as DEI email messages and newsletter are often ignored.  Similarly, there exists an attitude whereby mandatory DEI training is seen to be a \"checking the box\" activity, not an opportunity for real development and learning. This attitude has negative implications for both the efficiency and effectiveness of the training as well as the company culture, with the value of DEI initiatives becoming uncertain. For example, in DEI training, it is common for participants to turn off their camera in virtual meetings; add very little or no input whenever any participation is required. In some cases, individuals might even schedule these sessions during times known for low activity or engagement, such as late Friday afternoons, to minimize the impact on their regular workday.\nThis widespread apathy is a challenge to CreativeHorizon's ambition towards a truly inclusive culture. It also points out a huge gap between the DEI aspirations of the company and the level of devotion demonstrated by the employees. As a result, this disparity may lead to many consequences that include damaging of the workplace collaboration, keeping innovation from a possibility, and lowering of the overall team morale. At this critical juncture, addressing the engagement gap is not just a policy issue but a strategic necessity for CreativeHorizon's growth and market competitiveness."
+                }
+            ]
+
+        },
         {
             "heading": "Caselet Questions",
             "content": [
@@ -50,6 +58,10 @@
                 {
                     "type": "paragraph",
                     "text": "Trainees will gain insights into strategies for aligning company aspirations with actual employee behavior and attitudes towards DEI. This involves understanding the barriers to engagement and developing targeted initiatives to increase employee buy-in and participation."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit Vol III, MARC"
                 }
             ]
         }

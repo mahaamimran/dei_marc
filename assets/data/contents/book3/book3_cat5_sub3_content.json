@@ -1,8 +1,16 @@
 {
     "category": "Work Life Balance | 2-2.5 hrs",
     "subcategory": "Caselet | Navigating Work-Life Integration Post-Returnship | 15-20 Min",
-    "description": "After a two-year break from the professional world to care for her young children, Mariam, a skilled project manager in the IT sector, decides it's time to re-enter the workforce. Her decision is driven by a passion to engage with her profession again and contribute to her family's financial stability. Mariam enrolls in a returnship program offered by a leading tech company which is aimed at helping professionals like her transition back into the workplace.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"After a two-year break from the professional world to care for her young children, Mariam, a skilled project manager in the IT sector, decides it's time to re-enter the workforce. Her decision is driven by a passion to engage with her profession again and contribute to her family's financial stability. Mariam enrolls in a returnship program offered by a leading tech company which is aimed at helping professionals like her transition back into the workplace."
+                }
+            ]
+
+        },
         {
             "heading":"Scenario",
             "content":[
@@ -64,6 +72,10 @@
                 {
                     "type": "paragraph",
                     "text": "Learners will be equipped to help cultivate an organizational culture that genuinely values and supports work-life balance. This includes understanding the different needs of employees, such as those with caregiving responsibilities, and how to create policies that accommodate these needs without reducing workplace productivity."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit Vol III, MARC"
                 }
             ]
         }

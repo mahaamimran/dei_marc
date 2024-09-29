@@ -1,10 +1,17 @@
 {
     "category": "Work Life Balance | 2-2.5 hrs",
     "subcategory": "Video 1 | Gender Bias: Are You Overly Influenced By Your Own Prejudices? | 10 Min",
-    "description": "The video focuses on the challenges of workplace flexibility, particularly with regard to parenting responsibilities. It showcases various perspectives from both employers and employees about adjusting work hours to accommodate childcare needs, highlighting the differing attitudes towards male and female employees who request flexible work arrangements.",
     "content": [
         {
-            "heading": "",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"The video focuses on the challenges of workplace flexibility, particularly with regard to parenting responsibilities. It showcases various perspectives from both employers and employees about adjusting work hours to accommodate childcare needs, highlighting the differing attitudes towards male and female employees who request flexible work arrangements."
+                }
+            ]
+
+        },
+        {
             "content": [
                 {
                     "type": "video",

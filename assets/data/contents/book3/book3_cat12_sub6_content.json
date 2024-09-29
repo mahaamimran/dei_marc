@@ -1,10 +1,17 @@
 {
     "category": "Leadership | 2-2.5 hrs",
     "subcategory": "TEDx Talk | How Diversity Makes Teams More Innovative | Rocio Lorenzo | 15 Min",
-    "description": "This TEDx talk delves into the significant issue of diversity in the workplace, particularly in leadership roles. The speaker, a former management consultant who has worked across Europe and the US, shares her evolving understanding of diversity from her early academic days to her professional experiences where she often found herself as the only woman in the room. She discusses the initial skepticism about diversity's impact on innovation and describes a comprehensive study conducted with the Technical University of Munich to investigate the correlation between diversity and innovation in companies. The findings reveal a definitive link, suggesting that diverse companies are more innovative, which challenges existing corporate practices and highlights the need for greater inclusivity in leadership roles.",
     "content": [
         {
-            "heading": "",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This TEDx talk delves into the significant issue of diversity in the workplace, particularly in leadership roles. The speaker, a former management consultant who has worked across Europe and the US, shares her evolving understanding of diversity from her early academic days to her professional experiences where she often found herself as the only woman in the room. She discusses the initial skepticism about diversity's impact on innovation and describes a comprehensive study conducted with the Technical University of Munich to investigate the correlation between diversity and innovation in companies. The findings reveal a definitive link, suggesting that diverse companies are more innovative, which challenges existing corporate practices and highlights the need for greater inclusivity in leadership roles."
+                }
+            ]
+
+        },
+        {
             "content": [
                 {
                     "type": "video",

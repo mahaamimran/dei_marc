@@ -102,6 +102,10 @@
                 {
                     "type": "paragraph",
                     "text": "Track the engagement levels of both participants and trainers."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Adapted from UNESCO Training Manual"
                 }
             ]
         }
