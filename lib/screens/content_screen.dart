@@ -136,7 +136,7 @@ class _ContentScreenState extends State<ContentScreen> {
           foregroundColor: Colors.white,
           title: Text(
             '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
-            style: TextStyles.appBarTitle,
+            style: TextStyles.appBarTitle.copyWith(fontSize: 23),
           ),
           actions: [
             IconButton(

@@ -1,18 +1,18 @@
 {
-    "category": "Communication and Analytics | 2-2.5 hrs",
-    "description":"Communication and Analytics refers to the way an organization conveys messages, policies, and initiatives aimed at promoting diversity, equity, and inclusion (DEI) among its employees. Effective communication is crucial for ensuring that these initiatives are understood, valued, and embraced by the workforce. Analytics, on the other hand, involves using tools and data analysis techniques to measure and understand the impact of DEI initiatives. This can include tracking participation rates, feedback, and outcomes related to these programs to assess their effectiveness and identify areas for improvement.",
+    "category": "Communication and Analytics | 2-2.5 Hrs",
+    "description": "Communication and Analytics refers to the way an organization conveys messages, policies, and initiatives aimed at promoting diversity, equity, and inclusion (DEI) among its employees. Effective communication is crucial for ensuring that these initiatives are understood, valued, and embraced by the workforce. Analytics, on the other hand, involves using tools and data analysis techniques to measure and understand the impact of DEI initiatives. This can include tracking participation rates, feedback, and outcomes related to these programs to assess their effectiveness and identify areas for improvement.",
     "subcategories": [
         {
-            "name":"Caselet 1 | Personal Emergency Leave | 15-20 Min"
+            "name": "Caselet 1 | Personal Emergency Leave | 15-20 Min"
         },
         {
-            "name":"Caselet 2 | Creative Horizon And The Struggle To Transform DEI Culture | 15-20 Min"
+            "name": "Caselet 2 | Creative Horizon and the Struggle to Transform DEI Culture | 15-20 Min"
         },
         {
-            "name":"Caselet 3 | The Future Of Inclusion: Integrating Analytics Into DEI Efforts | 15-20 Min"
+            "name": "Caselet 3 | The Future of Inclusion: Integrating Analytics into DEI Efforts | 15-20 Min"
         },
         {
-            "name":"Video | Microaggressions In The WorkPlace | 10 Min"
+            "name": "Video | Microaggressions in the Workplace | 10 Min"
         }
     ]
 }

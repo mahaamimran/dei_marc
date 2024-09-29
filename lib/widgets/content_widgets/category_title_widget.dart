@@ -34,7 +34,8 @@ class CategoryTitleWidget extends StatelessWidget {
         const SizedBox(width: 18.0),
         Expanded(
           child: Text(
-            Helpers.capitalizeTitle(categoryName).toUpperCase(),
+            // Helpers.capitalizeTitle(categoryName).toUpperCase(),
+            categoryName.toUpperCase(),
             style: TextStyles.heading(context).copyWith(
               fontSize: fontSize + 10,
               fontWeight: FontWeight.w700,

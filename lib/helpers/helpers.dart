@@ -27,32 +27,32 @@ class Helpers {
     }
   }
 
-  static String capitalizeTitle(String input) {
-    const List<String> exceptions = [
-      "of",
-      "| the",
-      "in",
-      "and",
-      "| a",
-      "an",
-      "min"
-      "on"
-    ];
-    List<String> words = input.split(' ');
+  // static String capitalizeTitle(String input) {
+  //   const List<String> exceptions = [
+  //     "of",
+  //     "| the",
+  //     "in",
+  //     "and",
+  //     "| a",
+  //     "an",
+  //     "min"
+  //     "on"
+  //   ];
+  //   List<String> words = input.split(' ');
 
-    for (int i = 0; i < words.length; i++) {
-      if (i == 0 || !exceptions.contains(words[i].toLowerCase())) {
-        if (words[i] != words[i].toUpperCase()) {
-          words[i] =
-              words[i][0].toUpperCase() + words[i].substring(1).toLowerCase();
-        }
-      } else {
-        words[i] = words[i].toLowerCase();
-      }
-    }
+  //   for (int i = 0; i < words.length; i++) {
+  //     if (i == 0 || !exceptions.contains(words[i].toLowerCase())) {
+  //       if (words[i] != words[i].toUpperCase()) {
+  //         words[i] =
+  //             words[i][0].toUpperCase() + words[i].substring(1).toLowerCase();
+  //       }
+  //     } else {
+  //       words[i] = words[i].toLowerCase();
+  //     }
+  //   }
 
-    return words.join(' ');
-  }
+  //   return words.join(' ');
+  // }
 
   static List<TextSpan> highlightCompanies(
       String text, TextStyle baseStyle, Color highlightColor) {

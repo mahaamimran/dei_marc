@@ -18,7 +18,8 @@ class SubheadingWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
-        Helpers.capitalizeTitle(subheading),
+        // Helpers.capitalizeTitle(subheading),
+        subheading,
         style: TextStyles.subheading(context).copyWith(
           fontSize: fontSize + 2,
         ),

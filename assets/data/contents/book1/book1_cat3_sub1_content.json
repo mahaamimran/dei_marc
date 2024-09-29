@@ -10,8 +10,8 @@
             "text":"© Gender DEI Toolkit MARC"
         }
     ],
-    "subcategory": "A suitable DEI structure",
-    "content":[
+    "subcategory": "A Suitable DEI Structure",
+    "content": [
         {
             "content":[
                 {
@@ -21,4 +21,5 @@
             ]
         }
     ]
+
 }

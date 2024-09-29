@@ -1,29 +1,29 @@
 {
-    "description":"Numerous communication mediums are being used by organizations to promote DEI internally as well as externally. The aim is to maintain an interactive environment, and to provide employees an easy access to DEI related information, and to communicate with external audiences about DEI related initiatives and issues.",
+    "description":"Numerous communication mediums are being used by organizations to promote DEI internally as well as externally. The aim is to maintain an interactive environment, and to provide employees an easy access to DEI-related information, and to communicate with external audiences about DEI-related initiatives and issues.",
     "subcategories": [
         {
-            "name":"Internal and External Communication Channels"
+            "name": "Internal and External Communication Channels"
         },
         {
-            "name":"Internal webspaces used to promote DEI"
+            "name": "Internal Webspaces Used to Promote DEI"
         },
         {
-            "name": "DEI discussions in town hall meetings"
+            "name": "DEI Discussions in Town Hall Meetings"
         },
         {
-            "name": "DEI coverage in employee newsletters"
+            "name": "DEI Coverage in Employee Newsletters"
         },
         {
-            "name": "Internal meeting sessions on DEI"
+            "name": "Internal Meeting Sessions on DEI"
         },
         {
             "name": "Internal IVRs and SMSs for DEI"
         },
         {
-            "name": "External DEI communication using social media"
+            "name": "External DEI Communication Using Social Media"
         },
         {
-            "name": "External DEI digital campaigns"
+            "name": "External DEI Digital Campaigns"
         }
     ]
 }

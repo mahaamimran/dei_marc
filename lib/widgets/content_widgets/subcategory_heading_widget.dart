@@ -20,7 +20,8 @@ class SubcategoryNameWidget extends StatelessWidget {
     final fontSize = Provider.of<SettingsProvider>(context).fontSize;
 
     return Text(
-      Helpers.capitalizeTitle(subcategoryName),
+      // Helpers.capitalizeTitle(subcategoryName),
+      subcategoryName,
       style: TextStyles.subheading(context).copyWith(
         fontSize: fontSize + 8,
         color: color,

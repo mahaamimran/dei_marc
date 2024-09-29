@@ -52,7 +52,7 @@ class PlayerWidget extends StatelessWidget {
             child: GestureDetector(
               onTap: () => _launchURL(videoUrl!),
               child: const Text(
-                'No internet connection. Click here to watch the video.',
+                '🚧 Embedded videos under construction 🚧.',
                 style: TextStyle(
                   color: Colors.blue,
                   decoration: TextDecoration.underline,

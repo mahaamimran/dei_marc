@@ -68,8 +68,8 @@ class JumpToCategory extends StatelessWidget {
                     itemCount: subcategories.length,
                     itemBuilder: (context, index) {
                       final subcategory = subcategories[index];
-                      final displayName =
-                          Helpers.capitalizeTitle(subcategory.name);
+                      final displayName = subcategory.name;
+                      // Helpers.capitalizeTitle(subcategory.name);
 
                       return Column(
                         children: [
@@ -79,8 +79,8 @@ class JumpToCategory extends StatelessWidget {
                               onTap: () {
                                 onCategorySelected(index);
                               },
-                              splashColor:
-                                  backgroundColor.withOpacity(0.3), // Ripple effect
+                              splashColor: backgroundColor
+                                  .withOpacity(0.3), // Ripple effect
                               child: Padding(
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 8.0),
@@ -92,7 +92,8 @@ class JumpToCategory extends StatelessWidget {
                                       height: 30,
                                       decoration: BoxDecoration(
                                         color: backgroundColor,
-                                        borderRadius: BorderRadius.circular(2.0),
+                                        borderRadius:
+                                            BorderRadius.circular(2.0),
                                       ),
                                     ),
                                     const SizedBox(width: 12),

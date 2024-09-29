@@ -1,15 +1,15 @@
 {
-    "category": "Double Shift | 2-2.5 hrs",
-    "description":"The concept of the double shift in terms of gender Diversity, Equity, and Inclusion (DEI) refers to the dual responsibilities many women face, managing both their paid jobs and the majority of domestic or caregiving tasks at home. This phenomenon is also known as the “second shift” highlighting the additional unpaid labor that women typically perform after their formal workday ends.",
+    "category": "Double Shift | 2-2.5 Hrs",
+    "description": "The concept of the double shift in terms of gender Diversity, Equity, and Inclusion (DEI) refers to the dual responsibilities many women face, managing both their paid jobs and the majority of domestic or caregiving tasks at home. This phenomenon is also known as the 'second shift,' highlighting the additional unpaid labor that women typically perform after their formal workday ends.",
     "subcategories": [
         {
-            "name":"Activity 1 | My Wife Does Not Work | 35-40 Min"
+            "name": "Activity 1 | My Wife Does Not Work | 35-40 Min"
         },
         {
-            "name":"Caselet | Navigating Work-Life Integration Post-Returnship | 15-20 Min"
+            "name": "Caselet | Navigating Work-Life Integration Post-Returnship | 15-20 Min"
         },
         {
-            "name":"Video | A Tale Of Double Standards | 10 Min"
+            "name": "Video | A Tale of Double Standards | 10 Min"
         }
     ]
 }
