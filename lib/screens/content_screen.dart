@@ -165,10 +165,10 @@ class _ContentScreenState extends State<ContentScreen> {
             ),
           ],
         ),
-        body: _buildBody(subcategoryProvider, contentProvider),
-        floatingActionButton: widget.bookId == '3'
-            ? CustomFloatingActionButton(appBarColor: widget.appBarColor)
-            : null,
+        body: _buildBody(subcategoryProvider, contentProvider)
+        // floatingActionButton: widget.bookId == '3'
+            // ? CustomFloatingActionButton(appBarColor: widget.appBarColor)
+        //     : null,
       ),
     );
   }
