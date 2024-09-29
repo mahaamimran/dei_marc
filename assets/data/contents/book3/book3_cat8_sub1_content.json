@@ -1,7 +1,6 @@
 {
     "category": "Microaggressions | 2-2.5 hrs",
-    "type":"deckofslides",
-    "text":"deck_cat8",
+    "deckofslides":"deck_cat8",
     "image": [
         {
         "type": "image",

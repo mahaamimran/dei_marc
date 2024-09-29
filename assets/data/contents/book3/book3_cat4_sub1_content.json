@@ -1,7 +1,6 @@
 {
     "category": "Maternity / Paternity Leave | 2-2.5 hrs",
-    "type":"deckofslides",
-    "text":"deck_cat4",
+    "deckofslides":"deck_cat4",
     "image": [
         {
         "type": "image",

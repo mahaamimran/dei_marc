@@ -1,7 +1,6 @@
 {
     "category": "Negative Self Perception | 2-2.5 hrs",
-    "type":"deckofslides",
-    "text":"deck_cat9",
+    "deckofslides":"deck_cat9",
     "image": [
         {
         "type": "image",

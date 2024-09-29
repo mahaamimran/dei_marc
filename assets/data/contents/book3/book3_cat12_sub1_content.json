@@ -1,7 +1,6 @@
 {
     "category": "Leadership | 2-2.5 hrs",
-    "type":"deckofslides",
-    "text":"deck_cat12",
+    "deckofslides":"deck_cat12",
     "image": [
         {
         "type": "image",
