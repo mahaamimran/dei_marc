@@ -63,12 +63,16 @@
                     "text":"book2_cat1_sub6"
                 },
                 {
+                    "type":"caption",
+                    "text":"© Adapted from cartoonstock.com"
+                },
+                {
                     "type":"image",
                     "text":"book2_cat1_sub6_2"
                 },
                 {
                     "type":"caption",
-                    "text":"© Gender DEI Toolkit MARC"
+                    "text":"© Gender DEI Toolkit Vol II, MARC"
                 }
             ]
         }
