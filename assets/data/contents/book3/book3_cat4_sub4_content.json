@@ -1,18 +1,38 @@
 {
     "category": "Maternity / Paternity Leave | 2-2.5 hrs",
-    "subcategory": "Caselet | FutureLink Telecom's Maternity Leave Dilemma | 15-20 Min",
-    "description": "Situated in Karachi, Pakistan, Futurelink Telecom is a reputed telecommunication company known for its innovative trends and great customer service. Nevertheless, it recently faced a great difficulty after one of its best network operations team member named Ayesha declared that she was going on her maternity leave. Her knowledge in network management was excellent and finding a temporary replacement with the same or higher expertise level proved almost impossible. The firm’s efforts to replace her indicated how difficult it can be to get skilled individuals for specific roles, especially during maternity leave of any staff member. When Ayesha returned, she found that her absence had negatively affected her performance evaluation. Despite her years of dedication and hard work, there was a noticeable gap in her performance record due to the leave. This was considered as a continuation of the debate on how much maternity leave could affect women’s career inside the organization. This situation forced Futurelink Telecom to confront the need for a more supportive policy towards maternity leave and career progression for their female employees.",
+    "subcategory": "Video 3 | Second Chances: Overcoming Workplace Bias Through Returnship | 10 Min",
     "content": [
         {
-            "heading": "Caselet Questions",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"The video portrays the challenges faced by Laiba, a woman in her late 30s who returns to her career after a break. As the video continues, it is clear that Laiba’s career break for family reasons has led to an unfair performance evaluation, stagnation in career development, and lack of promotional opportunities. The video emphasizes the bias and challenges faced by individuals returning to the workforce after significant breaks, advocating for fair treatment and genuine second chances in professional settings."
+                }
+            ]
+
+        },
+        {
+            "content": [
+                {
+                    "type": "video",
+                    "text": "video_SecondChances"
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
             "content": [
                 {
                     "type": "bullet",
-                    "text": "What actions can be taken to ensure that performance evaluations for employees returning from maternity leave are fair and do not negatively impact their career progression? "
+                    "text":"What are some common difficulties for returnship participants integrating back into the job? In what ways can this process be better supported by the company?"
                 },
                 {
                     "type": "bullet",
-                    "text": "In the Pakistani context, what additional support can Futurelink Telecom provide to female employees going on maternity leave to help them balance careers and personal commitments more efficiently?"
+                    "text":"The video suggests that Laiba’s performance evaluation is impacted by her career break. How can organizations ensure that performance evaluations are fair and unbiased, especially for employees returning from extended leaves?"
+                },
+                {
+                    "type": "bullet",
+                    "text":"How can employers create a more inclusive environment that values diverse career paths and experiences, including those with gaps due to personal or family reasons?"
                 }
             ]
         },
@@ -21,35 +41,35 @@
             "content": [
                 {
                     "type": "subheading",
-                    "text": "Understanding the Long-term Career Impacts of Maternity Leave: "
+                    "text":"Understanding bias against returnship participants:"
                 },
                 {
                     "type": "paragraph",
-                    "text": "Trainees will gain insight into how maternity leave can influence long-term career trajectories, specifically focusing on challenges related to performance evaluation and professional development during and after leave."
+                    "text":"Trainees will learn about the challenges and biases faced by individuals, particularly women, returning to the workforce after a career break. This outcome emphasizes recognizing and addressing the skepticism and undervaluation that returnees often encounter from colleagues and supervisors."
                 },
                 {
                     "type": "subheading",
-                    "text": "Develop Effective Maternity Leave Policies:"
+                    "text":"Fostering inclusivity for returnship participants:"
                 },
                 {
                     "type": "paragraph",
-                    "text": "Participants will learn to create supportive maternity leave policies that facilitate a smooth transition back to work."
+                    "text":"Participants will explore strategies to create an inclusive environment that supports the reintegration of returnship participants into the workforce. This includes ensuring fair assignment of responsibilities, appropriate onboarding, and retraining to update skills."
                 },
                 {
                     "type": "subheading",
-                    "text": "Understanding the Long-term Career Impacts of Maternity Leave: "
+                    "text":"Mitigating bias in performance evaluations: "
                 },
                 {
                     "type": "paragraph",
-                    "text": "Trainees will gain insight into how maternity leave can influence long-term career trajectories, specifically focusing on challenges related to performance evaluation and professional development during and after leave."
+                    "text":"Learners will gain insights into how career breaks should be factored into performance evaluations to prevent unfair penalization for time away from the workplace. This outcome focuses on adjusting performance metrics to account for the transition period and providing equal opportunities for advancement."
                 },
                 {
                     "type": "subheading",
-                    "text": "Understanding the Long-term Career Impacts of Maternity Leave: "
+                    "text":"Empowering returnees to reclaim professional identity:"
                 },
                 {
                     "type": "paragraph",
-                    "text": "Trainees will gain insight into how maternity leave can influence long-term career trajectories, specifically focusing on challenges related to performance evaluation and professional development during and after leave."
+                    "text":"Participants will explore methods for returnees to effectively communicate their capabilities and career goals, and how to assert their professional identity in the workplace. This includes building confidence to discuss their career break openly and positively."
                 }
             ]
         }

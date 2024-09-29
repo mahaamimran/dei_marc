@@ -1,11 +1,13 @@
 {
     "category": "Communication and Analytics | 2-2.5 hrs",
     "subcategory": "Video | Microaggressions In The WorkPlace | 10 Min",
-    "description": "The video focuses on raising awareness about microaggressions in the workplace, particularly those directed at women in technical roles. The video defines microaggressions as remarks or actions that subtly express negative associations or insults, often towards members of historically marginalized groups. The main objective of the video is to empower viewers to recognize and interrupt microaggressions. It stresses the cumulative effect of such interactions, noting that while a single comment may seem minor, repeated incidents can significantly impact an individual's well-being.",
     "content": [
         {
-            "heading": "",
             "content": [
+                {
+                    "type":"paragraph",
+                    "text":"The video focuses on raising awareness about microaggressions in the workplace, particularly those directed at women in technical roles. The video defines microaggressions as remarks or actions that subtly express negative associations or insults, often towards members of historically marginalized groups. The main objective of the video is to empower viewers to recognize and interrupt microaggressions. It stresses the cumulative effect of such interactions, noting that while a single comment may seem minor, repeated incidents can significantly impact an individual's well-being."
+                },
                 {
                     "type": "video",
                     "text": "video_MicroaggressionsInTheWorkPlace"

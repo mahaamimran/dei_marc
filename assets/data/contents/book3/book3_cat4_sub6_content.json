@@ -1,18 +1,22 @@
 {
-    "category": "Stereotyping | 2.5-3 hrs",
-    "subcategory": "TEDx Talk | How To Avoid Gender Stereotyping | 10 Min",
+    "category": "Maternity / Paternity Leave | 2-2.5 hrs",
+    "subcategory": "TEDx Talk | How to Avoid Gender Stereotypes: Eleanor Tabi Haller-Jordan | 15-20 Min",
     "content": [
         {
-    
-            "content": [
+            "content":[
                 {
                     "type":"paragraph",
                     "text":"This video talks about how gender, leadership, and getting ahead in companies are connected, especially during tough times like economic crises. It also looks at debates about laws that say a certain number of women must be on company boards. The speaker shares her own stories and facts to show how women struggle with unfair ideas and unconscious biases at work. She says we need to change our thinking and be more aware to make workplaces fairer and use everyone's skills to make the world better."
+                }
+            ]
 
-                },
+        },
+        {
+            "content": [
                 {
                     "type": "video",
                     "text": "tedxtalk_HowToAvoidGenderStereotyping"
+                    
                 }
             ]
         },
@@ -42,7 +46,7 @@
                 },
                 {
                     "type": "subheading",
-                    "text": "Understand the Importance of Promoting Gender Diversity and Inclusion in Organizational Leadership: "
+                    "text": "Understand the Importance of Promoting Gender Diversity and Inclusion in Organizational Leadership:"
                 },
                 {
                     "type": "paragraph",

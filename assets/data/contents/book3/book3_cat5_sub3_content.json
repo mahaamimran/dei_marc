@@ -1,23 +1,48 @@
 {
     "category": "Work Life Balance | 2-2.5 hrs",
-    "subcategory": "Video 2 | Gender Bias: Are You Overly Influenced By Your Own Prejudices? | 10 Min",
-    "description": "The video focuses on the challenges of workplace flexibility, particularly with regard to parenting responsibilities. It showcases various perspectives from both employers and employees about adjusting work hours to accommodate childcare needs, highlighting the differing attitudes towards male and female employees who request flexible work arrangements.",
+    "subcategory": "Caselet | Navigating Work-Life Integration Post-Returnship | 15-20 Min",
     "content": [
         {
-            "heading": "",
-            "content": [
+            "content":[
                 {
-                    "type": "video",
-                    "text": "video_GenderBias"
+                    "type":"paragraph",
+                    "text":"After a two-year break from the professional world to care for her young children, Mariam, a skilled project manager in the IT sector, decides it's time to re-enter the workforce. Her decision is driven by a passion to engage with her profession again and contribute to her family's financial stability. Mariam enrolls in a returnship program offered by a leading tech company which is aimed at helping professionals like her transition back into the workplace."
+                }
+            ]
+
+        },
+        {
+            "heading":"Scenario",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Mariam successfully completes the returnship program. Being a quick learner, she adjusts swiftly to the new technologies and methodologies introduced during her two-year break from work. Notably, her managers are impressed by her skills and dedication, and are happy to offer Mariam a full-time position at the conclusion of the program. At first, she is very glad to return to work. However, soon, she understands that it is very difficult to manage her professional duties with her responsibilities as a primary caregiver.\nEven though her employer has provided support to flexible work arrangements, Mariam finds herself reverting to the 'family comes first' mindset. She often leaves earlier to take care of her children, declines business trips, most of which could advance her career, turns down any local promotion that might require travel, and is afraid to delve into large projects that require overtime and night shifts. Her immediate manager, Amir, notices Mariam’s struggles but is not sure of how to provide support without affecting the team’s productivity."
                 }
             ]
         },
         {
-            "heading": "Discussion Questions",
+            "heading":"Complications",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"Mariam's colleagues begin to notice her frequent absences and declined assignments, leading to mixed feelings. Some sympathize with her situation, while others feel the distribution of work is becoming increasingly unequal. This tension highlights a bigger problem within the organization: the challenge of fully integrating returnees who still prioritize family obligations over work commitments."
+                }
+            ]
+        },
+        {
+            "heading": "Caselet Questions",
             "content": [
                 {
                     "type": "bullet",
-                    "text": "How can organizations ensure that their flexible work policies are applied equitably across all genders?"
+                    "text": "What strategies can Mariam employ to communicate her needs and boundaries more effectively with her team and management?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How can Mariam pursue her career development goals without feeling that she is compromising her family responsibilities? What role can mentorship play in navigating these challenges?"
+                },
+                {
+                    "type": "bullet",
+                    "text": "How can the organization cultivate a culture that truly values work-life balance and recognizes the diverse needs of its workforce?"
                 }
             ]
         },
@@ -26,27 +51,31 @@
             "content": [
                 {
                     "type": "subheading",
-                    "text": "Recognizing Unconscious Bias in the Workplace: "
+                    "text": "Facilitating Successful Reintegration into the Workplace:"
                 },
                 {
                     "type": "paragraph",
-                    "text": "Develop the ability to identify instances of unconscious bias in workplace interactions and decisions, particularly regarding gender roles and family responsibilities."
+                    "text": "Trainees will explore strategies to support professionals, especially women, returning to the workforce after significant breaks. This includes understanding the challenges faced by returnees and providing structured support systems such as returnship programs, flexible work arrangements, and ongoing training to update skills."
                 },
                 {
                     "type": "subheading",
-                    "text": "Understanding the Impact of Unconscious Bias on Career Advancement:"
+                    "text": "Communicating and Negotiating Work-life Boundaries:"
                 },
                 {
                     "type": "paragraph",
-                    "text": "Gain insight into how unconscious biases, such as assumptions about employees' capabilities after returning from maternity leave, can hinder career progression and contribute to inequality in the workplace."
+                    "text": "Participants will learn effective communication techniques for expressing work-life balance needs and negotiating boundaries without compromising career progression. This outcome focuses on practical approaches for discussing flexible working conditions, setting realistic expectations with supervisors, and managing workloads."
                 },
                 {
                     "type": "subheading",
-                    "text": "Promoting Inclusive Leadership and Fair Treatment:"
+                    "text": "Promoting an Inclusive Culture for Diverse Work-life Needs:"
                 },
                 {
                     "type": "paragraph",
-                    "text": "Explore strategies for promoting inclusive leadership practices and fostering a culture of fairness and equal opportunities for all employees, regardless of gender or family status."
+                    "text": "Learners will be equipped to help cultivate an organizational culture that genuinely values and supports work-life balance. This includes understanding the different needs of employees, such as those with caregiving responsibilities, and how to create policies that accommodate these needs without reducing workplace productivity."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit Vol III, MARC"
                 }
             ]
         }

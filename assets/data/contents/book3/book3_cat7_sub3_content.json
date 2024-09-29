@@ -1,8 +1,16 @@
 {
     "category": "Double Shift | 2-2.5 hrs",
     "subcategory": "Video | A Tale of Double Standards | 10 Min",
-    "description": "The video sheds light on the subtle yet significant differences in treatment between working men and women within the household. Through contrasting scenes of a wife and husband returning home to their families, it highlights the societal double standards embedded in casual jokes and expectations. It prompts viewers to reflect on and challenge these disparities in domestic dynamics.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"The video sheds light on the subtle yet significant differences in treatment between working men and women within the household. Through contrasting scenes of a wife and husband returning home to their families, it highlights the societal double standards embedded in casual jokes and expectations. It prompts viewers to reflect on and challenge these disparities in domestic dynamics."
+                }
+            ]
+
+        },
         {
             "heading": "",
             "content": [

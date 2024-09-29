@@ -1,0 +1,73 @@
+{
+    "category": "Leadership | 2-2.5 hrs",
+    "subcategory": "TEDx Talk | How Diversity Makes Teams More Innovative | Rocio Lorenzo | 15 Min",
+    "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This TEDx talk delves into the significant issue of diversity in the workplace, particularly in leadership roles. The speaker, a former management consultant who has worked across Europe and the US, shares her evolving understanding of diversity from her early academic days to her professional experiences where she often found herself as the only woman in the room. She discusses the initial skepticism about diversity's impact on innovation and describes a comprehensive study conducted with the Technical University of Munich to investigate the correlation between diversity and innovation in companies. The findings reveal a definitive link, suggesting that diverse companies are more innovative, which challenges existing corporate practices and highlights the need for greater inclusivity in leadership roles."
+                }
+            ]
+
+        },
+        {
+            "content": [
+                {
+                    "type": "video",
+                    "text": "tedxtalk_HowDiversityMakesTeamsMoreInnovative"
+                }
+            ]
+        },
+        {
+            "heading": "Discussion Questions",
+            "content": [
+                {
+                    "type": "bullet",
+                    "text": "Have you encountered situations where gender bias affected team dynamics or decision-making processes in your workplace? "
+                },
+                {
+                    "type": "bullet",
+                    "text": "In your opinion, what role do leaders and managers play in modeling bias-aware behaviors and creating environments where diverse perspectives are valued and respected?"
+                }
+            ]
+        },
+        {
+            "heading": "Learning Outcomes",
+            "content": [
+                {
+                    "type": "subheading",
+                    "text": "Awareness of Unconscious Bias:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Even individuals who advocate for equality and encourage women to assume leadership roles can harbor unconscious biases. Recognizing these biases is the first step towards addressing them. This recognition is crucial for personal and professional growth, especially for those in leadership and HR roles."
+                },
+                {
+                    "type": "subheading",
+                    "text": "Understanding the Impact of Social Conditioning:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The talk emphasizes that our brains are conditioned by societal norms and past experiences, leading to automatic patterns of thinking. This can further lead to gender stereotypes, such as viewing men as providers and women as caregivers."
+                },
+                {
+                    "type": "subheading",
+                    "text": "Use of Mental Flipping as a Strategy:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The strategy of \"flipping it to test it\" is presented as an effective tool to uncover and challenge one's own biases. By mentally swapping the roles or characteristics of people in given scenarios, individuals can gain insight into their subconscious prejudices and rethink their automatic responses."
+                },
+                {
+                    "type": "subheading",
+                    "text": "Importance of Continuous Self-Reflection:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The discussion highlights the importance of continuous self-reflection and vigilance in recognizing one’s own biases. The speaker’s realization of her bias against women leaders, despite being one herself, serves as a call to action for everyone to examine their unconscious biases."
+                }
+            ]
+        }
+    ]
+}

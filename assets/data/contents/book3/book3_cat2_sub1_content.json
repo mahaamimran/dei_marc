@@ -1,5 +1,5 @@
 {
-    "category": "Stereotyping | 2-2.5 hrs",
+    "category": "Stereotyping | 2.5-3 hrs",
     "deckofslides":"deck_cat2",
     "image": [
         {
@@ -106,6 +106,10 @@
                 {
                     "type": "bullet",
                     "text": "The stereotype that women's main purpose is to serve as housewives and mothers underestimates their potential in other areas."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Adapted from UNESCO Training Manual"
                 }
             ]
         }

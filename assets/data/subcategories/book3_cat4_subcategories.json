@@ -1,6 +1,6 @@
 {
     "category": "Maternity/Paternity Leave | 2-2.5 Hrs",
-    "description": "Paternity leave is the time off from work that some employers provide to fathers after the birth or adoption of a child, allowing them to care for their newborn or newly adopted child. Maternity leave, on the other hand, is time off granted to mothers for childbirth and to care for their infant. Both types of leave are crucial for bonding with the child, promoting family well-being, and ensuring the health of the mother and child post-delivery.",
+    "description": "This module examines the significance of Paternity and Maternity Leave, highlighting the biases women face before and after maternity leave. It also encourages reflection on the acceptance of fathers as caregivers.",
     "subcategories": [
         {
             "name": "Activity | Mix and Match | 15-20 Min"
@@ -12,10 +12,13 @@
             "name": "Video 2 | Equality Starts at Home: The Push for Paternity Leave | 10 Min"
         },
         {
+            "name": "Video 3 | Second Chances: Overcoming Workplace Bias Through Returnship | 10 Min"
+        },
+        {
             "name": "Caselet | FutureLink Telecom's Maternity Leave Dilemma | 15-20 Min"
         },
         {
-            "name": "TEDx Talk | How to Avoid Gender Stereotypes: Eleanor Tabi Haller-Jordan | 15-20 Min"
+            "name": "TEDx Talk | How to Avoid Gender Stereotypes | 15-20 Min"
         }
     ]
 }

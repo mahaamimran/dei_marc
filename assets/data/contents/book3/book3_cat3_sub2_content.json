@@ -1,5 +1,5 @@
 {
-    "category": "Women in Stem | 2-2.5 hrs",
+    "category": "Women in STEM | 2-3 hrs",
     "subcategory": "Activity 2 | Mix And Match | 15-20 Min",
     "content": [
         {
@@ -99,6 +99,10 @@
                 {
                     "type": "bullet",
                     "text": "The stereotype that women's main purpose is to serve as housewives and mothers underestimates their potential in other areas."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Adapted from UNESCO Training Manual"
                 }
             ]
         }

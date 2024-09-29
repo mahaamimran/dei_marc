@@ -1,10 +1,17 @@
 {
-    "category": "Women in Stem | 2-2.5 hrs",
-    "subcategory": "TEDx Talk | Females in STEM - We need more! | 10 Min",
-    "description": "In this video, the speaker talks about how she used to not notice sexism when she was young, but now she sees it clearly, especially in the engineering industry where women face unfair treatment. She shares stories and facts to show how hard it can be for women to succeed in engineering jobs. She believes it's important to talk about and fix sexism at work so that everyone, regardless of gender, can do well in their careers.",
+    "category": "Women in STEM | 2-3 hrs",
+    "subcategory": "TEDx Talk 1 | Females in STEM - We need more! | 10 Min",
     "content": [
         {
-            "heading": "",
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"In this video, the speaker talks about how she used to not notice sexism when she was young, but now she sees it clearly, especially in the engineering industry where women face unfair treatment. She shares stories and facts to show how hard it can be for women to succeed in engineering jobs. She believes it's important to talk about and fix sexism at work so that everyone, regardless of gender, can do well in their careers."
+                }
+            ]
+
+        },
+        {
             "content": [
                 {
                     "type": "video",

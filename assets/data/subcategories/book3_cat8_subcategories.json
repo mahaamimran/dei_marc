@@ -1,6 +1,6 @@
 {
-    "category": "Microaggressions | 2-2.5 Hrs",
-    "description": "Gender-based microaggressions in the workplace are subtle, often overlooked comments or actions that can make individuals feel undervalued because of their gender. These might include casual jokes that reinforce stereotypes or dismissive remarks about someone’s capabilities. Although these actions may not always be intentional, they contribute to a work environment that feels unfriendly and unwelcoming.",
+    "category": "Microaggressions | 2-2.5 hrs",
+    "description":"The Microaggressions module highlights how subtle comments, casual jokes, and dismissive remarks, though not always intentional, contribute to an unwelcoming and unfriendly work environment.",
     "subcategories": [
         {
             "name": "Caselet | The Promotion Dilemma | 15-20 Min"
@@ -12,10 +12,10 @@
             "name": "Video 2 | Redefining Narratives: Finding Your Voice | 10 Min"
         },
         {
-            "name": "Article | Recognizing and Responding to Microaggressions at Work | 15-20 Min"
+            "name": "Article 1 | Recognizing and Responding to Microaggressions at Work | 15-20 Min"
         },
         {
-            "name": "TEDx Talk | Management Women and the New Facts of Life | 15 Min"
+            "name": "Article 2 | Management Women and the New Facts of Life | 15 Min"
         }
     ]
 }
