@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Stereotyping that Women cannot Fulfill Professional Commitments at Senior Levels",
-    "description": "This refers to the biases and assumptions that exist in organizations that women cannot balance their professional and personal commitments effectively as they move up the organizational ladder.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the biases and assumptions that exist in organizations that women cannot balance their professional and personal commitments effectively as they move up the organizational ladder."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -50,6 +57,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub10"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

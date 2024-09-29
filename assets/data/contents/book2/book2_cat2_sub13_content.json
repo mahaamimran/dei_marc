@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Difficulty for Organizations in Finding Replacements for Females during Maternity or Sabbatical Leaves",
-    "description": "This refers to the situation when managers are unable to find a suitable replacement for female team members when they take a long leave, such as maternity leave.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the situation when managers are unable to find a suitable replacement for female team members when they take a long leave, such as maternity leave."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -46,6 +53,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub13"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

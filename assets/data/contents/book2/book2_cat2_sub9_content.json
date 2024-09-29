@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Scarcity of Women in Leadership Roles in Organizations",
-    "description": "This refers to a barrier that exists in organizations because of which limited females reach leadership positions.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to a barrier that exists in organizations because of which limited females reach leadership positions."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -62,6 +69,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub9"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

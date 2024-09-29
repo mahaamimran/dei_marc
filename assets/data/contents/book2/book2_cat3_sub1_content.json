@@ -5,11 +5,22 @@
         {
         "type": "image",
         "text": "book2_cat3"
+        },
+        {
+            "type":"caption",
+            "text":"© Gender DEI Toolkit MARC"
         }
     ],
     "subcategory": "Limited Expertise in Identifying Issues through Analytics and Research Findings",
-    "description": "This refers to the insufficient knowledge of analytics because of which organizations fail to understand the importance of using tools and analytics to measure the impact of DEI initiatives.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the insufficient knowledge of analytics because of which organizations fail to understand the importance of using tools and analytics to measure the impact of DEI initiatives."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -57,6 +68,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat3_sub1"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

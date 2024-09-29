@@ -1,7 +1,14 @@
 {
     "subcategory": "Lack of Ownership of DEI throughout the Organization",
-    "description": "This refers to a situation where DEI initiatives are majorly the responsibility of Human Resources (HR) department, with minimal participation or involvement from other departments or employees",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to a situation where DEI initiatives are majorly the responsibility of Human Resources (HR) department, with minimal participation or involvement from other departments or employees"
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -45,6 +52,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat1_sub3"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

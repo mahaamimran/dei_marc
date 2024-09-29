@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Limited Availability of Trainers Specializing in DEI Training",
-    "description": "This refers to the absence of experienced trainers to implement DEI initiatives within the organization.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the absence of experienced trainers to implement DEI initiatives within the organization."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -38,6 +45,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat3_sub4"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

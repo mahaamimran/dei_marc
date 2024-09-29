@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Non-serious Attitude during Mandatory DEI Training Sessions",
-    "description": "This refers to the challenge that employees do not take DEI trainings seriously when it is made mandatory by their organization.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the challenge that employees do not take DEI trainings seriously when it is made mandatory by their organization."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -54,6 +61,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat3_sub5"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

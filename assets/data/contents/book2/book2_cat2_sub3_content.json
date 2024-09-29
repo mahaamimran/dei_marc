@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Perception that Females are Unsuitable for Outdoor and Fieldwork Job Roles",
-    "description": "This refers to a barrier that exists because of which females are not able to select many job opportunities or advance in their careers, as they are not perceived to be suitable for outdoor and fieldwork jobs.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to a barrier that exists because of which females are not able to select many job opportunities or advance in their careers, as they are not perceived to be suitable for outdoor and fieldwork jobs."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -46,6 +53,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat2_sub3"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }

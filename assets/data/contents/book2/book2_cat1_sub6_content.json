@@ -1,8 +1,15 @@
 
 {
     "subcategory": "Lack of Executive Involvement in DEI Initiatives",
-    "description": "This refers to the situation when the senior executives in the company are not supporting the DEI initiatives within an organization.",
     "content": [
+        {
+            "content":[
+                {
+                    "type":"paragraph",
+                    "text":"This refers to the situation when the senior executives in the company are not supporting the DEI initiatives within an organization."
+                }
+            ]
+        },
         {
             "heading": "Causes",
             "content": [
@@ -58,6 +65,10 @@
                 {
                     "type":"image",
                     "text":"book2_cat1_sub6_2"
+                },
+                {
+                    "type":"caption",
+                    "text":"© Gender DEI Toolkit MARC"
                 }
             ]
         }
