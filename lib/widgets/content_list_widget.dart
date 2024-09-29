@@ -99,7 +99,7 @@ class ContentListWidget extends StatelessWidget {
 
                                 if (deckOfSlidesUrl != null) {
                                   return PDFDownloadButton(
-                                    text: 'Download Deck of Slides',
+                                    text: 'Deck of Slides',
                                     secondaryColor: secondaryColor,
                                     primaryColor: appBarColor,
                                     pdfUrl: deckOfSlidesUrl,
