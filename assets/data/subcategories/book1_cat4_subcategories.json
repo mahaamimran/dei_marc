@@ -1,17 +1,17 @@
 {
-    "description":"Pursuing the agenda of DEI, organizations that have embraced DEI in Pakistan have carried out many initiatives to incorporate DEI in their recruitment system. These initiatives broadly fall under four categories. These include gender neutral job advertisements, gender balanced interview panels, equitable recruitment process and returnship programs. Detailed examples are presented below.",
+    "description": "Pursuing the agenda of DEI, organizations that have embraced DEI in Pakistan have carried out many initiatives to incorporate DEI in their recruitment system. These initiatives broadly fall under four categories. These include gender neutral job advertisements, gender balanced interview panels, equitable recruitment process and returnship programs. Detailed examples are presented below.",
     "subcategories": [
         {
-            "name": "Gender neutral job advertisements"
+            "name": "Gender Neutral Job Advertisements"
         },
         {
-            "name": "Gender balanced interview panels"
+            "name": "Gender Balanced Interview Panels"
         },
         {
-            "name": "Equitable recruitment process"
+            "name": "Equitable Recruitment Process"
         },
         {
-            "name": "Returnship programs"
+            "name": "Returnship Programs"
         }
     ]
 }
