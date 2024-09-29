@@ -14,7 +14,7 @@ import 'package:dei_marc/widgets/content_widgets/subheading_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/paragraph_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/bullet_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/image_widget.dart';
-import 'package:dei_marc/widgets/content_widgets/player_widget.dart';
+import 'package:dei_marc/widgets/content_widgets/video_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/quote_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/bold_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/category_title_widget.dart';
@@ -99,7 +99,7 @@ class ContentListWidget extends StatelessWidget {
 
                                 if (deckOfSlidesUrl != null) {
                                   return PDFDownloadButton(
-                                    text: 'Download Deck of Slides',
+                                    text: 'Deck of Slides',
                                     secondaryColor: secondaryColor,
                                     primaryColor: appBarColor,
                                     pdfUrl: deckOfSlidesUrl,
@@ -153,14 +153,13 @@ class ContentListWidget extends StatelessWidget {
                             final contents = contentProvider
                                     .contents['$categoryId-${index + 1}'] ??
                                 [];
-
                             if (contents.isEmpty) {
                               return const Text('No content available.');
                             }
 
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: contents.skip(1).map((contentItem) {
+                              children: contents.map((contentItem) {
                                 return _buildContentItem(contentItem, context);
                               }).toList(),
                             );
@@ -228,7 +227,7 @@ class ContentListWidget extends StatelessWidget {
     } else if (quote.type == Constants.IMAGE) {
       return ImageWidget(imageName: quote.text);
     } else if (quote.type == Constants.VIDEO) {
-      return PlayerWidget(videoUrl: quote.text);
+      return VideoWidget(videoName: quote.text);
     } else if (quote.type == Constants.BULLET) {
       return BulletWidget(
         text: quote.text,
@@ -245,6 +244,7 @@ class ContentListWidget extends StatelessWidget {
       return BoldWidget(text: quote.text, fontSize: fontSize);
     } else if (quote.type == Constants.CAPTION) {
       return CaptionWidget(text: quote.text, fontSize: fontSize);
+      // TODO:
     } else if (quote.type == 'pdf') {
       return PDFDownloadButton(
         text: 'Download',
@@ -252,8 +252,7 @@ class ContentListWidget extends StatelessWidget {
         primaryColor: appBarColor,
         pdfUrl: quote.text,
       );
-    }
-    else {
+    } else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
