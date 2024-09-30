@@ -35,5 +35,5 @@ class Constants {
   static const String DECKOFSLIDES = 'deckofslides';
   static const String DESCRIPTION = 'description';
   static const String PDF = 'pdf';
-
+  static const String ABOUT = 'About';
 }
