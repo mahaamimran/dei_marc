@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
 
 import 'package:dei_marc/config/asset_paths.dart';
+import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/models/subcategory.dart';
 import 'package:dei_marc/providers/config_provider.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class ContentScreen extends StatefulWidget {
   final Color appBarColor;
   final Color secondaryColor;
   final String categoryName;
+  final bool isLast;
 
   const ContentScreen({
     super.key,
@@ -30,6 +32,7 @@ class ContentScreen extends StatefulWidget {
     required this.appBarColor,
     required this.secondaryColor,
     required this.categoryName,
+    this.isLast = false,
   });
 
   @override
@@ -134,6 +137,9 @@ class _ContentScreenState extends State<ContentScreen> {
           backgroundColor: widget.appBarColor,
           foregroundColor: Colors.white,
           title: Text(
+            widget.isLast
+                ? Constants.ABOUT
+                :
             '${Helpers.getTitle(widget.bookId)} ${widget.categoryId}',
             style: TextStyles.appBarTitle.copyWith(fontSize: 23),
           ),
