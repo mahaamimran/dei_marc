@@ -3,7 +3,6 @@
 import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/models/subcategory.dart';
 import 'package:dei_marc/providers/config_provider.dart';
-import 'package:dei_marc/widgets/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/bookmark_provider.dart';

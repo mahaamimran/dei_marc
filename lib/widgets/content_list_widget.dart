@@ -242,10 +242,12 @@ class ContentListWidget extends StatelessWidget {
       );
     } else if (quote.type == Constants.BOLD) {
       return BoldWidget(text: quote.text, fontSize: fontSize);
-    } else if (quote.type == Constants.CAPTION) {
+    }else if (quote.type == Constants.DESCRIPTION) {
+      return DescriptionWidget(description: quote.text, fontSize: fontSize);
+    }
+     else if (quote.type == Constants.CAPTION) {
       return CaptionWidget(text: quote.text, fontSize: fontSize);
-      // TODO:
-    } else if (quote.type == 'pdf') {
+    } else if (quote.type == Constants.PDF) {
       return PDFDownloadButton(
         text: 'Download',
         secondaryColor: secondaryColor,

@@ -33,4 +33,7 @@ class Constants {
   static const String PARAGRAPH = 'paragraph';
   static const String CAPTION = 'caption';
   static const String DECKOFSLIDES = 'deckofslides';
+  static const String DESCRIPTION = 'description';
+  static const String PDF = 'pdf';
+
 }
