@@ -1,3 +1,4 @@
+import 'package:dei_marc/config/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
@@ -17,59 +18,58 @@ class VideoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     if (videoName == null) return const SizedBox.shrink();
 
-    // Fetch the video link from config using videoName as the key
-    final videoUrl = Provider.of<ConfigProvider>(context).getVideoPath(videoName!);
+    final videoUrl =
+        Provider.of<ConfigProvider>(context).getVideoPath(videoName!);
 
     if (videoUrl == null) {
       return const Center(child: Text('Video not found.'));
     }
 
-    // Minimalistic custom layout
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0), // Smaller padding
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Card(
-        elevation: 2.0, // Lower elevation for a flatter design
+        elevation: 2.0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0), // Rounded corners
+          borderRadius: BorderRadius.circular(18.0),
         ),
         child: InkWell(
           onTap: () => _launchURL(videoUrl),
           borderRadius: BorderRadius.circular(18.0),
           child: Padding(
-            padding: const EdgeInsets.all(12.0), // Minimal padding inside the card
+            padding: const EdgeInsets.all(12.0),
             child: Row(
               children: [
                 Icon(
                   Icons.play_arrow,
                   color: primaryColor,
-                  size: 24.0, // Small play icon
+                  size: 24.0,
                 ),
-                const SizedBox(width: 12.0), // Space between icon and text
+                const SizedBox(width: 12.0),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Watch Video',
-                      style: TextStyle(
+                      style: TextStyles.appCaption.copyWith(
                         color: primaryColor,
-                        fontWeight: FontWeight.bold, // Thicker font weight
-                        fontSize: 14.0, // Text size
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     Text(
                       'Tap to play',
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                        fontSize: 12.0, // Smaller subtitle text size
+                      style: TextStyles.appCaption.copyWith(
+                        color: Colors.grey,
+                        fontSize: 12.0,
                       ),
                     ),
                   ],
                 ),
-                const Spacer(), // Space between text and trailing icon
+                const Spacer(),
                 Icon(
                   Icons.chevron_right,
                   color: primaryColor,
-                  size: 24.0, // Smaller trailing icon
+                  size: 24.0,
                 ),
               ],
             ),
