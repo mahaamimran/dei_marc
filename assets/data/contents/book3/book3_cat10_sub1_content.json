@@ -23,7 +23,15 @@
             "content": [
                 {
                     "type": "paragraph",
-                    "text": "Farah works in the marketing department and is well-liked. She had an urgent family problem and needed to take time off. Her boss quickly said yes to a week off so she could take care of her emergency without stressing about work. Her coworkers helped out by covering her work while she was gone.\nA few months later, Ali, who also works in marketing and is a hard worker, needed emergency time off just like Farah did. He asked for leave the same way Farah had. However, his application took several days to process due to the recent implementation of a new digital approval system intended to standardize leave requests. The delay was primarily technical, as the system marked his request for additional verification, but nobody told Ali about these new steps. He felt like his emergency wasn't being treated as importantly as Farah's had been.\nThis incident prompted discussions among the staff. They realized there was a big issue of transparency and communication regarding the new system. Employees felt left in the dark about how decisions were made and the criteria used for approving leave requests. This feeling of possibly being treated differently or perception of bias started to make everyone feel less happy and trusting at work."
+                    "text": "Farah works in the marketing department and is well-liked. She had an urgent family problem and needed to take time off. Her boss quickly said yes to a week off so she could take care of her emergency without stressing about work. Her coworkers helped out by covering her work while she was gone."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A few months later, Ali, who also works in marketing and is a hard worker, needed emergency time off just like Farah did. He asked for leave the same way Farah had. However, his application took several days to process due to the recent implementation of a new digital approval system intended to standardize leave requests. The delay was primarily technical, as the system marked his request for additional verification, but nobody told Ali about these new steps. He felt like his emergency wasn't being treated as importantly as Farah's had been."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This incident prompted discussions among the staff. They realized there was a big issue of transparency and communication regarding the new system. Employees felt left in the dark about how decisions were made and the criteria used for approving leave requests. This feeling of possibly being treated differently or perception of bias started to make everyone feel less happy and trusting at work."
                 }
             ]
         },
