@@ -3,12 +3,15 @@
     "subcategory":"About",
     "content":[
         {
-            "content":[
+            "content": [
                 {
-                    "type":"pdf",
-                    "text":"book3_doc"
-
-                },
+                    "type": "pdf",
+                    "text": "cat1_sub1_pdf"
+                }
+            ]
+        },
+        {
+            "content":[
                 {
                     "type":"video",
                     "text":"book3_video"

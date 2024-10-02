@@ -95,9 +95,9 @@
         "book3_cat11":"images/book3/categories/cat11.png",
         "book3_cat12":"images/book3/categories/cat12.png",
 
-        "book1_team":"images/book1/team/team.png",
-        "book2_team":"images/book2/team/team.png",
-        "book3_team":"images/book3/team.png"
+        "book1_team":"images/book1/team/book1_team.png",
+        "book2_team":"images/book2/team/book2_team.png",
+        "book3_team":"images/book3/book3_team.png"
     },
 
     "video_paths":{
