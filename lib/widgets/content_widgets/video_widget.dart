@@ -1,15 +1,17 @@
+import 'package:dei_marc/config/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/config_provider.dart';
-import 'package:dei_marc/utils/connection_util.dart';
 
 class VideoWidget extends StatelessWidget {
   final String? videoName;
+  final Color primaryColor;
 
   const VideoWidget({
     super.key,
     required this.videoName,
+    required this.primaryColor,
   });
 
   @override
@@ -20,34 +22,61 @@ class VideoWidget extends StatelessWidget {
     final videoUrl = Provider.of<ConfigProvider>(context).getVideoPath(videoName!);
 
     if (videoUrl == null) {
-      return const Text('Video not found.');
+      return const Center(child: Text('Video not found.'));
     }
 
-    return FutureBuilder<bool>(
-      future: ConnectionUtil().isConnected(), // Check internet connection
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          // While the connection check is ongoing, show a loading indicator
-          return const CircularProgressIndicator();
-        } else if (snapshot.hasData && snapshot.data == true) {
-          // If connected, show a clickable link
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: GestureDetector(
-              onTap: () => _launchURL(videoUrl),
-              child: const Text(
-                'Watch Video',
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Card(
+        
+        elevation: 2.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+        ),
+        child: InkWell(
+          onTap: () => _launchURL(videoUrl),
+          borderRadius: BorderRadius.circular(18.0),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.play_arrow,
+                  color: primaryColor,
+                  size: 24.0,
                 ),
-              ),
+                const SizedBox(width: 12.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Watch Video',
+                      style: TextStyles.appCaption.copyWith(
+                        color: primaryColor,
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      'Tap to play',
+                      style: TextStyles.appCaption.copyWith(
+                        color: Colors.grey,
+                        fontSize: 12.0,
+                      ),
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                Icon(
+                  Icons.chevron_right,
+                  color: primaryColor,
+                  size: 24.0,
+                ),
+              ],
             ),
-          );
-        } else {
-          return const Text('No internet connection.');
-        }
-      },
+          ),
+        ),
+      ),
     );
   }
 

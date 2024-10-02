@@ -10,6 +10,14 @@
     "subcategory": "Caselet 1 | Addressing Pay Disparity At Bank Xcellence | 15-20 Min",
     "content": [
         {
+            "content": [
+                {
+                    "type": "pdf",
+                    "text": "cat11_sub1_pdf"
+                }
+            ]
+        },
+        {
             "content":[
                 {
                     "type":"paragraph",

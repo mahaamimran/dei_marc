@@ -1,21 +1,20 @@
 {
-    "category":"About the Gender DEI Toolkit Volume III",
-    "subcategories":[
+    "category": "About the Gender DEI Toolkit Volume III",
+    "subcategories": [
         {
-            "name":"About"
+            "name": "Overview Document & Video"
         },
         {
-            "name":"Meet the Team"
+            "name": "Meet the Team"
         },
         {
-            "name":"Acknowledgements"
+            "name": "Acknowledgements"
         },
         {
-            "name":"Special Thanks"
+            "name": "Special Thanks"
         },
         {
-            "name":"Methodology"
+            "name": "Methodology"
         }
-
     ]
 }

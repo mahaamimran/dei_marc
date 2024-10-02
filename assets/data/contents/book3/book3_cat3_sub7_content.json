@@ -5,6 +5,14 @@
         {
             "content": [
                 {
+                    "type": "pdf",
+                    "text": "cat3_sub7_pdf"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
                     "type":"paragraph",
                     "text":"This TEDx talk explores the profound challenges and biases that minorities and women face in the STEM fields—science, technology, engineering, and mathematics. The speaker, Nicole Cabrera Salazar, a PhD candidate in astronomy and an immigrant from Chile, shares her personal journey and the broader societal assumptions that often paint a stereotypical image of a scientist as white and male. She discusses the importance of diversity in fostering innovation and problem-solving in STEM and highlights both the institutional biases and socialization that deter a significant portion of the population from pursuing and persisting in STEM careers. Through her narrative, she underscores the critical need for representation and the benefits of a diverse scientific community."
                 },
