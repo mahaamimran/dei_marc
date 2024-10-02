@@ -16,7 +16,11 @@
             "content":[
                 {
                     "type":"paragraph",
-                    "text":"Mariam successfully completes the returnship program. Being a quick learner, she adjusts swiftly to the new technologies and methodologies introduced during her two-year break from work. Notably, her managers are impressed by her skills and dedication, and are happy to offer Mariam a full-time position at the conclusion of the program. At first, she is very glad to return to work. However, soon, she understands that it is very difficult to manage her professional duties with her responsibilities as a primary caregiver.\nEven though her employer has provided support to flexible work arrangements, Mariam finds herself reverting to the 'family comes first' mindset. She often leaves earlier to take care of her children, declines business trips, most of which could advance her career, turns down any local promotion that might require travel, and is afraid to delve into large projects that require overtime and night shifts. Her immediate manager, Amir, notices Mariam’s struggles but is not sure of how to provide support without affecting the team’s productivity."
+                    "text":"Mariam successfully completes the returnship program. Being a quick learner, she adjusts swiftly to the new technologies and methodologies introduced during her two-year break from work. Notably, her managers are impressed by her skills and dedication, and are happy to offer Mariam a full-time position at the conclusion of the program. At first, she is very glad to return to work. However, soon, she understands that it is very difficult to manage her professional duties with her responsibilities as a primary caregiver."
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Even though her employer has provided support to flexible work arrangements, Mariam finds herself reverting to the 'family comes first' mindset. She often leaves earlier to take care of her children, declines business trips, most of which could advance her career, turns down any local promotion that might require travel, and is afraid to delve into large projects that require overtime and night shifts. Her immediate manager, Amir, notices Mariam’s struggles but is not sure of how to provide support without affecting the team’s productivity."
                 }
             ]
         },
