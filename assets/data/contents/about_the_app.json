@@ -1,0 +1,49 @@
+{
+    "content": [
+      {
+        "heading": "ABOUT THE APP",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "This app is based on the Gender DEI Toolkit Series, developed by Dr. Sadia Nadeem, Director Management Advancement Research Centre (MARC), and three different teams, all based at FAST National University of Computer and Emerging Science (FAST NUCES), Islamabad, Pakistan. Through this series, the Gender DEI Toolkit teams aim to contribute towards the Fifth Sustainable Development Goal (SDG 5), namely ‘gender equality’, by imagineering a future where men and women are working side by side as equals, in all spheres of life in Pakistan."
+          }
+        ]
+      },
+      {
+        "heading": "ABOUT MARC",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "The Management Advancement Research Centre (MARC) was established at FAST-NUCES Islamabad to conduct leading edge research in management sciences with the aim to enhance knowledge and find solutions for industry challenges. Various Special Interest Groups (SIGs) work under MARC, all committed to taking up projects which contribute to the body of knowledge, yet at the same time provide a bridge between academia and practice."
+          }
+        ]
+      },
+      {
+        "heading": "ABOUT THE DIRECTOR MARC",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Dr. Sadia Nadeem is a professor at FAST School of Management, FAST NUCES Islamabad, and the director of MARC. She has approximately 26 years of experience in research, teaching and consulting in the field of HR. Discrimination and disadvantage in the labor market is one of her areas of interest."
+          }
+        ]
+      },
+      {
+        "heading": "ACKNOWLEDGEMENTS",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "The Gender DEI Toolkit Series would not have been possible without the valuable contributions of over 40 talented students from FAST NUCES between 2021 and 2024. The Director MARC extends special thanks to Sarah Khan and Dr. Amna Basharat for their unwavering support throughout the four-year journey of developing the series, which culminated in the development of this app."
+          },
+          {
+            "type": "paragraph",
+            "text": "The technical development of this app was carried out by Maham Imran and team, all students of FAST NUCES, under the direct supervision of Dr. Amna Basharat, Assistant Professor, FAST NUCES and the guidance of Dr. Sadia Nadeem."
+          },
+          {
+            "type": "paragraph",
+            "text": "The MARC Gender DEI Toolkit Volumes II and III, along with the development of this app, were partially funded by HEC NRPU 15351."
+          }
+        ]
+      }
+    ]
+  }
+  

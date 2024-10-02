@@ -52,6 +52,7 @@ flutter:
     - assets/data/images/book2/team/
     - assets/data/config.json
     - assets/launch_screen/launch_screen.png
+    - assets/data/contents/about_the_app.json
 
 
   fonts:

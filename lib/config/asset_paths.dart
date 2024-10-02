@@ -4,6 +4,7 @@ class AssetPaths {
     'assets/data/images/book_covers/toolkit2.png',
     'assets/data/images/book_covers/toolkit3.png',
   ];
+  static String aboutContentPath = 'assets/data/contents/about_the_app.json';
   static const String booksJson = 'assets/data/books/books.json';
   static const String placeholderImage = 'assets/data/images/placeholder.png';
   static String categoriesJson(String bookId) => 'assets/data/categories/book${bookId}_categories.json';

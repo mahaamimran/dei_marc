@@ -145,7 +145,7 @@ class ContentListWidget extends StatelessWidget {
                           color: appBarColor,
                         ),
 
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 8),
 
                         // Render remaining content items
                         Consumer<ContentProvider>(
@@ -242,17 +242,26 @@ class ContentListWidget extends StatelessWidget {
       );
     } else if (quote.type == Constants.BOLD) {
       return BoldWidget(text: quote.text, fontSize: fontSize);
-    }else if (quote.type == Constants.DESCRIPTION) {
+    } else if (quote.type == Constants.DESCRIPTION) {
       return DescriptionWidget(description: quote.text, fontSize: fontSize);
-    }
-     else if (quote.type == Constants.CAPTION) {
+    } else if (quote.type == Constants.CAPTION) {
       return CaptionWidget(text: quote.text, fontSize: fontSize);
     } else if (quote.type == Constants.PDF) {
-      return PDFDownloadButton(
-        text: 'Download',
-        secondaryColor: secondaryColor,
-        primaryColor: appBarColor,
-        pdfUrl: quote.text,
+      // Retrieve the PDF path from the ConfigProvider
+      return Consumer<ConfigProvider>(
+        builder: (context, configProvider, child) {
+          final pdfUrl = configProvider.getPdfPath(quote.text);
+
+          if (pdfUrl != null) {
+            return PDFDownloadButton(
+              text: 'Download PDF',
+              secondaryColor: secondaryColor,
+              primaryColor: appBarColor,
+              pdfUrl: pdfUrl,
+            );
+          }
+          return const SizedBox.shrink();
+        },
       );
     } else {
       return Padding(

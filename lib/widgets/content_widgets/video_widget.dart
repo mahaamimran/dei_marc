@@ -1,3 +1,4 @@
+import 'package:dei_marc/config/color_constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -32,6 +33,7 @@ class VideoWidget extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.0),
         ),
+        color: Colors.white70,
         child: InkWell(
           onTap: () => _launchURL(videoUrl),
           borderRadius: BorderRadius.circular(18.0),
