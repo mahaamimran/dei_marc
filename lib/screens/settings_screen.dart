@@ -4,6 +4,7 @@ import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/screens/settings_screens/about.dart';
+import 'package:dei_marc/screens/settings_screens/privacy.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,21 +35,25 @@ class SettingsScreen extends StatelessWidget {
                 child: ListView(
                   padding: const EdgeInsets.all(16.0),
                   children: [
-                      _buildSectionTitle('General'),
+                    _buildSectionTitle('General'),
                     const SizedBox(height: 10),
                     _buildSettingsOption('About', CupertinoIcons.info, () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const AboutScreen(),
-                            ),
-                          );
-                        }),
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const AboutScreen(),
+                        ),
+                      );
+                    }),
                     _buildSettingsOption('Copyright', Icons.copyright, () {
                       // Handle Copyright tap
                     }),
                     _buildSettingsOption(
                         'Privacy and Security', CupertinoIcons.lock, () {
-                      // Handle Privacy and Security tap
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const PrivacyPolicyScreen(),
+                        ),
+                      );
                     }),
                     _buildSettingsOption(
                         'Support', CupertinoIcons.question_circle, () {
