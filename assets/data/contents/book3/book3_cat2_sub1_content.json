@@ -10,6 +10,14 @@
     "subcategory": "Activity 1 | Mix and Match | 15-20 Min",
     "content": [
         {
+            "content": [
+                {
+                    "type": "pdf",
+                    "text": "cat2_sub1_pdf"
+                }
+            ]
+        },
+        {
             "heading": "Aim",
             "content": [
                 {

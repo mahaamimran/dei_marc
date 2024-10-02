@@ -10,6 +10,14 @@
     "subcategory": "Activity 1 | Hopes And Fears | 60 Min",
     "content": [
         {
+            "content": [
+                {
+                    "type": "pdf",
+                    "text": "cat3_sub1_pdf"
+                }
+            ]
+        },
+        {
             "heading": "Aim",
             "content": [
                 {

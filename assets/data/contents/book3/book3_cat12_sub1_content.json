@@ -10,6 +10,14 @@
     "subcategory": "Caselet 1 | The Promotion Dilemma | 25 Min",
     "content": [
         {
+            "content": [
+                {
+                    "type": "pdf",
+                    "text": "cat12_sub1_pdf"
+                }
+            ]
+        },
+        {
             "content":[
                 {
                     "type":"paragraph",
