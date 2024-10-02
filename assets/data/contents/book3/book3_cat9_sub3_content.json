@@ -14,7 +14,15 @@
             "content":[
                 {
                     "type":"paragraph",
-                    "text":"At the esteemed Bank Xcellence, two skilled financial analysts, Amna and Umer, encountered an unforeseen circumstance. Despite their comparable experiences, they noticed a substantial salary gap. Umer, being assertive, negotiated his salary during the hiring process and secured a higher initial pay. On the other hand, Amna accepted the first offer without negotiation, assuming it was a fair assessment of her value and adequate for her requirements.\nThis initial salary difference had a compounding effect. During their performance evaluations, their salary increments were determined as a percentage of their existing salary. As a result, Umer’s increments were consistently slightly more than Amna’s, progressively increasing the wage gap each year, despite their equal dedication and contributions to their roles.\nIn an informal chat, Amna and Umer discovered the discrepancy in their salaries. Amna was taken by surprise and felt a sense of unfairness. She was aware that they had identical qualifications and their performance was on par. This disclosure led her to question the equity of the system."
+                    "text":"At the esteemed Bank Xcellence, two skilled financial analysts, Amna and Umer, encountered an unforeseen circumstance. Despite their comparable experiences, they noticed a substantial salary gap. Umer, being assertive, negotiated his salary during the hiring process and secured a higher initial pay. On the other hand, Amna accepted the first offer without negotiation, assuming it was a fair assessment of her value and adequate for her requirements."
+                },
+                {
+                    "type":"paragraph",
+                    "text":"This initial salary difference had a compounding effect. During their performance evaluations, their salary increments were determined as a percentage of their existing salary. As a result, Umer’s increments were consistently slightly more than Amna’s, progressively increasing the wage gap each year, despite their equal dedication and contributions to their roles."
+                },
+                {
+                    "type":"paragraph",
+                    "text":"In an informal chat, Amna and Umer discovered the discrepancy in their salaries. Amna was taken by surprise and felt a sense of unfairness. She was aware that they had identical qualifications and their performance was on par. This disclosure led her to question the equity of the system."
                 }
             ]
 

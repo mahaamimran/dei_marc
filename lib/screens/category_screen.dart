@@ -108,14 +108,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ContentScreen(
-                        appBarColor: widget.appBarColor,
-                        secondaryColor: widget.secondaryColor,
-                        bookId: widget.bookFileName,
-                        categoryId: index + 1,
-                        categoryName: isLast
-                            ? label
-                            : category
-                                .name), // CategoryName as About for the last item
+                      appBarColor: widget.appBarColor,
+                      secondaryColor: widget.secondaryColor,
+                      bookId: widget.bookFileName,
+                      categoryId: index + 1,
+                      categoryName: isLast ? label : category.name,
+                      isLast: isLast,
+                    ),
                   ),
                 );
               },
@@ -188,10 +187,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         secondaryColor: widget.secondaryColor,
                         bookId: widget.bookFileName,
                         categoryId: index + 1,
-                        categoryName: isLast
-                            ? "About"
-                            : category
-                                .name, // CategoryName as About for the last item
+                        categoryName: isLast ? label : category.name,
+                        isLast: isLast,
                       ),
                     ),
                   );
@@ -202,9 +199,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   title: Text(
                     label,
                     style: TextStyles.appCaption.copyWith(
-                      color: widget.appBarColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        color: widget.appBarColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
                     // Removed the TextAlign.center for left alignment
                   ),
                   subtitle: !isLast

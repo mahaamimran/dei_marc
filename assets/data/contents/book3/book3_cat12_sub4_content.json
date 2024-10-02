@@ -14,8 +14,20 @@
             "heading": "Summary",
             "content": [
                 {
-                    "type": "paragraph",
-                    "text": "Business leaders failing to take ownership of DEI progress remains the top challenge for DEI leaders, according to a Gartner report published Jan. 25. \nDEI leaders report they have to “continually coach business leaders” on why DEI matters to the organization and why it’s critical for company success.\nDEI practitioners also feel limited by a lack of decision-making power, ineffective coordination of DEI programming across units, limited staff and employee resistance, the report said.\nAccording to survey data from Monster, 11% of employers surveyed said DEI programs are “the first to go” when a company needs to cut costs, and only 5% of recruiters said DEI was a top priority despite increased candidate interest in it."
+                    "type": "bullet",
+                    "text": "Business leaders failing to take ownership of DEI progress remains the top challenge for DEI leaders, according to a Gartner report published Jan. 25."
+                },
+                {
+                    "type": "bullet",
+                    "text": "DEI leaders report they have to “continually coach business leaders” on why DEI matters to the organization and why it’s critical for company success."
+                },
+                {
+                    "type": "bullet",
+                    "text": "DEI practitioners also feel limited by a lack of decision-making power, ineffective coordination of DEI programming across units, limited staff and employee resistance, the report said."
+                },
+                {
+                    "type": "bullet",
+                    "text": "According to survey data from Monster, 11% of employers surveyed said DEI programs are “the first to go” when a company needs to cut costs, and only 5% of recruiters said DEI was a top priority despite increased candidate interest in it."
                 }
             ]
         },
@@ -65,7 +77,7 @@
                 },
                 {
                     "type":"caption",
-                    "text":"© Kathryn Moody (2023, Feb 01). Leaders Aren’t Taking Ownership of Diversity Initiatives, DEI Pros Say.HR Drive. Retrieved from https://www.hrdive.com/news/company-leaders-arent-taking-ownership-diversity-initiatives/641749/"
+                    "text":"© Kathryn Moody (2023, Feb 01). Leaders Aren’t Taking Ownership of Diversity Initiatives, DEI Pros Say. HR Drive. Retrieved from https://www.hrdive.com/news/company-leaders-arent-taking-ownership-diversity-initiatives/641749/"
                 }
             ]
         }

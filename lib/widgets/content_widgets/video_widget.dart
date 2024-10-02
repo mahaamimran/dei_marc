@@ -18,8 +18,8 @@ class VideoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     if (videoName == null) return const SizedBox.shrink();
 
-    // Fetch the video link from config using videoName as the key
-    final videoUrl = Provider.of<ConfigProvider>(context).getVideoPath(videoName!);
+    final videoUrl =
+        Provider.of<ConfigProvider>(context).getVideoPath(videoName!);
 
     if (videoUrl == null) {
       return const Center(child: Text('Video not found.'));
@@ -28,7 +28,6 @@ class VideoWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Card(
-        
         elevation: 2.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.0),

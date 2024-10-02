@@ -80,23 +80,23 @@
         "book2_cat4_sub1": "images/book2/categories/cat4_sub1.jpeg",
         "book2_cat4_sub2": "images/book2/categories/cat4_sub2.jpeg",
 
-        "book3_cat1":"images/book3/categories/cat1.jpg",
-        "book3_cat2":"images/book3/categories/cat2.jpg",
+        "book3_cat1":"images/book3/categories/cat1.png",
+        "book3_cat2":"images/book3/categories/cat2.png",
         "book3_cat2_sub2":"images/book3/categories/cat2_sub2.png",
-        "book3_cat3":"images/book3/categories/cat3.jpg",
-        "book3_cat4":"images/book3/categories/cat4.jpg",
-        "book3_cat5":"images/book3/categories/cat5.jpg",
-        "book3_cat6":"images/book3/categories/cat6.jpg",
-        "book3_cat7":"images/book3/categories/cat7.jpg",
-        "book3_cat8":"images/book3/categories/cat8.jpg",
-        "book3_cat9":"images/book3/categories/cat9.jpg",
-        "book3_cat10":"images/book3/categories/cat10.jpg",
-        "book3_cat11":"images/book3/categories/cat11.jpg",
-        "book3_cat12":"images/book3/categories/cat12.jpg",
+        "book3_cat3":"images/book3/categories/cat3.png",
+        "book3_cat4":"images/book3/categories/cat4.png",
+        "book3_cat5":"images/book3/categories/cat5.png",
+        "book3_cat6":"images/book3/categories/cat6.png",
+        "book3_cat7":"images/book3/categories/cat7.png",
+        "book3_cat8":"images/book3/categories/cat8.png",
+        "book3_cat9":"images/book3/categories/cat9.png",
+        "book3_cat10":"images/book3/categories/cat10.png",
+        "book3_cat11":"images/book3/categories/cat11.png",
+        "book3_cat12":"images/book3/categories/cat12.png",
 
-        "book1_team":"images/book1/team/team.png",
-        "book2_team":"images/book2/team/team.png",
-        "book3_team":"images/book3/team.png"
+        "book1_team":"images/book1/team/book1_team.png",
+        "book2_team":"images/book2/team/book2_team.png",
+        "book3_team":"images/book3/book3_team.png"
     },
 
     "video_paths":{
@@ -118,8 +118,8 @@
         "video_WageDisparity":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
         "video_SecondChances":"https://www.youtube.com/watch?v=Bq_xYSOZrgU",
 
-        "book1_video":"",
-        "book2_video":"",
+        "book1_video":"https://www.youtube.com/watch?v=zMJ6o2ZGHmM",
+        "book2_video":"https://www.youtube.com/watch?v=ZRagaFyUoBI",
         "book3_video":""
     },
     

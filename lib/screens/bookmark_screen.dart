@@ -72,36 +72,35 @@ class BookmarksScreen extends StatelessWidget {
   }
 
   Widget _buildGridView(BookmarkProvider bookmarkProvider) {
-    return Scrollbar(
-      child: GridView.builder(
-        padding: const EdgeInsets.all(10.0),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Same grid layout as CategoryScreen
-          childAspectRatio: 1.3, // Same aspect ratio as CategoryScreen
-          crossAxisSpacing: 15.0,
-          mainAxisSpacing: 15.0,
-        ),
-        itemCount: bookmarkProvider.bookmarks.length,
-        itemBuilder: (context, index) {
-          final bookmark = bookmarkProvider.bookmarks[index];
-          return _buildGridBookmarkCard(context, bookmark);
-        },
+    return GridView.builder(
+      padding: const EdgeInsets.all(10.0),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2, // Same grid layout as CategoryScreen
+        childAspectRatio: 1.3, // Same aspect ratio as CategoryScreen
+        crossAxisSpacing: 15.0,
+        mainAxisSpacing: 15.0,
       ),
+      itemCount: bookmarkProvider.bookmarks.length,
+      itemBuilder: (context, index) {
+        final bookmark = bookmarkProvider.bookmarks[index];
+        return _buildGridBookmarkCard(context, bookmark);
+      },
     );
   }
 
-  Widget _buildListView(BookmarkProvider bookmarkProvider) {
-    return Scrollbar(
-      child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-        itemCount: bookmarkProvider.bookmarks.length,
-        itemBuilder: (context, index) {
-          final bookmark = bookmarkProvider.bookmarks[index];
-          return _buildListBookmarkCard(context, bookmark);
-        },
-      ),
-    );
-  }
+Widget _buildListView(BookmarkProvider bookmarkProvider) {
+  return ListView.builder(
+    padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+    itemCount: bookmarkProvider.bookmarks.length,
+    itemBuilder: (context, index) {
+      final bookmark = bookmarkProvider.bookmarks[index];
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 10.0), // Add spacing between items
+        child: _buildListBookmarkCard(context, bookmark),
+      );
+    },
+  );
+}
 
   Widget _buildGridBookmarkCard(BuildContext context, String bookmark) {
     final parts = bookmark.split('-');
