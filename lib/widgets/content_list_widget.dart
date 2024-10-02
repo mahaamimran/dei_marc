@@ -227,7 +227,7 @@ class ContentListWidget extends StatelessWidget {
     } else if (quote.type == Constants.IMAGE) {
       return ImageWidget(imageName: quote.text);
     } else if (quote.type == Constants.VIDEO) {
-      return VideoWidget(videoName: quote.text,primaryColor: appBarColor,);
+      return VideoWidget(videoName: quote.text, primaryColor: appBarColor);
     } else if (quote.type == Constants.BULLET) {
       return BulletWidget(
         text: quote.text,

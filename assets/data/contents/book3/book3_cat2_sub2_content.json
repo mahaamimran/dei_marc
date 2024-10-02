@@ -2,7 +2,14 @@
     "category": "Stereotyping | 2.5-3 hrs",
     "subcategory": "Activity 2 | My Wife Does Not Work | 35 Min",
     "content": [
-        
+        {
+            "content": [
+                {
+                    "type": "pdf",
+                    "text": "cat2_sub2_pdf"
+                }
+            ]
+        },
         {
             "heading": "Aim",
             "content": [

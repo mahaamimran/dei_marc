@@ -3,6 +3,14 @@
     "subcategory": "Caselet 1 | Farah's Dilemma At Digital Innovations Ltd. | 15-20 Min",
     "content": [
         {
+            "content": [
+                {
+                    "type": "pdf",
+                    "text": "cat9_sub2_pdf"
+                }
+            ]
+        },
+        {
             "content":[
                 {
                     "type":"paragraph",

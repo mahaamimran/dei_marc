@@ -3,6 +3,14 @@
     "subcategory": "TEDx Talk | Are You Biased? I am | 15 Min",
     "content": [
         {
+            "content": [
+                {
+                    "type": "pdf",
+                    "text": "cat1_sub6_pdf"
+                }
+            ]
+        },
+        {
             "content":[
                 {
                     "type":"paragraph",

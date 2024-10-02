@@ -1,6 +1,6 @@
 {
     "category":"About the Gender DEI Toolkit Volume I",
-    "subcategory":"About",
+    "subcategory":"Overview Document & Video",
     "content":[
         {
             "content":[
@@ -10,13 +10,13 @@
 
                 },
                 {
-                    "type":"video",
-                    "text":"book1_video"
+                    "type":"paragraph",
+                    "text":"This Gender DEI Toolkit is developed on the basis of information on gender DEI best practices collected from 19 organizations operating in Pakistan. It presents 47 tools further divided into 80 plus sub-categories. These have been identified by the MARC team on the basis of the details of practices provided by the participating organizations. The tools are organized under the 13 categories of the Global Diversity, Equity and Inclusion Benchmarks (GDEIB) 2021 standards that are published by the Centre for Global Inclusion, USA, with the support and input of 112 expert panelists from around the world. Thus, the toolkit provides practical ideas that are aligned with global standards, to aid organizations in fortifying and enhancing gender diversity in the workplace. Through this toolkit, the MARC team aims to contribute towards the Fifth Sustainable Development Goal (SDG 5), namely ‘gender equality’, by imagineering a future where men and women are working side by side as equals, in all spheres of life in Pakistan."
 
                 },
                 {
-                    "type":"paragraph",
-                    "text":"This Gender DEI Toolkit is developed on the basis of information on gender DEI best practices collected from 19 organizations operating in Pakistan. It presents 47 tools further divided into 80 plus sub-categories. These have been identified by the MARC team on the basis of the details of practices provided by the participating organizations. The tools are organized under the 13 categories of the Global Diversity, Equity and Inclusion Benchmarks (GDEIB) 2021 standards that are published by the Centre for Global Inclusion, USA, with the support and input of 112 expert panelists from around the world. Thus, the toolkit provides practical ideas that are aligned with global standards, to aid organizations in fortifying and enhancing gender diversity in the workplace. Through this toolkit, the MARC team aims to contribute towards the Fifth Sustainable Development Goal (SDG 5), namely ‘gender equality’, by imagineering a future where men and women are working side by side as equals, in all spheres of life in Pakistan."
+                    "type":"video",
+                    "text":"book1_video"
 
                 }
             ]

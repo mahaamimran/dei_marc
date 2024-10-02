@@ -3,6 +3,14 @@
     "subcategory": "Caselet 2 | A Determined Saleswoman In Peshawar | 25 Min",
     "content": [
         {
+            "content": [
+                {
+                    "type": "pdf",
+                    "text": "cat12_sub2_pdf"
+                }
+            ]
+        },
+        {
             "content":[
                 {
                     "type":"paragraph",
