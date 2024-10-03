@@ -99,6 +99,7 @@ class ContentListWidget extends StatelessWidget {
 
                                 if (deckOfSlidesUrl != null) {
                                   return PDFDownloadButton(
+                                    subcategoryName: "Deck of Slides",
                                     text: 'Deck of Slides',
                                     secondaryColor: secondaryColor,
                                     primaryColor: appBarColor,
@@ -160,7 +161,7 @@ class ContentListWidget extends StatelessWidget {
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: contents.map((contentItem) {
-                                return _buildContentItem(contentItem, context);
+                                return _buildContentItem(contentItem, context, subcategory.name);
                               }).toList(),
                             );
                           },
@@ -182,7 +183,7 @@ class ContentListWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildContentItem(ContentItem contentItem, BuildContext context) {
+  Widget _buildContentItem(ContentItem contentItem, BuildContext context, String subcategoryName) {
     final fontSize = Provider.of<SettingsProvider>(context).fontSize;
 
     return Column(
@@ -204,12 +205,12 @@ class ContentListWidget extends StatelessWidget {
                 ),
                 if (quote.content != null)
                   ...quote.content!.map((nestedQuote) {
-                    return _buildNestedContent(nestedQuote, context, fontSize);
+                    return _buildNestedContent(nestedQuote, context, fontSize, subcategoryName);
                   }),
               ],
             );
           } else {
-            return _buildNestedContent(quote, context, fontSize);
+            return _buildNestedContent(quote, context, fontSize, subcategoryName);
           }
         }),
       ],
@@ -217,7 +218,7 @@ class ContentListWidget extends StatelessWidget {
   }
 
   Widget _buildNestedContent(
-      Quote quote, BuildContext context, double fontSize) {
+      Quote quote, BuildContext context, double fontSize, String subcategoryName) {
     if (quote.type == Constants.PARAGRAPH) {
       return ParagraphWidget(
         text: quote.text,
@@ -246,6 +247,8 @@ class ContentListWidget extends StatelessWidget {
       return DescriptionWidget(description: quote.text, fontSize: fontSize);
     } else if (quote.type == Constants.CAPTION) {
       return CaptionWidget(text: quote.text, fontSize: fontSize);
+    } else if (quote.type == Constants.HEADING) {
+      return HeadingWidget(heading: quote.text, fontSize: fontSize);
     } else if (quote.type == Constants.PDF) {
       // Retrieve the PDF path from the ConfigProvider
       return Consumer<ConfigProvider>(
@@ -254,7 +257,8 @@ class ContentListWidget extends StatelessWidget {
 
           if (pdfUrl != null) {
             return PDFDownloadButton(
-              text: 'Download PDF',
+              subcategoryName: subcategoryName,
+              text: "Download PDF",
               secondaryColor: secondaryColor,
               primaryColor: appBarColor,
               pdfUrl: pdfUrl,

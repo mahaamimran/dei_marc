@@ -121,4 +121,12 @@ class Helpers {
         return '';
     }
   }
+
+ static String getPDFScreenAppBarTitle(String text) {
+    if (text.contains('|')) {
+      return text.split('|')[0].trim();
+    } else {
+      return text;
+    }
+  }
 }

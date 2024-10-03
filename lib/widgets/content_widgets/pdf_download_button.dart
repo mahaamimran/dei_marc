@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:dei_marc/screens/pdf_screen.dart';
 
 class PDFDownloadButton extends StatelessWidget {
+  final String subcategoryName;
   final String text;
   final Color secondaryColor;
   final Color primaryColor;
@@ -10,6 +11,7 @@ class PDFDownloadButton extends StatelessWidget {
 
   const PDFDownloadButton({
     super.key,
+    required this.subcategoryName,
     required this.text,
     required this.secondaryColor,
     required this.primaryColor,
@@ -29,6 +31,8 @@ class PDFDownloadButton extends StatelessWidget {
                 builder: (context) => PDFScreen(
                   appBarColor: primaryColor,
                   pdfUrl: pdfUrl,
+                  title: text,
+                  subcategoryName: subcategoryName,
                 ),
               ),
             );
