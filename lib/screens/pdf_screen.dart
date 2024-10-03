@@ -68,7 +68,6 @@ class _PDFScreenState extends State<PDFScreen> {
           IconButton(
             icon: const Icon(Icons.ios_share_rounded, color: Colors.white),
             onPressed: () {
-              // Share the PDF link
               Share.share(widget.pdfUrl);
             },
           ),
@@ -90,7 +89,7 @@ class _PDFScreenState extends State<PDFScreen> {
                     'No Internet Connection',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   TextButton(
                     onPressed: _launchPDFUrl,
                     child: const Text(

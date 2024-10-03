@@ -42,10 +42,10 @@ class QuoteWidget extends StatelessWidget {
               child: RichText(
                 text: TextSpan(
                   style: TextStyles.quote(context)
-                      .copyWith(fontSize: fontSize + 2),
+                      .copyWith(fontSize: fontSize + 2, height: 1.25),
                   children: Helpers.highlightCompanies(
                     quote,
-                    TextStyles.quote(context).copyWith(fontSize: fontSize + 2),
+                    TextStyles.quote(context).copyWith(fontSize: fontSize + 2, height: 1.25),
                     appBarColor,
                   ),
                 ),

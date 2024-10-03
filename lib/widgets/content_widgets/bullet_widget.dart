@@ -33,8 +33,8 @@ class BulletWidget extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style:
-                  TextStyles.bullet(context).copyWith(fontSize: fontSize + 2),
+              style: TextStyles.bullet(context)
+                  .copyWith(fontSize: fontSize + 2, height: 1.25),
             ),
           ),
         ],

@@ -19,7 +19,7 @@ class BoldWidget extends StatelessWidget {
       child: Text(
         // Helpers.capitalizeTitle(text),
         text,
-        style: TextStyles.bold(context).copyWith(fontSize: fontSize + 2),
+        style: TextStyles.bold(context).copyWith(fontSize: fontSize + 2, height: 1.25),
       ),
     );
   }

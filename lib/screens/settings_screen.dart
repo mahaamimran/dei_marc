@@ -4,7 +4,9 @@ import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:dei_marc/screens/settings_screens/about.dart';
+import 'package:dei_marc/screens/settings_screens/copyright.dart';
 import 'package:dei_marc/screens/settings_screens/privacy.dart';
+import 'package:dei_marc/screens/settings_screens/support.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -45,7 +47,11 @@ class SettingsScreen extends StatelessWidget {
                       );
                     }),
                     _buildSettingsOption('Copyright', Icons.copyright, () {
-                      // Handle Copyright tap
+                       Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const CopyrightScreen(),
+                        ),
+                      );
                     }),
                     _buildSettingsOption(
                         'Privacy and Security', CupertinoIcons.lock, () {
@@ -58,6 +64,11 @@ class SettingsScreen extends StatelessWidget {
                     _buildSettingsOption(
                         'Support', CupertinoIcons.question_circle, () {
                       // Handle Support tap
+                       Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const SupportScreen(),
+                        ),
+                      );
                     }),
                     _buildSettingsOption('Share App', CupertinoIcons.share, () {
                       // Handle Share App tap

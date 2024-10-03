@@ -23,7 +23,7 @@ class ParagraphWidget extends StatelessWidget {
         text: TextSpan(
           children: Helpers.highlightCompanies(
             text,
-            TextStyles.content(context).copyWith(fontSize: fontSize + 2),
+            TextStyles.content(context).copyWith(fontSize: fontSize + 2, height: 1.25),
             highlightColor,
           ),
         ),

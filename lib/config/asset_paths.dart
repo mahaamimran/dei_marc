@@ -1,10 +1,12 @@
 class AssetPaths {
-   static const List<String> bookCovers = [
+  static const List<String> bookCovers = [
     'assets/data/images/book_covers/toolkit1.png',
     'assets/data/images/book_covers/toolkit2.png',
     'assets/data/images/book_covers/toolkit3.png',
   ];
   static String aboutContentPath = 'assets/data/contents/about_the_app.json';
+  static String copyrightContentPath = 'assets/data/contents/copyright.json';
+  static String supportContentPath = 'assets/data/contents/support.json'; 
   static const String booksJson = 'assets/data/books/books.json';
   static const String placeholderImage = 'assets/data/images/placeholder.png';
   static String categoriesJson(String bookId) => 'assets/data/categories/book${bookId}_categories.json';

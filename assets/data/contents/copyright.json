@@ -1,0 +1,74 @@
+{
+    "content": [
+      {
+        "heading": "INTERPRETATION AND DEFINITIONS",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural."
+          }
+        ]
+      },
+      {
+        "heading": "DEFINITIONS",
+        "content": [
+          {
+            "type": "bullet",
+            "text": "Company (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Disclaimer) refers to DEI Toolkits."
+          },
+          {
+            "type": "bullet",
+            "text": "Service refers to the Application."
+          },
+          {
+            "type": "bullet",
+            "text": "You means the individual accessing the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable."
+          },
+          {
+            "type": "bullet",
+            "text": "Application means the software program provided by the Company downloaded by You on any electronic device named DEI Toolkits."
+          }
+        ]
+      },
+      {
+        "heading": "DISCLAIMER",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "The information contained on the Service is for general information purposes only."
+          },
+          {
+            "type": "paragraph",
+            "text": "The Company assumes no responsibility for errors or omissions in the contents of the Service."
+          },
+          {
+            "type": "paragraph",
+            "text": "In no event shall the Company be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service."
+          }
+        ]
+      },
+      {
+        "heading": "EXTERNAL LINKS DISCLAIMER",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "The Service may contain links to external websites that are not provided or maintained by or in any way affiliated with the Company."
+          },
+          {
+            "type": "paragraph",
+            "text": "Please note that the Company does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites."
+          }
+        ]
+      },
+      {
+        "heading": "NO RESPONSIBILITY DISCLAIMER",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "The information on the Service is provided with the understanding that the Company is not herein engaged in rendering legal, accounting, tax, or other professional advice and services."
+          }
+        ]
+      }
+    ]
+  }
+  

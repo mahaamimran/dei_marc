@@ -24,6 +24,7 @@ class SubcategoryNameWidget extends StatelessWidget {
       style: TextStyles.subheading(context).copyWith(
         fontSize: fontSize + 8,
         color: color,
+        height: 1.25,
       ),
     );
   }

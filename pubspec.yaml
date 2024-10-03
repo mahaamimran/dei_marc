@@ -53,6 +53,8 @@ flutter:
     - assets/data/config.json
     - assets/launch_screen/launch_screen.png
     - assets/data/contents/about_the_app.json
+    - assets/data/contents/copyright.json
+    - assets/data/contents/support.json
 
 
   fonts:

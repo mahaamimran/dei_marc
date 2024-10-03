@@ -20,6 +20,7 @@ class DescriptionWidget extends StatelessWidget {
         description,
         style: TextStyles.content(context).copyWith(
           fontSize: fontSize + 2,
+          height: 1.25,
         ),
       ),
     );

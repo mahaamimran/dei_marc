@@ -21,6 +21,7 @@ class SubheadingWidget extends StatelessWidget {
         subheading,
         style: TextStyles.subheading(context).copyWith(
           fontSize: fontSize + 2,
+          height: 1.25
         ),
       ),
     );

@@ -1,24 +1,24 @@
 import 'dart:convert';
-import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/models/content_item.dart';
 import 'package:dei_marc/widgets/content_widgets/description_widget.dart';
 import 'package:dei_marc/widgets/content_widgets/heading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/providers/settings_provider.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:dei_marc/providers/settings_provider.dart';
 
-class AboutScreen extends StatefulWidget {
-  const AboutScreen({super.key});
+class SupportScreen extends StatefulWidget {
+  const SupportScreen({super.key});
 
   @override
-  _AboutScreenState createState() => _AboutScreenState();
+  _SupportScreenState createState() => _SupportScreenState();
 }
 
-class _AboutScreenState extends State<AboutScreen> {
-  List<ContentItem> aboutContents = [];
+class _SupportScreenState extends State<SupportScreen> {
+  List<ContentItem> supportContents = [];
 
   @override
   void initState() {
@@ -27,11 +27,11 @@ class _AboutScreenState extends State<AboutScreen> {
   }
 
   Future<void> _loadContent() async {
-    final String response = await rootBundle.loadString(AssetPaths.aboutContentPath);
+    final String response = await rootBundle.loadString(AssetPaths.supportContentPath);
     final data = json.decode(response);
     var contentList = data['content'] as List;
     setState(() {
-      aboutContents = contentList.map((item) => ContentItem.fromJson(item)).toList();
+      supportContents = contentList.map((item) => ContentItem.fromJson(item)).toList();
     });
   }
 
@@ -43,7 +43,7 @@ class _AboutScreenState extends State<AboutScreen> {
         centerTitle: true,
         scrolledUnderElevation: 0,
         title: Text(
-          'About',
+          'Support',
           style: TextStyles.appBarTitle.copyWith(color: Colors.black),
         ),
         backgroundColor: Colors.grey[200],
@@ -53,15 +53,15 @@ class _AboutScreenState extends State<AboutScreen> {
           return Scrollbar(
             child: ListView(
               padding: const EdgeInsets.all(16.0),
-              children: aboutContents.map((aboutContent) {
+              children: supportContents.map((supportContent) {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      aboutContent.heading!,
+                      supportContent.heading!,
                       style: TextStyles.heading(context).copyWith(fontSize: 16),
                     ),
-                    ...aboutContent.content.map((content) {
+                    ...supportContent.content.map((content) {
                       if (content.type == Constants.PARAGRAPH) {
                         return Text(
                           content.text,
@@ -80,4 +80,5 @@ class _AboutScreenState extends State<AboutScreen> {
       ),
     );
   }
+
 }
