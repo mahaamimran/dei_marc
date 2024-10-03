@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/models/content_item.dart';
-import 'package:dei_marc/widgets/content_widgets/description_widget.dart';
-import 'package:dei_marc/widgets/content_widgets/heading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/config/asset_paths.dart';
