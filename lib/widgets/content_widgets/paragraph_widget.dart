@@ -1,4 +1,3 @@
-// widgets/content_widgets/paragraph_widget.dart
 import 'package:flutter/material.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/config/text_styles.dart';
@@ -23,8 +22,7 @@ class ParagraphWidget extends StatelessWidget {
         TextSpan(
           children: Helpers.highlightCompanies(
             text,
-            TextStyles.content(context)
-                .copyWith(fontSize: fontSize + 2, height: 1.25),
+            TextStyles.content(context).copyWith(fontSize: fontSize + 2, height: 1.25),
             highlightColor,
           ),
         ),

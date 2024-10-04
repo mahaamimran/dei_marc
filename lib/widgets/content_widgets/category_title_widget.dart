@@ -1,4 +1,3 @@
-// widgets/content_widgets/category_title_widget.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/config/text_styles.dart';
@@ -32,13 +31,15 @@ class CategoryTitleWidget extends StatelessWidget {
         ),
         const SizedBox(width: 18.0),
         Expanded(
-          child: SelectableText(
-            // Helpers.capitalizeTitle(categoryName).toUpperCase(),
-            categoryName.toUpperCase(),
-            style: TextStyles.heading(context).copyWith(
-              fontSize: fontSize + 10,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
+          child: SelectableText.rich(
+            TextSpan(
+              text: categoryName.toUpperCase(),
+              style: TextStyles.heading(context).copyWith(
+                fontSize: fontSize + 10,
+                fontWeight: FontWeight.w700,
+                color: textColor,
+               height: 1.75
+              ),
             ),
           ),
         ),

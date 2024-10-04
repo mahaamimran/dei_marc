@@ -272,7 +272,7 @@ class ContentListWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
           quote.text,
-          style: TextStyles.content(context).copyWith(fontSize: fontSize),
+          style: TextStyles.content(context).copyWith(fontSize: fontSize, height: 1.25),
         ),
       );
     }

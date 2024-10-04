@@ -1,4 +1,3 @@
-// widgets/heading_widget.dart
 import 'package:flutter/material.dart';
 import 'package:dei_marc/config/text_styles.dart';
 
@@ -16,9 +15,11 @@ class HeadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: SelectableText(
-        heading,
-        style: TextStyles.heading(context).copyWith(fontSize: fontSize + 6,height: 1.25),
+      child: SelectableText.rich(
+        TextSpan(
+          text: heading,
+          style: TextStyles.heading(context).copyWith(fontSize: fontSize + 6, height: 1.75),
+        ),
       ),
     );
   }

@@ -66,6 +66,7 @@ class TextStyles {
       fontFamily: Provider.of<SettingsProvider>(context).fontFamily,
       fontSize: 16,
       color: Colors.grey[800],
+      height: 1.25,
     );
   }
 
@@ -74,6 +75,7 @@ class TextStyles {
       fontFamily: Provider.of<SettingsProvider>(context).fontFamily,
       fontSize: 16,
       color: Colors.grey[800],
+      height: 1.25,
     );
   }
 
@@ -91,6 +93,7 @@ class TextStyles {
       fontFamily: Provider.of<SettingsProvider>(context).fontFamily,
       fontSize: 16,
       color: Colors.grey[800],
+      height: 1.25,
     );
   }
 }

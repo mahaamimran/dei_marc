@@ -1,4 +1,3 @@
-// widgets/content_widgets/quote_widget.dart
 import 'package:flutter/material.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/helpers/helpers.dart';
@@ -40,9 +39,7 @@ class QuoteWidget extends StatelessWidget {
             const SizedBox(width: 8),
             Expanded(
               child: SelectableText.rich(
-                 TextSpan(
-                  style: TextStyles.quote(context)
-                      .copyWith(fontSize: fontSize + 2, height: 1.25),
+                TextSpan(
                   children: Helpers.highlightCompanies(
                     quote,
                     TextStyles.quote(context).copyWith(fontSize: fontSize + 2, height: 1.25),

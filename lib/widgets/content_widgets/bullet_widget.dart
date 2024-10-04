@@ -1,4 +1,3 @@
-// widgets/bullet_widget.dart
 import 'package:flutter/material.dart';
 import 'package:dei_marc/config/text_styles.dart';
 
@@ -31,10 +30,11 @@ class BulletWidget extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           Expanded(
-            child: SelectableText(
-              text,
-              style: TextStyles.bullet(context)
-                  .copyWith(fontSize: fontSize + 2, height: 1.25),
+            child: SelectableText.rich(
+              TextSpan(
+                text: text,
+                style: TextStyles.bullet(context).copyWith(fontSize: fontSize + 2, height: 1.75),
+              ),
             ),
           ),
         ],
