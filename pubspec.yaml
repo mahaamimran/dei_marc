@@ -55,6 +55,8 @@ flutter:
     - assets/data/contents/about_the_app.json
     - assets/data/contents/copyright.json
     - assets/data/contents/support.json
+    - assets/app_logo/app_logo.png
+    - assets/app_logo/DEI.png
 
 
   fonts:

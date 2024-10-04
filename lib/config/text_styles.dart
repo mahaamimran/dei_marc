@@ -1,3 +1,4 @@
+import 'package:dei_marc/config/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
@@ -5,21 +6,21 @@ import 'package:dei_marc/providers/settings_provider.dart';
 class TextStyles {
   // App-wide TextStyles (do not depend on BuildContext)
   static const TextStyle appBarTitle = TextStyle(
-    fontFamily: 'Lexend',
+    fontFamily: Constants.FONT_FAMILY_LEXEND,
     fontSize: 26,
     fontWeight: FontWeight.w700,
     color: Colors.white,
   );
 
   static const TextStyle appTitle = TextStyle(
-    fontFamily: 'Lexend',
+    fontFamily: Constants.FONT_FAMILY_LEXEND,
     fontSize: 18,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
 
   static const TextStyle appCaption = TextStyle(
-    fontFamily: 'Lexend',
+    fontFamily: Constants.FONT_FAMILY_LEXEND,
     fontSize: 14,
     color: Colors.grey,
   );

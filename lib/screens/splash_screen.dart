@@ -1,10 +1,11 @@
-
-
 import 'dart:async';
 import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/config/text_styles.dart';
+import 'package:dei_marc/providers/settings_provider.dart';
+import 'package:dei_marc/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/screens/tab_bar_screen.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,38 +23,42 @@ class SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    
-    
+
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000), 
+      duration: const Duration(milliseconds: 1000),
     );
 
-    
-    _fadeAnimation = Tween<double>(
-      begin: 0.0, 
-      end: 1.0
-    ).animate(CurvedAnimation(
+    _fadeAnimation =
+        Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
       parent: _animationController,
       curve: Curves.easeIn,
     ));
 
-    
     _pulseAnimation = Tween<double>(
-      begin: 1.0, 
-      end: 1.05,  
+      begin: 1.0,
+      end: 1.05,
     ).animate(CurvedAnimation(
       parent: _animationController,
-      curve: Curves.easeInOut, 
+      curve: Curves.easeInOut,
     ));
 
-    
     _animationController.forward();
 
-    
     Future.delayed(const Duration(seconds: 2), () {
-      _navigateToHome();
+      _checkOnboarding();
     });
+  }
+
+  void _checkOnboarding() async {
+    final settingsProvider =
+        Provider.of<SettingsProvider>(context, listen: false);
+    if (settingsProvider.hasSeenOnboarding) {
+      _navigateToHome();
+    } else {
+      _navigateToHome();
+      // _navigateToOnboarding();
+    }
   }
 
   @override
@@ -62,10 +67,25 @@ class SplashScreenState extends State<SplashScreen>
     super.dispose();
   }
 
+  void _navigateToOnboarding() {
+    Navigator.of(context).pushReplacement(
+      PageRouteBuilder(
+        transitionDuration: const Duration(milliseconds: 400),
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const OnboardingScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          final opacityAnimation =
+              Tween<double>(begin: 0.0, end: 1.0).animate(animation);
+          return FadeTransition(opacity: opacityAnimation, child: child);
+        },
+      ),
+    );
+  }
+
   void _navigateToHome() {
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
-        transitionDuration: const Duration(milliseconds: 400), 
+        transitionDuration: const Duration(milliseconds: 400),
         pageBuilder: (context, animation, secondaryAnimation) =>
             const TabBarScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -92,9 +112,9 @@ class SplashScreenState extends State<SplashScreen>
           ),
           child: Center(
             child: FadeTransition(
-              opacity: _fadeAnimation, 
+              opacity: _fadeAnimation,
               child: ScaleTransition(
-                scale: _pulseAnimation, 
+                scale: _pulseAnimation,
                 child: Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: Column(
@@ -103,27 +123,26 @@ class SplashScreenState extends State<SplashScreen>
                       FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'GENDER\nDEI TOOLKITS', 
+                          'GENDER\nDEI TOOLKITS',
                           textAlign: TextAlign.center,
                           style: TextStyles.appBarTitle.copyWith(
-                            fontWeight: FontWeight.w700, 
-                            fontSize: 30, 
-                            color: Colors.white, 
-                            letterSpacing: 1.5, 
-                            height: 1.2
-                          ),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 30,
+                              color: Colors.white,
+                              letterSpacing: 1.5,
+                              height: 1.2),
                         ),
                       ),
-                      const SizedBox(height: 15), 
+                      const SizedBox(height: 15),
                       const Text(
                         'BY MARC',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: 'Raleway', 
-                          fontWeight: FontWeight.w500, 
-                          fontSize: 20, 
-                          letterSpacing: 10, 
-                          color: Colors.white70, 
+                          fontFamily: 'Raleway',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          letterSpacing: 10,
+                          color: Colors.white70,
                         ),
                       ),
                     ],
