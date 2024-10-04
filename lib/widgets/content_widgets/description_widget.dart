@@ -16,7 +16,7 @@ class DescriptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Text(
+      child: SelectableText(
         description,
         style: TextStyles.content(context).copyWith(
           fontSize: fontSize + 2,

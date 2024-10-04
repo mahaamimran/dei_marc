@@ -31,7 +31,7 @@ class BulletWidget extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           Expanded(
-            child: Text(
+            child: SelectableText(
               text,
               style: TextStyles.bullet(context)
                   .copyWith(fontSize: fontSize + 2, height: 1.25),

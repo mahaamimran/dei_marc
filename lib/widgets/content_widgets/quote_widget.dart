@@ -39,8 +39,8 @@ class QuoteWidget extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Expanded(
-              child: RichText(
-                text: TextSpan(
+              child: SelectableText.rich(
+                 TextSpan(
                   style: TextStyles.quote(context)
                       .copyWith(fontSize: fontSize + 2, height: 1.25),
                   children: Helpers.highlightCompanies(

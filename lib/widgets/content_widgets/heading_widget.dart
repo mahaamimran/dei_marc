@@ -16,7 +16,7 @@ class HeadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Text(
+      child: SelectableText(
         heading,
         style: TextStyles.heading(context).copyWith(fontSize: fontSize + 6,height: 1.25),
       ),

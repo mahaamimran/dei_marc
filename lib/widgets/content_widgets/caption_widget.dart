@@ -17,7 +17,7 @@ class CaptionWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8),
       child: Center(
-        child: Text(
+        child: SelectableText(
           // Helpers.capitalizeTitle(text),
           text,
           style: TextStyles.caption(context).copyWith(

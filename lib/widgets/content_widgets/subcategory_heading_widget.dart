@@ -18,7 +18,7 @@ class SubcategoryNameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final fontSize = Provider.of<SettingsProvider>(context).fontSize;
 
-    return Text(
+    return SelectableText(
       // Helpers.capitalizeTitle(subcategoryName),
       subcategoryName,
       style: TextStyles.subheading(context).copyWith(

@@ -129,10 +129,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'GENDER DEI TOOLKIT VOLUME ${toRoman(book.volume)}',
-                        style:
-                            TextStyles.appTitle.copyWith(color: primaryColor),
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'GENDER DEI TOOLKIT VOLUME ${toRoman(book.volume)}',
+                          style:
+                              TextStyles.appTitle.copyWith(color: primaryColor),
+                        ),
                       ),
                       const SizedBox(height: 8.0),
                       Row(

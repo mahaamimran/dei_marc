@@ -16,7 +16,7 @@ class BoldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: Text(
+      child: SelectableText( 
         // Helpers.capitalizeTitle(text),
         text,
         style: TextStyles.bold(context).copyWith(fontSize: fontSize + 2, height: 1.25),

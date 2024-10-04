@@ -16,7 +16,7 @@ class SubheadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Text(
+      child: SelectableText(
         // Helpers.capitalizeTitle(subheading),
         subheading,
         style: TextStyles.subheading(context).copyWith(

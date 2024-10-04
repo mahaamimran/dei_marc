@@ -19,11 +19,12 @@ class ParagraphWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: RichText(
-        text: TextSpan(
+      child: SelectableText.rich(
+        TextSpan(
           children: Helpers.highlightCompanies(
             text,
-            TextStyles.content(context).copyWith(fontSize: fontSize + 2, height: 1.25),
+            TextStyles.content(context)
+                .copyWith(fontSize: fontSize + 2, height: 1.25),
             highlightColor,
           ),
         ),
