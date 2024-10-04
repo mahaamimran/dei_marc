@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
-import 'package:dei_marc/screens/onboarding_screen.dart';
+// import 'package:dei_marc/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/screens/tab_bar_screen.dart';
 import 'package:provider/provider.dart';
@@ -67,20 +67,20 @@ class SplashScreenState extends State<SplashScreen>
     super.dispose();
   }
 
-  void _navigateToOnboarding() {
-    Navigator.of(context).pushReplacement(
-      PageRouteBuilder(
-        transitionDuration: const Duration(milliseconds: 400),
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            const OnboardingScreen(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          final opacityAnimation =
-              Tween<double>(begin: 0.0, end: 1.0).animate(animation);
-          return FadeTransition(opacity: opacityAnimation, child: child);
-        },
-      ),
-    );
-  }
+  // void _navigateToOnboarding() {
+  //   Navigator.of(context).pushReplacement(
+  //     PageRouteBuilder(
+  //       transitionDuration: const Duration(milliseconds: 400),
+  //       pageBuilder: (context, animation, secondaryAnimation) =>
+  //           const OnboardingScreen(),
+  //       transitionsBuilder: (context, animation, secondaryAnimation, child) {
+  //         final opacityAnimation =
+  //             Tween<double>(begin: 0.0, end: 1.0).animate(animation);
+  //         return FadeTransition(opacity: opacityAnimation, child: child);
+  //       },
+  //     ),
+  //   );
+  // }
 
   void _navigateToHome() {
     Navigator.of(context).pushReplacement(
