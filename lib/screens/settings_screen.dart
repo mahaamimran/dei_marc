@@ -70,9 +70,9 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       );
                     }),
-                    _buildSettingsOption('Share App', CupertinoIcons.share, () {
-                      // Handle Share App tap
-                    }),
+                    // _buildSettingsOption('Share App', CupertinoIcons.share, () {
+                    //   // Handle Share App tap
+                    // }),
                     const Divider(height: 40, thickness: 2),
                     _buildSectionTitle('Font Settings'),
                     const SizedBox(height: 10),
