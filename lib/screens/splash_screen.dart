@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously
+
 
 import 'dart:async';
 import 'package:dei_marc/config/asset_paths.dart';
@@ -16,26 +16,42 @@ class SplashScreen extends StatefulWidget {
 class SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
-  late Animation<Offset> _animation;
+  late Animation<double> _fadeAnimation;
+  late Animation<double> _pulseAnimation;
 
   @override
   void initState() {
     super.initState();
+    
+    
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600), // Faster bounce effect
-    )..repeat(reverse: true);
+      duration: const Duration(milliseconds: 1000), 
+    );
 
-    _animation = Tween<Offset>(
-      begin: const Offset(0, 0),
-      end: const Offset(0, -0.1), // Gentle bounce effect
+    
+    _fadeAnimation = Tween<double>(
+      begin: 0.0, 
+      end: 1.0
     ).animate(CurvedAnimation(
       parent: _animationController,
-      curve: Curves.easeInOut,
+      curve: Curves.easeIn,
     ));
 
-    // Navigate to the home screen after 1 second
-    Future.delayed(const Duration(seconds: 1), () {
+    
+    _pulseAnimation = Tween<double>(
+      begin: 1.0, 
+      end: 1.05,  
+    ).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut, 
+    ));
+
+    
+    _animationController.forward();
+
+    
+    Future.delayed(const Duration(seconds: 2), () {
       _navigateToHome();
     });
   }
@@ -49,8 +65,7 @@ class SplashScreenState extends State<SplashScreen>
   void _navigateToHome() {
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
-        transitionDuration:
-            const Duration(milliseconds: 400), // Quicker fade transition
+        transitionDuration: const Duration(milliseconds: 400), 
         pageBuilder: (context, animation, secondaryAnimation) =>
             const TabBarScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -76,35 +91,43 @@ class SplashScreenState extends State<SplashScreen>
             ),
           ),
           child: Center(
-            child: SlideTransition(
-              position: _animation,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'GENDER\nDEI TOOLKITS',
-                      textAlign: TextAlign.center,
-                      style: TextStyles.appBarTitle.copyWith(
-                        fontWeight: FontWeight.w700, // Bold font weight
-                        fontSize: 28, // Larger font size for emphasis
-                        color: Colors.white, // White color for contrast
+            child: FadeTransition(
+              opacity: _fadeAnimation, 
+              child: ScaleTransition(
+                scale: _pulseAnimation, 
+                child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'GENDER\nDEI TOOLKITS', 
+                          textAlign: TextAlign.center,
+                          style: TextStyles.appBarTitle.copyWith(
+                            fontWeight: FontWeight.w700, 
+                            fontSize: 30, 
+                            color: Colors.white, 
+                            letterSpacing: 1.5, 
+                            height: 1.2
+                          ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 8), // Space between the two lines
-                    Text(
-                      'By MARC',
-                      textAlign: TextAlign.center,
-                      style: TextStyles.appBarTitle.copyWith(
-                        fontWeight:
-                            FontWeight.w400, // Regular weight for subtitle
-                        fontSize: 24, // Smaller font size for subtitle
-                        letterSpacing: 1.0, // Slight letter spacing
-                        color: Colors.white70, // Lighter shade of white
+                      const SizedBox(height: 15), 
+                      const Text(
+                        'BY MARC',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Raleway', 
+                          fontWeight: FontWeight.w500, 
+                          fontSize: 20, 
+                          letterSpacing: 10, 
+                          color: Colors.white70, 
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
