@@ -83,7 +83,7 @@ class VideoWidget extends StatelessWidget {
   void _launchURL(String url) async {
     try {
       Uri parsedUrl = Uri.parse(url);
-      if (!await launchUrl(parsedUrl, mode: LaunchMode.inAppWebView)) {
+      if (!await launchUrl(parsedUrl, mode: LaunchMode.platformDefault)) {
       throw Exception('Could not launch $url');
     }
   } catch (e) {
