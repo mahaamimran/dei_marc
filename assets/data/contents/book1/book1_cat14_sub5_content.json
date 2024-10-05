@@ -5,22 +5,22 @@
         {
             "content":[
                 {
-                    "type":"paragraph",
+                    "type":"description",
                     "text":"The Gender DEI Toolkit is based on data collected from 19 organizations operating in Pakistan. Various organizations which had won awards for DEI over the last few years were approached from September 2021 till March 2022. The concept of the toolkit was explained and they were requested to share their gender DEI best practices with the MARC team. Interviews were taken with at least one person in each organization who was directly involved in the design and implementation of DEI practices in the organization. The purpose of the interview was to collect information on various best practices in the organization; the research was not designed to collect comprehensive data on all possible DEI practices from multiple sources. As a follow-up to the interview, the organizations were also asked to share additional relevant information, documents, photographs, etc. that they had mentioned during the interview, and which were not confidential. Some examples of commonly shared post-interview material include the DEI vision or mission statements, details of DEI-related events, names of DEI programs and trainings, and lists of DEI-related benefits. "
 
                 },
                 {
-                    "type":"paragraph",
+                    "type":"description",
                     "text":"All interviews were transcribed and added to NVivo, a software for qualitative analysis. Additional relevant information from each organization was also added to the NVivo database. Thematic analysis was used to extract information from the data using a mix of deductive and inductive approaches. Thus, while some initial nodes were identified from the existing literature and the GDEIB 2021 standards, additional nodes emerged from the data. All the relevant information from the 19 organizations was coded under the various nodes/categories and was read by at least two researchers to ensure that the examples reflected the node/category. The names of the nodes were later refined to reflect the categories and sub-categories of the “Gender DEI Tools”. Follow-up emails were sent to the participating organizations in which the focal person was asked to review the information extracted from their organization to be included in the toolkit, to avoid any misinterpretation of information. "
 
                 },
                 {
-                    "type":"paragraph",
+                    "type":"description",
                     "text":"The first draft of the toolkit was more than 150 pages in length. Based on internal discussions, this was reduced to around 100 pages and shared with a few industry experts and some academicians for feedback. After incorporating feedback from these experts, the toolkit was condensed to its current length to make it concise and user-friendly. Variations in the names of the tools were discussed to ensure that they reflected the vocabulary used in the DEI literature and the industry in Pakistan. "
 
                 },
                 {
-                    "type":"paragraph",
+                    "type":"description",
                     "text":"The purpose of the toolkit is to provide a list of tools and examples of practices under each tool to enhance gender equity in organizations in Pakistan. Since its inception, the toolkit was not aimed at presenting detailed examples of all DEI practices implemented within participating organizations. The purpose of the toolkit strongly influenced the methodology and was kept in perspective during the whole process of developing the toolkit."
 
                 }

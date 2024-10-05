@@ -46,20 +46,21 @@ class SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     Future.delayed(const Duration(seconds: 2), () {
-      _checkOnboarding();
+      // _checkOnboarding();
+      _navigateToHome();
     });
   }
 
-  void _checkOnboarding() async {
-    final settingsProvider =
-        Provider.of<SettingsProvider>(context, listen: false);
-    if (settingsProvider.hasSeenOnboarding) {
-      _navigateToHome();
-    } else {
-      _navigateToHome();
-      // _navigateToOnboarding();
-    }
-  }
+  // void _checkOnboarding() async {
+  //   final settingsProvider =
+  //       Provider.of<SettingsProvider>(context, listen: false);
+  //   if (settingsProvider.hasSeenOnboarding) {
+  //     _navigateToHome();
+  //   } else {
+  //     _navigateToHome();
+  //     // _navigateToOnboarding();
+  //   }
+  // }
 
   @override
   void dispose() {

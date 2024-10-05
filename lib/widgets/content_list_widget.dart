@@ -64,7 +64,7 @@ class ContentListWidget extends StatelessWidget {
                 CategoryTitleWidget(
                   categoryName: categoryName,
                   barColor: appBarColor,
-                  textColor: appBarColor,
+                  textColor: Colors.black,
                 ),
                 const SizedBox(height: 16),
 
