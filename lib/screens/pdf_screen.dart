@@ -77,7 +77,7 @@ class _PDFScreenState extends State<PDFScreen> {
       await _downloadPDF();
     }
     if (_pdfFilePath != null) {
-      Share.shareXFiles([XFile(_pdfFilePath!)], text: widget.title);
+      Share.shareXFiles([XFile(_pdfFilePath!)], subject: widget.title);
     }
   }
 
