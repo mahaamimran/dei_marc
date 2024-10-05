@@ -21,7 +21,7 @@ class BulletWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(top: fontSize * 0.2),
+            padding: EdgeInsets.only(top: fontSize * 0.5),
             child: Icon(
               Icons.double_arrow_rounded,
               size: fontSize,
