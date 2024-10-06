@@ -1,17 +1,17 @@
-import 'package:dei_marc/config/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:dei_marc/config/text_styles.dart';
 
 class PlatformAlertDialog extends StatelessWidget {
   final String title;
   final String content;
-  final VoidCallback onClear;
+  final List<PlatformAlertOption> options;
 
   const PlatformAlertDialog({
     super.key,
     required this.title,
     required this.content,
-    required this.onClear,
+    required this.options,
   });
 
   @override
@@ -20,23 +20,7 @@ class PlatformAlertDialog extends StatelessWidget {
       return CupertinoAlertDialog(
         title: Text(title),
         content: Text(content),
-        actions: [
-          CupertinoDialogAction(
-            child: const Text("Cancel"),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          CupertinoDialogAction(
-            isDestructiveAction: true,
-            onPressed: () {
-              onClear();
-              Navigator.of(context).pop();
-            },
-            child: const Text("Clear",
-                style: TextStyle(color: CupertinoColors.systemRed)),
-          ),
-        ],
+        actions: _buildCupertinoActions(context),
       );
     } else {
       return AlertDialog(
@@ -45,28 +29,63 @@ class PlatformAlertDialog extends StatelessWidget {
           style: TextStyles.appTitle,
         ),
         content: Text(content, style: TextStyles.appCaption.copyWith(color: Colors.grey[800])),
-        actions: [
-          TextButton(
-            child: Text(
-              "Cancel",
-              style: TextStyles.appCaption.copyWith(color: Colors.black),
-            ),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          TextButton(
-            onPressed: () {
-              onClear();
-              Navigator.of(context).pop();
-            },
-            style: TextButton.styleFrom(
-              foregroundColor: Colors.red,
-            ),
-            child: Text("Clear", style: TextStyles.appCaption.copyWith(color: Colors.red),),
-          ),
-        ],
+        actions: _buildMaterialActions(context),
       );
     }
   }
+
+  List<Widget> _buildCupertinoActions(BuildContext context) {
+    return options.map((option) {
+      return CupertinoDialogAction(
+        isDestructiveAction: option.isCancel,
+        onPressed: () {
+          Navigator.of(context).pop();
+          option.onPressed();
+        },
+        child: Text(
+          option.label,
+          style: TextStyle(
+            color: option.isCancel
+                ? CupertinoColors.systemRed
+                : option.useDefaultColor
+                    ? null // Use default iOS color for non-cancel buttons
+                    : CupertinoColors.black,
+          ),
+        ),
+      );
+    }).toList();
+  }
+
+  List<Widget> _buildMaterialActions(BuildContext context) {
+    return options.map((option) {
+      return TextButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+          option.onPressed();
+        },
+        style: TextButton.styleFrom(
+          foregroundColor: option.isCancel
+              ? Colors.red
+              : option.useDefaultColor
+                  ? Theme.of(context).primaryColor // Use platform default for material
+                  : Colors.black,
+        ),
+        child: Text(option.label, style: TextStyles.appCaption.copyWith(color: option.isCancel ? Colors.red : Colors.black)),
+      );
+    }).toList();
+  }
+}
+
+class PlatformAlertOption {
+  final String label;
+  final VoidCallback onPressed;
+  final bool isCancel;
+  final bool useDefaultColor;
+
+  PlatformAlertOption({
+    required this.label,
+    required this.onPressed,
+    this.isCancel = false,
+    this.useDefaultColor = false,
+  });
 }

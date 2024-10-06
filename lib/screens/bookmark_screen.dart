@@ -88,19 +88,20 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
-Widget _buildListView(BookmarkProvider bookmarkProvider) {
-  return ListView.builder(
-    padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-    itemCount: bookmarkProvider.bookmarks.length,
-    itemBuilder: (context, index) {
-      final bookmark = bookmarkProvider.bookmarks[index];
-      return Padding(
-        padding: const EdgeInsets.only(bottom: 10.0), // Add spacing between items
-        child: _buildListBookmarkCard(context, bookmark),
-      );
-    },
-  );
-}
+  Widget _buildListView(BookmarkProvider bookmarkProvider) {
+    return ListView.builder(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      itemCount: bookmarkProvider.bookmarks.length,
+      itemBuilder: (context, index) {
+        final bookmark = bookmarkProvider.bookmarks[index];
+        return Padding(
+          padding:
+              const EdgeInsets.only(bottom: 10.0), // Add spacing between items
+          child: _buildListBookmarkCard(context, bookmark),
+        );
+      },
+    );
+  }
 
   Widget _buildGridBookmarkCard(BuildContext context, String bookmark) {
     final parts = bookmark.split('-');
@@ -221,19 +222,30 @@ Widget _buildListView(BookmarkProvider bookmarkProvider) {
     );
   }
 
-  void _showClearAllDialog(
-      BuildContext context, BookmarkProvider bookmarkProvider) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return PlatformAlertDialog(
-          title: "Clear all Bookmarks",
-          content: "Are you sure you want to clear all bookmarks?",
-          onClear: () {
-            bookmarkProvider.clearAllBookmarks();
-          },
-        );
-      },
-    );
-  }
+ void _showClearAllDialog(BuildContext context, BookmarkProvider bookmarkProvider) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return PlatformAlertDialog(
+        title: "Clear all Bookmarks",
+        content: "Are you sure you want to clear all bookmarks?",
+        options: [
+          PlatformAlertOption(
+            label: "Cancel",
+            onPressed: () {},  // Just dismiss the dialog
+            isCancel: false,  // This will be black
+          ),
+          PlatformAlertOption(
+            label: "Clear",
+            onPressed: () {
+              bookmarkProvider.clearAllBookmarks();
+            },
+            isCancel: true,  // This will be red
+          ),
+        ],
+      );
+    },
+  );
+}
+
 }

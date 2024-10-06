@@ -1,12 +1,14 @@
 import 'dart:io';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/helpers/helpers.dart';
+import 'package:dei_marc/widgets/platform_alert_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
-import 'package:share_plus/share_plus.dart'; // Correct import
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:path_provider/path_provider.dart'; // For file storage
-import 'package:http/http.dart' as http; // For downloading the file
+import 'package:path_provider/path_provider.dart';
+import 'package:http/http.dart' as http;
 import 'package:dei_marc/utils/connection_util.dart';
 
 class PDFScreen extends StatefulWidget {
@@ -31,45 +33,124 @@ class _PDFScreenState extends State<PDFScreen> {
   late PdfViewerController _pdfViewerController;
   bool _isConnected = true;
   String? _pdfFilePath;
+  bool _isDownloading = false;
+  double _downloadProgress = 0;
+  http.Client? _httpClient;
 
   @override
   void initState() {
     super.initState();
     _pdfViewerController = PdfViewerController();
+    _httpClient = http.Client(); // Initialize the HTTP client
     _checkInternetConnection();
+    _downloadPDF(); // Start downloading when the screen opens
+  }
+
+  @override
+  void dispose() {
+    _httpClient?.close(); // Close the HTTP client
+    super.dispose();
   }
 
   // Check the internet connection status using the utility function
   Future<void> _checkInternetConnection() async {
     bool isConnected = await ConnectionUtil().isConnected();
-    setState(() {
-      _isConnected = isConnected;
-    });
-  }
-
-  // Download the PDF and save it to the device's local storage
-  Future<void> _downloadPDF() async {
-    try {
-      // Get the temporary directory
-      final dir = await getTemporaryDirectory();
-
-      // Define the path for the file
-      final filePath = '${dir.path}/${widget.title}.pdf';
-
-      // Download the file from the URL
-      final response = await http.get(Uri.parse(widget.pdfUrl));
-
-      // Save the file to the local path
-      final file = File(filePath);
-      await file.writeAsBytes(response.bodyBytes);
-
+    if (mounted) {
       setState(() {
-        _pdfFilePath = filePath;
+        _isConnected = isConnected;
       });
-    } catch (e) {
-      print('Error downloading PDF: $e');
     }
   }
+
+  // Download the PDF and save it to the device's local storage with progress tracking
+  Future<void> _downloadPDF() async {
+    if (!mounted) return; // Ensure the widget is still in the tree
+
+    setState(() {
+      _isDownloading = true;
+      _downloadProgress = 0; // Reset progress
+    });
+
+    try {
+      final dir = await getTemporaryDirectory();
+      final filePath = '${dir.path}/${widget.title}.pdf';
+
+      final request =
+          _httpClient!.send(http.Request('GET', Uri.parse(widget.pdfUrl)));
+      final file = File(filePath);
+
+      final response = await request;
+      final contentLength = response.contentLength;
+
+      List<int> bytes = [];
+      response.stream.listen(
+        (newBytes) {
+          bytes.addAll(newBytes);
+          if (mounted) {
+            setState(() {
+              _downloadProgress = bytes.length / contentLength!;
+            });
+          }
+        },
+        onDone: () async {
+          await file.writeAsBytes(bytes);
+          if (mounted) {
+            setState(() {
+              _pdfFilePath = filePath;
+              _isDownloading = false;
+            });
+          }
+        },
+        onError: (e) {
+          print("Error downloading file: $e");
+          if (mounted) {
+            setState(() {
+              _isDownloading = false;
+            });
+          }
+        },
+        cancelOnError: true,
+      );
+    } catch (e) {
+      print('Error downloading PDF: $e');
+      if (mounted) {
+        setState(() {
+          _isDownloading = false;
+        });
+      }
+    }
+  }
+
+  // Platform-specific share dialog
+ Future<void> _showShareOptions(BuildContext context) async {
+  showDialog(
+    context: context,
+    builder: (context) {
+      return PlatformAlertDialog(
+        title: "Share PDF or Link",
+        content: "Would you like to share the PDF file or just the link? Sharing the link is faster.",
+        options: [
+          PlatformAlertOption(
+            label: "Cancel",
+            onPressed: () {},  // Just dismiss the dialog
+            isCancel: true,  // Red for Cancel
+          ),
+          PlatformAlertOption(
+            label: "PDF",
+            onPressed: _sharePDF,  // Share the PDF file
+            useDefaultColor: true,  // Use platform default color
+          ),
+          PlatformAlertOption(
+            label: "Link",
+            onPressed: _shareLink,  // Share the link
+            useDefaultColor: true,  // Use platform default color
+          ),
+        ],
+      );
+    },
+  );
+}
+
 
   // Share the downloaded PDF file
   Future<void> _sharePDF() async {
@@ -81,15 +162,20 @@ class _PDFScreenState extends State<PDFScreen> {
     }
   }
 
+  // Share the link directly
+  void _shareLink() {
+    Share.share(widget.pdfUrl, subject: widget.title);
+  }
+
   // Handle launching the PDF URL in a browser if no internet connection
   void _launchPDFUrl() async {
     try {
       Uri parsedUrl = Uri.parse(widget.pdfUrl);
       if (!await launchUrl(parsedUrl, mode: LaunchMode.platformDefault)) {
-      throw Exception('Could not launch $widget.pdfUrl');
-    }
-  } catch (e) {
-    print('Error launching URL: $e');
+        throw Exception('Could not launch $widget.pdfUrl');
+      }
+    } catch (e) {
+      print('Error launching URL: $e');
     }
   }
 
@@ -108,17 +194,39 @@ class _PDFScreenState extends State<PDFScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.ios_share_rounded, color: Colors.white),
-            onPressed: _sharePDF, // Share the PDF when pressed
+            onPressed: () =>
+                _showShareOptions(context), // Show the share options dialog
           ),
         ],
       ),
-      body: _isConnected
-          ? SfPdfViewer.network(
-              widget.pdfUrl,
+      body: Stack(
+        children: [
+          if (_pdfFilePath != null)
+            SfPdfViewer.file(
+              File(_pdfFilePath!), // Open from local file
               controller: _pdfViewerController,
               canShowScrollStatus: true,
             )
-          : Center(
+          else if (_isConnected && _isDownloading)
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: LinearProgressIndicator(
+                    value: _downloadProgress,
+                    backgroundColor: Colors.grey.shade300,
+                    color: widget.appBarColor,
+                  ),
+                ),
+                Text(
+                  "${(_downloadProgress * 100).toStringAsFixed(0)}% downloaded",
+                  style: TextStyles.appCaption.copyWith(fontSize: 14),
+                ),
+              ],
+            )
+          else
+            Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -139,6 +247,8 @@ class _PDFScreenState extends State<PDFScreen> {
                 ],
               ),
             ),
+        ],
+      ),
     );
   }
 }
