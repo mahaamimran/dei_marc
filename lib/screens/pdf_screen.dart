@@ -82,11 +82,14 @@ class _PDFScreenState extends State<PDFScreen> {
   }
 
   // Handle launching the PDF URL in a browser if no internet connection
-  Future<void> _launchPDFUrl() async {
-    if (await canLaunch(widget.pdfUrl)) {
-      await launch(widget.pdfUrl);
-    } else {
-      throw 'Could not launch ${widget.pdfUrl}';
+  void _launchPDFUrl() async {
+    try {
+      Uri parsedUrl = Uri.parse(widget.pdfUrl);
+      if (!await launchUrl(parsedUrl, mode: LaunchMode.platformDefault)) {
+      throw Exception('Could not launch $widget.pdfUrl');
+    }
+  } catch (e) {
+    print('Error launching URL: $e');
     }
   }
 
