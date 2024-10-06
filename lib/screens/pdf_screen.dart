@@ -3,7 +3,6 @@ import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/helpers/helpers.dart';
 import 'package:dei_marc/widgets/platform_alert_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -43,7 +42,7 @@ class _PDFScreenState extends State<PDFScreen> {
     _pdfViewerController = PdfViewerController();
     _httpClient = http.Client(); // Initialize the HTTP client
     _checkInternetConnection();
-    _downloadPDF(); // Start downloading when the screen opens
+    _checkAndDownloadPDF(); // Start checking for cached file or downloading when the screen opens
   }
 
   @override
@@ -62,8 +61,28 @@ class _PDFScreenState extends State<PDFScreen> {
     }
   }
 
+  // Check if the file is cached, if not download it
+  Future<void> _checkAndDownloadPDF() async {
+    // Get a path in the application document directory (permanent directory)
+    final dir = await getApplicationDocumentsDirectory();
+    final filePath = '${dir.path}/${widget.title}.pdf';
+
+    final file = File(filePath);
+
+    // If the file already exists, use it
+    if (await file.exists()) {
+      setState(() {
+        _pdfFilePath = filePath;
+        _isDownloading = false;
+      });
+    } else {
+      // File doesn't exist, download it
+      _downloadPDF(filePath);
+    }
+  }
+
   // Download the PDF and save it to the device's local storage with progress tracking
-  Future<void> _downloadPDF() async {
+  Future<void> _downloadPDF(String filePath) async {
     if (!mounted) return; // Ensure the widget is still in the tree
 
     setState(() {
@@ -72,9 +91,6 @@ class _PDFScreenState extends State<PDFScreen> {
     });
 
     try {
-      final dir = await getTemporaryDirectory();
-      final filePath = '${dir.path}/${widget.title}.pdf';
-
       final request =
           _httpClient!.send(http.Request('GET', Uri.parse(widget.pdfUrl)));
       final file = File(filePath);
@@ -122,40 +138,39 @@ class _PDFScreenState extends State<PDFScreen> {
   }
 
   // Platform-specific share dialog
- Future<void> _showShareOptions(BuildContext context) async {
-  showDialog(
-    context: context,
-    builder: (context) {
-      return PlatformAlertDialog(
-        title: "Share PDF or Link",
-        content: "Would you like to share the PDF file or just the link? Sharing the link is faster.",
-        options: [
-          PlatformAlertOption(
-            label: "Cancel",
-            onPressed: () {},  // Just dismiss the dialog
-            isCancel: true,  // Red for Cancel
-          ),
-          PlatformAlertOption(
-            label: "PDF",
-            onPressed: _sharePDF,  // Share the PDF file
-            useDefaultColor: true,  // Use platform default color
-          ),
-          PlatformAlertOption(
-            label: "Link",
-            onPressed: _shareLink,  // Share the link
-            useDefaultColor: true,  // Use platform default color
-          ),
-        ],
-      );
-    },
-  );
-}
-
+  Future<void> _showShareOptions(BuildContext context) async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return PlatformAlertDialog(
+          title: "Share PDF or Link",
+          content: "Would you like to share the PDF file or just the link? Sharing the link is faster.",
+          options: [
+            PlatformAlertOption(
+              label: "Cancel",
+              onPressed: () {},  // Just dismiss the dialog
+              isCancel: true,  // Red for Cancel
+            ),
+            PlatformAlertOption(
+              label: "PDF",
+              onPressed: _sharePDF,  // Share the PDF file
+              useDefaultColor: true,  // Use platform default color
+            ),
+            PlatformAlertOption(
+              label: "Link",
+              onPressed: _shareLink,  // Share the link
+              useDefaultColor: true,  // Use platform default color
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   // Share the downloaded PDF file
   Future<void> _sharePDF() async {
     if (_pdfFilePath == null) {
-      await _downloadPDF();
+      await _checkAndDownloadPDF();
     }
     if (_pdfFilePath != null) {
       Share.shareXFiles([XFile(_pdfFilePath!)], subject: widget.title);
