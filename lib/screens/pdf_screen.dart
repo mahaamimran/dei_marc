@@ -76,8 +76,17 @@ class _PDFScreenState extends State<PDFScreen> {
         _isDownloading = false;
       });
     } else {
-      // File doesn't exist, download it
-      _downloadPDF(filePath);
+      // If the file does not exist, check internet connection before attempting download
+      if (_isConnected) {
+        // File doesn't exist, and we have internet, download it
+        _downloadPDF(filePath);
+      } else {
+        // No internet and no cached file, show the "No Internet" message
+        setState(() {
+          _isDownloading = false;
+          _pdfFilePath = null; // Ensure there’s no PDF loaded
+        });
+      }
     }
   }
 
@@ -144,22 +153,23 @@ class _PDFScreenState extends State<PDFScreen> {
       builder: (context) {
         return PlatformAlertDialog(
           title: "Share PDF or Link",
-          content: "Would you like to share the PDF file or just the link? Sharing the link is faster.",
+          content:
+              "Would you like to share the PDF file or just the link?",
           options: [
             PlatformAlertOption(
               label: "Cancel",
-              onPressed: () {},  // Just dismiss the dialog
-              isCancel: true,  // Red for Cancel
+              onPressed: () {}, // Just dismiss the dialog
+              isCancel: true, // Red for Cancel
             ),
             PlatformAlertOption(
               label: "PDF",
-              onPressed: _sharePDF,  // Share the PDF file
-              useDefaultColor: true,  // Use platform default color
+              onPressed: _sharePDF, // Share the PDF file
+              useDefaultColor: true, // Use platform default color
             ),
             PlatformAlertOption(
               label: "Link",
-              onPressed: _shareLink,  // Share the link
-              useDefaultColor: true,  // Use platform default color
+              onPressed: _shareLink, // Share the link
+              useDefaultColor: true, // Use platform default color
             ),
           ],
         );
@@ -240,7 +250,7 @@ class _PDFScreenState extends State<PDFScreen> {
                 ),
               ],
             )
-          else
+          else if (!_isConnected && _pdfFilePath == null)
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
