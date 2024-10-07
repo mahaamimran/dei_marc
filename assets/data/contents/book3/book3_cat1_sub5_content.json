@@ -12,56 +12,56 @@
         },
         {
             "heading": "Summary",
-            "content":[
+            "content": [
                 {
-                    "type":"paragraph",
-                    "text":"There's a growing skepticism about whether unconscious bias training is an effective tool to meet corporate diversity goals. Some studies have shown that traditional diversity trainings aren't effective, and can even backfire. Others have shown that some trainings can be effective. Clearly, not all trainings are equally good — and none are a silver bullet. But three things can help. First, strike a careful balance between communicating that all humans have biases and emphasizing the importance of eliminating biases. You don't want to imply that, because biases are common, we can't do anything about them. Second, structure the content around workplace situations (like hiring or performance reviews) not psychological terms (like \"confirmation bias\") or demographics (like \"maternal bias\"). Finally, make it action-oriented. Give people tactics and tips about what they can do differently to make sure their companies offer an even playing field."
+                    "type": "paragraph",
+                    "text": "There's a growing skepticism about whether unconscious bias training is an effective tool to meet corporate diversity goals. Some studies have shown that traditional diversity trainings aren't effective, and can even backfire. Others have shown that some trainings can be effective. Clearly, not all trainings are equally good — and none are a silver bullet. But three things can help. First, strike a careful balance between communicating that all humans have biases and emphasizing the importance of eliminating biases. You don't want to imply that, because biases are common, we can't do anything about them. Second, structure the content around workplace situations (like hiring or performance reviews) not psychological terms (like \"confirmation bias\") or demographics (like \"maternal bias\"). Finally, make it action-oriented. Give people tactics and tips about what they can do differently to make sure their companies offer an even playing field."
+                },
+                {
+                    "type": "caption",
+                    "text": "© Joelle Emerson (2017, April 28). Don’t Give Up on Unconscious Bias Training — Make It Better. Harvard Business Review. Retrieved from https://hbr.org/2017/04/dont-give-up-on-unconscious-bias-training-make-it-better"
                 }
             ]
         },
         {
             "heading": "Discussion Questions",
-            "content":[
+            "content": [
                 {
-                    "type":"bullet",
-                    "text":"Considering the article's skepticism about the effectiveness of unconscious bias training, how do you think organizations can measure the success of such trainings in a tangible way? What metrics would you suggest?"
+                    "type": "bullet",
+                    "text": "Considering the article's skepticism about the effectiveness of unconscious bias training, how do you think organizations can measure the success of such trainings in a tangible way? What metrics would you suggest?"
                 },
                 {
-                    "type":"bullet",
-                    "text":"The training aimed to limit defensiveness about unconscious bias while communicating its importance. What approaches can be taken in designing bias training to minimize defensiveness among participants? How can organizations ensure that these trainings are perceived as valuable and not accusatory?"
+                    "type": "bullet",
+                    "text": "The training aimed to limit defensiveness about unconscious bias while communicating its importance. What approaches can be taken in designing bias training to minimize defensiveness among participants? How can organizations ensure that these trainings are perceived as valuable and not accusatory?"
                 },
                 {
-                    "type":"bullet",
-                    "text":"The article indicates that long after the training, many employees continued to apply strategies to mitigate bias. Discuss why certain training strategies might have a lasting impact while others do not. What elements of the training described in the article do you think contributed to these enduring behavioral changes?"
+                    "type": "bullet",
+                    "text": "The article indicates that long after the training, many employees continued to apply strategies to mitigate bias. Discuss why certain training strategies might have a lasting impact while others do not. What elements of the training described in the article do you think contributed to these enduring behavioral changes?"
                 },
                 {
-                    "type":"bullet",
-                    "text":"After reading about the importance and challenges of managing unconscious bias, have you identified any biases of your own that you were previously unaware of? How might you address these biases in your professional or personal life?"
+                    "type": "bullet",
+                    "text": "After reading about the importance and challenges of managing unconscious bias, have you identified any biases of your own that you were previously unaware of? How might you address these biases in your professional or personal life?"
                 }
             ]
         },
         {
             "heading": "Learning Outcomes",
-            "content":[
+            "content": [
                 {
-                    "type":"subheading",
-                    "text":"Recognizing Unconscious Biases:"
+                    "type": "subheading",
+                    "text": "Recognizing Unconscious Biases:"
                 },
                 {
-                    "type":"paragraph",
-                    "text":"It is imperative to acknowledge that biases are inherent to human nature. Understanding and acknowledging their existence is crucial, particularly in workplace contexts such as hiring processes or performance evaluations. By identifying and actively working to eliminate these biases, organizations can foster fairer and more inclusive environments conducive to talent recognition and development."
+                    "type": "paragraph",
+                    "text": "It is imperative to acknowledge that biases are inherent to human nature. Understanding and acknowledging their existence is crucial, particularly in workplace contexts such as hiring processes or performance evaluations. By identifying and actively working to eliminate these biases, organizations can foster fairer and more inclusive environments conducive to talent recognition and development."
                 },
                 {
-                    "type":"subheading",
-                    "text":"Effective Training Content:"
+                    "type": "subheading",
+                    "text": "Effective Training Content:"
                 },
                 {
-                    "type":"paragraph",
-                    "text":"Effective training content should prioritize practical workplace scenarios over abstract psychological concepts or demographic categorizations. By grounding the training in real-world situations, employees can better grasp the implications of unconscious biases and their impact on decision-making processes. This approach enhances engagement and comprehension, facilitating meaningful behaviour change and promoting a culture of inclusivity within the organization."
-                },
-                {
-                    "type":"caption",
-                    "text":"© Joelle Emerson (2017, April 28). Don’t Give Up on Unconscious Bias Training — Make It Better. Harvard Business Review. Retrieved from https://hbr.org/2017/04/dont-give-up-on-unconscious-bias-training-make-it-better"
+                    "type": "paragraph",
+                    "text": "Effective training content should prioritize practical workplace scenarios over abstract psychological concepts or demographic categorizations. By grounding the training in real-world situations, employees can better grasp the implications of unconscious biases and their impact on decision-making processes. This approach enhances engagement and comprehension, facilitating meaningful behaviour change and promoting a culture of inclusivity within the organization."
                 }
             ]
         }
