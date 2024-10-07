@@ -7,12 +7,13 @@ class CategoryTitleWidget extends StatelessWidget {
   final String categoryName;
   final Color barColor;
   final Color textColor;
-
+  final double lineHeight;
   const CategoryTitleWidget({
     super.key,
     required this.categoryName,
     required this.barColor,
     required this.textColor,
+    this.lineHeight = 1.5,
   });
 
   @override
@@ -38,7 +39,7 @@ class CategoryTitleWidget extends StatelessWidget {
                 fontSize: fontSize + 10,
                 fontWeight: FontWeight.w700,
                 color: textColor,
-               height: 1.75
+                height: lineHeight,
               ),
             ),
           ),

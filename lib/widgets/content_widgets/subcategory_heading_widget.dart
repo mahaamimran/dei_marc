@@ -6,11 +6,12 @@ import 'package:dei_marc/providers/settings_provider.dart';
 class SubcategoryNameWidget extends StatelessWidget {
   final String subcategoryName;
   final Color color;
-
+  final double lineHeight;
   const SubcategoryNameWidget({
     super.key,
     required this.subcategoryName,
     required this.color,
+    this.lineHeight = 1.5,
   });
 
   @override
@@ -23,7 +24,7 @@ class SubcategoryNameWidget extends StatelessWidget {
         style: TextStyles.subheading(context).copyWith(
           fontSize: fontSize + 8,
           color: color,
-          height: 1.75,
+          height: lineHeight,
         ),
       ),
     );
