@@ -85,8 +85,6 @@ class SettingsScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     _buildFontFamilySection(settingsProvider, context),
                     const Divider(height: 40, thickness: 2),
-
-                    // Clear Cache Option
                    _buildClearCacheOption(context),
                   ],
                 ),
@@ -101,10 +99,10 @@ class SettingsScreen extends StatelessWidget {
   Widget _buildPreviewText(SettingsProvider settingsProvider) {
     return Center(
       child: Text(
-        'DEI MARC',
+        'DEI Toolkits',
         style: TextStyle(
           fontFamily: settingsProvider.fontFamily,
-          fontSize: settingsProvider.fontSize,
+          fontSize: settingsProvider.fontSize + 2,
           color: Colors.black,
         ),
       ),

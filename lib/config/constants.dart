@@ -13,7 +13,7 @@ class Constants {
   static const String FONT_FAMILY_LEXEND = 'Lexend';
 
   // Font Size Limits
-  static const double FONT_SIZE_MIN = 10.0;
+  static const double FONT_SIZE_MIN = 9.0;
   static const double FONT_SIZE_MAX = 32.0;
 
   // Other Constants
