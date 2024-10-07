@@ -5,7 +5,7 @@
         {
             "content":[
                 {
-                    "type":"paragraph",
+                    "type":"description",
                     "text":"The four groups used for arranging the challenges faced by organizations in implementing DEI practices in the Gender DEI Toolkit Volume II are based on the groups and categories of the Global Diversity, Equity and Inclusion Benchmarks (GDEIB) 2021. The MARC team is grateful to Yvonne (Nene) Kegomoditswe Molefi, Julie O’Mara, and Alan Richter, authors of GDEIB 2021. The team also acknowledges the contribution of Zahid Mubarak, CEO of HR Metrics, in raising awareness about the GDEIB standards in Pakistan."
 
                 },
@@ -15,7 +15,7 @@
 
                 },
                 {
-                    "type":"paragraph",
+                    "type":"description",
                     "text":"The team also extends its appreciation to the cartoonist of Volume II, Syeda Hussain Fatima, for her extensive discussions with the Volume II team, resulting in the various comic style cartoons for Volume II. "
 
                 }

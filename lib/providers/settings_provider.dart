@@ -7,9 +7,9 @@ class SettingsProvider with ChangeNotifier {
   String _fontFamily = Constants.FONT_FAMILY_LEXEND;
   bool _isGridView = true;
   bool _isListView = true; // home page view preference
-  bool _hasSeenOnboarding = false;
+  // bool _hasSeenOnboarding = false;
 
-  bool get hasSeenOnboarding => _hasSeenOnboarding;
+  // bool get hasSeenOnboarding => _hasSeenOnboarding;
   double get fontSize => _fontSize;
   String get fontFamily => _fontFamily;
   bool get isGridView => _isGridView;
@@ -26,17 +26,17 @@ class SettingsProvider with ChangeNotifier {
         Constants.FONT_FAMILY_LEXEND;
     _isGridView = prefs.getBool(Constants.IS_GRID_VIEW_KEY) ?? true;
     _isListView = prefs.getBool(Constants.IS_LIST_VIEW_KEY) ?? true;
-    _hasSeenOnboarding = prefs.getBool('hasSeenOnboarding') ?? false;
+    // _hasSeenOnboarding = prefs.getBool('hasSeenOnboarding') ?? false;
     false;
     notifyListeners();
   }
 
-  Future<void> setHasSeenOnboarding(bool value) async {
-    _hasSeenOnboarding = value;
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setBool('hasSeenOnboarding', value);
-    notifyListeners();
-  }
+  // Future<void> setHasSeenOnboarding(bool value) async {
+  //   _hasSeenOnboarding = value;
+  //   final prefs = await SharedPreferences.getInstance();
+  //   prefs.setBool('hasSeenOnboarding', value);
+  //   notifyListeners();
+  // }
 
   void setFontSize(double size) async {
     _fontSize = size;

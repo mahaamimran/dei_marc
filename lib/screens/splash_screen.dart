@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'package:dei_marc/config/asset_paths.dart';
 import 'package:dei_marc/config/text_styles.dart';
-import 'package:dei_marc/providers/settings_provider.dart';
+// import 'package:dei_marc/providers/settings_provider.dart';
 // import 'package:dei_marc/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dei_marc/screens/tab_bar_screen.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -46,20 +46,21 @@ class SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     Future.delayed(const Duration(seconds: 2), () {
-      _checkOnboarding();
+      // _checkOnboarding();
+      _navigateToHome();
     });
   }
 
-  void _checkOnboarding() async {
-    final settingsProvider =
-        Provider.of<SettingsProvider>(context, listen: false);
-    if (settingsProvider.hasSeenOnboarding) {
-      _navigateToHome();
-    } else {
-      _navigateToHome();
-      // _navigateToOnboarding();
-    }
-  }
+  // void _checkOnboarding() async {
+  //   final settingsProvider =
+  //       Provider.of<SettingsProvider>(context, listen: false);
+  //   if (settingsProvider.hasSeenOnboarding) {
+  //     _navigateToHome();
+  //   } else {
+  //     _navigateToHome();
+  //     // _navigateToOnboarding();
+  //   }
+  // }
 
   @override
   void dispose() {
