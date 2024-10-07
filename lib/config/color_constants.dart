@@ -5,7 +5,7 @@ class ColorConstants {
 
   // primary colors for each toolkit
   static const List<Color> booksPrimary = [
-    Color(0xFF9F2F5F),
+    Color(0xFFb52656),
     Color(0xFF116b73),
     Color(0xFF702963),
   ];
