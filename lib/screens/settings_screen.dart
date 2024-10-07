@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_declarations
 
+import 'dart:io';
+
 import 'package:dei_marc/config/constants.dart';
 import 'package:dei_marc/config/text_styles.dart';
 import 'package:dei_marc/providers/settings_provider.dart';
@@ -9,6 +11,7 @@ import 'package:dei_marc/screens/settings_screens/privacy.dart';
 import 'package:dei_marc/screens/settings_screens/support.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -47,7 +50,7 @@ class SettingsScreen extends StatelessWidget {
                       );
                     }),
                     _buildSettingsOption('Copyright', Icons.copyright, () {
-                       Navigator.of(context).push(
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => const CopyrightScreen(),
                         ),
@@ -64,7 +67,7 @@ class SettingsScreen extends StatelessWidget {
                     _buildSettingsOption(
                         'Support', CupertinoIcons.question_circle, () {
                       // Handle Support tap
-                       Navigator.of(context).push(
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => const SupportScreen(),
                         ),
@@ -82,6 +85,9 @@ class SettingsScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     _buildFontFamilySection(settingsProvider, context),
                     const Divider(height: 40, thickness: 2),
+
+                    // Clear Cache Option
+                   _buildClearCacheOption(context),
                   ],
                 ),
               );
@@ -261,5 +267,69 @@ class SettingsScreen extends StatelessWidget {
         );
       },
     );
+  }
+
+  Widget _buildClearCacheOption(BuildContext context) {
+    return TextButton(
+      onPressed: () => _clearCacheAndShowSize(context),
+      child: Text(
+        'Clear Cache',
+        style: TextStyles.appCaption.copyWith(color: Colors.red),
+      ),
+    );
+  }
+
+  Future<void> _clearCacheAndShowSize(BuildContext context) async {
+    final cacheSize = await _getCacheSize();
+    await _clearCache();
+    _showCacheClearedAsText(context, cacheSize);
+  }
+
+  void _showCacheClearedAsText(BuildContext context, double totalSize) {
+    final sizeInMB = totalSize.toStringAsFixed(2);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("You have cleared $sizeInMB MB of cache."),
+        duration: const Duration(seconds: 3),
+      ),
+    );
+  }
+
+  Future<double> _getCacheSize() async {
+    try {
+      final cacheDir = await getTemporaryDirectory();
+      if (await cacheDir.exists()) {
+        final files = cacheDir.listSync(recursive: true);
+        double totalSize = 0;
+
+        for (var file in files) {
+          if (file is File) {
+            totalSize += await file.length();
+          }
+        }
+        return totalSize / (1024 * 1024); // Return size in MB
+      }
+      return 0; // If the directory doesn't exist, return 0
+    } catch (e) {
+      print('Error calculating cache size: $e');
+      return 0;
+    }
+  }
+
+  Future<void> _clearCache() async {
+    try {
+      final cacheDir = await getApplicationDocumentsDirectory();
+      if (await cacheDir.exists()) {
+        final files = cacheDir.listSync(recursive: true);
+
+        for (var file in files) {
+          if (file is File) {
+            file.deleteSync();
+          }
+        }
+      }
+    } catch (e) {
+      print('Error clearing cache: $e');
+    }
   }
 }
