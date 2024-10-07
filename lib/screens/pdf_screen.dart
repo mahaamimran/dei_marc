@@ -9,6 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:dei_marc/utils/connection_util.dart';
+import 'package:uuid/uuid.dart'; // Import the UUID package
 
 class PDFScreen extends StatefulWidget {
   final Color appBarColor;
@@ -35,12 +36,14 @@ class _PDFScreenState extends State<PDFScreen> {
   bool _isDownloading = false;
   double _downloadProgress = 0;
   http.Client? _httpClient;
+  String? _fileUUID; // UUID for file identification
 
   @override
   void initState() {
     super.initState();
     _pdfViewerController = PdfViewerController();
     _httpClient = http.Client(); // Initialize the HTTP client
+    _fileUUID = const Uuid().v5(Uuid.NAMESPACE_URL, widget.pdfUrl); // Generate UUID from the URL
     _checkInternetConnection();
     _checkAndDownloadPDF(); // Start checking for cached file or downloading when the screen opens
   }
@@ -63,9 +66,9 @@ class _PDFScreenState extends State<PDFScreen> {
 
   // Check if the file is cached, if not download it
   Future<void> _checkAndDownloadPDF() async {
-    // Get a path in the application document directory (permanent directory)
+    // Use UUID for unique file naming based on the URL
     final dir = await getApplicationDocumentsDirectory();
-    final filePath = '${dir.path}/${widget.title}.pdf';
+    final filePath = '${dir.path}/$_fileUUID.pdf'; // Unique file path based on UUID
 
     final file = File(filePath);
 
@@ -151,28 +154,47 @@ class _PDFScreenState extends State<PDFScreen> {
     showDialog(
       context: context,
       builder: (context) {
-        return PlatformAlertDialog(
-          title: "Share PDF or Link",
-          content:
-              "Would you like to share the PDF file or just the link?",
-          options: [
-            PlatformAlertOption(
-              label: "Cancel",
-              onPressed: () {}, // Just dismiss the dialog
-              isCancel: true, // Red for Cancel
-            ),
-            PlatformAlertOption(
-              label: "PDF",
-              onPressed: _sharePDF, // Share the PDF file
-              useDefaultColor: true, // Use platform default color
-            ),
-            PlatformAlertOption(
-              label: "Link",
-              onPressed: _shareLink, // Share the link
-              useDefaultColor: true, // Use platform default color
-            ),
-          ],
-        );
+        // if internet connection is not available, and the PDF file is not downloaded, show the dialog with only the link option
+        if (!_isConnected && _pdfFilePath == null) {
+          return PlatformAlertDialog(
+            title: "Share Link",
+            content: "You can share the PDF when connected to the internet",
+            options: [
+              PlatformAlertOption(
+                label: "Cancel",
+                onPressed: () {}, // Just dismiss the dialog
+                isCancel: true, // Red for Cancel
+              ),
+              PlatformAlertOption(
+                label: "Share",
+                onPressed: _shareLink, // Share the link
+                useDefaultColor: true, // Use platform default color
+              ),
+            ],
+          );
+        } else {
+          return PlatformAlertDialog(
+            title: "Share PDF or Link",
+            content: "Would you like to share the PDF file or just the link?",
+            options: [
+              PlatformAlertOption(
+                label: "Cancel",
+                onPressed: () {}, // Just dismiss the dialog
+                isCancel: true, // Red for Cancel
+              ),
+              PlatformAlertOption(
+                label: "PDF",
+                onPressed: _sharePDF, // Share the PDF file
+                useDefaultColor: true, // Use platform default color
+              ),
+              PlatformAlertOption(
+                label: "Link",
+                onPressed: _shareLink, // Share the link
+                useDefaultColor: true, // Use platform default color
+              ),
+            ],
+          );
+        }
       },
     );
   }
