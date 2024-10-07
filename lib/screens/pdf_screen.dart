@@ -283,7 +283,7 @@ class _PDFScreenState extends State<PDFScreen> {
                     'No Internet Connection',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 5),
                   TextButton(
                     onPressed: _launchPDFUrl,
                     child: const Text(
