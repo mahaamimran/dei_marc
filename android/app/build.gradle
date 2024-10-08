@@ -20,7 +20,7 @@ subprojects {
 }
 
 android {
-    namespace = "com.example.dei_marc"
+    namespace = "com.marc.deitoolkits"
     compileSdk = 34
     ndkVersion = "21.4.7075529"
 
@@ -34,7 +34,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.dei_marc"
+        applicationId = "com.marc.deitoolkits"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
