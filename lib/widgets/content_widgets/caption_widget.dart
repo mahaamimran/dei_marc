@@ -15,7 +15,7 @@ class CaptionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 14.0),
       child: Center(
         child: SelectableText.rich(
           TextSpan(
@@ -26,7 +26,7 @@ class CaptionWidget extends StatelessWidget {
               height: lineHeight,
             ),
           ),
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.justify,
         ),
       ),
     );
