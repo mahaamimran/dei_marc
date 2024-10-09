@@ -225,8 +225,7 @@ class _PDFScreenState extends State<PDFScreen> {
     } catch (e) {
       print('Error launching URL: $e');
       // if cannot launch the URL give fallback url
-      // TODO: Replace the URL with the actual fallback URL
-      launchUrl(Uri.parse('https://www.example.com'));
+      launchUrl(Uri.parse('https://drive.google.com/drive/folders/12FREzZacaApmHUnhscaCa63mgdKoFADp'));
     }
   }
 

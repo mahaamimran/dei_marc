@@ -1,4 +1,4 @@
-package com.example.dei_marc
+package com.marc.deitoolkits
 
 import io.flutter.embedding.android.FlutterActivity
 

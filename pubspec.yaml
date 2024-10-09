@@ -19,6 +19,7 @@ dependencies:
   path_provider: ^2.1.4
   http: ^0.13.6
   uuid: ^3.0.7
+  rename: ^3.0.2
 
 
 dev_dependencies:

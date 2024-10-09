@@ -34,7 +34,7 @@ class VideoWidget extends StatelessWidget {
         ),
         color: Colors.white70,
         child: InkWell(
-          onTap: () => _launchURL(videoUrl),
+          onTap: () => _launchURL(videoUrl, context),
           borderRadius: BorderRadius.circular(18.0),
           child: Padding(
             padding: const EdgeInsets.all(12.0),
@@ -80,14 +80,37 @@ class VideoWidget extends StatelessWidget {
     );
   }
 
-  void _launchURL(String url) async {
+  void _launchURL(String url, BuildContext context) async {
+    if (url.isEmpty || url == "") {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('🚧 '),
+              SizedBox(width: 8.0),
+              Text(
+                'Video not added yet',
+                style: TextStyles.appCaption,
+              ),
+              SizedBox(width: 8.0),
+              Text(' 🚧'),
+            ],
+          ),
+          duration: const Duration(seconds: 2),
+          backgroundColor: Colors.grey[900],
+        ),
+      );
+      return;
+    }
+
     try {
       Uri parsedUrl = Uri.parse(url);
       if (!await launchUrl(parsedUrl, mode: LaunchMode.platformDefault)) {
-      throw Exception('Could not launch $url');
-    }
-  } catch (e) {
-    print('Error launching URL: $e');
+        throw Exception('Could not launch $url');
+      }
+    } catch (e) {
+      print('Error launching URL: $e');
     }
   }
 }
