@@ -6,12 +6,14 @@ class QuoteWidget extends StatelessWidget {
   final String quote;
   final double fontSize;
   final Color appBarColor;
+  final double lineHeight;
 
   const QuoteWidget({
     super.key,
     required this.quote,
     required this.fontSize,
     required this.appBarColor,
+    this.lineHeight = 1.5,
   });
 
   @override
@@ -42,7 +44,7 @@ class QuoteWidget extends StatelessWidget {
                 TextSpan(
                   children: Helpers.highlightCompanies(
                     quote,
-                    TextStyles.quote(context).copyWith(fontSize: fontSize + 2, height: 1.25),
+                    TextStyles.quote(context).copyWith(fontSize: fontSize + 2, height: lineHeight),
                     appBarColor,
                   ),
                 ),

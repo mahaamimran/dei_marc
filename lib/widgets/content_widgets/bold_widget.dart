@@ -4,11 +4,12 @@ import 'package:dei_marc/config/text_styles.dart';
 class BoldWidget extends StatelessWidget {
   final String text;
   final double fontSize;
-
+  final double lineHeight;
   const BoldWidget({
     super.key,
     required this.text,
     required this.fontSize,
+    this.lineHeight = 1.5,
   });
 
   @override
@@ -18,7 +19,7 @@ class BoldWidget extends StatelessWidget {
       child: SelectableText.rich(
         TextSpan(
           text: text,
-          style: TextStyles.bold(context).copyWith(fontSize: fontSize + 2, height: 1.75),
+          style: TextStyles.bold(context).copyWith(fontSize: fontSize + 2, height: lineHeight),
         ),
       ),
     );

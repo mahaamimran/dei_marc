@@ -5,12 +5,14 @@ class BulletWidget extends StatelessWidget {
   final String text;
   final Color bulletColor;
   final double fontSize;
+  final double lineHeight;
 
   const BulletWidget({
     super.key,
     required this.text,
     required this.bulletColor,
     required this.fontSize,
+    this.lineHeight = 1.5,
   });
 
   @override
@@ -33,7 +35,7 @@ class BulletWidget extends StatelessWidget {
             child: SelectableText.rich(
               TextSpan(
                 text: text,
-                style: TextStyles.bullet(context).copyWith(fontSize: fontSize + 2, height: 1.75),
+                style: TextStyles.bullet(context).copyWith(fontSize: fontSize + 2, height: lineHeight),
               ),
             ),
           ),

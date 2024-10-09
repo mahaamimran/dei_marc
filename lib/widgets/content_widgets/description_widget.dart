@@ -4,11 +4,13 @@ import 'package:dei_marc/config/text_styles.dart';
 class DescriptionWidget extends StatelessWidget {
   final String description;
   final double fontSize;
+  final double lineHeight; 
 
   const DescriptionWidget({
     super.key,
     required this.description,
     required this.fontSize,
+    this.lineHeight = 1.5, 
   });
 
   @override
@@ -18,7 +20,10 @@ class DescriptionWidget extends StatelessWidget {
       child: SelectableText.rich(
         TextSpan(
           text: description,
-          style: TextStyles.content(context).copyWith(fontSize: fontSize + 2, height: 1.75),
+          style: TextStyles.content(context).copyWith(
+            fontSize: fontSize + 2,
+            height: lineHeight, 
+          ),
         ),
       ),
     );

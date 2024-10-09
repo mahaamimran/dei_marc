@@ -117,23 +117,33 @@ class SplashScreenState extends State<SplashScreen>
               child: ScaleTransition(
                 scale: _pulseAnimation,
                 child: Padding(
-                  padding: const EdgeInsets.all(18.0),
+                  padding: const EdgeInsets.all(30.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'GENDER\nDEI TOOLKITS',
+                          'GENDER DIVERSITY,\nEQUITY AND INCLUSION\n TOOLKITS',
                           textAlign: TextAlign.center,
                           style: TextStyles.appBarTitle.copyWith(
                               fontWeight: FontWeight.w700,
-                              fontSize: 30,
+                              fontSize: 25,
                               color: Colors.white,
                               letterSpacing: 1.5,
-                              height: 1.2),
+                              height: 1.75),
                         ),
                       ),
+                      // Text(
+                      //   'Gender Diversity Equity and Inclusion Toolkits',
+                      //   textAlign: TextAlign.center,
+                      //   style: TextStyles.appBarTitle.copyWith(
+                      //       fontWeight: FontWeight.w700,
+                      //       fontSize: 30,
+                      //       color: Colors.white,
+                      //       letterSpacing: 1.5,
+                      //       height: 1.2),
+                      // ),
                       const SizedBox(height: 15),
                       const Text(
                         'BY MARC',

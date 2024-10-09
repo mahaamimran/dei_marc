@@ -144,6 +144,7 @@ class _PDFScreenState extends State<PDFScreen> {
       if (mounted) {
         setState(() {
           _isDownloading = false;
+          _pdfFilePath = null;
         });
       }
     }
@@ -223,6 +224,8 @@ class _PDFScreenState extends State<PDFScreen> {
       }
     } catch (e) {
       print('Error launching URL: $e');
+      // if cannot launch the URL give fallback url
+      launchUrl(Uri.parse('https://drive.google.com/drive/folders/12FREzZacaApmHUnhscaCa63mgdKoFADp'));
     }
   }
 

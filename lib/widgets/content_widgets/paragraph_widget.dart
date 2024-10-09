@@ -6,12 +6,14 @@ class ParagraphWidget extends StatelessWidget {
   final String text;
   final double fontSize;
   final Color highlightColor;
+  final double lineHeight;
 
   const ParagraphWidget({
     super.key,
     required this.text,
     required this.fontSize,
     required this.highlightColor,
+    this.lineHeight = 1.5,
   });
 
   @override
@@ -22,7 +24,10 @@ class ParagraphWidget extends StatelessWidget {
         TextSpan(
           children: Helpers.highlightCompanies(
             text,
-            TextStyles.content(context).copyWith(fontSize: fontSize + 2, height: 1.25),
+            TextStyles.content(context).copyWith(
+              fontSize: fontSize + 2,
+              height: lineHeight,
+            ),
             highlightColor,
           ),
         ),
