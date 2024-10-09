@@ -7,10 +7,6 @@
                 {
                     "type": "pdf",
                     "text": "cat3_sub5_pdf"
-                },
-                {
-                    "type":"caption",
-                    "text":"© Elizabeth L. Campbell, & Oliver Hahl, (2022, July 22). Stop Undervaluing Exceptional Women. Harvard Business Review. Retrieved from https://hbr.org/2022/07/stop-undervaluing-exceptional-women"
                 }
             ]
         },
@@ -20,6 +16,10 @@
                 {
                     "type": "paragraph",
                     "text": "Despite progress toward gender equality at work, it still takes women longer to get promoted than men, and few make it to the top of the corporate ladder. The authors’ research suggests that the reason why comes down to gender-biased assumptions about how challenging it will be to retain them. Their findings illuminate how standout women employees can be taken for granted by companies because of gendered beliefs about who is and who isn’t a flight risk. Moreover, such gendered dynamics likely contribute to the glass ceiling and gender gaps in earnings. If companies assume women will place loyalty to the firm over advancing in their careers through outside opportunities, they won’t engage in preemptive retention efforts like bonuses, raises, promotions, or increased responsibility like they will for men. To stop taking talented women for granted and to avoid losing them to other firms, companies need to do more to recognize and address these biases."
+                },
+                {
+                    "type":"caption",
+                    "text":"© Elizabeth L. Campbell, & Oliver Hahl, (2022, July 22). Stop Undervaluing Exceptional Women. Harvard Business Review. Retrieved from https://hbr.org/2022/07/stop-undervaluing-exceptional-women"
                 }
             ]
         },
