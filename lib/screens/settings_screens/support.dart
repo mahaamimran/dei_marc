@@ -55,13 +55,13 @@ class _SupportScreenState extends State<SupportScreen> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    SelectableText(
                       supportContent.heading!,
                       style: TextStyles.heading(context).copyWith(fontSize: 16),
                     ),
                     ...supportContent.content.map((content) {
                       if (content.type == Constants.PARAGRAPH) {
-                        return Text(
+                        return SelectableText(
                           content.text,
                           style: TextStyles.content(context).copyWith(fontSize: 16),
                         );
