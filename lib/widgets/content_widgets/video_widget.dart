@@ -16,13 +16,13 @@ class VideoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (videoName == null) return const SizedBox.shrink();
+    if (videoName == null || videoName!.isEmpty) return const SizedBox.shrink();
 
     final videoUrl =
         Provider.of<ConfigProvider>(context).getVideoPath(videoName!);
 
-    if (videoUrl == null) {
-      return const Center(child: Text('Video not found.'));
+    if (videoUrl == null || videoUrl.isEmpty) {
+      return const SizedBox.shrink();
     }
 
     return Padding(
@@ -81,29 +81,6 @@ class VideoWidget extends StatelessWidget {
   }
 
   void _launchURL(String url, BuildContext context) async {
-    if (url.isEmpty || url == "") {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('🚧 '),
-              SizedBox(width: 8.0),
-              Text(
-                'Video not added yet',
-                style: TextStyles.appCaption,
-              ),
-              SizedBox(width: 8.0),
-              Text(' 🚧'),
-            ],
-          ),
-          duration: const Duration(seconds: 2),
-          backgroundColor: Colors.grey[900],
-        ),
-      );
-      return;
-    }
-
     try {
       Uri parsedUrl = Uri.parse(url);
       if (!await launchUrl(parsedUrl, mode: LaunchMode.platformDefault)) {

@@ -20,6 +20,7 @@ class PDFDownloadButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (pdfUrl.isEmpty || pdfUrl == "") return const SizedBox.shrink();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -14,7 +14,7 @@ class Constants {
 
   // Font Size Limits
   static const double FONT_SIZE_MIN = 9.0;
-  static const double FONT_SIZE_MAX = 32.0;
+  static const double FONT_SIZE_MAX = 33.0;
 
   // Other Constants
   static const List<String> FONT_FAMILIES = [

@@ -131,7 +131,7 @@ class SplashScreenState extends State<SplashScreen>
                               fontSize: 25,
                               color: Colors.white,
                               letterSpacing: 1.5,
-                              height: 1.75),
+                              height: 1.55),
                         ),
                       ),
                       // Text(
