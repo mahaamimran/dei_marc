@@ -161,7 +161,8 @@ class ContentListWidget extends StatelessWidget {
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: contents.map((contentItem) {
-                                return _buildContentItem(contentItem, context, subcategory.name);
+                                return _buildContentItem(
+                                    contentItem, context, subcategory.name);
                               }).toList(),
                             );
                           },
@@ -183,7 +184,8 @@ class ContentListWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildContentItem(ContentItem contentItem, BuildContext context, String subcategoryName) {
+  Widget _buildContentItem(
+      ContentItem contentItem, BuildContext context, String subcategoryName) {
     final fontSize = Provider.of<SettingsProvider>(context).fontSize;
 
     return Column(
@@ -205,20 +207,22 @@ class ContentListWidget extends StatelessWidget {
                 ),
                 if (quote.content != null)
                   ...quote.content!.map((nestedQuote) {
-                    return _buildNestedContent(nestedQuote, context, fontSize, subcategoryName);
+                    return _buildNestedContent(
+                        nestedQuote, context, fontSize, subcategoryName);
                   }),
               ],
             );
           } else {
-            return _buildNestedContent(quote, context, fontSize, subcategoryName);
+            return _buildNestedContent(
+                quote, context, fontSize, subcategoryName);
           }
         }),
       ],
     );
   }
 
-  Widget _buildNestedContent(
-      Quote quote, BuildContext context, double fontSize, String subcategoryName) {
+  Widget _buildNestedContent(Quote quote, BuildContext context, double fontSize,
+      String subcategoryName) {
     if (quote.type == Constants.PARAGRAPH) {
       return ParagraphWidget(
         text: quote.text,
@@ -267,12 +271,31 @@ class ContentListWidget extends StatelessWidget {
           return const SizedBox.shrink();
         },
       );
+    } else if (quote.type == Constants.COMPLETEPDF) {
+      // Retrieve the PDF path from the ConfigProvider
+      return Consumer<ConfigProvider>(
+        builder: (context, configProvider, child) {
+          final pdfUrl = configProvider.getPdfPath(quote.text);
+
+          if (pdfUrl != null) {
+            return PDFDownloadButton(
+              subcategoryName: subcategoryName,
+              text: "Complete Module",
+              secondaryColor: secondaryColor,
+              primaryColor: appBarColor,
+              pdfUrl: pdfUrl,
+            );
+          }
+          return const SizedBox.shrink();
+        },
+      );
     } else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Text(
           quote.text,
-          style: TextStyles.content(context).copyWith(fontSize: fontSize, height: 1.25),
+          style: TextStyles.content(context)
+              .copyWith(fontSize: fontSize, height: 1.25),
         ),
       );
     }

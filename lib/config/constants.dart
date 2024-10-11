@@ -36,5 +36,7 @@ class Constants {
   static const String DESCRIPTION = 'description';
   static const String HEADING = 'heading';
   static const String PDF = 'pdf';
+  static const String COMPLETEPDF= 'completepdf';
   static const String ABOUT = 'About';
+
 }
