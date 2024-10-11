@@ -26,7 +26,7 @@ class CaptionWidget extends StatelessWidget {
               height: lineHeight,
             ),
           ),
-          textAlign: TextAlign.justify,
+          textAlign: TextAlign.center,
         ),
       ),
     );
