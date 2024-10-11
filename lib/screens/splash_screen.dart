@@ -151,7 +151,7 @@ class SplashScreenState extends State<SplashScreen>
                         style: TextStyle(
                           fontFamily: 'Raleway',
                           fontWeight: FontWeight.w500,
-                          fontSize: 16,
+                          fontSize: 14,
                           letterSpacing: 10,
                           color: Colors.white70,
                         ),
