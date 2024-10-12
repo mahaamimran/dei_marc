@@ -1,11 +1,19 @@
 // ignore_for_file: constant_identifier_names
 
 class Constants {
+  // Reposive
+  static const double MOBILE_TITLE_FONT_SIZE = 18.0;
+  static const double TABLET_TITLE_FONT_SIZE = 24.0;
+
+  static const double MOBILE_PADDING = 8.0;
+  static const double TABLET_PADDING = 16.0;
+  
   // SharedPreferences Keys
   static const String FONT_SIZE_KEY = 'fontSize';
   static const String FONT_FAMILY_KEY = 'fontFamily';
   static const String IS_GRID_VIEW_KEY = 'isGridView';
   static const String IS_LIST_VIEW_KEY = 'isListView';
+  static const String BOOKMARKS_KEY = 'bookmarks';
 
   // Font Family Options
   static const String FONT_FAMILY_RALEWAY = 'Raleway';
@@ -36,7 +44,6 @@ class Constants {
   static const String DESCRIPTION = 'description';
   static const String HEADING = 'heading';
   static const String PDF = 'pdf';
-  static const String COMPLETEPDF= 'completepdf';
+  static const String COMPLETEPDF = 'completepdf';
   static const String ABOUT = 'About';
-
 }
