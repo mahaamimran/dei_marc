@@ -183,11 +183,6 @@ class _PDFScreenState extends State<PDFScreen> {
             content: "Would you like to share the PDF file or just the link?",
             options: [
               PlatformAlertOption(
-                label: "Cancel",
-                onPressed: () {}, // Just dismiss the dialog
-                isCancel: true, // Red for Cancel
-              ),
-              PlatformAlertOption(
                 label: "PDF",
                 onPressed: _sharePDF, // Share the PDF file
                 useDefaultColor: true, // Use platform default color
@@ -197,6 +192,11 @@ class _PDFScreenState extends State<PDFScreen> {
                 onPressed: _shareLink, // Share the link
                 useDefaultColor: true, // Use platform default color
               ),
+              PlatformAlertOption(
+                label: "Cancel",
+                onPressed: () {}, // Just dismiss the dialog
+                isCancel: true, // Red for Cancel
+              ),
             ],
           );
         }
@@ -204,19 +204,29 @@ class _PDFScreenState extends State<PDFScreen> {
     );
   }
 
-  // Share the downloaded PDF file
   Future<void> _sharePDF() async {
     if (_pdfFilePath == null) {
       await _checkAndDownloadPDF();
     }
     if (_pdfFilePath != null) {
-      Share.shareXFiles([XFile(_pdfFilePath!)], subject: widget.title);
+      RenderBox? box = context.findRenderObject() as RenderBox?;
+      Share.shareXFiles(
+        [XFile(_pdfFilePath!)],
+        subject: widget.title,
+        sharePositionOrigin: box!.localToGlobal(Offset.zero) &
+            box.size, // Ensure proper position for iPads
+      );
     }
   }
 
-  // Share the link directly
   void _shareLink() {
-    Share.share(widget.pdfUrl, subject: widget.title);
+    RenderBox? box = context.findRenderObject() as RenderBox?;
+    Share.share(
+      widget.pdfUrl,
+      subject: widget.title,
+      sharePositionOrigin: box!.localToGlobal(Offset.zero) &
+          box.size, // iPad share sheet positioning
+    );
   }
 
   // Handle launching the PDF URL in a browser if no internet connection
