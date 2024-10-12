@@ -65,29 +65,41 @@ class _ImageWidgetState extends State<ImageWidget>
     final imagePath = configProvider.getImagePath(widget.imageName);
 
     if (imagePath != null) {
-      return GestureDetector(
-        onDoubleTap: () {
-          _transformationController.value = Matrix4.identity();
-        },
-        onScaleEnd: (_) => _onInteractionEnd(), // Snap back on release
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: InteractiveViewer(
-            transformationController: _transformationController,
-            panEnabled: true, // Allow panning
-            scaleEnabled: true, // Enable zoom on touch
-            boundaryMargin: EdgeInsets.zero, // Keep within boundaries
-            minScale: 1.0, // No zoom out smaller than original
-            maxScale: 4.0, // Set maximum zoom level
-            //clipBehavior: Clip.none, // Prevent clipping during zoom
-            onInteractionEnd: (_) => _onInteractionEnd(), // Snap back when released
-            child: Image.asset(
-              AssetPaths.image(imagePath),
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                print('Error loading image: $error');
-                return const Text('Image not found');
-              },
+      // Determine if the device is a tablet
+      final isTablet = MediaQuery.of(context).size.shortestSide >= 600;
+
+      // Define image dimensions based on the device type
+      final double imageWidth = isTablet ? 800.0 : MediaQuery.of(context).size.width * 0.9;
+      final double imageHeight = isTablet ? 400.0 : MediaQuery.of(context).size.height * 0.4;
+
+      return Center(
+        child: GestureDetector(
+          onDoubleTap: () {
+            _transformationController.value = Matrix4.identity();
+          },
+          onScaleEnd: (_) => _onInteractionEnd(), // Snap back on release
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: InteractiveViewer(
+              transformationController: _transformationController,
+              panEnabled: true, // Allow panning
+              scaleEnabled: true, // Enable zoom on touch
+              boundaryMargin: EdgeInsets.zero, // Keep within boundaries
+              minScale: 1.0, // No zoom out smaller than original
+              maxScale: 4.0, // Set maximum zoom level
+              onInteractionEnd: (_) => _onInteractionEnd(), // Snap back when released
+              child: SizedBox(
+                width: imageWidth, // Use defined width for phone/tablet
+                height: imageHeight, // Use defined height for phone/tablet
+                child: Image.asset(
+                  AssetPaths.image(imagePath),
+                  fit: BoxFit.contain, // Ensure the whole image fits within the container
+                  errorBuilder: (context, error, stackTrace) {
+                    print('Error loading image: $error');
+                    return const Text('Image not found');
+                  },
+                ),
+              ),
             ),
           ),
         ),

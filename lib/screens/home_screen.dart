@@ -33,6 +33,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final isTablet = MediaQuery.of(context).size.shortestSide >= 600;
     return MediaQuery(
       data: MediaQuery.of(context)
           .copyWith(textScaler: const TextScaler.linear(1.0)),
@@ -79,8 +80,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Consumer<SettingsProvider>(
                       builder: (context, settingsProvider, child) {
                         return settingsProvider.isListView
-                            ? _buildListView(bookProvider)
-                            : _buildGridView(bookProvider);
+                            ? (isTablet
+                                ? _buildTabletListView(bookProvider)
+                                : _buildPhoneListView(bookProvider))
+                            : (isTablet
+                                ? _buildGridViewForTablet(bookProvider)
+                                : _buildGridViewForPhone(bookProvider));
                       },
                     ),
                   ),
@@ -93,7 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildListView(BookProvider bookProvider) {
+  /// List view for phones
+  Widget _buildPhoneListView(BookProvider bookProvider) {
     return Scrollbar(
       child: ListView.builder(
         itemCount: bookProvider.books.length,
@@ -184,7 +190,106 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildGridView(BookProvider bookProvider) {
+  /// List view for tablets
+  Widget _buildTabletListView(BookProvider bookProvider) {
+    return Scrollbar(
+      child: ListView.builder(
+        itemCount: bookProvider.books.length,
+        itemBuilder: (context, index) {
+          final book = bookProvider.books[index];
+          final primaryColor = ColorConstants
+              .booksPrimary[index % ColorConstants.booksPrimary.length];
+          final secondaryColor = ColorConstants
+              .booksSecondary[index % ColorConstants.booksSecondary.length];
+
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Material(
+              color: secondaryColor,
+              borderRadius: BorderRadius.circular(16.0),
+              elevation: 2.0,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(16.0),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CategoryScreen(
+                        bookFileName: book.bookId.toString(),
+                        appBarColor: primaryColor,
+                        secondaryColor: secondaryColor,
+                      ),
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Larger image on the left for tablet
+                      Container(
+                        width: 150, // Larger size for tablet
+                        height: 150, // Larger size for tablet
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          image: DecorationImage(
+                            image: AssetImage(AssetPaths.bookCovers[
+                                index % AssetPaths.bookCovers.length]),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 16.0),
+                      // Text on the right for tablet
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'GENDER DEI TOOLKIT VOLUME ${toRoman(book.volume)}',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyles.appTitle.copyWith(
+                                color: primaryColor,
+                               fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 4.0),
+                            Text(
+                              book.title,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyles.appCaption.copyWith(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                                fontSize:18.0, // Larger font size for tablet
+                              ),
+                            ),
+                            const SizedBox(height: 4.0),
+                            Text(
+                              'By ${book.author}',
+                              style: TextStyles.appCaption.copyWith(
+                                color: Colors.grey[800],
+                                fontSize: 15.0, // Larger font size for tablet
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildGridViewForPhone(BookProvider bookProvider) {
     return Scrollbar(
       child: ListView.builder(
         itemCount: bookProvider.books.length,
@@ -220,12 +325,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          AssetPaths
-                              .bookCovers[index % AssetPaths.bookCovers.length],
-                          fit: BoxFit.contain,
+                      Center(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            AssetPaths.bookCovers[
+                                index % AssetPaths.bookCovers.length],
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 8.0),
@@ -250,6 +357,94 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         },
       ),
+    );
+  }
+
+  Widget _buildGridViewForTablet(BookProvider bookProvider) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    print(screenWidth);
+    // Adjust the number of grid columns based on the screen width
+    final int crossAxisCount = screenWidth >= 1180
+        ? 3
+        : screenWidth >= 700
+            ? 2
+            : 1;
+
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: crossAxisCount, // Adjust columns for responsiveness
+        crossAxisSpacing: 8.0,
+        mainAxisSpacing: 8.0,
+        childAspectRatio:
+            0.75, // Control the height dynamically (height/width ratio)
+      ),
+      itemCount: bookProvider.books.length,
+      itemBuilder: (context, index) {
+        final book = bookProvider.books[index];
+        final primaryColor = ColorConstants
+            .booksPrimary[index % ColorConstants.booksPrimary.length];
+        final secondaryColor = ColorConstants
+            .booksSecondary[index % ColorConstants.booksSecondary.length];
+
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Material(
+            color: secondaryColor,
+            borderRadius: BorderRadius.circular(16.0),
+            elevation: 2.0,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(16.0),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CategoryScreen(
+                      bookFileName: book.bookId.toString(),
+                      appBarColor: primaryColor,
+                      secondaryColor: secondaryColor,
+                    ),
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          AssetPaths
+                              .bookCovers[index % AssetPaths.bookCovers.length],
+                          fit: BoxFit.contain,
+                          width: double.infinity, // Full width image
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 8.0),
+                    Text(
+                      'GENDER DEI TOOLKIT: ${book.title} | Volume ${toRoman(book.volume)}',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyles.appTitle.copyWith(
+                        color: primaryColor,
+                      ),
+                    ),
+                    const SizedBox(height: 4.0),
+                    Text(
+                      'By ${book.author}',
+                      style: TextStyles.appCaption.copyWith(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

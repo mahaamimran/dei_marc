@@ -8,15 +8,16 @@ class PDFDownloadButton extends StatelessWidget {
   final Color secondaryColor;
   final Color primaryColor;
   final String pdfUrl;
+  final bool isCompletePDF;
 
-  const PDFDownloadButton({
-    super.key,
-    required this.subcategoryName,
-    required this.text,
-    required this.secondaryColor,
-    required this.primaryColor,
-    required this.pdfUrl,
-  });
+  const PDFDownloadButton(
+      {super.key,
+      required this.subcategoryName,
+      required this.text,
+      required this.secondaryColor,
+      required this.primaryColor,
+      required this.pdfUrl,
+      this.isCompletePDF = false});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,7 @@ class PDFDownloadButton extends StatelessWidget {
                   pdfUrl: pdfUrl,
                   title: text,
                   subcategoryName: subcategoryName,
+                  isCompletePDF: isCompletePDF
                 ),
               ),
             );

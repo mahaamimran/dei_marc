@@ -13,6 +13,7 @@ class BookmarksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isTablet = MediaQuery.of(context).size.shortestSide >= 600;
     return MediaQuery(
       data: MediaQuery.of(context)
           .copyWith(textScaler: const TextScaler.linear(1.0)),
@@ -63,47 +64,33 @@ class BookmarksScreen extends StatelessWidget {
             }
 
             return settingsProvider.isGridView
-                ? _buildGridView(bookmarkProvider)
-                : _buildListView(bookmarkProvider);
+                ? _buildGridView(bookmarkProvider, isTablet)
+                : _buildListView(bookmarkProvider, isTablet);
           },
         ),
       ),
     );
   }
 
-  Widget _buildGridView(BookmarkProvider bookmarkProvider) {
+    Widget _buildGridView(BookmarkProvider bookmarkProvider, bool isTablet) {
     return GridView.builder(
       padding: const EdgeInsets.all(10.0),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2, // Same grid layout as CategoryScreen
-        childAspectRatio: 1.3, // Same aspect ratio as CategoryScreen
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: isTablet ? 3 : 2,
+        childAspectRatio: 1.3,
         crossAxisSpacing: 15.0,
         mainAxisSpacing: 15.0,
       ),
       itemCount: bookmarkProvider.bookmarks.length,
       itemBuilder: (context, index) {
         final bookmark = bookmarkProvider.bookmarks[index];
-        return _buildGridBookmarkCard(context, bookmark);
+        return _buildGridBookmarkCard(context, bookmark, isTablet);
       },
     );
   }
 
-  Widget _buildListView(BookmarkProvider bookmarkProvider) {
-    return ListView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-      itemCount: bookmarkProvider.bookmarks.length,
-      itemBuilder: (context, index) {
-        final bookmark = bookmarkProvider.bookmarks[index];
-        return Padding(
-          padding:
-              const EdgeInsets.only(bottom: 10.0), // Add spacing between items
-          child: _buildListBookmarkCard(context, bookmark),
-        );
-      },
-    );
-  }
-
-  Widget _buildGridBookmarkCard(BuildContext context, String bookmark) {
+  Widget _buildGridBookmarkCard(
+      BuildContext context, String bookmark, bool isTablet) {
     final parts = bookmark.split('-');
     final bookId = parts[0];
     final categoryId = int.parse(parts[1]);
@@ -116,11 +103,11 @@ class BookmarksScreen extends StatelessWidget {
         .booksSecondary[bookIdIndex % ColorConstants.booksSecondary.length];
 
     return Material(
-      color: bookSecondaryColor, // background color for the card
-      borderRadius: BorderRadius.circular(16.0), // Card shape
-      elevation: 2.0, // Elevation for shadow
+      color: bookSecondaryColor,
+      borderRadius: BorderRadius.circular(16.0),
+      elevation: 2.0,
       child: InkWell(
-        borderRadius: BorderRadius.circular(16.0), // Ripple effect shape
+        borderRadius: BorderRadius.circular(16.0),
         onTap: () {
           Navigator.push(
             context,
@@ -144,6 +131,7 @@ class BookmarksScreen extends StatelessWidget {
                 '${Helpers.getTitle(bookId)} $categoryId',
                 style: TextStyles.appCaption.copyWith(
                   fontWeight: FontWeight.bold,
+                  fontSize: isTablet ? 18.0 : 12.0, // Adjust font size
                   color: bookPrimaryColor,
                 ),
               ),
@@ -157,6 +145,7 @@ class BookmarksScreen extends StatelessWidget {
               Text(
                 categoryName,
                 style: TextStyles.appCaption.copyWith(
+                  fontSize: isTablet ? 18.0 : 12.0, // Adjust font size
                   color: Colors.black,
                 ),
                 textAlign: TextAlign.center,
@@ -168,7 +157,22 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildListBookmarkCard(BuildContext context, String bookmark) {
+  Widget _buildListView(BookmarkProvider bookmarkProvider, bool isTablet) {
+    return ListView.builder(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      itemCount: bookmarkProvider.bookmarks.length,
+      itemBuilder: (context, index) {
+        final bookmark = bookmarkProvider.bookmarks[index];
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 10.0),
+          child: _buildListBookmarkCard(context, bookmark, isTablet),
+        );
+      },
+    );
+  }
+
+  Widget _buildListBookmarkCard(
+      BuildContext context, String bookmark, bool isTablet) {
     final parts = bookmark.split('-');
     final bookId = parts[0];
     final categoryId = int.parse(parts[1]);
@@ -183,7 +187,7 @@ class BookmarksScreen extends StatelessWidget {
     return Material(
       color: bookSecondaryColor,
       borderRadius: BorderRadius.circular(16.0),
-      elevation: 2.0, // Add elevation for shadow
+      elevation: 2.0,
       child: InkWell(
         borderRadius: BorderRadius.circular(16.0),
         onTap: () {
@@ -208,6 +212,7 @@ class BookmarksScreen extends StatelessWidget {
             style: TextStyles.appCaption.copyWith(
               color: bookPrimaryColor,
               fontWeight: FontWeight.bold,
+              fontSize: isTablet ? 18.0 : 12.0, // Adjust font size
             ),
           ),
           subtitle: Text(
@@ -215,6 +220,7 @@ class BookmarksScreen extends StatelessWidget {
             style: TextStyles.appCaption.copyWith(
               color: Colors.black,
               fontWeight: FontWeight.normal,
+              fontSize: isTablet ? 18.0 : 12.0, // Adjust font size
             ),
           ),
         ),
@@ -222,30 +228,30 @@ class BookmarksScreen extends StatelessWidget {
     );
   }
 
- void _showClearAllDialog(BuildContext context, BookmarkProvider bookmarkProvider) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return PlatformAlertDialog(
-        title: "Clear all Bookmarks",
-        content: "Are you sure you want to clear all bookmarks?",
-        options: [
-          PlatformAlertOption(
-            label: "Cancel",
-            onPressed: () {},  // Just dismiss the dialog
-            isCancel: false,  // This will be black
-          ),
-          PlatformAlertOption(
-            label: "Clear",
-            onPressed: () {
-              bookmarkProvider.clearAllBookmarks();
-            },
-            isCancel: true,  // This will be red
-          ),
-        ],
-      );
-    },
-  );
-}
-
+  void _showClearAllDialog(
+      BuildContext context, BookmarkProvider bookmarkProvider) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return PlatformAlertDialog(
+          title: "Clear all Bookmarks",
+          content: "Are you sure you want to clear all bookmarks?",
+          options: [
+            PlatformAlertOption(
+              label: "Cancel",
+              onPressed: () {}, // Just dismiss the dialog
+              isCancel: false, // This will be black
+            ),
+            PlatformAlertOption(
+              label: "Clear",
+              onPressed: () {
+                bookmarkProvider.clearAllBookmarks();
+              },
+              isCancel: true, // This will be red
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

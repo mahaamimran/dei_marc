@@ -16,6 +16,7 @@ class PDFScreen extends StatefulWidget {
   final String pdfUrl;
   final String title;
   final String subcategoryName;
+  final bool isCompletePDF;
 
   const PDFScreen({
     super.key,
@@ -23,6 +24,7 @@ class PDFScreen extends StatefulWidget {
     required this.pdfUrl,
     required this.title,
     required this.subcategoryName,
+    this.isCompletePDF = false,
   });
 
   @override
@@ -43,7 +45,8 @@ class _PDFScreenState extends State<PDFScreen> {
     super.initState();
     _pdfViewerController = PdfViewerController();
     _httpClient = http.Client(); // Initialize the HTTP client
-    _fileUUID = const Uuid().v5(Uuid.NAMESPACE_URL, widget.pdfUrl); // Generate UUID from the URL
+    _fileUUID = const Uuid()
+        .v5(Uuid.NAMESPACE_URL, widget.pdfUrl); // Generate UUID from the URL
     _checkInternetConnection();
     _checkAndDownloadPDF(); // Start checking for cached file or downloading when the screen opens
   }
@@ -68,7 +71,8 @@ class _PDFScreenState extends State<PDFScreen> {
   Future<void> _checkAndDownloadPDF() async {
     // Use UUID for unique file naming based on the URL
     final dir = await getApplicationDocumentsDirectory();
-    final filePath = '${dir.path}/$_fileUUID.pdf'; // Unique file path based on UUID
+    final filePath =
+        '${dir.path}/$_fileUUID.pdf'; // Unique file path based on UUID
 
     final file = File(filePath);
 
@@ -179,11 +183,6 @@ class _PDFScreenState extends State<PDFScreen> {
             content: "Would you like to share the PDF file or just the link?",
             options: [
               PlatformAlertOption(
-                label: "Cancel",
-                onPressed: () {}, // Just dismiss the dialog
-                isCancel: true, // Red for Cancel
-              ),
-              PlatformAlertOption(
                 label: "PDF",
                 onPressed: _sharePDF, // Share the PDF file
                 useDefaultColor: true, // Use platform default color
@@ -193,6 +192,11 @@ class _PDFScreenState extends State<PDFScreen> {
                 onPressed: _shareLink, // Share the link
                 useDefaultColor: true, // Use platform default color
               ),
+              PlatformAlertOption(
+                label: "Cancel",
+                onPressed: () {}, // Just dismiss the dialog
+                isCancel: true, // Red for Cancel
+              ),
             ],
           );
         }
@@ -200,19 +204,29 @@ class _PDFScreenState extends State<PDFScreen> {
     );
   }
 
-  // Share the downloaded PDF file
   Future<void> _sharePDF() async {
     if (_pdfFilePath == null) {
       await _checkAndDownloadPDF();
     }
     if (_pdfFilePath != null) {
-      Share.shareXFiles([XFile(_pdfFilePath!)], subject: widget.title);
+      RenderBox? box = context.findRenderObject() as RenderBox?;
+      Share.shareXFiles(
+        [XFile(_pdfFilePath!)],
+        subject: widget.title,
+        sharePositionOrigin: box!.localToGlobal(Offset.zero) &
+            box.size, // Ensure proper position for iPads
+      );
     }
   }
 
-  // Share the link directly
   void _shareLink() {
-    Share.share(widget.pdfUrl, subject: widget.title);
+    RenderBox? box = context.findRenderObject() as RenderBox?;
+    Share.share(
+      widget.pdfUrl,
+      subject: widget.title,
+      sharePositionOrigin: box!.localToGlobal(Offset.zero) &
+          box.size, // iPad share sheet positioning
+    );
   }
 
   // Handle launching the PDF URL in a browser if no internet connection
@@ -225,7 +239,8 @@ class _PDFScreenState extends State<PDFScreen> {
     } catch (e) {
       print('Error launching URL: $e');
       // if cannot launch the URL give fallback url
-      launchUrl(Uri.parse('https://drive.google.com/drive/folders/12FREzZacaApmHUnhscaCa63mgdKoFADp'));
+      launchUrl(Uri.parse(
+          'https://drive.google.com/drive/folders/12FREzZacaApmHUnhscaCa63mgdKoFADp'));
     }
   }
 
@@ -237,7 +252,9 @@ class _PDFScreenState extends State<PDFScreen> {
         scrolledUnderElevation: 0,
         backgroundColor: widget.appBarColor,
         title: Text(
-          Helpers.getPDFScreenAppBarTitle(widget.subcategoryName),
+          widget.isCompletePDF
+              ? 'Complete Module'
+              : Helpers.getPDFScreenAppBarTitle(widget.subcategoryName),
           style: TextStyles.appBarTitle.copyWith(color: Colors.white),
         ),
         iconTheme: const IconThemeData(color: Colors.white),

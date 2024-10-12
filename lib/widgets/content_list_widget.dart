@@ -284,6 +284,7 @@ class ContentListWidget extends StatelessWidget {
               secondaryColor: secondaryColor,
               primaryColor: appBarColor,
               pdfUrl: pdfUrl,
+              isCompletePDF: true,
             );
           }
           return const SizedBox.shrink();
