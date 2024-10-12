@@ -76,6 +76,14 @@
                     "text":"Trainees will be introduced to specific, actionable standards and practices that have been proven to mitigate gender bias in the workplace. This includes understanding how to apply these standards consistently across the organization to ensure inclusivity and fairness."
                 }
             ]
+        },
+        {
+            "content": [
+                {
+                    "type": "completepdf",
+                    "text": "cat6_pdf"
+                }
+            ]
         }
     ]
 }

@@ -71,6 +71,14 @@
                     "text":"The discussion highlights the importance of continuous self-reflection and vigilance in recognizing one’s own biases. The speaker’s realization of her bias against women leaders, despite being one herself, serves as a call to action for everyone to examine their unconscious biases."
                 }
             ]
+        },
+        {
+            "content": [
+                {
+                    "type": "completepdf",
+                    "text": "cat3_pdf"
+                }
+            ]
         }
     ]
 }
