@@ -128,7 +128,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     style: TextStyles.appCaption.copyWith(
                       fontWeight: FontWeight.bold,
                       color: widget.appBarColor,
-                      fontSize: isTablet ? 18.0 : 12.0, // Adjust font size
+                      fontSize: isTablet ? 18.0 : 14.0, // Adjust font size
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -144,8 +144,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       category.name,
                       style: TextStyles.appCaption.copyWith(
                         color: Colors.black,
-                        fontSize: isTablet ? 18.0 : 12.0, // Adjust font size
+                        fontSize: isTablet ? 18.0 : 14.0, // Adjust font size
                       ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
                     ),
                   ],
@@ -203,7 +205,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     style: TextStyles.appCaption.copyWith(
                         color: widget.appBarColor,
                         fontWeight: FontWeight.bold,
-                         fontSize: isTablet ? 18.0 : 12.0, // Adjust font size
+                         fontSize: isTablet ? 18.0 : 14.0, // Adjust font size
                          ),
                     // Removed the TextAlign.center for left alignment
                   ),
@@ -213,7 +215,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                           style: TextStyles.appCaption.copyWith(
                             color: Colors.black,
                             fontWeight: FontWeight.normal,
-                             fontSize: isTablet ? 18.0 : 12.0, // Adjust font size
+                             fontSize: isTablet ? 18.0 : 14.0, // Adjust font size
                           ),
                           // Removed the TextAlign.center for left alignment
                         )
