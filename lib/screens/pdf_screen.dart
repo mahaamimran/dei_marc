@@ -209,23 +209,35 @@ class _PDFScreenState extends State<PDFScreen> {
       await _checkAndDownloadPDF();
     }
     if (_pdfFilePath != null) {
-      RenderBox? box = context.findRenderObject() as RenderBox?;
+      final RenderBox? box = context.findRenderObject() as RenderBox?;
       Share.shareXFiles(
         [XFile(_pdfFilePath!)],
         subject: widget.title,
-        sharePositionOrigin: box!.localToGlobal(Offset.zero) &
-            box.size, // Ensure proper position for iPads
+        sharePositionOrigin: box != null
+            ? box.localToGlobal(Offset.zero) & box.size
+            : Rect.fromLTWH(
+                MediaQuery.of(context).size.width / 2,
+                MediaQuery.of(context).size.height / 2,
+                0,
+                0,
+              ), // Provide screen center as a fallback
       );
     }
   }
 
   void _shareLink() {
-    RenderBox? box = context.findRenderObject() as RenderBox?;
+    final RenderBox? box = context.findRenderObject() as RenderBox?;
     Share.share(
       widget.pdfUrl,
       subject: widget.title,
-      sharePositionOrigin: box!.localToGlobal(Offset.zero) &
-          box.size, // iPad share sheet positioning
+      sharePositionOrigin: box != null
+          ? box.localToGlobal(Offset.zero) & box.size
+          : Rect.fromLTWH(
+              MediaQuery.of(context).size.width / 2,
+              MediaQuery.of(context).size.height / 2,
+              0,
+              0,
+            ), // Provide screen center as a fallback
     );
   }
 
