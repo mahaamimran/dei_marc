@@ -57,6 +57,14 @@
                     "text": "Participants will understand the importance of promoting gender diversity and inclusion in organizational leadership to create fairer and more equitable workplaces. They will explore the benefits of having diverse perspectives and skills represented in leadership positions and how initiatives such as laws mandating gender diversity on company boards can help address gender disparities and promote gender equality in corporate settings. "
                 }
             ]
+        },
+        {
+            "content": [
+                {
+                    "type": "completepdf",
+                    "text": "cat2_pdf"
+                }
+            ]
         }
     ]
 }

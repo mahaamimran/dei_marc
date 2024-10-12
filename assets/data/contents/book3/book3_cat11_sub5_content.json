@@ -56,6 +56,14 @@
                     "text": "Participants will learn about effective methods for raising awareness and advocating for equal pay in the workplace. They will explore strategies such as conducting pay audits to identify and address wage gaps, promoting transparency in salary negotiations and compensation practices, and fostering a culture of accountability and fairness in addressing wage disparities."
                 }
             ]
+        },
+        {
+            "content": [
+                {
+                    "type": "completepdf",
+                    "text": "cat11_pdf"
+                }
+            ]
         }
     ]
 }
