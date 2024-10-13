@@ -61,7 +61,11 @@
             "content":[
                 {
                     "type":"paragraph",
-                    "text":"During a routine review of team compositions and leadership demographics, Amna noticed a significant gender imbalance across the technical teams and among the leadership roles. Concerned, she convened a meeting with her executive team and HR department to address this issue. It was during this meeting that the above challenges came to the forefront.\nRecognizing the need for immediate action, Amna realized that there is a need for an organization-wide strategic initiative to foster ownership and understanding of DEI across the organization."
+                    "text":"During a routine review of team compositions and leadership demographics, Amna noticed a significant gender imbalance across the technical teams and among the leadership roles. Concerned, she convened a meeting with her executive team and HR department to address this issue. It was during this meeting that the above challenges came to the forefront."
+                },
+                {
+                    "type":"paragraph",
+                    "text":"Recognizing the need for immediate action, Amna realized that there is a need for an organization-wide strategic initiative to foster ownership and understanding of DEI across the organization."
                 }
             ]
         },
