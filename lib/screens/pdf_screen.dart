@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:dei_marc/utils/connection_util.dart';
-import 'package:uuid/uuid.dart'; 
+import 'package:uuid/uuid.dart';
 
 class PDFScreen extends StatefulWidget {
   final Color appBarColor;
@@ -210,8 +210,18 @@ class _PDFScreenState extends State<PDFScreen> {
     }
     if (_pdfFilePath != null) {
       final RenderBox? box = context.findRenderObject() as RenderBox?;
+
+      final dir = await getApplicationDocumentsDirectory();
+      final newFileName = widget.isCompletePDF
+          ? 'Complete Module.pdf'
+          : '${widget.subcategoryName}.pdf'; // App bar title as file name
+      final newFilePath = '${dir.path}/$newFileName';
+
+      // Copy or rename the downloaded file to the new file path
+      final newFile = await File(_pdfFilePath!).copy(newFilePath);
+
       Share.shareXFiles(
-        [XFile(_pdfFilePath!)],
+        [XFile(newFile.path)], // Share the renamed file
         subject: widget.title,
         sharePositionOrigin: box != null
             ? box.localToGlobal(Offset.zero) & box.size
