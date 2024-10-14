@@ -35,6 +35,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         create: (context) =>
             CategoryProvider()..loadCategories(widget.bookFileName),
         child: Scaffold(
+          backgroundColor: Colors.white,
           appBar: AppBar(
             centerTitle: true,
             leading: IconButton(
